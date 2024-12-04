@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+  :root {
+    --background-color: #FFFFFA;
+    --border-color: #A1A191;
+    --border-color-2: #6E6E5E;
+    --default-color: #1C1B17;
+    --yellow-color: #FEF506;
+    --logout-color:#c50e0ede;
+    --sideText-color:#448297;
+    --Table-background-color:#2c3e50;
+    --stroke-color:#3498db;
+    --stroke-color-2:#007bff;
+    --select-border-color:#dfe4ea;
+    --cancel-btn-color:#95a5a6;
+    --ban-btn-color:#f39c12;
+    --active-btn-color:#2ecc71;
+    --ban-row-color:#fdedec;
+    --gallery-background-color:#f4f4f4;
+    --gallery-dash-color:#ccc;
+    --NavBar-background-color: #F5F5F5;
+    --NavBar-active-font-color: #02224B;
+    --NavBar-inactive-font-color: #57677B;
+    
+    --Hero-boldText-color: #09C0FF;
+    --Table-border-color:#DDDDDD;
+    --Primary-color:#000000;
+    --Secondary-color:#04234C;
+    --Answer-background-color:#E9F4FF;
+    
+    --socialsandrewards-color :#407BFF;
+    --cashback-color:#7F3E3B;
+    --Footer-link-color:#EFF1F3;
+   
+}
+body{
+  margin: 0rem;
+  padding: 0rem;
+}
+
+ 
+
+
+
+ 
+
+
+
+
+

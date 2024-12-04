@@ -1,0 +1,165 @@
+
+.adminGalleryContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .mainContent {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .pageTitle {
+    text-align: center;
+    color: var(--stroke-color);
+    margin-bottom: 20px;
+  }
+  
+  /* Upload Form Styles */
+  .uploadForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: var(--gallery-background-color);
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .fileInputLabel {
+    position: relative;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+  }
+  
+  .hiddenFileInput {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  
+  .fileInputPlaceholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed  var(--gallery-dash-color);
+    padding: 30px;
+    text-align: center;
+    font-family: 'Inter';
+  }
+  
+  .uploadIcon {
+    width: 50px;
+    height: 50px;
+    fill: var(--stroke-color-2);
+    margin-bottom: 10px;
+  }
+  
+  .imagePreview {
+    max-width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .descriptionInput {
+    padding: 10px;
+    border: 1px solid var(--gallery-dash-color);
+    border-radius: 4px;
+    outline: none;
+  }
+  
+  .uploadButton {
+    background-color: var(--stroke-color-2) ;
+    color: var(--background-color);
+    border: none;
+    font-family: 'Comic Sans MS';
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .uploadButton:disabled {
+    background-color: var(--gallery-dash-color);
+    cursor: not-allowed;
+  }
+  
+  /* Gallery Image List Styles */
+  .galleryImageGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .galleryImageItem {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .galleryImageItem:hover {
+    transform: scale(1.05);
+  }
+  
+  .galleryImage {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+  
+  .imageOverlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: var(--yellow-color);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .imageDescription {
+    margin: 0;
+    font-size: 0.9rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .imageActions {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .deleteButton, 
+  .confirmDeleteButton, 
+  .cancelDeleteButton {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: var(--background-color);
+    transition: background-color 0.3s ease;
+  }
+  
+  .deleteButton {
+    background-color: var(--logout-color);
+    
+  }
