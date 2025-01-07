@@ -1,30 +1,28 @@
 import React from 'react'
 import Image from 'next/image'
-import '../Style/about.css'
-import Footer from '../Pages/Footer'
-import Navbar from '../Pages/Navbar'
-import Img1 from '../../public/Svgs/aboutImg1.svg'
-import Rect from '../../public/Svgs/about_square.svg'
-import VisionTag from '../../public/Svgs/visionTag.svg'
-import moon from '../../public/Svgs/aboutHalfMoon.svg'
-import MissionTag from '../../public/Svgs/missionTag.svg'
-import line from '../../public/Svgs/line 83.svg'
-import beeImage from '../../public/Svgs/beeImage.svg'
-import text from '../../public/Svgs/text.svg'
-import ball from '../../public/Svgs/Ball.svg'
-import strike from '../../public/Svgs/vector 5.svg'
-import vector from '../../public/Svgs/vector 12.svg'
-import Student from '../../public/Images/Students.png'
-import Teacher from '../../public/Images/Teacher.png'
-import Parent from '../../public/Images/Parent.png'
-import stake from '../../public/Svgs/Vector 2516.svg'
+import '@assets/css/about.css'
+import Img1 from '@assets/svg/aboutImg1.svg'
+import Rect from '@assets/svg/about_square.svg'
+import VisionTag from '@assets/svg/visionTag.svg'
+import moon from '@assets/svg/aboutHalfMoon.svg'
+import MissionTag from '@assets/svg/missionTag.svg'
+import line from '@assets/svg/line 83.svg'
+import beeImage from '@assets/svg/beeImage.svg'
+import text from '@assets/svg/text.svg'
+import ball from '@assets/svg/Ball.svg'
+import strike from '@assets/svg/vector 5.svg'
+import vector from '@assets/svg/vector 12.svg'
+import Student from '@assets/img/Students.png'
+import Teacher from '@assets/img/Teacher.png'
+import Parent from '@assets/img/Parent.png'
+import stake from '@assets/svg/Vector 2516.svg'
+import FAQPage from '../faqPage/Page'
 
 
 function About() {
     return (
         <>
-            <Navbar />
-            <div className='about-main'>
+            <div className='about-main' id='about'>
                 <div className='about-section'>
                     <div>
                         <div className='about-rect'><Image src={Rect} alt='image' /></div>
@@ -221,8 +219,8 @@ function About() {
 
 
                 </div>
+                
             </div>
-            <Footer/> 
         </>
     )
 }

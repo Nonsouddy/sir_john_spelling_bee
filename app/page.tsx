@@ -1,14 +1,13 @@
 import React from 'react'
 import Dashboard from './(Admin)/Dashboard'
-import RegistrationPage from './(RegistrationPage)/registrationPage'
-import  RegAuth from './(RegistrationPage)/regAuth'
+// import RegistrationPage from './registerPage/registrationPage'
+// import  RegAuth from './registerPage/regAuth'
 import  StaffPage from './(Admin)/staffPage'
 import  GalleryPage from './(Admin)/adminGalleryPage/gallery'
-import MaterialPage  from './(Admin)/MaterialPage'
+// import MaterialPage  from './(Admin)/materialPage/Page.tsx'
 import EventManagementDashboard from './(Admin)/EventManagementDashboard'
-import About from './Pages/About'
-import HomePage from './Pages/HomePage'
-import Resource from './Pages/ResourcesPage'
+import HomePage from './pages/HomePage'
+
 
 
 
@@ -27,9 +26,8 @@ function page() {
  
 
 
- <About/>
- {/* <HomePage/> */}
-{/* <Resource/> */}
+  <HomePage/>
+
 
 
 

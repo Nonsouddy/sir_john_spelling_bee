@@ -2,9 +2,9 @@ import React from 'react'
 import Link from 'next/link';
 import "../Style/homePage.css"
 import Image from 'next/image'
-import FAQPage from '../Pages/FAQPage'
-import Footer from '../Pages/Footer'
-import Navbar from '../Pages/Navbar'
+import FAQPage from '../faqPage/Page'
+import Footer from '../components/Footer'
+import Navbar from '../components/Navbar'
 import HomeImg from "../../public/Svgs/homePageImg.svg"
 import Arrow from "../../public/Svgs/Arrow 1.svg"
 import beeImage from "../../public/Svgs/beeImage.svg"
@@ -39,7 +39,6 @@ import step4 from "../../public/Images/step4.png"
 function HomePage() {
     return (
        <>
-       <Navbar/>
         <section className='home-main'>
             {/* HomePage first column */}
             <div className='home-section'>
@@ -248,15 +247,16 @@ function HomePage() {
                     <div>
 
                     </div>
-                    {/* <FAQPage/> */}
+                
                 </div>
 
                 
             </div>
+            <FAQPage/>
           
         </section>
        
-        <Footer/>
+        
         </>
     )
 }

@@ -20,9 +20,15 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@assets/css/*":["./assets/css/*"],
+      "@assets/js/*":["./assets/js/*"],
+      "@assets/image/*":["./assets/images/*"],
+      "@assets/public/*":["./public/*"],
+      "@assets/svg/*":["./public/svgs/*"],
+      "@assets/img/*":["./public/images/*"],
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/(Admin)/user_table.tsx", "app/(Admin)/users.tsx", "app/(Admin)/AdminGalleryPage"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/(Admin)/user_table.tsx", "app/(Admin)/users.tsx", "app/(Admin)/AdminGalleryPage", "app/(Admin)/materialPage/Page.tsx"],
   "exclude": ["node_modules"]
 }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import "../Style/fqaAccordion.css"
+import "@assets/css/fqaAccordion.css"
 import Image from 'next/image';
-import beeImage from "../../public/Svgs/beeImage.svg"
+import beeImage from "@assets/svg/beeImage.svg"
 
 // Types for our FAQ items
 interface FAQItem {
@@ -43,7 +43,7 @@ const FAQ: React.FC = () => {
   };
 
   return (
-    <div className="faq-container">
+    <div className="faq-container " id='faq-container'>
       <div className="faq-content">
         <div className=''>
           <div className="faq-sidebar">

@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import FileUploadForm from '../Components/FileUploadForm';
+import FileUploadForm from '../../components/FileUploadForm';
 import  '../Style/Material.css';
 
 const AdminPage: React.FC = () => {

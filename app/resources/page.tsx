@@ -1,38 +1,37 @@
 import React from 'react'
 import Image from 'next/image'
-import '../Style/resourcesPage.css'
-import ResourceBanner from "../../public/Images/ResourcesBanner.png"
-import RightArrow from "../../public/Svgs/Arrow 13.svg"
-import eventImg1 from "../../public/Svgs/eventImg1.svg"
-import eventImg2 from "../../public/Svgs/eventImg2.svg"
-import eventImg3 from "../../public/Svgs/eventImg3.svg"
-import eventImg4 from "../../public/Svgs/eventImg4.svg"
-import Btn from "../../public/Svgs/downloadBtn.svg"
-import crul1 from "../../public/Svgs/crul1.svg"
-import crul2 from "../../public/Svgs/crul2.svg"
-import crul3 from "../../public/Svgs/crul3.svg"
-import bookBall from "../../public/Svgs/bookBall.svg"
-import bookBall1 from "../../public/Svgs/bookBall1.svg"
-import bookBall2 from "../../public/Svgs/bookBall2.svg"
-import bookLeft from "../../public/Svgs/bookLeft.svg"
-import bookLeft1 from "../../public/Svgs/bookLeft1.svg"
-import bookSmallBall1 from "../../public/Svgs/bookSmallBall1.svg"
-import bookSmallBall2 from "../../public/Svgs/bookSmallBall2.svg"
-import bookSmallBall3 from "../../public/Svgs/bookSmallBall3.svg"
-import bookSmallBall4 from "../../public/Svgs/bookSmallBall4.svg"
-import Ellipse11 from "../../public/Svgs/Ellipse11.svg"
-// import resourceBackground from "../../public/Svgs/resourceBackground.svg"
-import moon from '../../public/Svgs/aboutHalfMoon.svg'
-import halfmoon from '../../public/Svgs/halfMoon.svg'
-import vector13 from '../../public/Svgs/vector13.svg'
+import '@assets/css/resourcesPage.css'
+// import ResourceBanner from "../../public/Images/ResourcesBanner.png"
+// import RightArrow from "@assets/svg/Arrow 13.svg"
+import eventImg1 from "@assets/svg/eventImg1.svg"
+import eventImg2 from "@assets/svg/eventImg2.svg"
+import eventImg3 from "@assets/svg/eventImg3.svg"
+import eventImg4 from "@assets/svg/eventImg4.svg"
+import Btn from "@assets/svg/downloadBtn.svg"
+import crul1 from "@assets/svg/crul1.svg"
+import crul2 from "@assets/svg/crul2.svg"
+import crul3 from "@assets/svg/crul3.svg"
+import bookBall from "@assets/svg/bookBall.svg"
+import bookBall1 from "@assets/svg/bookBall1.svg"
+import bookBall2 from "@assets/svg/bookBall2.svg"
+import bookLeft from "@assets/svg/bookLeft.svg"
+import bookLeft1 from "@assets/svg/bookLeft1.svg"
+import bookSmallBall1 from "@assets/svg/bookSmallBall1.svg"
+import bookSmallBall2 from "@assets/svg/bookSmallBall2.svg"
+import bookSmallBall3 from "@assets/svg/bookSmallBall3.svg"
+import bookSmallBall4 from "@assets/svg/bookSmallBall4.svg"
+import Ellipse11 from "@assets/svg/Ellipse11.svg"
+// import resourceBackground from "@assets/svg/resourceBackground.svg"
+import moon from '@assets/svg/aboutHalfMoon.svg'
+import halfmoon from '@assets/svg/halfMoon.svg'
+import vector13 from '@assets/svg/vector13.svg'
 import Link from 'next/link'
-import Footer from '../Pages/Footer'
-import Navbar from '../Pages/Navbar'
+
 
 function ResourcesPage() {
     return (
         <>
-        <Navbar/>
+       
             <div className='resources-head-main'>
                 <div className='resources-head'>
                     <div className='resources-moon'><Image src={moon} alt='image' /></div>
@@ -267,7 +266,7 @@ function ResourcesPage() {
                     </div>
                 </div>
             </div>
-            <Footer/>
+          
         </>
            
      

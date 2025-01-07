@@ -1,7 +1,8 @@
 "use client"
 import { useState } from 'react';
-import styles from '../Style/registrationPage.module.css';
+import  '@assets/css/registration.css';
 import Image from 'next/image';
+import Link from 'next/link';
 import logo from '../../public/Svgs/Auth_logo.svg';
 import regImg from '../../public/Svgs/Auth_image1.svg';
 import strike from '../../public/Svgs/Auth_strike.svg';
@@ -82,23 +83,23 @@ const StudentRegistrationForm: React.FC = () => {
       // TODO: Implement API submission logic
       alert('Registration Successful!');
     } else {
-      alert('Please complete all fields');
+      alert('complete all fields');
     }
   };
 
 
 
   return (
-    <div className={styles.reg_section}>
-      <div className={styles.reg_row_1}><Image src={regImg} alt='' /> </div>
+    <div className= "reg_section">
+      <div className= "reg_row_1"><Image src={regImg} alt='' /> </div>
 
-      <div className={styles.reg_row_2}>
-        <div className={styles.reg_row_col_1}>
-          <div className={styles.reg_top_text}>
+      <div className='reg_row_2'>
+        <div className= "reg_row_col_1">
+          <div className="reg_top_text">
             <div>Welcome!</div>
             <div className='flex'>
-                <Image className={styles.logo} src={logo} alt='' />
-              <div className={styles.logo_group}>
+                <Image className="logo" src={logo} alt='' />
+              <div className= "logo_group">
                 <div >
                   {/* <Image className= {styles.strike} src={strike} alt='' /> */}
                 </div>
@@ -106,16 +107,16 @@ const StudentRegistrationForm: React.FC = () => {
             </div>
 
           </div>
-          <div className={styles.reg_middel_text}>Register your pupils here</div>
+          <div className= "reg_middel_text">Register your pupils here</div>
         </div>
 
 
-        <div className={styles.formContainer}>
-          <form onSubmit={handleSubmit} className={styles.registrationForm}>
+        <div className="formContainer">
+          <form onSubmit={handleSubmit} className= "registrationForm">
 
 
             {/* Full Name Input */}
-            <div className={styles.formGroup}>
+            <div className= "formGroup">
               <label htmlFor="fullName">Full Name</label>
               <input
                 type="text"
@@ -129,8 +130,8 @@ const StudentRegistrationForm: React.FC = () => {
             </div>
 
             {/* Email Input */}
-            <div className={styles.reg_input_col}>
-              <div className={styles.formGroup}>
+            <div className= "reg_input_col">
+              <div className= "formGroup">
                 <label htmlFor="email">Email Address</label>
                 <input
                   type="email"
@@ -144,7 +145,7 @@ const StudentRegistrationForm: React.FC = () => {
               </div>
 
               {/* Phone Number Input */}
-              <div className={styles.formGroup}>
+              <div className="formGroup">
                 <label htmlFor="phoneNumber">Phone Number</label>
                 <input
                   type="tel"
@@ -161,7 +162,7 @@ const StudentRegistrationForm: React.FC = () => {
 
             {/* Date of Birth Input */}
 
-            <div className={styles.formGroup}>
+            <div className= "formGroup">
               <label htmlFor="dateOfBirth">Date of Birth</label>
               <input
                 type="date"
@@ -175,9 +176,9 @@ const StudentRegistrationForm: React.FC = () => {
             </div>
 
             {/* Sex Dropdown */}
-            <div className={styles.formGroup}>
+            <div className="formGroup">
               <label htmlFor="sex">Gender</label>
-              <div className={styles.selectWrapper}>
+              <div className= "selectWrapper">
                 <select
                   id="sex"
                   name="sex"
@@ -192,15 +193,15 @@ const StudentRegistrationForm: React.FC = () => {
                     </option>
                   ))}
                 </select>
-                <div className={styles.selectArrow}></div>
+                <div className= "selectArrow"></div>
               </div>
             </div>
 
 
             {/* Class Dropdown */}
-            <div className={styles.formGroup}>
+            <div className= "formGroup">
               <label htmlFor="class">Class</label>
-              <div className={styles.selectWrapper}>
+              <div className= "selectWrapper">
                 <select
                   id="class"
                   name="class"
@@ -215,14 +216,14 @@ const StudentRegistrationForm: React.FC = () => {
                     </option>
                   ))}
                 </select>
-                <div className={styles.selectArrow}></div>
+                <div className= "selectArrow"></div>
               </div>
             </div>
 
             {/* Category Dropdown */}
-            <div className={styles.formGroup}>
+            <div className= "formGroup">
               <label htmlFor="category">Category</label>
-              <div className={styles.selectWrapper}>
+              <div className= "selectWrapper">
                 <select
                   id="category"
                   name="category"
@@ -237,20 +238,22 @@ const StudentRegistrationForm: React.FC = () => {
                     </option>
                   ))}
                 </select>
-                <div className={styles.selectArrow}></div>
+                <div className= "selectArrow"></div>
               </div>
             </div>
 
             {/* Submit Button */}
-            <button type="submit" className={styles.submitButton}>
+            <Link href="/regAuth">
+            <button type="submit" className= "submitButton">
               Next
             </button>
+            </Link>
           </form>
         </div>
 
       </div>
 
-    </div>
+    </div> 
   )
 }
 

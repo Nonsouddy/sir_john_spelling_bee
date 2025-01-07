@@ -1,8 +1,9 @@
 "use client"
 import { useState } from 'react';
-import styles from '../Style/registrationPage.module.css';
+import '@assets/css/registration.css';
 import Image from 'next/image';
 import logo from '../../public/Svgs/Auth_logo.svg';
+import Link from 'next/link';
 import regImg2 from '../../public/Svgs/Auth_img2.svg';
 import strike from '../../public/Svgs/Auth_strike.svg';
 import { styleText } from 'util';
@@ -59,16 +60,16 @@ const StudentRegistrationForm: React.FC = () => {
 
 
   return (
-    <div className={styles.reg_section}>
-      <div className={styles.reg_row_1}><Image src={regImg2} alt='' /> </div>
+    <div className= "reg_section">
+      <div className= "reg_row_1"><Image src={regImg2} alt='' /> </div>
 
-      <div className={styles.reg_row_2}>
-        <div className={styles.reg_row_col_1}>
-          <div className={styles.reg_top_text}>
+      <div className="reg_row_2">
+        <div className= "reg_row_col_1">
+          <div className= "reg_top_text">
             <div>Welcome!</div>
             <div className='flex'>
-              <Image className={styles.logo} src={logo} alt='' />
-              <div className={styles.logo_group}>
+              <Image className= "logo" src={logo} alt='' />
+              <div className= "logo_group">
                 <div >
                   {/* <Image className= {styles.strike} src={strike} alt='' /> */}
                 </div>
@@ -76,16 +77,16 @@ const StudentRegistrationForm: React.FC = () => {
             </div>
 
           </div>
-          <div className={styles.reg_middel_text}>Register your pupils here</div>
+          <div className= "reg_middel_text">Register your pupils here</div>
         </div>
 
 
-        <div className={styles.formContainer}>
-          <form onSubmit={handleSubmit} className={styles.registrationForm}>
+        <div className= "formContainer">
+          <form onSubmit={handleSubmit} className= "registrationForm">
 
-            <div className={styles.regAuth_title}> School Information</div>
+            <div className= "regAuth_title"> School Information</div>
             {/* Name of School Input */}
-            <div className={styles.formGroup}>
+            <div className= "formGroup">
               <label htmlFor="nameOfSchool">Name of School</label>
               <input
                 type="text"
@@ -97,9 +98,9 @@ const StudentRegistrationForm: React.FC = () => {
                 required
               />
             </div>
-            <div className={styles.reg_input_col}>
+            <div className= "reg_input_col">
               {/* School location */}
-              <div className={styles.formGroup}>
+              <div className= "formGroup">
                 <label htmlFor="location">Location</label>
                 <input
                   type="text"
@@ -114,7 +115,7 @@ const StudentRegistrationForm: React.FC = () => {
 
 
               {/* Phone Number Input */}
-              <div className={styles.formGroup}>
+              <div className= "formGroup">
                 <label htmlFor="phoneNumber">Phone Number</label>
                 <input
                   type="tel"
@@ -130,10 +131,10 @@ const StudentRegistrationForm: React.FC = () => {
             </div>
 
 
-            <div className={styles.regAuth_title}> Coach/Tutor's Information</div>
+            <div className= "regAuth_title"> Coach/Tutor's Information</div>
 
             {/* Coach's Input */}
-            <div className={styles.formGroup}>
+            <div className= "formGroup">
               <label htmlFor="coachFullName">Full Name</label>
               <input
                 type="text"
@@ -146,7 +147,7 @@ const StudentRegistrationForm: React.FC = () => {
               />
             </div>
             {/* coach Number Input */}
-            <div className={styles.formGroup}>
+            <div className= "formGroup">
               <label htmlFor="phoneNumber">Phone Number</label>
               <input
                 type="tel"
@@ -169,9 +170,11 @@ const StudentRegistrationForm: React.FC = () => {
 
 
             {/* Submit Button */}
-            <button type="submit" className={styles.submitButton}>
-              Next
+            <Link href="#">
+           <button type="submit" className= "submitButton">
+              Register
             </button>
+            </Link>
           </form>
         </div>
 
