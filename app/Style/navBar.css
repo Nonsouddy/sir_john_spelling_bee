@@ -1,0 +1,165 @@
+.navbar {
+  width: 100%;
+  background-color: var(--background-color);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--menu-bar-color);
+  text-decoration: none;
+}
+
+
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 10px;
+  
+
+}
+
+.nav-item {
+margin-left: 1.5rem;
+font-family: Comic Sans MS;
+font-size: 16px;
+font-weight: 400;
+line-height: 22.3px;
+text-align: center;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+color: var(--navBar-text-color);
+list-style-type: none;
+
+}
+.nav_log{
+  padding-left: 80px;
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-link {
+  color: var(--menu-bar-color);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+
+  
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--orange-color);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--orange-color);
+
+ 
+}
+
+.nav-link:hover::after {
+  width: 100%;
+
+  
+}
+/* a.active::after{
+  background-image: url(../../public/Svgs/Ball.svg);
+  background-repeat: repeat-x;
+  background-size: 120px;
+} */
+
+
+
+.register-btn:hover {
+  background-color: #efe811;;
+  transform: scale(1.05);
+}
+
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 25px;
+  height: 3px;
+  background-color: var( --menu-bar-color);
+  margin: 3px 0;
+  transition: 0.4s;
+}
+
+.menu-icon.open .bar1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-icon.open .bar2 {
+  opacity: 0;
+}
+
+.menu-icon.open .bar3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+@media screen and (max-width: 768px) {
+  .menu-icon {
+    display: flex;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    background-color: var(--background-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 1rem;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-item {
+    margin: 0.5rem 0;
+    width: 100%;
+    text-align: center;
+  }
+  .nav_log{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+   margin-right: 50px;
+   
+   
+  }
+}

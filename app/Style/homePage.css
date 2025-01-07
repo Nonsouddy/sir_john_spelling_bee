@@ -1,0 +1,1449 @@
+.head-main {
+    /* Home page */
+    position: relative;
+    width: 1440px;
+    height: 5500px;
+    background: var(--background-color);
+
+}
+
+/* HomePage first column */
+
+.home-section {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    margin-top: 100px;
+    /* justify-content: space-between; */
+}
+
+.home-image {
+    /* position: absolute; */
+    width: 61.87px;
+    /* height: 51.33px; */
+    margin-left: 347.21px;
+    margin-top: 100px;
+    transform: rotate(360.7deg);
+}
+
+.home-head-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 48px;
+    /* position: absolute; */
+    width: 547px;
+    height: 328px;
+    padding-left: 130px;
+    padding-top: 100px;
+}
+
+.home-head-section p {
+    /* Master the art of spelling and shine with confidence, success, and incredible prizes! */
+    width: 547px;
+    height: 70px;
+    font-family: 'Istok Web';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 35px;
+    color: var(--navBar-text-color);
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+
+}
+
+.home-head-col1 {
+    display: flex;
+    flex-direction: column;
+    /* Buzz Into Brilliance: Let Your Words Shine */
+    width: 547px;
+    height: 134px;
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 67px;
+    color: var(--default-color);
+    flex: none;
+    order: 0;
+
+}
+.Buzz{
+    color: var( --orange-color);
+
+}
+
+
+.homePage-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 20px;
+    width: 369px;
+    height: 48px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.homePage-btn button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 10px;
+    gap: 10px;
+    width: 197px;
+    height: 48px;
+    background: var(--yellow-color);
+    border-radius: 30px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.home-btn {
+    /* Register Now */
+    width: 177px;
+    height: 22px;
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    color: var(--btn-text-color);
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+}
+
+.home-learn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    width: 152px;
+    height: 42px;
+    flex: none;
+    gap: 5px;
+    order: 1;
+    flex-grow: 0;
+
+}
+
+.home-learn div {
+    /* Learn the buzz */
+    width: 112px;
+    height: 22px;
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: var(--gray-700);
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.home-learn img {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    background: var(--home-learn);
+    border-radius: 10px;
+}
+
+
+.home-ellipse-sec {
+    display: flex;
+    flex-direction: row;
+    gap: 50%;
+
+}
+
+.home-page-head-section2 {
+    width: 597.84px;
+    height: 505px;
+    /* padding-left: 706px; */
+    margin-top: -120px;
+}
+
+.home-ellipse1 {
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    margin-left: 50px;
+    margin-top: 150px;
+}
+
+.home-ellipse2 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 227px;
+    margin-left: 60px;
+    /* background-color: red; */
+    transform: rotate(325deg);
+    column-gap: 51px;
+
+}
+
+.home-head-section2 {
+    display: flex;
+    flex-direction: row;
+    margin-top: 150px;
+    /* gap: 220px; */
+}
+
+.home-head-section2-col1 {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+
+}
+
+.home-head-section2-ellipse {
+    display: flex;
+    flex-direction: row;
+    transform: rotate(-95.78deg);
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+
+.ellipse6 {
+    box-sizing: border-box;
+    width: 70px;
+    /* margin-top: -30px; */
+    margin-left: -60px;
+    /* width: 22px; */
+}
+
+.ellipse3 {
+    /* display: block; */
+    /* margin-bottom: -10px; */
+}
+
+.ellipse2 {
+    /* display: block; */
+    /* position: sticky; */
+}
+
+.home-head-section2-ellipse img {
+    width: 68px;
+    height: auto;
+
+
+}
+
+.home-head-section-details {
+    display: flex;
+    flex-direction: row;
+    margin-left: 320px;
+}
+
+.home-head-section-text {
+    display: flex;
+    flex-direction: row;
+    height: 74px;
+    /* width: 98px; */
+    padding-top: 10px;
+    transform: rotate(-1.76deg);
+    /* margin-right: -150px; */
+
+}
+
+
+
+.home-head-section-text div {
+    width: 49.33px !important;
+    height: auto;
+    text-align: center;
+    justify-content: center;
+    margin-left: 20px;
+    background: var(--orange-50);
+    box-shadow: 0px 6.16667px 40.0833px rgba(0, 0, 0, 0.1);
+    transform: rotate(-1.76deg);
+    /* B */
+    /* padding-left: 17.38px; */
+    padding-top: 14.86px;
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24.6667px;
+    line-height: 34px;
+    color: var(--orange-800)
+}
+
+.home-head-section-text span {
+    width: 49.33px;
+    height: 60px;
+    text-align: center;
+    margin-left: 20px;
+    margin-top: 20px;
+    background: var(--orange-50);
+    box-shadow: 0px 6.16667px 40.0833px rgba(0, 0, 0, 0.1);
+    transform: rotate(-1.76deg);
+    /* E */
+    /* padding-top: 14.86px; */
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24.6667px;
+    line-height: 34px;
+    color: var(--orange-800);
+    padding-top: 10px;
+}
+
+.polygon {
+    margin-top: 50px;
+}
+
+.home-head-section3 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 82px;
+    /* position: absolute; */
+    width: 1194px;
+    height: 428px;
+}
+
+.home-head-section3-Top {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    width: 274px;
+    gap: 20px;
+    height: 294px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.home-head-section3-Top h2 {
+    /* Your Path to Spelling Stardom! */
+    width: 274px;
+    height: 150px;
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 50px;
+    color: var(--navBar-text-color);
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+
+
+}
+
+.home-head-section3-Top p {
+    /* Sir John’s Spelling Bee offers more than just competition—it’s a platform to grow, excel, and thrive. */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    width: 274px;
+    height: 116px;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+    font-family: 'Istok Web';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 29px;
+    color: var(--navBar-text-color);
+
+}
+
+.home-head-section3-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: center;
+    width: 838px;
+    height: 428px;
+}
+
+.home-head-section3-col h2 {
+    /* Build Your Confidence */
+    width: 191px;
+    height: 56px;
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    color: var(--navBar-text-color);
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+
+}
+
+.home-head-section3-col p {
+    /* Gain poise and self-assurance through public speaking and performing on a national stage. */
+    width: 191px;
+    height: 83px;
+    font-family: 'Istok Web';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--navBar-text-color);
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 1;
+}
+
+.home-head-sec3-row1 {
+    width: 266px;
+    height: 428px;
+    background: var(--yellow-color);
+    border-radius: 20px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.home-head-sec3-row2 {
+    width: 266px;
+    height: 428px;
+    background: var(--orange-color);
+    border-radius: 20px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.home-head-sec3-row3 {
+    width: 266px;
+    height: 428px;
+    background: var(--blue-color);
+    border-radius: 20px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.home-card {
+    /* Frame 54 */
+
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+    position: relative;
+    width: 191px;
+    height: 265px;
+    left: 32px;
+    top: 48px;
+
+}
+
+.bee_home {
+    width: 61.87px;
+    height: 51.33px;
+    margin-left: 14px;
+    margin-top: 60px;
+    transform: rotate(360deg);
+
+
+}
+
+.polygon2 img {
+    margin-left: 1175px;
+    transform: rotate(180deg);
+    margin-top: -30px;
+}
+
+.home-register-section {
+    margin-bottom: 100px;
+}
+
+.home-register {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    margin-bottom: 100px;
+}
+
+.home-register-detail-1 {
+    /* position: relative; */
+    width: 695px;
+    height: 900px;
+    /* padding-left: 0px; */
+    margin-top: 540px;
+    background: var(--DEF3FD);
+    border-radius: 0px 20px 20px 0px;
+}
+
+.home-register-detail-2 {
+    /* position: relative; */
+    width: 695px;
+    height: 900px;
+    /* margin-left: 74px; */
+    margin-top: 540px;
+    background: var(--FDF1E8);
+    border-radius: 20px 0px 0px 20px;
+}
+
+.register-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 24px;
+    position: relative;
+    width: 308px;
+    height: 372px;
+    left: 50px;
+    top: 36px;
+
+}
+
+.register-card2 {
+    /* Frame 1618872957 */
+
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 24px;
+    position: relative;
+    width: 308px;
+    /* height: 372px; */
+    left: 200px;
+    /* top: 36px; */
+}
+
+.register-card img,
+.register-card2 img {
+    width: 308px;
+    height: 282px;
+}
+
+.register-card p {
+    /* Sign up online and secure your spot in the competition. Schools can register multiple students for discounted rates! */
+    width: 282px;
+    height: 66px;
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--default-color);
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+
+}
+
+.register-card2 p {
+    /* Sign up online and secure your spot in the competition. Schools can register multiple students for discounted rates! */
+    width: 282px;
+    height: 66px;
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--default-color);
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.register-card-img1 {
+    /* Ellipse 1 */
+    position: relative;
+    width: 68.45px;
+    height: 68.45px;
+    left: 245px;
+    top: 154.99px;
+    opacity: 0.4;
+    transform: rotate(365.96deg);
+
+}
+
+.register-card-img2 {
+    /* Ellipse7 */
+    position: relative;
+    width: 41px;
+    height: 39.85px;
+    left: 80px;
+    top: 200px;
+    opacity: 0.6;
+
+
+}
+
+.register-card-img3 {
+    /* Polygon 3 */
+    position: relative;
+    width: 100px;
+    height: 57px;
+    left: 100px;
+    top: 250px;
+    transform: rotate(-60.62deg);
+
+
+}
+
+.register-card-img4 {
+
+    position: relative;
+    width: 68.45px;
+    height: 68.45px;
+    left: 150px;
+    top: 185px;
+    transform: rotate(365.78deg);
+
+
+
+
+}
+
+.register-card-img5 {
+
+
+    position: relative;
+    width: 71px;
+    height: 69px;
+    left: 70px;
+    top: 310px;
+    opacity: 0.1;
+}
+
+.register-card-img6 {
+    /* Ellipse 9 */
+    position: relative;
+    width: 68.45px;
+    height: 68.45px;
+    left: 160px;
+    top: 230px;
+    /* opacity: 0.1; */
+    transform: rotate(245.78deg);
+
+}
+
+.vector-7 {
+    position: relative;
+    width: 157.5px;
+    height: 184px;
+    left: 350px;
+    top: -60px;
+
+}
+
+.gam {
+    display: flex;
+    flex-direction: row;
+    margin-top: -62px;
+}
+
+.gam2 {
+    display: flex;
+    flex-direction: row;
+    margin-top: 80px;
+}
+.gam3{
+    display: flex;
+}
+
+.vector-8 {
+    position: relative;
+    width: 80.5px;
+    height: 72.5px;
+    left: 585px;
+    top: -150.5px;
+    transform: scaleX(1)
+}
+
+.vector-9 {
+    position: relative;
+    width: 52px;
+    height: 150px;
+    left: 655.5px;
+    top: -324.7px;
+}
+
+.vector-10 {
+    position: relative;
+    width: 63.37px;
+    height: 151px;
+    left: 692px;
+    top: -481px;
+}
+
+.vector-11 {
+    /* Vector 11 */
+
+    position: relative;
+    width: 255.5px;
+    height: 308px;
+    left: 330px;
+    top: -463px;
+
+}
+
+/* res */
+@media (max-width:480px){
+
+    .head-main {
+        /* Home page */
+        width: 400px;
+        height: 5500px;
+    }
+
+    /* HomePage first column */
+
+    .home-section {
+        display: flex;
+        flex-direction: row;
+        padding-right: 120px;
+    }
+
+    .home-image {
+        display: none;
+    }
+
+    .home-head-section {
+        /* height: 328px; */
+        font-size: 18px;
+        /* padding-left: 10%; */
+        padding-top:50px;
+        padding-left:0px;
+       
+        height: 382px;
+        width: 500px;
+
+        margin: 10px !important;    }
+
+    .home-head-section p {
+        /* Master the art of spelling and shine with confidence, success, and incredible prizes! */
+       font-weight: 400;
+        font-size: 18px;
+        width: 50%;
+       top: -100px;
+       position: relative;
+
+    }
+   
+
+    .home-head-col1 {
+        /* Buzz Into Brilliance: Let Your Words Shine */
+        width:50% !important;
+        /* height: auto; */
+        font-style: normal;
+        font-size: 20px;
+        line-height: 30px; 
+        flex-wrap: wrap;
+       
+    }
+
+    .homePage-btn {
+        display: flex;
+        flex-direction: column;
+        /* margin:2% ; */
+       margin-left: -80px;
+       justify-content: center;
+       place-items: center;
+    }
+
+    .homePage-btn button {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+       margin-top: -40%;
+    }
+
+    .home-btn {
+        /* Register Now */
+        width: 100%;
+        height: 22px;
+        font-size: 15px;
+    }
+
+    .home-learn {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 22px;
+        font-size: 15px;
+       padding-left: 110px;
+       margin-top: -5%;
+
+    }
+
+    .home-learn div {
+        /* Learn the buzz */
+        font-size: 15px;
+    }
+
+    .home-ellipse-sec {
+        display: none;
+    }
+    .home-ellipse1 {
+        display: none;
+    }
+
+    .home-ellipse2 {
+        display: none;
+    }
+
+    .home-head-section2 {
+        display: flex;
+        flex-direction: row;
+        margin-top: 150px;
+        /* gap: 220px; */
+    }
+
+    .home-head-section2-col1 {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+
+    }
+
+    .home-head-section2-ellipse {
+        display: none;
+    }
+
+    .ellipse6 {
+        display: none;
+    }
+
+    .home-head-section2-ellipse img {
+        display: none;
+
+    }
+
+    .home-page-head-section2-img img {
+        display: none;
+    }
+
+    .home-head-section-details img {
+        display: none;
+    }
+
+    .home-head-section-text {
+        display: none;
+    }
+
+    .polygon {
+        display: none;
+
+    }
+
+    .home-head-section3 {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 82px;
+        position: relative;
+        width: 50%;
+        height: 500px;
+    }
+
+    .home-head-section3-Top {
+        margin-top: -125%;
+    }
+
+    .home-head-section3-Top h2 {
+        /* Your Path to Spelling Stardom! */
+        width: 75%;
+        font-size: 20px;
+        line-height: 24px;
+         height: 80%;
+    }
+
+    .home-head-section3-Top p {
+        /* Sir John’s Spelling Bee offers more than just competition—it’s a platform to grow, excel, and thrive. */
+        width: 70%;
+        font-weight: 400;
+        font-size: 18px;
+        margin-top: -80px;
+    }
+
+    .home-head-section3-col {
+        display: flex;
+        flex-direction: column;
+        width: 100px;
+        margin-top: 60px;
+        margin-left: -300px;
+    }
+
+    .home-head-section3-col h2 {
+        /* Build Your Confidence */
+        font-size: 20px;
+        margin-bottom: 20px;
+        margin-bottom: 20px;
+        /* width: 90%; */
+        text-align: center;
+        margin-top: -30px;
+        height: 50%;
+
+    }
+
+    .home-head-section3-col p {
+        /* Gain poise and self-assurance through public speaking and performing on a national stage. */
+        width: 100%;
+        height: 83px;
+        font-size: 14px;
+        line-height: 20px;
+        text-align: center;
+
+    }
+
+    .home-head-sec3-row1 {
+        height: 350px;
+        place-content: center;
+        margin-top: -20px;
+       
+
+    }
+
+    .home-head-sec3-row2,
+    .home-head-sec3-row3 {
+        height: 350px;
+        place-content: center;
+    }
+
+    .home-head-sec3-row1 img,
+    .home-head-sec3-row2 img,
+    .home-head-sec3-row3 img {
+        width: 40%;
+        display: flex;
+        position: relative;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+
+
+    .polygon2 img {
+        display: none;
+    }
+
+
+    .home-register {
+        flex-direction: column;
+        margin-top: 300px;
+    }
+
+    .home-register-detail-1 {
+        width: 120%;
+    }
+
+    .home-register-detail-2 {
+        width: 120%;
+        margin-top: 0%;
+        /* background-color: red; */
+        flex-direction:column;
+        display: flex;
+
+    }
+
+    .register-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px;
+        gap: 24px;
+        position: relative;
+        width: 80%;
+        height: 90%;
+        left: 0px;
+        /* top: 100px; */
+    }
+.register-card2 {
+        /* Frame 1618872957 */
+
+        /* Auto layout */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px;
+        gap: 24px;
+        position: relative;
+        width: 308px;
+        /* height: 372px; */
+        left: -20px;
+        top: 100px;
+    }
+
+    .register-card img{
+        width: 200px;
+        height: auto;
+
+    }
+    .register-card2 img {
+        width: 200px;
+       height: auto;
+       padding-left: 0px;
+    }
+
+    .register-card p {
+        /* Sign up online and secure your spot in the competition. Schools can register multiple students for discounted rates! */
+        width: 80%;
+        margin-bottom: 50px;
+    }
+
+    .register-card2 p {
+        /* Sign up online and secure your spot in the competition. Schools can register multiple students for discounted rates! */
+        width: 70%;
+        margin-bottom: 100px;
+        padding-right: 40px;
+    }
+
+    .register-card-img1 {
+        /* Ellipse 1 */
+        display: none;
+    }
+
+    .register-card-img2 {
+        /* Ellipse7 */
+        display: none;
+    }
+
+    .register-card-img3 {
+        /* Polygon 3 */
+        display: none;
+
+
+
+    }
+
+    .register-card-img4 {
+
+        display: none;
+    }
+
+    .register-card-img5 {
+        display: none;
+    }
+
+    .register-card-img6 {
+        /* Ellipse 9 */
+        display: none;
+    }
+
+    .vector-7 {
+       display: none;
+
+    }
+
+   
+
+
+    .vector-10 {
+        display: none;
+       
+    }
+
+    .vector-11 {
+        /* Vector 11 */
+
+        display: none;
+
+    }
+    .gam{
+        margin-top: 20px;
+    }
+    .gam2{
+        order: 2;
+        margin-top: -20px;
+    }
+    .gam3{
+        order: 1;
+      
+     
+    }
+}
+@media (min-width: 481px) and (max-width:768px) {
+    /* HomePage first column */
+    
+    .home-section {
+        display: flex;
+        flex-direction: row;
+        gap: 10%;
+        margin-top: 20%;
+    }
+    
+    .home-image {
+   display: none;
+    }
+    
+    .home-head-section {
+      padding-left: 20px;
+        padding-top: 20px;
+    }
+    
+    .home-head-section p {
+        /* Master the art of spelling and shine with confidence, success, and incredible prizes! */
+        width: 60%;
+        height: 70px;
+        line-height: 35px;
+        font-size: 24px;
+    }
+    
+    .home-head-col1 {
+      /* Buzz Into Brilliance: Let Your Words Shine */
+       font-size: 30px;
+    }
+    .Buzz{
+        color: var( --orange-color);
+    }
+    .homePage-btn{
+        gap: 50px;}
+    
+    .homePage-btn button {
+        width: 150%;
+       border-radius: 20px;
+    }
+    
+    .home-btn {
+        /* Register Now */
+    
+        font-size: 14px;
+    }
+
+    .home-ellipse-sec {
+        display:none;
+    }
+    
+    .home-page-head-section2 {
+        width: 597.84px;
+        height: 505px;
+        /* padding-left: 706px; */
+        margin-top: -120px;
+    }
+    
+    .home-ellipse1 {
+       display: none;
+    }
+    
+    .home-ellipse2 {
+        display: none;
+   
+    
+    }
+    
+    .home-head-section2 {
+        display: flex;
+        flex-direction: row;
+   
+    }
+    
+    .home-head-section2-col1 {
+        display: none;
+       }
+    
+    .home-head-section2-ellipse {
+        display: none;
+       }
+    
+    
+    .ellipse6 {
+       display: none;
+    }
+    
+    
+    .home-head-section2-ellipse img {
+       display: none;
+       
+    
+    
+    }
+    
+    .home-head-section-details {
+      display: none;
+    }
+
+    
+    .polygon
+     {
+        margin-top: -50%;
+       
+    }
+    .polygon2{
+       display: none;
+    }
+    .polygon img{
+        
+        width: 5%;
+    }
+    
+    .home-head-section3 {
+   flex-direction: column;
+    }
+    
+    .home-head-section3-Top {
+        gap: 20px;
+        height: 294px;
+    }
+    
+    .home-head-section3-Top h2 {
+        /* Your Path to Spelling Stardom! */
+        font-size: 30px;
+        font-weight: 200;
+     
+      
+      
+    
+    
+    }
+    
+    .home-head-section3-Top p {
+        /* Sir John’s Spelling Bee offers more than just competition—it’s a platform to grow, excel, and thrive. */
+      font-size: 20px;
+       
+    
+    }
+    
+    .home-head-section3-col {
+        display: grid;
+        grid-template-columns: repeat(2,0fr);
+        gap: 10px;
+    }
+    
+    
+    
+    .home-head-section3-col p {
+        /* Gain poise and self-assurance through public speaking and performing on a national stage. */
+        width: 191px;
+        height: 83px;
+        font-family: 'Istok Web';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+    }
+    
+    
+    .home-head-sec3-row3 {
+       padding-left: 10px;
+    }
+    
+    .home-card {
+        /* Frame 54 */
+    
+        /* Auto layout */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 24px;
+        position: relative;
+        width: 191px;
+        height: 265px;
+        left: 32px;
+        top: 48px;
+    
+    }
+    .bee_home {
+       display: none;
+    
+    
+    }
+    .home-head-section-text{
+        display: none;
+    }
+    
+    .home-register-section {
+        margin-bottom: 100px;
+        display: flex;
+        flex-direction: column;
+       
+    }
+    .home-register{
+        display: flex;
+        flex-direction: column;
+    }
+    
+   
+    
+    .home-register-detail-1 {
+        display: grid;
+        grid-template-columns: repeat(2,0fr);
+    margin-top: 170%;
+        
+    }
+    
+    .home-register-detail-2 {
+        width: 120%;
+        margin-top: 0%;
+        /* background-color: red; */
+        flex-direction:column;
+        display: flex;
+        overflow: hidden;
+
+    }
+    .register-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px;
+        gap: 24px;
+        position: relative;
+        width: 308px;
+        height: 500px;
+        left: 50px;
+        top: 36px;
+    
+    }
+    
+    .register-card2 {
+        /* Frame 1618872957 */
+    
+        /* Auto layout */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px;
+        gap: 24px;
+        position: relative;
+        width: 308px;
+        /* height: 372px; */
+        left: 200px;
+        /* top: 36px; */
+    }
+    
+    .register-card img,
+    .register-card2 img {
+        width: 308px;
+        height: 282px;
+    }
+    
+    .register-card p {
+        /* Sign up online and secure your spot in the competition. Schools can register multiple students for discounted rates! */
+        width: 282px;
+        height: 66px;
+        font-family: 'Comic Sans MS';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 22px;
+        color: var(--default-color);
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+    
+    }
+    
+    .register-card2 p {
+        /* Sign up online and secure your spot in the competition. Schools can register multiple students for discounted rates! */
+        width: 282px;
+        height: 66px;
+        font-family: 'Comic Sans MS';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 22px;
+        color: var(--default-color);
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+    }
+    
+    .register-card-img1 {
+        display: none;
+    
+    }
+    
+    .register-card-img2 {
+        display: none;
+    
+    }
+    
+    .register-card-img3 {
+        display: none;
+    
+    
+    }
+    
+    .register-card-img4 {
+    
+        display: none;
+    
+    
+    
+    
+    }
+    
+    .register-card-img5 {
+    
+    
+        display: none;
+    }
+    
+    .register-card-img6 {
+       display: none;
+    
+    }
+    
+    .vector-7 {
+        display: none;
+    
+    }
+    
+    .gam {
+        display: flex;
+        flex-direction: row;
+        margin-top: -62px;
+    }
+    
+    .gam2{
+        order: 2;
+        margin-top: -20px;
+    }
+    .gam3{
+        order: 1;
+      
+     
+    }
+    
+    .vector-8 {
+        display: none;
+    }
+    
+    .vector-9 {
+        display: none;
+    }
+    
+    .vector-10 {
+        display: none;
+    }
+    
+    .vector-11 {
+        /* Vector 11 */
+    
+       display: none;
+    
+    }
+   
+}

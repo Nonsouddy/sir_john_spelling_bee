@@ -1,0 +1,1093 @@
+.about-main {
+    /* About us */
+ /* width: 1440px; */
+height: 5500px;
+position: relative;
+background: var(--background-color);
+
+}
+
+.about-section {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 40px;
+    gap: 70px;
+    margin-top:-40px;
+
+}
+
+.about-col1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    /* position: absolute; */
+    /* width: 530px; */
+    width: 100%;
+    height: 443px;
+    padding-left: 122px;
+    padding-top: 338px;
+}
+
+.about-col1 h1 {
+    /* Sir John’s Spelling Bee */
+    width: 100%;
+    height: 78px;
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 61px;
+    text-align: center;
+    color: var(--orange-color);
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.about-col1 span {
+    color: var(--blue-color);
+}
+
+.about-col1 p {
+    /* Sir John’s Spelling Bee is a competition for children aged 5–17, aimed at fostering effective communication skills, enriching vocabulary, improving pronunciation, and cultivating poise and confidence. It promotes literacy by emphasizing the power of words as tools for dreaming, building, and exploring. */
+    width: 530px;
+    height: 351px;
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 39px;
+    text-align: center;
+    color: var(--default-color);
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+
+}
+
+.about-rect {
+    /* About-Rectangle */
+    position: absolute;
+    width: 24.71px;
+    height: 24.71px;
+    left: 567px;
+    top: 261px;
+}
+
+.about-moon {
+    /* Ellipse 527 */
+    position: absolute;
+    width: 58.11px;
+    height: 58.11px;
+    left: 124px;
+    top: 800.67px;
+    /* background: #FB9A15;
+transform: rotate(-28.37deg); */
+
+}
+
+
+.about-col2 {
+
+    /* padding-left: 739px; */
+    margin-top: 133px ;
+    /* position:absolute */
+    padding-bottom: 40px;
+    Width:701px;
+    Height:789px;
+
+}
+
+/* .about-col2 img {
+    width: 701px;
+    height: 789px;
+} */
+
+.about-main-section-3 {
+    /* width: 1440px; */
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+
+}
+
+.about-vision {
+    width: 100%;
+    /* position: sticky; */
+    height: 800px;
+    left: 0px;
+    padding-top: 10px;
+    padding-left: 50px;
+    background: var(--DEF3FD);
+    border-radius: 0px 20px 20px 0px;
+}
+
+.vision-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    place-items: center;
+    text-align: center;
+    gap: 12px;
+    width: 100%;
+    height: 187px;
+    padding-left: 50px;
+    padding-top: 100px;
+    /* flex-wrap: wrap; */
+}
+
+.about-vision h2 {
+    /* Vision */
+    width: 451px;
+    height: 66px;
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 54px;
+    text-align: center;
+    color: var(--orange-color);
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+
+
+}
+
+.about-vision p,
+.about-mission p {
+    /* Through words, we can raise children with tools to dream, build, create, break away boundaries and explore the world. */
+    width: 451px;
+    height: 92px;
+    font-family: 'Istok Web';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 35px;
+    text-align: center;
+    color: var(--default-color);
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+
+}
+
+.vision-image {
+    width: 529px;
+    height: 300px;
+    /* left: calc(50% - 529px/2); */
+    margin-top: 80px;
+    background: url(../../public/Svgs/vision.svg);
+    border-radius: 10px;
+
+}
+
+.vision-image-tag {
+    position: relative;
+    margin-left: calc(50% - 140px/2 + 241px);
+    /* place-content: center; */
+    right: 50px;
+    top: 80px;
+
+}
+
+.about-mission {
+    width: 100%;
+    height: 800px;
+    left: 0px;
+    margin-top: 180px;
+    padding-top: 10px;
+    padding-left: 50px;
+    background: var( --FDF1E8);
+    border-radius: 10px;
+    position: sticky;
+}
+
+.about-mission h2 {
+    /* Mission */
+    width: 451px;
+    height: 66px;
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 54px;
+    text-align: center;
+    color: var(--blue-color);
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+
+}
+
+.mission-image {
+    width: 529px;
+    height: 300px;
+    /* left: calc(50% - 529px/2); */
+    margin-top: 80px;
+    background: url(../../public/Svgs/mission.svg);
+    border-radius: 10px;
+
+
+}
+
+.mission-image-tag {
+    position: relative;
+    width: 252px;
+    height: 136px;
+    margin-left: calc(50% - 252px/2 - 186.5px);
+    /* padding-top: 100px; */
+    right: -20px;
+    top: 200px;
+}
+
+.line img{
+    position: relative;
+    width: 307.18px;
+    height: 150px;
+    left: 595px;
+    top: 180px;
+
+    transform: rotate(0.24deg);
+}
+
+.about-bee {
+    margin-left: 60px;
+    margin-top: -20px;
+    transform: rotate(5.7deg);
+}
+
+.about-bee img {
+    /* position: absolute; */
+    width: 61.87px;
+    height: 51.33px;
+
+}
+
+.about-bee-text {
+    /* Group 2 */
+    /* position: absolute; */
+    margin-left: -40px;
+    margin-top: -150px;
+    transform: rotate(-4.37deg);
+
+
+}
+
+.about-bee-text img {
+    /* Group 2 */
+    width: 384.65px;
+    height: 64.67px;
+    /* transform: rotate(-4.37deg); */
+}
+
+.ball-Img {
+    width: 245px;
+    height: 180px;
+    margin-left: 1100px;
+    margin-top: 223px;
+    margin-bottom: -130px;
+ transform: rotate(180deg);
+   
+
+
+}
+
+.about-main-section-2 {
+    /* width: 1440px; */
+
+}
+
+.about-section-2 {
+    width: 100%;
+    height: 824px;
+    left: 0px;
+    top: 2286px;
+    background:var(--FFFDD1);
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    position: sticky;
+}
+
+.about-section-2-col1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+    /* position: absolute; */
+    width: 100%;
+    height: 392px;
+    padding-left: 150px;
+    margin-top: 250px;
+}
+
+.about-sec-2-bigtext {
+    /* Why Sir John’s Spelling Bee */
+    height: 109px;
+    /* width: 50%; */
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 54px;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-sec-2-bigtext h2 {
+    color: var(--primary-700);
+}
+
+.about-sec-2-bigtext span {
+    color: var(--orange-color);
+}
+
+.about-sec-2-bigtext div {
+    color: var(--blue-color);
+}
+
+.about-section-2-col1 p {
+    /* Words are powerful—they are the building blocks of language and key to expressing ourselves. At Sir John’s Spelling Bee, we create a fair and inclusive platform where learners can grow their confidence, showcase their abilities, and embrace the challenge of effective communication. Through words, we empower participants to connect, share, and explore their world. */
+    width: 333px;
+    height: 259px;
+    font-family: 'Istok Web';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+    color: var(--navBar-text-color);
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.about-section-2-col2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 150px;
+    gap: 50px;
+    margin-right: 150px;
+}
+
+.about-section-2-col2-box {
+    /* Box Section */
+    width: 273px;
+    height: 273px;
+    left: 636px;
+    top: 143px;
+    background: var(--FFFDD1);
+    box-shadow: 0px 4px 26px rgba(80, 80, 80, 0.07);
+    border-radius: 20px;
+
+}
+
+.about-box-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 20px;
+    /* position: absolute; */
+    width: 165px;
+    height: 127px;
+    padding-left: calc(50% - 165px/2);
+    padding-top: 73px;
+}
+
+.about-section-2-col2-box p {
+    /* Experience the thrill of a fun and competitive environment. */
+    width: 165px;
+    height: 56px;
+    font-family: 'Istok Web';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    color: var(--default-color);
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.about-section-2-col2-box h2 {
+    /* Exciting and Challenging */
+    width: 165px;
+    height: 51px;
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+    text-align: center;
+    color: var(--default-color);
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+
+}
+
+#p {
+    border-radius: 20px 0px 0px 20px;
+    background-color: var(--orange-color);
+    ;
+    color: var(--background-color);
+    padding-left: 10px;
+    padding-bottom: 5px;
+
+}
+
+#w {
+    border-radius: 0px 20px 20px 0px;
+    background-color: var(--blue-color);
+    ;
+    color: var(--background-color);
+    padding-right: 5px;
+    padding-bottom: 5px;
+}
+
+#En {
+    border-radius: 20px;
+    background-color: var(--primary-700);
+    color: var(--background-color);
+    /* padding-left: 5px; */
+    padding-right: 5px;
+    padding-bottom: 3px;
+
+}
+
+.Ex {
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+}
+
+.Ex span {
+    padding-right: -40px;
+
+}
+
+.vector {
+    /* position: absolute; */
+    width: 65.82px;
+    height: 30.84px;
+    margin-left: -85px;
+    margin-top: -5px;
+    /* Blue */
+    /* border: 3px solid #59C5F3; */
+}
+
+.bar-strike {
+    margin-top: -20px;
+    margin-left: 30px;
+}
+
+/* Key Stakeholder Section */
+.stakeholder-main {
+    /* width: 1440px; */
+    height: 918px;
+    background: var(--background-color);
+
+}
+
+.stakeholder-heading {
+    /* Key Stakeholders */
+    width: 445px;
+    height: 90px;
+    margin-left: calc(50% - 445px/2 + 0.5px);
+    margin-top: 148px;
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 54px;
+    text-align: center;
+    color: var(--default-color);
+}
+
+.stakeholder-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    /* position: absolute; */
+    width: 100%;
+    height: 477px;
+    /* left: calc(50% - 1275px/2 + 0.5px); */
+    padding: 0px 50px;
+    /* background-color: red; */
+    background: url(../../public/Svgs/Vector\ 2516.svg) no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-top: 100px;
+
+}
+
+.stake-card {
+    /* Frame 1618872985 */
+    width: 409px;
+    height: auto;
+    background: var(--background-color);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 28px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.stake-img {
+    width: 328px;
+    height: 178px;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 30px 40px;
+
+
+}
+
+.stake-detail {
+    /* stake details */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding-left:  75px; */
+    gap: 14px;
+    width: 328px;
+    height: 161px;
+    flex: none;
+    position: sticky;
+
+
+}
+
+.stake-detail h2 {
+    /* Teachers */
+    width: 328px;
+    height: 37px;
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 26px;
+    text-align: center;
+    flex: none;
+    order: 0;
+}
+
+.stake-detail p {
+    /* They play a vital role by serving as mentors, spelling coaches, and motivators. They create engaging learning experiences that inspire their pupils and students while also acting as school bee coordinators and judges to ensure student success. */
+    width: 286px;
+    height: 110px;
+    font-family: 'Istok Web';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 129%;
+    text-align: center;
+    color: var(--navBar-text-color);
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+/* Category & Prizes */
+
+.prize-main {
+    /* width: 1440px; */
+    height: 1100px;
+    left: 0px;
+    top: 4071px;
+    background: var(--blue-color);
+}
+
+.prize-head-text {
+    /* Category & Prizes */
+    width: 905px;
+    height: 89px;
+    margin-left: calc(50% - 905px/2 - 189.5px);
+    padding-top: 100px;
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 102%;
+    letter-spacing: 0.28em;
+    color: var(--default-color);
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.prize-categories {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 47px;
+    width: 1200px;
+    height: 600px;
+    margin-left: 77px;
+    margin-top: 267px;
+    opacity: 0px;
+
+}
+
+.prize-list-1{
+    width: 402px;
+    height: 600px;
+    background: var(--yellow-color);
+    border-radius: 10px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    padding-top: 33px;
+}
+
+.prize-categories h2{
+    /* Competition Categories */
+    width: 244px;
+    height: 104px;
+    padding-left:10px;
+    padding-top: 33px;
+
+    margin-bottom: 20px;
+    
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 122%;
+    color: var(--default-color);
+}
+
+.prize-list-2 {
+    width: 410px;
+    height: 500px;
+    background: var(--yellow-color);
+    border-radius: 10px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.prize-list-3 {
+    width: 410px;
+    height: 400px;
+    background: var(--yellow-color);
+    border-radius: 10px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.prize-categories div {
+    /* Early Spellers (Primary 1–2) Upper Primary (Primary 3–5) Junior Secondary (JSS 1–3) Senior Secondary (SS 1–3) */
+    width: 312px;
+    /* height: 469px; */
+    padding-left:10px;
+    padding-top: 30px;
+    font-family: 'Istok Web';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    /* line-height: 125%; */
+    color:var(--blue-900);
+} 
+/* rsponsivness */
+@media (min-width: 481px) and (max-width:768px){
+    .about-main {
+        /* About us */
+    height: 5000px;
+    position: relative;
+    
+    }
+    
+    .about-section {
+        
+        flex-direction: column;
+        
+    }
+    
+    .about-col1 {
+       gap: 30px;
+       width: 90%;
+       
+        padding-left: 12px;
+        padding-top: 300px;
+    }
+    
+    .about-col1 h1 {
+        /* Sir John’s Spelling Bee */
+        font-size: 200%;
+    }
+    
+    .about-col1 p {
+        /* Sir John’s Spelling Bee is a competition for children aged 5–17, aimed at fostering effective communication skills, enriching vocabulary, improving pronunciation, and cultivating poise and confidence. It promotes literacy by emphasizing the power of words as tools for dreaming, building, and exploring. */
+        width:100%;
+        font-size: 150%;
+    }
+    
+    .about-rect {
+        /* About-Rectangle */
+        display: none;
+    }
+    
+    .about-moon {
+        /* Ellipse 527 */
+        display: none;
+      
+    
+    }
+    
+    
+    .about-col2 {
+    
+        display: none;
+    
+    }
+    
+    /* .about-col2 img {
+        width: 701px;
+        height: 789px;
+    } */
+    
+    .about-main-section-3 {
+        /* width: 1440px; */
+       
+     
+        flex-direction: column;
+        gap: 30px;
+        width: 100%;
+}
+    
+    .about-vision {
+        padding-top: 10px;
+       margin-top: 50%;
+    }
+    
+    .vision-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        place-items: center;
+        text-align: center;
+        gap: 12px;
+        width: 100%;
+        height: 187px;
+        padding-left: 50px;
+        padding-top: 100px;
+        /* flex-wrap: wrap; */
+    }
+    
+    .about-vision h2 {
+        /* Vision */
+        width: 80%;
+      font-size: 150%;
+    }
+    
+    .about-vision p,
+    .about-mission p {
+        /* Through words, we can raise children with tools to dream, build, create, break away boundaries and explore the world. */
+        width: 80%;
+       font-size: 120%;
+    
+    }
+    
+    .vision-image {
+        width: 80%;
+    }
+    
+    .vision-image-tag {
+       
+        right: 150px;
+}
+    
+    .about-mission {
+        /* padding-top: 10px; */
+       margin-top: 20%;
+    }
+    
+    .about-mission h2 {
+        /* Mission */
+        width: 80%;
+        font-size: 150%;
+    
+    }
+    
+    .mission-image {
+        width: 100%;
+        
+    
+    
+    }
+    
+    .mission-image-tag {
+        right: -50px;
+    }
+    
+    .line img{
+        display: none;
+    }
+    
+    .about-bee {
+       display: none;
+    }
+    
+    .about-bee img {
+        /* position: absolute; */
+        display: none;
+    }
+        
+    
+    
+    
+    .about-bee-text {
+        /* Group 2 */
+        /* position: absolute; */
+        display: none;
+    }
+    
+    .about-bee-text img {
+        /* Group 2 */
+        display: none;
+    
+    }
+    
+    .ball-Img {
+        display: none;
+    }
+    
+    .about-main-section-2 {
+       margin-top: 100px;
+      
+    
+    }
+    
+    .about-section-2 {
+       flex-direction: column;
+       height: 100%;
+       
+    }
+    
+    .about-section-2-col1 {
+        padding-left: 30px;
+        margin-top: 50px;
+    }
+    
+    .about-sec-2-bigtext {
+        /* Why Sir John’s Spelling Bee */
+       font-size: 200%;
+    }
+    
+    
+    .about-section-2-col1 p {
+        /* Words are powerful—they are the building blocks of language and key to expressing ourselves. At Sir John’s Spelling Bee, we create a fair and inclusive platform where learners can grow their confidence, showcase their abilities, and embrace the challenge of effective communication. Through words, we empower participants to connect, share, and explore their world. */
+        width:80%;
+    }
+    
+    .about-section-2-col2 {
+        margin-top: 50px;
+        gap: 10px;
+        margin-right: 0px;
+    }
+    
+    .about-section-2-col2-box {
+        /* Box Section */
+        width: 100%;
+        height: 273px;
+        left: 0px;
+        top: 143px;
+    }
+    
+    .about-box-info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 20px;
+        /* position: absolute; */
+        width: 100%;
+        height: 127px;
+        padding-left: calc(50% - 165px/2);
+        padding-top: 73px;
+    }
+    
+    .about-section-2-col2-box p {
+        /* Experience the thrill of a fun and competitive environment. */
+        width: 80%;
+        height: 56px;
+        font-size: 90%;
+    }
+    
+    .about-section-2-col2-box h2 {
+        /* Exciting and Challenging */
+        width: 165px;
+        font-size: 100%;
+       
+    
+    }
+    
+    
+    
+   
+    
+    .Ex {
+        display: flex;
+        flex-direction: row;
+        gap: 0px;
+    }
+    
+    .vector {
+        /* position: absolute; */
+       display: none;
+    }
+    
+    .bar-strike {
+        margin-top: -50px;
+        margin-left: 30px;
+    }
+    
+    /* Key Stakeholder Section */
+    .stakeholder-main {
+        /* width: 1440px; */
+        height: 918px;
+        background: var(--background-color);
+    
+    }
+    
+    .stakeholder-heading {
+        /* Key Stakeholders */
+        width: 100%;
+        margin-top: 100px;
+        font-size: 200%;
+    }
+    
+    .stakeholder-info {
+       flex-direction: column;
+      width: 100%;
+        height: 100%; 
+        padding: 0px 50px;
+         background: none;
+    
+    }
+    
+    .stake-card {
+        /* Frame 1618872985 */
+        width: 100%;
+    }
+    
+    .stake-img {
+        width: 80%;
+    }
+    
+    .stake-detail {
+        /* stake details */
+       width: 100%;
+    }
+    
+    .stake-detail h2 {
+        /* Teachers */
+        width: 80%;
+    }
+    
+    .stake-detail p {
+        /* They play a vital role by serving as mentors, spelling coaches, and motivators. They create engaging learning experiences that inspire their pupils and students while also acting as school bee coordinators and judges to ensure student success. */
+        width: 80%;
+        font-size: 80%;
+        
+    }
+    
+    /* Category & Prizes */
+    
+    .prize-main {
+        /* width: 1440px; */
+          left: 0px;
+          position:static;
+        margin-top: 700px;
+         margin-bottom:60px;
+        
+        }
+        .prize-section{
+             height: 20px;
+            
+        }
+ 
+    
+    .prize-head-text {
+        /* Category & Prizes */
+        width: 100%;
+       margin-left:20px;
+        font-size: 200%;
+    }
+    
+    .prize-categories {
+        flex-direction:column;
+       margin-top: 100px;
+        width: 50%;
+       margin-left: 30%;
+       margin-bottom: 300px;
+    }
+    
+    .prize-list-1{
+        width: 50%;
+        height: 40%;
+    }
+    
+    .prize-categories h2{
+        /* Competition Categories */
+        width: 100%;
+        height: 104px;
+        padding-top:0%;
+       margin-bottom:0%;
+        font-size: 70% !important;
+    }
+    
+    .prize-list-2 {
+        width: 50%;
+        height: 40%;
+    }
+    
+    .prize-list-3 {
+        width: 50%;
+        height: 40%;
+    }
+    
+    .prize-list-1 div,
+    .prize-list-2 div,
+    .prize-list-3 div {
+        /* Early Spellers (Primary 1–2) Upper Primary (Primary 3–5) Junior Secondary (JSS 1–3) Senior Secondary (SS 1–3) */
+        width: 100%;
+        height: 10px;
+        padding-left:10px;
+        margin-top: -60px;
+        font-weight: 400;
+        font-size: 50%;
+    
+    }
+
+}
+ @media (max-width: 480px){
+
+ }
+    
+ 

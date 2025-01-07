@@ -1,0 +1,53 @@
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color:var(--gallery-background-color);
+  
+}
+.MathHead h1{
+  color: var(--stroke-color);
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+    width: 95%;
+  }
+}
+
+.upload-section {
+  background-color: var(--background-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border: 2px dashed var(--stroke-color);
+  padding: 30px;
+  font-family: 'Comic Sans MS';
+  color: var(--stroke-color);
+}
+.UploadedDoc{
+  color: var(--border-color-2);
+  font-family: "Inter";
+  padding: 32px 0;
+}
+.file-input {
+  display: none;
+}
+
+.file-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed var(--primary-color);
+  padding: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.file-label:hover {
+  background-color: rgba(52, 152, 219, 0.1);
+}

@@ -2,51 +2,86 @@
 @tailwind components;
 @tailwind utilities;
 
-  :root {
-    --background-color: #FFFFFA;
-    --border-color: #A1A191;
-    --border-color-2: #6E6E5E;
-    --default-color: #1C1B17;
-    --yellow-color: #FEF506;
-    --logout-color:#c50e0ede;
-    --sideText-color:#448297;
-    --Table-background-color:#2c3e50;
-    --stroke-color:#3498db;
-    --stroke-color-2:#007bff;
-    --select-border-color:#dfe4ea;
-    --cancel-btn-color:#95a5a6;
-    --ban-btn-color:#f39c12;
-    --active-btn-color:#2ecc71;
-    --ban-row-color:#fdedec;
-    --gallery-background-color:#f4f4f4;
-    --gallery-dash-color:#ccc;
-    --NavBar-background-color: #F5F5F5;
-    --NavBar-active-font-color: #02224B;
-    --NavBar-inactive-font-color: #57677B;
-    
-    --Hero-boldText-color: #09C0FF;
-    --Table-border-color:#DDDDDD;
-    --Primary-color:#000000;
-    --Secondary-color:#04234C;
-    --Answer-background-color:#E9F4FF;
-    
-    --socialsandrewards-color :#407BFF;
-    --cashback-color:#7F3E3B;
-    --Footer-link-color:#EFF1F3;
-   
+:root {
+
+  --background-color: #FFFFFA;
+  --border-color: #A1A191;
+  --border-color-2: #6E6E5E;
+  --default-color: #1C1B17;
+  --yellow-color: #FEF506;
+  --logout-color: #c50e0ede;
+  --sideText-color: #448297;
+  --Table-background-color: #2c3e50;
+  --stroke-color: #3498db;
+  --stroke-color-2: #007bff;
+  --select-border-color: #dfe4ea;
+  --cancel-btn-color: #95a5a6;
+  --ban-btn-color: #f39c12;
+  --active-btn-color: #2ecc71;
+  --ban-row-color: #fdedec;
+  --gallery-background-color: #f4f4f4;
+  --gallery-dash-color: #ccc;
+  --navBar-text-color: #37372F;
+  --orange-color: #EB8733;
+  --menu-bar-color: #333;
+  --input-color: #7C7C7C;
+  --btn-text-color: #1C1B17;
+  --blue-color: #59C5F3;
+  --primary-700: #9D9801;
+  --primary-800: #6B6700;
+  --primary-600:  #D0C901;
+  --Hero-boldText-color: #09C0FF;
+  --footer-background-color: #2E1805;
+  --footer-border-color: #F3B886;
+  --DEF3FD: #DEF3FD;
+  --FFFDD1:#FFFDD1;
+  --blue-900: #032230;
+  --blue-500: #F5FCFE;
+  --blue-800: #084F6D;
+  --gray-700:#535246;
+  --gray-500:#8A8975;
+  
+  --home-learn:#F1F1EE;
+  --orange-800:#6B360A;
+  --orange-50:#FEFAF6;
+  --FDF1E8:#FDF1E8;
+   --Natural-color: #212121;
+ 
+ 
+  
+ 
+
+ 
+
+
+
+
+
+
+
 }
-body{
+
+body {
   margin: 0rem;
   padding: 0rem;
 }
 
- 
+.register-btn {
+  background-color: var(--yellow-color);
+  padding: 0.5rem 2rem;
+  border-radius: 30px;
+  height: 48px;
+  width: 197px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
 
-
-
- 
-
-
-
-
-
+#id {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+#img{
+  padding-top: 10px;
+  
+}
