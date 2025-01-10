@@ -6,7 +6,7 @@ import  StaffPage from './(Admin)/staffPage'
 import  GalleryPage from './(Admin)/adminGalleryPage/gallery'
 // import MaterialPage  from './(Admin)/materialPage/Page.tsx'
 import EventManagementDashboard from './(Admin)/EventManagementDashboard'
-import HomePage from './pages/HomePage'
+import HomePage from './components/HomePage'
 
 
 

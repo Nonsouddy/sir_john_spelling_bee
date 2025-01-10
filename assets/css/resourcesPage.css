@@ -11,6 +11,11 @@
 }
 
   
+  .resource-list ul {
+    list-style: none;
+  
+   
+  }
   .resource-list li:hover {
     color: var(--orange-color);
   
@@ -125,6 +130,8 @@ transform: rotate(-9.78deg);
     flex: none;
     order: 0;
     flex-grow: 0;
+    list-style: none;
+    
 }
 
 .resource-list li {

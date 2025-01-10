@@ -3,8 +3,8 @@ import Link from 'next/link';
 import "../Style/homePage.css"
 import Image from 'next/image'
 import FAQPage from '../faqPage/Page'
-import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
+import Footer from './Footer'
+import Navbar from './Navbar'
 import HomeImg from "../../public/Svgs/homePageImg.svg"
 import Arrow from "../../public/Svgs/Arrow 1.svg"
 import beeImage from "../../public/Svgs/beeImage.svg"

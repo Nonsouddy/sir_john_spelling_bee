@@ -1,0 +1,128 @@
+.TandC-main-section {
+    font-family: 'Comic Sans MS';
+    line-height: 1.6;
+    color: var(--menu-bar-color);
+    background-color: var(--background-color);
+}
+
+.TandC-header {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: var(--background-color);
+    padding: 130px 16px;
+    text-align: center;
+
+
+}
+
+.TandC-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    animation: fadeIn 1s ease-in;
+}
+
+.TandC-header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.TandC-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.TandC-card {
+    background: var(--background-color);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.TandC-card:hover {
+    transform: translateY(-5px);
+}
+
+.TandC-section-title {
+    color: var(--orange-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid  var( --border-color);
+}
+
+.TandC-content {
+    margin-bottom: 1.5rem;
+}
+
+.TandC-content p {
+    margin-bottom: 1rem;
+}
+
+.TandC-content ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.TandC-content li {
+    margin-bottom: 0.5rem;
+}
+
+.TandC-highlight {
+    background-color: var(--FDF1E8);
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.TandC-last-updated {
+    text-align: center;
+    color: var( --gray-700);
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .TandC-header h1 {
+        font-size: 2rem;
+    }
+
+    .TandC-card {
+        padding: 1.5rem;
+    }
+
+    .TandC-section-title {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .TandC-header h1 {
+        font-size: 1.75rem;
+    }
+
+    .TandC-header p {
+        font-size: 1rem;
+    }
+
+    .TandC-card {
+        padding: 1rem;
+    }
+
+    .TandC-section-title {
+        font-size: 1.2rem;
+    }
+}

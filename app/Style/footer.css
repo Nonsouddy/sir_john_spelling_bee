@@ -120,13 +120,12 @@ FAQs */
   flex-direction: row;
   align-items: center;
   padding: 0px;
+  gap: 100px;
 
   /* width: 131px; */
   height: 53px;
   top: 524px;
   padding-left: 100px;
-  font-family: 'Istok Web';
-  font-style: normal;
   font-weight: 700;
   font-size: 20px;
   line-height: 28px;
@@ -138,15 +137,21 @@ FAQs */
 
 }
 
-#face {
-  /* border-right:0.5px solid var(--footer-border-color);  */
+/* #face {
+  border-right:0.5px solid var(--footer-border-color); 
   text-align: center;
   padding-right: 20px;
 
+} */
+
+ 
+.social-icon a {
+  display: inline-block;
+  transition: transform 0.3s ease;
 }
 
-.social-icon:hover {
-  color: #007bff;
+.social-icon a:hover {
+  transform: scale(1.1);
 }
 
 .newsletter-container {

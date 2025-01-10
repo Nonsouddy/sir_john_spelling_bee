@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import logo from "../../public/Svgs/FooterLogo.svg"
 import line from "../../public/Svgs/Line.svg"
 import FaceBook from "../../public/Svgs/FaceBook.svg"
@@ -68,9 +69,9 @@ const Footer: React.FC = () => {
                             <div className="footer-section">
                                 <h4>Quick Links</h4>
                                 <ul>
-                                    <li><a href="/">About Us</a></li>
-                                    <li><a href="/about">Resources</a></li>
-                                    <li><a href="/services">Events</a></li>
+                                    <li><Link href="/about">About Us</Link></li>
+                                    <li>< Link href="/resources">Resources</Link></li>
+                                    <li><Link href="/resources">Events</Link></li>
 
                                 </ul>
                             </div>
@@ -82,8 +83,8 @@ const Footer: React.FC = () => {
                             <div className="footer-section">
                                 <h4>Company</h4>
                                 <ul>
-                                    <li><a href="/careers">Privacy Policies</a></li>
-                                    <li><a href="/press">Terms and conditions</a></li>
+                                    <li><Link href="/termsAndConditions">Privacy Policies</Link></li>
+                                    <li>< Link href="/termsAndConditions">Terms and conditions</Link></li>
                                 </ul>
                             </div>
 
@@ -104,22 +105,22 @@ const Footer: React.FC = () => {
                 </div>
 
                 <div className="footer-social">
-                    <a href="#" className="social-icon" id='face'>
-                        <Image src={FaceBook} alt=''/>
-                    </a>
-                    <a href="#" className="social-icon" id='face'><Image src={Youtube} alt=''/> </a>
-                    <a href="#" className="social-icon" id='face'><Image src={x} alt=''/> </a>
-                    <a href="#" className="social-icon" id='face'><Image src={x} alt=''/> </a>
-                    <a href="#" className="social-icon" id='face'><Image src={WhatsApp} alt=''/></a>
-                    <a href="#" className="social-icon"> <Image src={Insta} alt=''/></a>
-                    {/* <a href="#" className="social-icon"> <Image src={Tiktok} alt=''/>Instagram</a> */}
+                    <div className="social-icon">
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><Image src={FaceBook} alt='' /></a>
+                        <a href="https://x.com" target="_blank" rel="noopener noreferrer"><Image src={x} alt='' /> </a>
+                        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" ><Image src={Tiktok} alt='' /> </a>
+                        <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer"><Image src={WhatsApp} alt='' /> </a>
+                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><Image src={Youtube} alt='' /></a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><Image src={Insta} alt='' /></a>
+                        {/* <a href="#" className="social-icon"> <Image src={Tiktok} alt=''/>Instagram</a> */}
+                    </div>
                 </div>
 
                 <div>
-                   
+
                     <div className='footer-copy'>  &copy;
                         <div>AllRightReserved.2024,Deals</div> </div>
-                    </div>
+                </div>
 
                 {/* Floating Newsletter */}
 
