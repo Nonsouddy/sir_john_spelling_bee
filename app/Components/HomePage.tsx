@@ -56,8 +56,8 @@ function HomePage() {
 
                         <p>Master the art of spelling and shine with confidence, success, and incredible prizes! </p>
                         <div className='homePage-btn'>
-                            <Link href=''><button className='home-btn'>Register</button></Link>
-                            <Link href="" className='home-learn'>
+                            <Link  href="/instructions"><button className='home-btn'>Register</button></Link>
+                            <Link href="/about" className='home-learn'>
                                 <div>Learn the buzz</div>
                                 <Image src={Arrow} alt='' />
 

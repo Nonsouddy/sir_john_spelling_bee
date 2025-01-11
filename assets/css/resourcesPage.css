@@ -12,7 +12,7 @@
 
   
   .resource-list ul {
-    list-style: none;
+    list-style: none!important;
   
    
   }

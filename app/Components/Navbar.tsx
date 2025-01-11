@@ -50,7 +50,7 @@ const Navbar = () => {
             <Link href="/login" className="nav-link">Login</Link>
           </li>
           <li className="nav-item register">
-            <Link href="/register" className="register-btn">Register</Link>
+            <Link href="/instructions" className="register-btn">Register</Link>
           </li>
           </div>
          

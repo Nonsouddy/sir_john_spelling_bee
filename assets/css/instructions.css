@@ -1,0 +1,140 @@
+/*Instructions.css */
+.inst-container {
+    min-height: 100vh;
+    padding: 1rem;
+    background-color: var(--background-color);
+    margin-top: 150px;
+    
+  }
+  
+  .inst-main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--background-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .inst-title {
+    font-size: 2.5rem;
+    text-align: center;
+    color:var(--logout-color);
+    margin-bottom: 2rem;
+  }
+  
+  .inst-contentWrapper {
+    max-height: 60vh;
+    overflow-y: auto;
+    padding-right: 1rem;
+    margin-bottom: 2rem;
+    scroll-behavior: smooth;
+  }
+  
+  .inst-section {
+    margin-bottom: 2rem;
+  }
+  
+  .inst-section h2 {
+    font-size: 1.5rem;
+    color: var(--orange-color);
+    margin-bottom: 1rem;
+  }
+  
+  .inst-section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var( --gray-700);
+    margin-bottom: 1rem;
+  }
+  
+  .inst-section ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    list-style: none;
+  }
+  
+  .inst-section li {
+    margin-bottom: 0.5rem;
+    color: var( --gray-700);
+  }
+  
+  .inst-proceedButton {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+    padding: 1rem;
+    font-size: 1.1rem;
+    color: var(--background-color);
+    background-color: var(--input-color);
+    border: none;
+    border-radius: 4px;
+    cursor: not-allowed;
+    transition: all 0.3s ease;
+  }
+  
+  .inst-proceedButton.inst-enabled {
+    background-color:var(--active-btn-color);
+    cursor: pointer;
+  }
+  
+  .inst-proceedButton.inst-enabled:hover {
+    background-color: #2a7b4c;
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    .inst-main {
+      padding: 1.5rem;
+    }
+  
+    .inst-title {
+      font-size: 2rem;
+    }
+  
+    .inst-section h2 {
+      font-size: 1.3rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .inst-container {
+      padding: 0.5rem;
+    }
+  
+    .inst-main {
+      padding: 1rem;
+    }
+  
+    .inst-title {
+      font-size: 1.8rem;
+    }
+  
+    .inst-section h2 {
+      font-size: 1.2rem;
+    }
+  
+    .inst-proceedButton {
+      max-width: 100%;
+    }
+  }
+  
+  /* Custom Scrollbar */
+  .inst-contentWrapper::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .inst-contentWrapper::-webkit-scrollbar-track {
+    background: var(--background-color);
+    border-radius: 4px;
+  }
+  
+  .inst-contentWrapper::-webkit-scrollbar-thumb {
+    background: var( --gray-700);
+    border-radius: 4px;
+  }
+  
+  .inst-contentWrapper::-webkit-scrollbar-thumb:hover {
+    background: var( --gray-500);
+  }
