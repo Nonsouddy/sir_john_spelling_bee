@@ -209,48 +209,62 @@ margin-left: 30px;
 @media (max-width: 480px) {
   .faq-container{
     height: auto;
-    width: auto;
+    width: 150%;
 
   }
+ 
   .faq-content {
     display: grid;
     grid-template-columns: 1fr;
-    /* gap: 40px; */
+    gap: 0px;
 }
 
   .faq-sidebar {
     flex-direction:column;
     position: static;
-    text-align: center;
-    margin-bottom: 20px;
-    /* width: 100%; */
+    text-align: start;
     background-image: none;
     gap: 0px;
-    margin-left: 5%;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    width: 100%;
     
   }
  
+ 
   .faq-sidebar h2{
-    width: 50%;
-   font-size: 20px;
+    width: 40%;
+   font-size: 100%;
    text-align: center;
    flex-wrap: wrap;
-   padding-left: 20px;
+   padding-left: 0px;
   }
   .faq-sidebar p{
-    width: 60%;
-   font-size: 18px;
+    width: 40%;
+   font-size: 80%;
    text-align: center;
-   margin-top:-100px ;
+   margin-top:-120px ;
  
    
   }
+  .faq-list{
+    gap: 0px;
+    top:20px
+   
+  }
   .faq-item{
-  font-size: 16px;
-  /* width: 30%; */
+  font-size: 80%;
+  width: 40%;
   line-height: 18px;
   flex-wrap: wrap;
+  /* background-color: red; */
   }
+  .faq-item svg{
+    width: 20%;
+ 
+  }
+ 
+
   
   
   .bee_home{
@@ -271,6 +285,7 @@ margin-left: 30px;
   .faq-answer{
     width: 90%;
     height: 100%;
+    font-size: 80%;
    
     
     
@@ -282,6 +297,87 @@ margin-left: 30px;
   }
 }
 
-@media (max-width: 760px){
+@media (min-width: 481px) and (max-width:768px){
+  .faq-container{
+    height: auto;
+    width: 300%;
+
+  }
+  .faq-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* gap: 40px; */
+    /* background-color: red; */
+}
+
+  .faq-sidebar {
+    flex-direction:column;
+    position: static;
+    text-align: start;
+    gap: 0px;
+    margin-left: 0px;
+    margin-bottom: 100px;
+    width: 100%;
+    
+  }
+ 
+  .faq-sidebar h2{
+    width: 100%;
+   font-size: 150%;
+   text-align: start;
+   flex-wrap: wrap;
+   padding-left: 0px;
+  }
+  .faq-sidebar p{
+    width: 30%;
+   font-size: 100%;
+   text-align: start;
+   margin-top:-120px ;
+ 
+   
+  }
+  .faq-list{
+    gap: 0px;
+    top:20px
+   
+  }
+  .faq-item{
+  font-size: 100%;
+  width: 100%;
+  line-height: 18px;
+  flex-wrap: wrap;
+  /* background-color: red; */
+  }
+
+  
+  
+  .bee_home{
+    display: none;
+  }
+  .FAQ-bee-section{
+    display: none;
+  }
+  .faq-list{
+    padding: 0px;
+    left: 0%;
+    top: 0%;
+    right: 20px;
+    margin-top:-100px ;
+   
+    
+  }
+  .faq-answer{
+    width: 90%;
+    height: 100%;
+    font-size: 80%;
+   
+    
+    
+
+  }
+  .faq-item.active .faq-answer{
+    max-height: 300px;
+    /* height: 1200px; */
+  }
 
 }
