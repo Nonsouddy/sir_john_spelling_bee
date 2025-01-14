@@ -1,11 +1,12 @@
 import React from 'react'
-import Dashboard from './(Admin)/Dashboard'
-import  StaffPage from './(Admin)/staffPage'
-import  GalleryPage from './(Admin)/adminGalleryPage/gallery'
+import Dashboard from './(Admin)/dashboard/page'
+import  StaffPage from './(Admin)/staffPage/page'
+import  GalleryPage from './(Admin)/adminGalleryPage/page'
 // import MaterialPage  from './(Admin)/materialPage/Page.tsx'
-import EventManagementDashboard from './(Admin)/EventManagementDashboard'
+import EventManagementDashboard from './(Admin)/eventManagementDashboard/page'
 
 import HomePage from './components/HomePage'
+import SideBar from '../app/admin-sideBar'
 
 
 
@@ -27,6 +28,8 @@ function page() {
 
 
   <HomePage/>
+  {/* <SideBar/> */}
+  {/* <Dashboard/> */}
 
 
 

@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react';
-import styles from '../Style/staffPage.module.css';
+import '@assets/css/staffPage.css'
 
 // Types
 interface Admin {
@@ -62,12 +62,12 @@ const CreateAdminForm: React.FC<{
   };
 
   return (
-    <div className={styles.createAdminContainer}>
+    <div className="createAdminContainer">
       <h2>
         <Icons.Add /> Create New Admin
       </h2>
-      <form onSubmit={handleSubmit} className={styles.adminForm}>
-        <div className={styles.formGroup}>
+      <form onSubmit={handleSubmit} className= "adminForm">
+        <div className= "formGroup">
           <label htmlFor="username">Username</label>
           <input
             type="text"
@@ -78,7 +78,7 @@ const CreateAdminForm: React.FC<{
             required
           />
         </div>
-        <div className={styles.formGroup}>
+        <div className="formGroup">
           <label htmlFor="email">Email Address</label>
           <input
             type="email"
@@ -89,7 +89,7 @@ const CreateAdminForm: React.FC<{
             required
           />
         </div>
-        <div className={styles.formGroup}>
+        <div className= "formGroup">
           <label htmlFor="role">Admin Role</label>
           <select
             id="role"
@@ -100,7 +100,7 @@ const CreateAdminForm: React.FC<{
             <option value="super-admin">Super Admin</option>
           </select>
         </div>
-        <button type="submit" className={styles.createButton}>
+        <button type="submit" className= "createButton">
           <Icons.Add /> Create Admin
         </button>
       </form>
@@ -117,8 +117,8 @@ const AdminTable: React.FC<{
   const [confirmDelete, setConfirmDelete] = useState<string | null>(null);
 
   return (
-    <div className={styles.adminTableContainer}>
-      <table className={styles.adminTable}>
+    <div className= "adminTableContainer">
+      <table className= "adminTable">
         <thead>
           <tr>
             <th>Username</th>
@@ -133,50 +133,50 @@ const AdminTable: React.FC<{
           {admins.map((admin) => (
             <tr 
               key={admin.id} 
-              className={admin.status === 'banned' ? styles.bannedRow : ''}
+              className={admin.status === 'banned' ?  "bannedRow" : ''}
             >
               <td>{admin.username}</td>
               <td>{admin.email}</td>
               <td>{admin.role === 'super-admin' ? 'Super Admin' : 'Admin'}</td>
               <td>
-                <span className={`${styles.statusBadge} ${
-                  admin.status === 'banned' ? styles.bannedStatus : styles.activeStatus
+                <span className={`$ "statusBadge" ${
+                  admin.status === 'banned' ? "bannedStatus" : "activeStatus"
                 }`}>
                   {admin.status === 'banned' ? 'Banned' : 'Active'}
                 </span>
               </td>
               <td>{admin.createdAt.toLocaleDateString()}</td>
-              <td className={styles.actionCell}>
+              <td className= "actionCell">
                 {confirmDelete === admin.id ? (
-                  <div className={styles.confirmDelete}>
+                  <div className= "confirmDelete">
                     <button 
                       onClick={() => {
                         onDeleteAdmin(admin.id);
                         setConfirmDelete(null);
                       }}
-                      className={styles.confirmDeleteBtn}
+                      className= "confirmDeleteBtn"
                     >
                       Confirm Delete
                     </button>
                     <button 
                       onClick={() => setConfirmDelete(null)}
-                      className={styles.cancelBtn}
+                      className= "cancelBtn"
                     >
                       Cancel
                     </button>
                   </div>
                 ) : (
-                  <div className={styles.actionButtons}>
+                  <div className= "actionButtons">
                     <button 
                       onClick={() => onBanAdmin(admin.id)}
-                      className={styles.banBtn}
+                      className= "banBtn"
                       disabled={admin.status === 'banned'}
                     >
                       <Icons.Ban /> {admin.status === 'banned' ? 'Banned' : 'Ban'}
                     </button>
                     <button 
                       onClick={() => setConfirmDelete(admin.id)}
-                      className={styles.deleteBtn}
+                      className= "deleteBtn"
                     >
                       <Icons.Delete /> Delete
                     </button>
@@ -244,8 +244,8 @@ const AdminStaffManagement: React.FC = () => {
   };
 
   return (
-    <div className={styles.adminStaffManagement}>
-      <header className={styles.pageHeader}>
+    <div className= "adminStaffManagement">
+      <header className= "pageHeader">
         <h1>Admin Staff Management</h1>
       </header>
       

@@ -3,7 +3,7 @@
 import React, { useState, useRef } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { FileDocument } from '../Type/Document';
-import  '../Style/Material.css';
+import '@assets/css/material.css';
 
 const FileUploadForm: React.FC = () => {
   const [files, setFiles] = useState<FileDocument[]>([]);

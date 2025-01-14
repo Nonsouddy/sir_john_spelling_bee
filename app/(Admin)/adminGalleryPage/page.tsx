@@ -1,10 +1,10 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import styles from '../../Style/AdminGallery.module.css';
-import { GalleryUploadForm } from '../adminGalleryPage/galleryUploadForm';
-import { GalleryImageList } from '../adminGalleryPage/galleryImageList';
-import { uploadImage, fetchGalleryImages, deleteImage } from '../adminGalleryPage/galleryService';
+import '@assets/css/adminGallery.css'
+import { GalleryUploadForm } from './galleryUploadForm';
+import { GalleryImageList } from './galleryImageList';
+import { uploadImage, fetchGalleryImages, deleteImage } from './galleryService';
 
 interface GalleryImage {
   id: string;
@@ -53,14 +53,14 @@ export default function AdminGalleryPage() {
   };
 
   return (
-    <div className={styles.adminGalleryContainer}>
+    <div className= "adminGalleryContainer">
       <Head>
         <title>Admin Gallery Management</title>
         <meta name="description" content="Manage gallery images" />
       </Head>
 
-      <main className={styles.mainContent}>
-        <h1 className={styles.pageTitle}>Gallery Management</h1>
+      <main className= "mainContent">
+        <h1 className="pageTitle">Gallery Management</h1>
 
         <GalleryUploadForm 
           onImageUpload={handleImageUpload}
@@ -68,17 +68,17 @@ export default function AdminGalleryPage() {
         />
 
         {error && (
-          <div className={styles.errorMessage}>
+          <div className= "errorMessage">
             {error}
           </div>
         )}
 
         {isLoading ? (
-          <div className={styles.loadingSpinner}>
+          <div className= "loadingSpinner">
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
               viewBox="0 0 50 50" 
-              className={styles.spinner}
+              className= "spinner"
             >
               <circle 
                 cx="25" 

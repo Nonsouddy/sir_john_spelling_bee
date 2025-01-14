@@ -45,10 +45,10 @@ function ResourcesPage() {
                     <div></div>
                 </div>
 
-                <div className='resource-nav'>
+                {/* <div className='resource-nav'>
                     <div className='resource-list'>
                         <ul>
-                            {/* <Link href="/"><li>All</li></Link> */}
+                            <Link href="/"><li>All</li></Link>
                             <Link href="/"><li>Nature</li></Link>
                             <Link href="/"> <li>English</li></Link>
                             <Link href="/"> <li>Novel</li></Link>
@@ -58,9 +58,9 @@ function ResourcesPage() {
                         </ul>
                     </div>
                     <div>
-                        {/* <Link href="/"> <Image className='nav-arrow' src={RightArrow} alt='Arrow 13' /></Link> */}
+                        <Link href="/"> <Image className='nav-arrow' src={RightArrow} alt='Arrow 13' /></Link>
                     </div>
-                </div>
+                </div> */}
 
 
 

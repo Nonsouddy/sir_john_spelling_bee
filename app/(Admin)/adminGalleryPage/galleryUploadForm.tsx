@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import styles from '../../Style/AdminGallery.module.css';;
+import '@assets/css/adminGallery.css'
 
 interface GalleryUploadFormProps {
   onImageUpload: (file: File, description: string) => Promise<void>;
@@ -43,23 +43,23 @@ export const GalleryUploadForm: React.FC<GalleryUploadFormProps> = ({
   return (
     <form 
       onSubmit={handleSubmit} 
-      className={styles.uploadForm}
+      className= "uploadForm"
       aria-label="Gallery Image Upload Form"
     >
-      <div className={styles.formGroup}>
-        <label htmlFor="imageUpload" className={styles.fileInputLabel}>
+      <div className= "formGroup">
+        <label htmlFor="imageUpload" className="fileInputLabel">
           {previewImage ? (
             <img 
               src={previewImage} 
               alt="Preview" 
-              className={styles.imagePreview} 
+              className= "imagePreview"
             />
           ) : (
-            <div className={styles.fileInputPlaceholder}>
+            <div className= "fileInputPlaceholder">
               <svg 
                 xmlns="http://www.w3.org/2000/svg" 
                 viewBox="0 0 24 24" 
-                className={styles.uploadIcon}
+                className= "uploadIcon"
               >
                 <path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/>
               </svg>
@@ -72,21 +72,21 @@ export const GalleryUploadForm: React.FC<GalleryUploadFormProps> = ({
             ref={fileInputRef}
             accept="image/*"
             onChange={handleFileChange}
-            className={styles.hiddenFileInput}
+            className="hiddenFileInput"
             disabled={disabled}
             required
           />
         </label>
       </div>
 
-      <div className={styles.formGroup}>
+      <div className= "formGroup">
         <label htmlFor="imageDescription">Image Description</label>
         <input 
           type="text"
           id="imageDescription"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-          className={styles.descriptionInput}
+          className= "descriptionInput"
           placeholder="Enter image description"
           maxLength={200}
           disabled={disabled}
@@ -96,7 +96,7 @@ export const GalleryUploadForm: React.FC<GalleryUploadFormProps> = ({
 
       <button 
         type="submit" 
-        className={styles.uploadButton}
+        className= "uploadButton"
         disabled={disabled || !previewImage}
       >
         Upload Image

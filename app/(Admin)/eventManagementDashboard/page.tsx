@@ -1,6 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react';
-import styles from '../Style/eventManagement.module.css';
+import '@assets/css/eventManagement.css';
+
 import { Trash2, Plus, Calendar, FileText } from 'lucide-react';
 
 // Event Type Definition
@@ -92,13 +93,13 @@ const EventManagementDashboard: React.FC = () => {
   };
 
   return (
-    <div className={styles.eventManagementContainer}>
-      <div className={styles.dashboardHeader}>
+    <div className="eventManagementContainer">
+      <div className="dashboardHeader">
         <h1>Event Management Dashboard</h1>
       </div>
       
-      <div className={styles.eventCreationSection}>
-        <div className={styles.formGroup}>
+      <div className= "eventCreationSection">
+        <div className= "formGroup">
           <label htmlFor="eventTitle">
             <FileText size={24} />
             Event Title
@@ -109,12 +110,12 @@ const EventManagementDashboard: React.FC = () => {
             value={newEvent.title}
             onChange={(e) => setNewEvent({...newEvent, title: e.target.value})}
             placeholder="Enter event title"
-            className={errors.title ? styles.inputError : ''}
+            className={errors.title ? "inputError" : ''}
           />
-          {errors.title && <span className={styles.errorText}>{errors.title}</span>}
+          {errors.title && <span className= "errorText">{errors.title}</span>}
         </div>
 
-        <div className={styles.formGroup}>
+        <div className= "formGroup">
           <label htmlFor="eventDate">
             <Calendar size={24} />
             Event Date
@@ -124,12 +125,12 @@ const EventManagementDashboard: React.FC = () => {
             id="eventDate"
             value={newEvent.date}
             onChange={(e) => setNewEvent({...newEvent, date: e.target.value})}
-            className={errors.date ? styles.inputError : ''}
+            className={errors.date ?  "inputError" : ''}
           />
-          {errors.date && <span className={styles.errorText}>{errors.date}</span>}
+          {errors.date && <span className= "errorText">{errors.date}</span>}
         </div>
 
-        <div className={styles.formGroup}>
+        <div className= "formGroup">
           <label htmlFor="eventDescription">
             <FileText size={24} />
             Event Description
@@ -139,34 +140,34 @@ const EventManagementDashboard: React.FC = () => {
             value={newEvent.description}
             onChange={(e) => setNewEvent({...newEvent, description: e.target.value})}
             placeholder="Enter event details"
-            className={errors.description ? styles.inputError : ''}
+            className={errors.description ?  "inputError" : ''}
           />
-          {errors.description && <span className={styles.errorText}>{errors.description}</span>}
+          {errors.description && <span className= "errorText">{errors.description}</span>}
         </div>
 
         <button 
           onClick={handleAddEvent}
-          className={styles.addEventButton}
+          className= "addEventButton"
         >
           <Plus size={20} /> Add Event
         </button>
       </div>
 
-      <div className={styles.eventListSection}>
+      <div className= "eventListSection">
         <h2>Upcoming Events</h2>
         {events.length === 0 ? (
-          <div className={styles.noEvents}>
+          <div className= "noEvents">
             <p>No events scheduled</p>
           </div>
         ) : (
-          <div className={styles.eventGrid}>
+          <div className="eventGrid">
             {events.map((event) => (
-              <div key={event.id} className={styles.eventCard}>
-                <div className={styles.eventCardHeader}>
+              <div key={event.id} className= "eventCard">
+                <div className= "eventCardHeader">
                   <h3>{event.title}</h3>
                   
                 </div>
-                <div className={styles.eventCardBody}>
+                <div className= "eventCardBody">
                   <p className='flex'>
                     {/* <Calendar size={24} />  */}
                     {new Date(event.date).toLocaleDateString()}
@@ -176,7 +177,7 @@ const EventManagementDashboard: React.FC = () => {
                 </div>
                 <button 
                     onClick={() => handleDeleteEvent(event.id)}
-                    className={styles.deleteButton}
+                    className= "deleteButton"
                   >
                     <Trash2 size={24} />
                   </button>

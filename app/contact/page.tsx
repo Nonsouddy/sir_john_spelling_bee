@@ -23,8 +23,9 @@ const Contact = () => {
                 <section className="contact-details">
                     <div className="contact-info">
                         <h2>Get in Touch</h2>
-                        <p>Email us at <a href="mailto:help@sirjohnspellingbee.com">help@sirjohnspellingbee.com</a></p>
-                        <p>Call us: <a href="tel:+1234567890">+1 (234) 9039129125,7036658383</a></p>
+                        <p>Email us at: <a href="mailto:help@sirjohnspellingbee.com">help@sirjohnspellingbee.com</a></p>
+                        <p>Call us: <a href="tel:+1234567890">+ 234 9039129125,7036658383</a></p>
+                        <p>Adress: B69, Yenagoa Street, Airport Road, Lugbe, Abuja-FCT Nigeria.</p>
                     </div>
                     <div className="contact-map">
                         <iframe

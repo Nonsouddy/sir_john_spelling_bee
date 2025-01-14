@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import styles from '../../Style/AdminGallery.module.css';;
+import '@assets/css/adminGallery.css'
+
 
 interface GalleryImage {
   id: string;
@@ -25,13 +26,13 @@ export const GalleryImageList: React.FC<GalleryImageListProps> = ({
   };
 
   return (
-    <div className={styles.galleryImageGrid}>
+    <div className="galleryImageGrid">
       {images.length === 0 ? (
-        <div className={styles.emptyState}>
+        <div className="emptyState">
           <svg 
             xmlns="http://www.w3.org/2000/svg" 
             viewBox="0 0 24 24" 
-            className={styles.emptyIcon}
+            className= "emptyIcon"
           >
             <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zm-2 0H5V5h14v14zM13.5 13l-2.25 3-1.75-2.25L6 17h12l-4.5-4z"/>
           </svg>
@@ -39,28 +40,28 @@ export const GalleryImageList: React.FC<GalleryImageListProps> = ({
         </div>
       ) : (
         images.map((image) => (
-          <div key={image.id} className={styles.galleryImageItem}>
+          <div key={image.id} className= "galleryImageItem">
             <img 
               src={image.url} 
               alt={image.description} 
-              className={styles.galleryImage} 
+              className= "galleryImage" 
             />
-            <div className={styles.imageOverlay}>
-              <p className={styles.imageDescription}>
+            <div className= "imageOverlay">
+              <p className= "imageDescription">
                 {image.description}
               </p>
-              <div className={styles.imageActions}>
+              <div className= "imageActions">
                 {confirmDelete === image.id ? (
-                  <div className={styles.confirmDelete}>
+                  <div className= "confirmDelete">
                     <button 
                       onClick={() => handleDeleteClick(image.id)}
-                      className={styles.confirmDeleteButton}
+                      className= "confirmDeleteButton"
                     >
                       Confirm Delete
                     </button>
                     <button 
                       onClick={() => setConfirmDelete(null)}
-                      className={styles.cancelDeleteButton}
+                      className= "cancelDeleteButton"
                     >
                       Cancel
                     </button>
@@ -68,7 +69,7 @@ export const GalleryImageList: React.FC<GalleryImageListProps> = ({
                 ) : (
                   <button 
                     onClick={() => setConfirmDelete(image.id)}
-                    className={styles.deleteButton}
+                    className= "deleteButton"
                   >
                     Delete
                   </button>

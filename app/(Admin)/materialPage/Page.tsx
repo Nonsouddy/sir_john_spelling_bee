@@ -2,7 +2,7 @@
 
 import React from 'react';
 import FileUploadForm from '../../components/FileUploadForm';
-import  '../Style/Material.css';
+import '@assets/css/material.css';
 
 const AdminPage: React.FC = () => {
   return (
