@@ -7,7 +7,6 @@ import Footer from './Footer'
 import Navbar from './Navbar'
 import HomeImg from "../../public/Svgs/homePageImg.svg"
 import Arrow from "../../public/Svgs/Arrow 1.svg"
-import beeImage from "../../public/Svgs/beeImage.svg"
 import Ellipse1 from "../../public/Svgs/Ellipse 1.svg"
 import Ellipse2 from "../../public/Svgs/Ellipse 2.svg"
 import Ellipse3 from "../../public/Svgs/Ellipse 3.svg"
@@ -28,6 +27,7 @@ import vector9 from "../../public/Svgs/vector 9.svg"
 import vector10 from "../../public/Svgs/vector 10.svg"
 import vector11 from "../../public/Svgs/vector 11.svg"
 import star from "../../public/Images/star.png"
+import beeImage from '@assets/img/beeImage.png'
 import book from "../../public/Images/book.png"
 import tropy from "../../public/Images/tropy.png"
 import step1 from "../../public/Images/step1.png"

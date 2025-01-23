@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import "@assets/css/fqaAccordion.css"
 import Image from 'next/image';
-import beeImage from "@assets/svg/beeImage.svg"
+import beeImage from '@assets/img/beeImage.png'
+
 
 // Types for our FAQ items
 interface FAQItem {
