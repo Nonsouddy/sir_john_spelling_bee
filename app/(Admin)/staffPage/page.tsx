@@ -245,9 +245,8 @@ const AdminStaffManagement: React.FC = () => {
 
   return (
     <div className= "adminStaffManagement">
-      <header className= "pageHeader">
-        <h1>Admin Staff Management</h1>
-      </header>
+        <h1 className= "pageHeader">Admin Staff Management</h1>
+     
       
       <CreateAdminForm onCreateAdmin={handleCreateAdmin} />
       

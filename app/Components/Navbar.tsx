@@ -1,6 +1,5 @@
  "use client"
-
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import "../Style/navBar.css"
@@ -46,9 +45,6 @@ const Navbar = () => {
           </li>
           <div className='nav_log'>
          
-          <li className="nav-item login">
-            <Link href="/login" className="nav-link">Login</Link>
-          </li>
           <li className="nav-item register">
             <Link href="/instructions" className="register-btn">Register</Link>
           </li>

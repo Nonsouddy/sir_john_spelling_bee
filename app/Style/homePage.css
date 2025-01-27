@@ -17,6 +17,7 @@
     /* justify-content: space-between; */
 }
 
+
 .home-image {
     /* position: absolute; */
     width: 61.87px;
@@ -24,6 +25,11 @@
     margin-left: 347.21px;
     margin-top: 100px;
     transform: rotate(360.7deg);
+}
+.home-head-color-text{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 }
 
 .home-head-section {
@@ -180,6 +186,7 @@
     gap: 0px;
     margin-left: 50px;
     margin-top: 150px;
+    
 }
 
 .home-ellipse2 {
@@ -236,11 +243,15 @@
     /* position: sticky; */
 }
 
+
 .home-head-section2-ellipse img {
     width: 68px;
     height: auto;
-
-
+}
+.home-page-head-section2-img{
+    width: auto;
+    height: auto;
+    
 }
 
 .home-head-section-details {
@@ -712,7 +723,7 @@
 
     .head-main {
         /* Home page */
-        width: 400px;
+        width: 100vw;
         height: 5500px;
     }
 
@@ -721,7 +732,7 @@
     .home-section {
         display: flex;
         flex-direction: row;
-        padding-right: 120px;
+        /* padding-right: 120px; */
     }
 
     .home-image {
@@ -729,22 +740,19 @@
     }
 
     .home-head-section {
-        /* height: 328px; */
         font-size: 18px;
-        /* padding-left: 10%; */
         padding-top:50px;
         padding-left:0px;
-       
-        height: 382px;
-        width: 500px;
-
-        margin: 10px !important;    }
+       height: 382px;
+        width: 100vw;
+       margin: 10px !important; 
+       }
 
     .home-head-section p {
         /* Master the art of spelling and shine with confidence, success, and incredible prizes! */
        font-weight: 400;
         font-size: 18px;
-        width: 50%;
+        width: 70vw;
        top: -100px;
        position: relative;
 
@@ -753,7 +761,7 @@
 
     .home-head-col1 {
         /* Buzz Into Brilliance: Let Your Words Shine */
-        width:50% !important;
+        width:100vw;
         /* height: auto; */
         font-style: normal;
         font-size: 20px;
@@ -766,40 +774,46 @@
         display: flex;
         flex-direction: column;
         /* margin:2% ; */
-       margin-left: -80px;
-       justify-content: center;
-       place-items: center;
+       /* margin-left: -120px; */
+       justify-content: start;
+       place-items: start;
+       margin-top: -90%;
+      
     }
 
     .homePage-btn button {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        align-items: center;
-       margin-top: -40%;
+        align-items: start;
+        width: 40vw;
+
     }
 
     .home-btn {
         /* Register Now */
-        width: 100%;
         height: 22px;
         font-size: 15px;
+        margin: 0px;
     }
 
     .home-learn {
         display: flex;
         flex-direction: row;
-        width: 100%;
+       
         height: 22px;
         font-size: 15px;
-       padding-left: 110px;
-       margin-top: -5%;
+       /* padding-left: 110px; */
+       margin-top: 2%;
+        width: 40vw;
 
     }
 
     .home-learn div {
         /* Learn the buzz */
         font-size: 15px;
+       
+     
     }
 
     .home-ellipse-sec {
@@ -862,59 +876,64 @@
         flex-direction: row;
         align-items: flex-start;
         padding: 0px;
-        gap: 82px;
-        position: relative;
-        width: 50%;
-        height: 500px;
+        /* gap: 82px; */
+        /* position: relative; */
+        width:80vw;
+        height: auto;
+        position: static;
     }
 
     .home-head-section3-Top {
-        margin-top: -125%;
+        margin-top: -100%;
+        height: auto;
     }
 
     .home-head-section3-Top h2 {
         /* Your Path to Spelling Stardom! */
-        width: 75%;
-        font-size: 20px;
+        width: 100vw;
+        font-size: 100%;
         line-height: 24px;
-         height: 80%;
+       
+        
     }
 
     .home-head-section3-Top p {
         /* Sir John’s Spelling Bee offers more than just competition—it’s a platform to grow, excel, and thrive. */
-        width: 70%;
+        width: 90vw;
         font-weight: 400;
-        font-size: 18px;
-        margin-top: -80px;
+        font-size: 80%;
+         margin-top: -10%;
+         word-wrap: wrap;
     }
 
     .home-head-section3-col {
         display: flex;
         flex-direction: column;
-        width: 100px;
-        margin-top: 60px;
-        margin-left: -300px;
+        width: 10vw;
+        margin-top: 100px;
+        margin-left: -250px;
+        /* place-content: center; */
     }
 
     .home-head-section3-col h2 {
         /* Build Your Confidence */
-        font-size: 20px;
+        font-size: 18px;
         margin-bottom: 20px;
-        margin-bottom: 20px;
-        /* width: 90%; */
-        text-align: center;
+        width: 100vw;
+        text-align: start;
         margin-top: -30px;
-        height: 50%;
+        height: 60%;
 
     }
 
     .home-head-section3-col p {
         /* Gain poise and self-assurance through public speaking and performing on a national stage. */
-        width: 100%;
+        width: 50vw;
         height: 83px;
         font-size: 14px;
         line-height: 20px;
         text-align: center;
+        margin-top: -30px;
 
     }
 
@@ -928,18 +947,18 @@
 
     .home-head-sec3-row2,
     .home-head-sec3-row3 {
-        height: 350px;
+        height: 500px;
         place-content: center;
     }
 
     .home-head-sec3-row1 img,
     .home-head-sec3-row2 img,
     .home-head-sec3-row3 img {
-        width: 40%;
+        width: auto;
         display: flex;
         position: relative;
         top: 20%;
-        left: 50%;
+        left: 25%;
         transform: translate(-50%, -50%);
 
     }
@@ -952,7 +971,7 @@
 
     .home-register {
         flex-direction: column;
-        margin-top: 300px;
+        margin-top: 600px;
     }
 
     .home-register-detail-1 {
@@ -1094,9 +1113,7 @@
         margin-top: 20%;
     }
     
-    .home-image {
-   display: none;
-    }
+
     
     .home-head-section {
       padding-left: 20px;
@@ -1105,7 +1122,7 @@
     
     .home-head-section p {
         /* Master the art of spelling and shine with confidence, success, and incredible prizes! */
-        width: 60%;
+        width: 90vw;
         height: 70px;
         line-height: 35px;
         font-size: 24px;
@@ -1114,6 +1131,7 @@
     .home-head-col1 {
       /* Buzz Into Brilliance: Let Your Words Shine */
        font-size: 30px;
+       width: 90vw;
     }
     .Buzz{
         color: var( --orange-color);
@@ -1175,9 +1193,10 @@
     
     .home-head-section2-ellipse img {
        display: none;
-       
-    
-    
+    }
+    .home-page-head-section2-img{
+        display: none;
+
     }
     
     .home-head-section-details {
@@ -1187,7 +1206,8 @@
     
     .polygon
      {
-        margin-top: -50%;
+        margin-top: -30%;
+        width: 70vw;
        
     }
     .polygon2{
@@ -1200,6 +1220,7 @@
     
     .home-head-section3 {
    flex-direction: column;
+   width: 100vw;
     }
     
     .home-head-section3-Top {
@@ -1211,31 +1232,43 @@
         /* Your Path to Spelling Stardom! */
         font-size: 30px;
         font-weight: 200;
-     
-      
-      
-    
-    
-    }
+        width: 90vw;
+     }
     
     .home-head-section3-Top p {
         /* Sir John’s Spelling Bee offers more than just competition—it’s a platform to grow, excel, and thrive. */
       font-size: 20px;
+      width: 80vw;
+      margin-top: -70px;
        
     
     }
     
     .home-head-section3-col {
-        display: grid;
-        grid-template-columns: repeat(2,0fr);
+        /* display: grid; */
+        /* grid-template-columns: repeat(2,0fr); */
+        display: flex;
+        flex-direction: row;
         gap: 10px;
+        
     }
+    .home-head-sec3-row1,
+    .home-head-sec3-row2,
+    .home-head-sec3-row3{
+        width: 30vw;
+        height: 500px;
+}
     
-    
+.home-head-section3-col h2{
+    width: 10vw;
+    margin-bottom: 10%;
+
+
+}
     
     .home-head-section3-col p {
         /* Gain poise and self-assurance through public speaking and performing on a national stage. */
-        width: 191px;
+        width: 20vw;
         height: 83px;
         font-family: 'Istok Web';
         font-style: normal;
@@ -1276,6 +1309,7 @@
     
     .home-register-section {
         margin-bottom: 100px;
+        margin-top: -70%;
         display: flex;
         flex-direction: column;
        
@@ -1290,12 +1324,12 @@
     .home-register-detail-1 {
         display: grid;
         grid-template-columns: repeat(2,0fr);
-    margin-top: 170%;
+       margin-top: 170%;
         
     }
     
     .home-register-detail-2 {
-        width: 120%;
+        /* width: 120%; */
         margin-top: 0%;
         /* background-color: red; */
         flex-direction:column;
@@ -1447,3 +1481,125 @@
     }
    
 }
+
+
+
+@media (min-width: 769px) and (max-width:1024px){
+.home-section{
+    width: 100vw;
+    gap: 0px;
+   
+}
+.home-head-section{
+    width: 60vw;
+    padding-left: 30px;
+}
+.home-image {
+    /* position: absolute; */
+    width: 6vw;
+   margin-left: 200px;
+}
+
+.home-head-col1{
+    width: 50vw;
+    font-size: 200%;
+
+}
+.home-head-section p{
+    width: 50vw;
+}
+.home-ellipse2{
+    display: none;
+}
+    .home-page-head-section2-img{
+        width: 50vw;
+        height: auto;
+        margin-left: -100px;
+        
+    }
+    .home-head-section2-ellipse{
+        display: none;
+    }
+    .home-head-section-details{
+        /* width: 20vw; */
+        margin-left: 20%;
+        margin-top: -20%;
+    }
+    .home-head-section-text{
+        width: 50vw;
+
+    }
+    .polygon {
+        margin-top: -20px;
+    }
+    .home-head-section3{
+        flex-direction: column;
+        margin-bottom:70%;
+    }
+    .home-head-sec3-row1,
+    .home-head-sec3-row2,
+    .home-head-sec3-row3{
+        width: 30vw;
+        height: 400px;
+}
+.home-head-section3-col h2{
+    width: 20vw;
+    margin-bottom: 10%;
+}
+.home-head-section3-col p {
+        /* Gain poise and self-assurance through public speaking and performing on a national stage. */
+        width: 20vw;
+       
+    }
+
+    .polygon2 img {
+        margin-left:915px;
+        margin-top: -100px;
+    }
+    .home-register-main{
+        margin-top: 330px;
+    }
+    .home-register{
+        width: 100vw;
+    }
+    .home-register-detail-1,
+    .home-register-detail-2{
+        width: 50vw;
+    }
+    .register-card-img1,
+    .register-card-img2,
+    .register-card-img3,
+    .register-card-img4,
+    .register-card-img5,
+    .register-card-img6{
+        display: none;
+    }
+    .vector-7,
+    .vector-8,
+    .vector-9,
+    .vector-10,
+    .vector-11{
+        display: none;
+
+    }
+    .gam {
+       
+        flex-direction: column;
+       
+        margin-top: 70px;
+        margin-left: -30%;
+    }
+    
+    .gam2 {
+       
+        flex-direction: column;
+        margin-top: 30px;
+        margin-left: -30%;
+        
+    }
+    .gam3{
+        flex-direction: column;
+        
+    }
+   
+    }

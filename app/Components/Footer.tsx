@@ -25,6 +25,7 @@ const Footer: React.FC = () => {
 
     return (
         <div className='footer'>
+              {/* Floating Newsletter */}
             <div className="newsletter-container">
                 <form onSubmit={handleSubmit} className="newsletter-form">
                     <div className='newsletter-text'>
@@ -41,15 +42,18 @@ const Footer: React.FC = () => {
                             placeholder="Enter your email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            required
+                            required={true}
+                            
                         />
-                        <button type="submit">
+                        <button 
+                        type="submit">
                             <div>Register Now</div>
                         </button>
                     </div>
 
                 </form>
             </div>
+            
 
 
 
@@ -106,12 +110,12 @@ const Footer: React.FC = () => {
 
                 <div className="footer-social">
                     <div className="social-icon">
-                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><Image src={FaceBook} alt='' /></a>
-                        <a href="https://x.com" target="_blank" rel="noopener noreferrer"><Image src={x} alt='' /> </a>
-                        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" ><Image src={Tiktok} alt='' /> </a>
-                        <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer"><Image src={WhatsApp} alt='' /> </a>
-                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><Image src={Youtube} alt='' /></a>
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><Image src={Insta} alt='' /></a>
+                        <Link href="https://www.facebook.com/profile.php?id=61560930817507" target="_blank" rel="noopener noreferrer"><Image src={FaceBook} alt='' /></Link>
+                        <Link href="https://x.com" target="_blank" rel="noopener noreferrer"><Image src={x} alt='' /> </Link>
+                        <Link href="https://tiktok.com" target="_blank" rel="noopener noreferrer" ><Image src={Tiktok} alt='' /> </Link>
+                        <Link href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer"><Image src={WhatsApp} alt='' /> </Link>
+                        <Link href="https://youtube.com" target="_blank" rel="noopener noreferrer"><Image src={Youtube} alt='' /></Link>
+                        <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer"><Image src={Insta} alt='' /></Link>
                         {/* <a href="#" className="social-icon"> <Image src={Tiktok} alt=''/>Instagram</a> */}
                     </div>
                 </div>
@@ -122,7 +126,7 @@ const Footer: React.FC = () => {
                         <div>AllRightReserved.2024,Deals</div> </div>
                 </div>
 
-                {/* Floating Newsletter */}
+              
 
             </footer>
         </div>

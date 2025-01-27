@@ -14,10 +14,11 @@ const Contact = () => {
         <div className="contact-main">
             <div className="contact-page">
                 {/* Hero Section */}
-                <header className="contact-header">
+                <div className="contact-header">
                     <h1>Contact Us</h1>
                     <p>We'd love to hear from you! Reach out to us anytime.</p>
-                </header>
+                    </div>
+                
 
                 {/* Contact Details Section */}
                 <section className="contact-details">

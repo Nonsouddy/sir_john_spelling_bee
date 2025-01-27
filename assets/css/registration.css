@@ -1,25 +1,27 @@
 .reg_section {
   display: flex;
   flex-direction: row;
-  /* width: 100%; */
+  width: 95%;
   margin-top: 100px;
   margin-bottom: 300px;
+  /* gap: 20rem; */
+  justify-content: space-between;
 }
 
 .reg_row_1 {
   position: relative;
-  width: 39rem;
+  /* width: 100%; */
   height: 63.75rem;
   left: 0px;
-  top: calc(50% - 1024px/2);
+  /* top: calc(50% - 1024px/2); */
   /* border-radius: 0px 50px 50px 0px; */
 }
 
 .reg_row_2 {
-  box-sizing: border-box;
-  width: 39.24rem;
+
+  /* width: 18rem; */
   height: 63.75rem;
-  padding-left: 5rem;
+  /* padding-left: 5rem; */
   top: calc(50% - 1024px/2);
   background: var(--background-color);
   /* border: 1px solid var(--border-color) */
@@ -32,18 +34,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  /* width: 100%; */
   height: auto;
   margin-top: 6.44rem;
 
 }
 
 .reg_top_text {
-  padding-left: 10rem;
-  height: 5.6rem;
+  padding-left: 25%;
   display: flex;
   flex-direction: row;
   text-align: center;
+
 
 }
 
@@ -105,7 +107,7 @@
 
 .reg_middel_text {
   /* Register your pupils here */
-  padding-left: 120px;
+  padding-left: 20%;
   height: 39px;
   font-family: 'Inter';
   font-style: normal;
@@ -118,6 +120,7 @@
   order: 1;
   align-self: stretch;
   flex-grow: 0;
+  width: 100%;
 }
 
 .reg_formDetails {
@@ -198,7 +201,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   /* background-color: #f0f2f5; */
   padding: 20px;
   font-family: "Inter";
@@ -264,8 +267,13 @@
   pointer-events: none;
 }
 
+.kk {
+  width: 100%;
+  place-content: center;
+}
+
 .submitButton {
-  width: 31.3%;
+  width: 31%;
   background-color: var(--yellow-color);
   color: var(--default-color);
   border: none;
@@ -318,16 +326,15 @@
 
 
 /* Responsive Design */
-@media screen and (max-width: 480px) {
+@media  (max-width: 480px) {
 
   .reg_section {
     display: flex;
     flex-direction: column;
     padding: 0px !important;
     /* margin: 0px !important; */
-    width: 100% !important;
-
-
+    /* width: 100%; */
+  
 
   }
 
@@ -337,9 +344,9 @@
   }
 
   .reg_row_2 {
-    width: 100%;
+    /* width: 100%; */
     padding-left: 0px;
-    text-align: start;
+    text-align: center;
 
   }
 
@@ -347,21 +354,24 @@
     padding: 5%;
     gap: 0px;
     margin: 0px;
-    text-align: center;
-    
+ 
+    text-align: start;
+
   }
 
   .reg_top_text {
     place-content: center;
-  text-align: center;
-    margin-left: 50% !important;
+    text-align: center;
+    margin-bottom: 10% !important;
+    margin-left: 10% !important;
   }
 
   .reg_top_text div {
-    text-align: center;
     font-size: 22px;
-    padding: 5% 0%;
-    line-height: 30px !important;
+    text-align: center;
+    padding-right:-10%;
+    width: 100%;
+    /* line-height: 30px !important; */
 
   }
 
@@ -369,7 +379,9 @@
     width: 50px;
     height: auto;
     flex-grow: 0;
-    margin-left: -100px;
+    margin-left: -10px;
+    margin-top: 0px;
+
   }
 
   .logo_group {
@@ -382,36 +394,43 @@
   .reg_middel_text {
     font-size: 18px;
     width: 100%;
-    text-align: center;
+    text-align: start;
     margin-top: -30px;
     margin-left: 10px;
     padding: 5% 0%;
     line-height: 20px !important;
   }
+ 
 
   .registrationForm {
     padding: 1px;
     margin: 0 10px;
-    width: 100%;
-    /* text-align: center; */
+    /* width: 100%; */
+    text-align: start;
+   
   }
-  .regAuth_title{
+
+  .regAuth_title {
     margin-bottom: 5px;
     margin-top: 10px;
     font-size: 16px;
     line-height: 15px;
-    
+
 
   }
 
   .formGroup input,
   .selectWrapper select {
     font-size: 14px;
+    
+   
+   
   }
 
   .reg_input_col {
     display: flex;
     flex-direction: column;
+    width: 100%;
 
   }
 
@@ -421,7 +440,7 @@
   }
 }
 
-@media screen and (max-width:768) {
+@media (min-width: 481px) and (max-width:768px) {
 
   .reg_section {
     display: flex;
@@ -451,12 +470,12 @@
     gap: 0px;
     margin: 0px;
     text-align: center;
-    
+
   }
 
   .reg_top_text {
     place-content: center;
-  text-align: center;
+    text-align: center;
     margin-left: 50% !important;
   }
 
@@ -498,12 +517,13 @@
     width: 100%;
     /* text-align: center; */
   }
-  .regAuth_title{
+
+  .regAuth_title {
     margin-bottom: 5px;
     margin-top: 10px;
     font-size: 16px;
     line-height: 15px;
-    
+
 
   }
 

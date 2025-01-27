@@ -5,10 +5,10 @@ function page() {
     return (
         <>
             <div className='TandC-main-section'>
-                <header className=" TandC-header">
+                <div className=" TandC-header">
                     <h1>SIR JOHN’S SPELLING BEE TERMS AND CONDITIONS</h1>
                     <p>Please read these terms carefully before using our services</p>
-                </header>
+                </div>
 
                 <div className="TandC-container">
                     <div className="TandC-card">
