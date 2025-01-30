@@ -206,68 +206,68 @@ margin-left: 30px;
 
 
 
-@media (max-width: 480px) {
+@media screen and  (max-width: 480px) {
   .faq-container{
     height: auto;
-    width: 150%;
-
-  }
+    }
  
   .faq-content {
     display: grid;
     grid-template-columns: 1fr;
     gap: 0px;
+  
 }
 
   .faq-sidebar {
     flex-direction:column;
-    position: static;
-    text-align: start;
+    text-align: center;
+    place-items: center;
+    justify-items: center;
     background-image: none;
-    gap: 0px;
-    margin-left: 0px;
-    margin-bottom: 0px;
-    width: 100%;
-    
-  }
+    margin-left: -120px;
+    margin-bottom: 100px;
+   }
  
  
   .faq-sidebar h2{
-    width: 40%;
+    width: 70vw;
    font-size: 100%;
    text-align: center;
    flex-wrap: wrap;
    padding-left: 0px;
   }
   .faq-sidebar p{
-    width: 40%;
+    width: 70vw;
    font-size: 80%;
    text-align: center;
    margin-top:-120px ;
+   margin-left: -250px;
  
    
   }
+  
+  .faq-question {
+    display: flex;
+    gap: 20px;
+    width: 90vw;
+   
+    font-weight: 500;
+  }
   .faq-list{
     gap: 0px;
-    top:20px
+    top:20px;
    
   }
   .faq-item{
   font-size: 80%;
-  width: 40%;
+  width: 80vw;
   line-height: 18px;
   flex-wrap: wrap;
-  /* background-color: red; */
-  }
+}
   .faq-item svg{
-    width: 20%;
- 
+    width: 40vw;
   }
- 
-
-  
-  
-  .bee_home{
+   .bee_home{
     display: none;
   }
   .FAQ-bee-section{
@@ -299,8 +299,9 @@ margin-left: 30px;
 
 @media (min-width: 481px) and (max-width:768px){
   .faq-container{
-    height: auto;
-    width: 300%;
+    height: 800px;
+    width: 100vw;
+    margin-bottom: -1400px;
 
   }
   .faq-content {
@@ -312,24 +313,24 @@ margin-left: 30px;
 
   .faq-sidebar {
     flex-direction:column;
-    position: static;
     text-align: start;
     gap: 0px;
-    margin-left: 0px;
-    margin-bottom: 100px;
-    width: 100%;
+    margin-left: -80px;
+    margin-top: -100px;
+    margin-bottom: 120px;
+    width: 100vw;
     
   }
  
   .faq-sidebar h2{
-    width: 100%;
+    width: 90vw;
    font-size: 150%;
    text-align: start;
    flex-wrap: wrap;
    padding-left: 0px;
   }
   .faq-sidebar p{
-    width: 30%;
+    width: 60vw;
    font-size: 100%;
    text-align: start;
    margin-top:-120px ;
@@ -343,7 +344,7 @@ margin-left: 30px;
   }
   .faq-item{
   font-size: 100%;
-  width: 100%;
+  width: 90vw;
   line-height: 18px;
   flex-wrap: wrap;
   /* background-color: red; */

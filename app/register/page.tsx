@@ -1,6 +1,6 @@
 "use client"
 import { useState } from 'react';
-import  '@assets/css/registration.css';
+import '@assets/css/registration.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import logo from '../../public/Svgs/Auth_logo.svg';
@@ -90,16 +90,16 @@ const StudentRegistrationForm: React.FC = () => {
 
 
   return (
-    <div className= "reg_section">
-      <div className= "reg_row_1"><Image src={regImg} alt='' /> </div>
+    <div className="reg_section">
+      <div className="reg_row_1"><Image src={regImg} alt='' /> </div>
 
       <div className='reg_row_2'>
-        <div className= "reg_row_col_1">
+        <div className="reg_row_col_1">
           <div className="reg_top_text">
             <div>Welcome!</div>
             <div className='flex'>
-                <Image className="logo" src={logo} alt='' />
-              <div className= "logo_group">
+              <Image className="logo" src={logo} alt='' />
+              <div className="logo_group">
                 <div >
                   {/* <Image className= {styles.strike} src={strike} alt='' /> */}
                 </div>
@@ -107,16 +107,16 @@ const StudentRegistrationForm: React.FC = () => {
             </div>
 
           </div>
-          <div className= "reg_middel_text">Register your pupils here</div>
+          <div className="reg_middel_text">Register your pupils here</div>
         </div>
 
 
         <div className="formContainer">
-          <form onSubmit={handleSubmit} className= "registrationForm">
+          <form onSubmit={handleSubmit} className="registrationForm">
 
 
             {/* Full Name Input */}
-            <div className= "formGroup">
+            <div className="formGroup">
               <label htmlFor="fullName">Full Name</label>
               <input
                 type="text"
@@ -130,8 +130,8 @@ const StudentRegistrationForm: React.FC = () => {
             </div>
 
             {/* Email Input */}
-            <div className= "reg_input_col">
-              <div className= "formGroup">
+            <div className="reg_input_col">
+              <div className="formGroup">
                 <label htmlFor="email">Email Address</label>
                 <input
                   type="email"
@@ -162,7 +162,7 @@ const StudentRegistrationForm: React.FC = () => {
 
             {/* Date of Birth Input */}
 
-            <div className= "formGroup">
+            <div className="formGroup">
               <label htmlFor="dateOfBirth">Date of Birth</label>
               <input
                 type="date"
@@ -176,9 +176,10 @@ const StudentRegistrationForm: React.FC = () => {
             </div>
 
             {/* Sex Dropdown */}
+          
             <div className="formGroup">
               <label htmlFor="sex">Gender</label>
-              <div className= "selectWrapper">
+              <div className="selectWrapper">
                 <select
                   id="sex"
                   name="sex"
@@ -193,67 +194,77 @@ const StudentRegistrationForm: React.FC = () => {
                     </option>
                   ))}
                 </select>
-                <div className= "selectArrow"></div>
+                <div className="selectArrow"></div>
               </div>
             </div>
+
 
 
             {/* Class Dropdown */}
-            <div className= "formGroup">
-              <label htmlFor="class">Class</label>
-              <div className= "selectWrapper">
-                <select
-                  id="class"
-                  name="class"
-                  value={formData.class}
-                  onChange={handleChange}
-                  required
-                >
-                  <option value="">Select Class</option>
-                  {CLASS_OPTIONS.map(classOption => (
-                    <option key={classOption} value={classOption}>
-                      {classOption}
-                    </option>
-                  ))}
-                </select>
-                <div className= "selectArrow"></div>
+           
+              <div className="formGroup">
+                <label htmlFor="class">Class</label>
+                <div className="selectWrapper">
+                  <select
+                    id="class"
+                    name="class"
+                    value={formData.class}
+                    onChange={handleChange}
+                    required
+                  >
+                    <option value="">Select Class</option>
+                    {CLASS_OPTIONS.map(classOption => (
+                      <option key={classOption} value={classOption}>
+                        {classOption}
+                      </option>
+                    ))}
+                  </select>
+                  <div className="selectArrow"></div>
+                </div>
               </div>
-            </div>
+        
 
-            {/* Category Dropdown */}
-            <div className= "formGroup">
-              <label htmlFor="category">Category</label>
-              <div className= "selectWrapper">
-                <select
-                  id="category"
-                  name="category"
-                  value={formData.category}
-                  onChange={handleChange}
-                  required
-                >
-                  <option value="">Select Category</option>
-                  {CATEGORY_OPTIONS.map(categoryOption => (
-                    <option key={categoryOption} value={categoryOption}>
-                      {categoryOption}
-                    </option>
-                  ))}
-                </select>
-                <div className= "selectArrow"></div>
+              {/* Category Dropdown */}
+              <div className="formGroup">
+                <label htmlFor="category">Category</label>
+                <div className="selectWrapper">
+                  <select
+                    id="category"
+                    name="category"
+                    value={formData.category}
+                    onChange={handleChange}
+                    required
+                  >
+                    <option value="">Select Category</option>
+                    {CATEGORY_OPTIONS.map(categoryOption => (
+                      <option key={categoryOption} value={categoryOption}>
+                        {categoryOption}
+                      </option>
+                    ))}
+                  </select>
+                  <div className="selectArrow"></div>
+                </div>
               </div>
-            </div>
+           
 
             {/* Submit Button */}
+            <div className='kk'>
             <Link href="/regAuth">
-            <button type="submit" className= "submitButton">
-              Next
-            </button>
-            </Link>
+           
+            
+              <button type="submit" className="submitButton">
+                Next
+              </button>
+              </Link>
+           
+            </div>
+           
           </form>
         </div>
 
       </div>
 
-    </div> 
+    </div>
   )
 }
 

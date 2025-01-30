@@ -2,6 +2,7 @@
 .resources-head-main{
     height: 2200px;
     margin-top: 90px;
+   
 }
 .resources-head {
     background: url(../../public/Svgs/resourceBackground.svg) no-repeat;
@@ -1056,7 +1057,7 @@ transform: rotate(-9.78deg);
 
 }
 /* responsive media */
-@media (max-width:480px){
+@media  screen and (max-width:480px){
     .resources-head-main{
         height:3600px;
         margin-top: 90px;
@@ -1136,11 +1137,13 @@ transform: rotate(-9.78deg);
 
 /* book section start */
 .resource-main-section-1 {
-  flex-direction: column !important;
-    width:50%;
-    height: 420px;
+    flex-direction: column;
+    width:100vw;
+   height: auto;
+   text-align: center;
+   margin-left: -10vw;
 }
-.row-card1,
+/* .row-card1,
 .row-card2,
 .row-card3{
     display: flex;
@@ -1153,62 +1156,99 @@ transform: rotate(-9.78deg);
     height: 247px;
     left: 120px;
     top: 40px;
+   
+} */
+
+
+.book-section-row {
+    width:80vw;
+}
+
+.book-section-row1 {
+    width:80vw;
+}
+
+
+.book-section-row2 {
+    width:80vw;
+
+}
+
+.book-section-row-card {
+    width:80vw;
+   text-align:start;
+   
+    
+
+}
+
+.book-section-row-card1 {
+    width:80vw;
+
+}
+
+.book-section-row-card2 {
+    width:80vw;
+
+
 }
 
 .row-card1 h2 {
     /* Wild Life Africa */
     font-size: 24px;
-    text-align: center;
+    /* text-align: center; */
+    width:50vw;
     }
 
 .row-card2 h2 {
    
    /* Wild Life Africa */
    font-size: 24px;
-   text-align: center;
+   /* text-align: center; */
+   width:50vw;
 }
 
 .row-card3 h2 {
    font-size: 24px;
-     text-align: center; 
+     /* text-align: center;  */
+     width:50vw;
     
    
 }
 
 .row-card1 p {
     /* By Chimca Odinaka */
-   text-align: center;
-   margin-top: -20px;
+   text-align: start;
+   margin-top: 0px;
+   width:50vw;
 }
 
 .row-card2 p,
 .row-card3 p {
     /* By Chimca Odinaka */
-    text-align: center;
-   
-}
-
+    text-align: start;
+    width:50vw;
+   }
 
 .row-card1 div {
     /* Names of all the wild life found on the coast of west Africa. From terrestrial to aquatic. */
-    text-align: center;
-    width: 100%;
-    padding-left: 20px;
+    text-align: start;
+    width:50vw;
 }
 
 .row-card2 div,
 .row-card3 div {
     /* Names of all the wild life found on the coast of west Africa. From terrestrial to aquatic. */
-    text-align: center;
-    width: 100%;
-    padding-left: 20px;
+    text-align: start;
+    width:50vw;
+   
 }
 
 .book-download-section {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-left: 140px;
+    width: 100vw;
     margin-top: 50px;
     height: 17px;
 }
@@ -1236,8 +1276,8 @@ transform: rotate(-9.78deg);
 
 
 .download-section {
-    justify-content: start;
-    padding-left: 60px;
+    justify-content: center;
+    /* padding-left: 60px; */
     font-size: 10px;
 }
 
@@ -1261,31 +1301,17 @@ transform: rotate(-9.78deg);
     width: 20px;
 }
 
-.left-ball {
-    position: relative;
-    width: 100px;
-    height: 100px;
-    left: 315px;
-    top: -220px;
-    opacity: 0.3;
-
-}
-
-.left-ball2 {
-    position: relative;
-    width: 100px;
-    height: 100px;
-    left: 315px;
-    top: -380px;
-    opacity: 0.3;
+.left-ball,
+.left-ball2  {
+    display: none;
 
 }
 
 /* book section end */
 
 .resource-main-section-2{
-   
-    width: 100%;
+   width: 100vw;
+   margin-top: -800px;
 }
 
 .resource-section2-col1,
@@ -1295,7 +1321,7 @@ transform: rotate(-9.78deg);
    align-items: center;
     padding: 0px;
     gap: 25px;
-    width: 100%;
+    width: 90vw;
     flex: none;
     order: 0;
     align-self: stretch;
@@ -1321,7 +1347,7 @@ transform: rotate(-9.78deg);
 
 
 .event-details {
-    width:90% !important;
+    width:80vw !important;
     height: 420px;
     margin-top: 400px;
     margin-left:-45px;
@@ -1330,7 +1356,7 @@ transform: rotate(-9.78deg);
 
 
 .event-details1 {
-    width:90% !important;
+    width:80vw !important;
     height: 420px;
     margin-top: 40px;
     margin-left:-45px;
@@ -1341,15 +1367,15 @@ transform: rotate(-9.78deg);
 
 
 .event-details2 {
-    width:90% !important;
+    width:80vw !important;
     height: 420px;
     margin-top:-80px;
     margin-left:-45px;
 }
 
 .event-details3 {
-    width:90% !important;
-    height: 420px;
+    width:80vw !important;
+    height: 490px;
     margin-top: 20px;
     margin-left:-45px;
 }
@@ -1378,12 +1404,12 @@ transform: rotate(-9.78deg);
     height: 211px;
     left:10px;
     place-content:center;
-    top: -10px;
+    top: -20px;
 }
 
 
 .event-row1 {
-    width: 100%;
+    width:80vw !important;
     height: 46px;
     left: 20px;
     gap: 0px;
@@ -1391,7 +1417,7 @@ transform: rotate(-9.78deg);
 }
 
 .event-row2 {
-    width: 100%;
+    width:80vw !important;
     height: 46px;
     left: 20px;
     gap: 0px;
@@ -1401,7 +1427,7 @@ transform: rotate(-9.78deg);
 
 
 .event-row3 {
-    width: 100%;
+    width:80vw !important;
     height: 46px;
     left: 20px;
     gap: 0px;
@@ -1409,25 +1435,26 @@ transform: rotate(-9.78deg);
 }
 
 .event-row4 {
-    width: 100%;
+    width:80vw !important;
     height: 46px;
     left: 20px;
     gap: 0px;
-    top: -60px;
+    top: -20px;
 
 }
 
 .event-row1 h2 {
     /* The Word Origin Challenge */
-    width: 100%;
+    width:70vw;
     font-size: 16px;
+    margin-bottom: 10px;
     
 
 }
 
 .event-row2 h2 {
     /* The Word Origin Challenge */
-    width: 95%;
+    width:70vw;
     font-size: 16px;
     margin-bottom: 15px;
     
@@ -1436,17 +1463,18 @@ transform: rotate(-9.78deg);
 .event-row3 h2 {
     /* The Word Origin Challenge */
 
-    width: 100%;
+    width:70vw;
     font-size: 16px;
     padding-top:0px;
+    margin-bottom: 10px;
 }
 
 .event-row4 h2 {
     /* The Word Origin Challenge */
 
-    width: 90%;
+    width:70vw;
     font-size: 16px;
-    padding-top:40px;
+    margin-bottom: 10px;
 }
 
 .event-card{
@@ -1457,12 +1485,14 @@ transform: rotate(-9.78deg);
    
 }
 
+.event-text1 p,
 .event-text2 p,
 .event-text3 p,
 .event-text4 p {
     /* Dive into the roots of language! */
     font-size: 12px;
     padding-bottom: 10px;
+    width:50vw;
   
    
 
@@ -1471,7 +1501,7 @@ transform: rotate(-9.78deg);
 
 .event-date {
     /* Date: January 10. */
-   width: 80%;
+    width: 40vw;
    margin-top: 20px;
    text-align: center;
 
@@ -1479,9 +1509,10 @@ transform: rotate(-9.78deg);
 
 .event-date1 {
     /* Date: January 10. */
-    width: 80%;
+    width: 40vw;
     margin-top: 20px;
     text-align: center;
+    
  
 
 
@@ -1490,7 +1521,7 @@ transform: rotate(-9.78deg);
 
 .event-date2 {
     /* Date: January 10. */
-    width: 80%;
+    width: 40vw;
     margin-top: 20px;
     text-align: center;
  
@@ -1501,7 +1532,7 @@ transform: rotate(-9.78deg);
 
 .event-date3 {
     /* Date: January 10. */
-    width: 80%;
+    width: 40vw;
     margin-top: 20px;
     text-align: center;
  
@@ -1509,14 +1540,14 @@ transform: rotate(-9.78deg);
 
 .event-date4 {
     /* Date: January 10. */
-    width: 80%;
+    width: 40vw;
     margin-top: 20px;
     text-align: center;
 }
 
 .event-info1 {
     /* Participants spell words while identifying their origins. Discover the beauty of etymology and broaden your vocabulary in this fascinating round. */
-   width: 80%;
+    width: 50vw;
    font-size: 12px;
 
 
@@ -1524,23 +1555,24 @@ transform: rotate(-9.78deg);
 
 .event-info2 {
     /* Participants spell words while identifying their origins. Discover the beauty of etymology and broaden your vocabulary in this fascinating round. */
-    width: 80%;
-   font-size: 12px;;
+    width: 50vw;
+   font-size: 12px;
 
 
 }
 
 .event-info3 {
     /* Participants spell words while identifying their origins. Discover the beauty of etymology and broaden your vocabulary in this fascinating round. */
-    width: 80%;
+    width: 50vw;
    font-size: 12px;
 
 }
 
 .event-info4 {
     /* Participants spell words while identifying their origins. Discover the beauty of etymology and broaden your vocabulary in this fascinating round. */
-    width: 80%;
+    width: 50vw;
    font-size: 12px;
+   margin-top: 20px;
 
 
 }
@@ -1555,6 +1587,14 @@ transform: rotate(-9.78deg);
     opacity: 0px;
     position: relative;
 }
+.res-broken-line {
+    display: none;
+ 
+} 
+.res-broken-line2 {
+    display: none;
+ 
+} 
 
 .resources-big-text h2 {
     /* Get everything you need to be prepared */
@@ -1580,23 +1620,24 @@ margin-left: 10px;
 
 /* book section start */
 .resource-main-section-1 {
-   width: 100%;
+   width: 100vw;
+   justify-content: center;
 }
 
 .book-section-row {
-    width:180px;
+    width:25vw;
 }
 
 .book-section-row1 {
-    width:180px;
+    width:25vw;
 }
 
 .book-section-row2 {
-    width:180px;
+    width:25vw;
 }
 
 .book-section-row-card {
-    width:180px;
+    width:25vw;
     text-align:start;
    
     
@@ -1604,36 +1645,39 @@ margin-left: 10px;
 }
 
 .book-section-row-card1 {
-    width:180px;
+    width:25vw;
 
 }
 
 .book-section-row-card2 {
-    width:180px;
+    width:25vw;
 
 }
 
 
 .row-card1 h2 {
     /* Wild Life Africa */
-    width: 70%;
+    width:20vw;
     font-size: 120%;
     margin-left: -20px;
+    margin-bottom: 20px;
   
 }
 
 .row-card2 h2 {
     /* Wild Life Africa */
-    width: 70%;
+    width:20vw;
    font-size: 120%;
    margin-left: -20px;
+   margin-bottom: 20px;
 }
 
 .row-card3 h2 {
     /* Wild Life Africa */
-    width: 70%;
+    width:20vw;
    font-size: 120%;
    margin-left: -20px;
+   margin-bottom: 20px;
    
 }
 
@@ -1688,13 +1732,6 @@ margin-left: 10px;
     top: -12px;
 
 }
-
-.book-btn-sectionimg img {
-   display: none;
-
-
-}
-
 .left-ball,
 .left-ball2  {
     display: none;
@@ -1915,6 +1952,367 @@ margin-left: 10px;
 }
 
 }
+@media (min-width: 769px) and (max-width:1024px){
+    
+
+.resource-list ul {
+   
+    gap: 30px;
+    width: 120%;
+}
+
+.resource-list li {
+    font-size: 18px;
+}
+.res-broken-line {
+    display: none;
+ 
+} 
+.res-broken-line2 {
+    display: none;
+ 
+}
+
+/* book section start */
+.resource-main-section-1 {
+    width:100vw;
+   height: auto;
+   
+   /* justify-content: center; */
+}
+
+.book-section-row {
+    width:29.5vw;
+}
+
+.book-section-row1 {
+    width:29.5vw;
+}
+
+
+.book-section-row2 {
+    width:29.5vw;
+
+}
+
+.book-section-row-card {
+    width:29.5vw;
+
+    text-align:start;
+   
+    
+
+}
+
+.book-section-row-card1 {
+    width:29.5vw;
+
+
+}
+
+.book-section-row-card2 {
+    width:29.5vw;
+
+
+}
+
+
+.row-card1 h2 {
+    /* Wild Life Africa */
+    width: 100%;
+    font-size: 150%;
+    margin-left: -20px;
+  
+}
+
+.row-card2 h2 {
+    /* Wild Life Africa */
+    width: 100%;
+    font-size: 150%;;
+   margin-left: -20px;
+}
+
+.row-card3 h2 {
+    /* Wild Life Africa */
+    width: 100%;
+    font-size: 150%;
+ 
+}
+
+
+
+.row-card1 p {
+    /* By Chimca Odinaka */
+    width: 80%;
+    margin-left: -20px;
+    margin-top: -20px;
+    
+}
+
+.row-card2 p,
+.row-card3 p {
+    width: 80%;
+    /* By Chimca Odinaka */
+    margin-left: -20px;
+    margin-top: -20px;
+
+}
+
+
+.row-card1 div {
+    /* Names of all the wild life found on the coast of west Africa. From terrestrial to aquatic. */
+    width: 100%;
+    margin-left: -20px;
+  
+}
+
+.row-card2 div,
+.row-card3 div {
+    /* Names of all the wild life found on the coast of west Africa. From terrestrial to aquatic. */
+    width: 100%;
+    margin-left: -20px;
+}
+
+
+.top-ball {
+
+    display: none;
+}
+
+.btm-ball {
+    height: 30px;
+    left: 80px;
+    top: -82px;
+}
+
+
+.book-btn-sectionimg {
+    position: relative;
+    top: -10px;
+}
+
+.left-ball,
+.left-ball2  {
+    display: none;
+
+}
+/* book section end */
+.resource-main-section-2 {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    gap: 40px;
+    position: relative;
+    width: 100%;
+    /* height: 10000px; */
+    left: 25px;
+    right: 25px;
+   
+}
+
+
+
+.resource-section2-col1 {
+    display: flex;
+   flex-direction: row;
+   align-items: center;
+    padding: 0px;
+    gap: 25px;
+    width: 100%;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    margin-top: 100px;
+}
+.resource-section2-col2 {
+    display: flex;
+   flex-direction: row;
+   align-items: center;
+    padding: 0px;
+    gap: 25px;
+    width: 100%;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    margin-top: 0px;
+   
+
+   
+}
+
+.resource-main-head {
+    /* Upcoming Events */
+    width: 40%;
+   font-size: 150%;
+   
+    
+}
+
+.event-details {
+    
+    width: 45vw;
+}
+
+.event-details1 {
+    width: 45vw;
+}
+
+.event-details2 {
+    
+    width: 50vw;
+}
+
+.event-details3 {
+   
+    width: 40vw;
+   
+}
+
+.event-img {
+    position: relative;
+    width: 80%;
+    height: 211px;
+    left: 35px;
+    top: 0px;
+}
+
+.event-img1 {
+    position: relative;
+    width: 80%;
+    height: 211px;
+    left: 35px;
+    top: 0px;
+    top: 30px;
+}
+
+.event-img2 {
+    position: relative;
+    width: 80%;
+    height: 211px;
+    left: 35px;
+    top: 30px;
+}
+
+
+.event-row1 {
+   width: 100%;
+   top: -20px;
+}
+
+.event-row2 {
+    width: 100%;
+    top: -20px;
+}
+
+.event-row3 {
+    width: 100%;
+    top: -30px;
+}
+
+.event-row4 {
+    width: 100%;
+    top: 50px;
+   
+
+}
+.event-text1 p {
+    /* Dive into the roots of language! */
+    width: 100%;
+    
+}
+
+.event-text2 p {
+    /* Dive into the roots of language! */
+    width: 100%;
+   
+ 
+
+}
+
+.event-text3 p {
+    /* Dive into the roots of language! */
+    width: 100%;
+   
+
+}
+
+.event-text4 p {
+    /* Dive into the roots of language! */
+    width: 100%;
+   
+}
+.event-card{
+   flex-direction: column;
+}
+
+.event-date {
+    /* Date: January 10. */
+    width: 50%;
+    margin-top: -80px;
+
+}
+
+
+.event-date1 {
+    /* Date: January 10. */
+    width: 50%;
+    margin-top: -80px;
+
+
+
+}
+
+.event-date2 {
+    /* Date: January 10. */
+    width: 50%;
+    margin-top: -80px;
+}
+
+.event-date3 {
+    /* Date: January 10. */
+    width: 50%;
+    margin-top: -80px;
+}
+
+.event-date4 {
+    /* Date: January 10. */
+    width: 50%;
+ 
+}
+
+.event-info1 {
+    /* Participants spell words while identifying their origins. Discover the beauty of etymology and broaden your vocabulary in this fascinating round. */
+   width: 80%;
+
+
+}
+
+.event-info2 {
+    /* Participants spell words while identifying their origins. Discover the beauty of etymology and broaden your vocabulary in this fascinating round. */
+    width: 80%;
+
+}
+
+.event-info3 {
+    /* Participants spell words while identifying their origins. Discover the beauty of etymology and broaden your vocabulary in this fascinating round. */
+    width: 80%;
+
+
+}
+
+.event-info4 {
+    /* Participants spell words while identifying their origins. Discover the beauty of etymology and broaden your vocabulary in this fascinating round. */
+    width: 80%;
+
+
+}
+
+}
+
+
+
 
 
 

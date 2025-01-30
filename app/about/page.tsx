@@ -1,4 +1,3 @@
-import React from 'react'
 import Image from 'next/image'
 import '@assets/css/about.css'
 import Img1 from '@assets/svg/aboutImg1.svg'
@@ -105,7 +104,7 @@ function About() {
                             <div className='about-section-2-col2-box'>
                                 <div className='about-box-info'>
                                     <div className='Ex'>
-                                        <h2>Build <span>Skills</span></h2>
+                                        <h2>Build<span>Skills</span></h2>
                                         <Image className='vector' src={vector} alt='' />
                                     </div>
 
@@ -167,11 +166,12 @@ function About() {
                     </div>
                 </div>
                 {/* Category & Prizes */}
+                
                 <div className='prize-main'>
                     <div className='prize-section'>
                         <div className='prize-head-text'>
                             <h2> Category </h2><div>& </div>
-                            <div className='flex'>
+                            <div className='prize'>
                                 <div className='text-[#FEF506]'>P</div>
                                 <div className='text-[#EB8733]'>r</div>
                                 <div className='text-[#FFFFFA]'>i</div>
@@ -212,15 +212,20 @@ function About() {
                                     <li> 2nd: ₦50,000</li>
                                     <li> 3rd: ₦30,000</li>
 
+
+
                                 </div>
+
+
                             </div>
                         </div>
                     </div>
 
 
                 </div>
+                </div>
                 
-            </div>
+          
         </>
     )
 }

@@ -1,4 +1,3 @@
-import React from 'react'
 import Link from 'next/link';
 import "../Style/homePage.css"
 import Image from 'next/image'
@@ -46,22 +45,22 @@ function HomePage() {
                     <Image className='home-image' src={beeImage} alt='' />
                     <div className='home-head-section'>
                         <div className='home-head-col1'>
-                            <div className='flex gap-5'>
+                            <div className='home-head-color-text'>
                                 <div className=' Buzz'>Buzz</div>
                                 <div> Into </div>
-                                <div className='text-[#59C5F3]'>Brilliance:</div>
+                                <div id ="hh" className='text-[#59C5F3]'>Brilliance:</div>
                             </div>
                             <div>Let Your Words Shine</div>
                         </div>
 
                         <p>Master the art of spelling and shine with confidence, success, and incredible prizes! </p>
                         <div className='homePage-btn'>
-                            <Link  href="/instructions"><button className='home-btn'>Register</button></Link>
-                            <Link href="/about" className='home-learn'>
+                            <a  href="/instructions"><button className='home-btn'>Register</button></a>
+                            <a href="/about" className='home-learn'>
                                 <div>Learn the buzz</div>
                                 <Image src={Arrow} alt='' />
 
-                            </Link>
+                            </a>
                         </div>
                     </div>
                 </div>
