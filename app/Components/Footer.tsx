@@ -13,7 +13,7 @@ import Tiktok from "../../public/Svgs/Tiktok.svg"
 
 import '../Style/footer.css';
 
-const Footer: React.FC = () => {
+const Footer = () => {
     const [email, setEmail] = useState('');
 
     const handleSubmit = (e: React.FormEvent) => {

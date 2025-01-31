@@ -55,11 +55,6 @@
  
 }
 
-body {
-  margin: 0rem;
-  padding: 0rem;
-}
-
 .register-btn {
   background-color: var(--yellow-color);
   padding: 0.5rem 2rem;

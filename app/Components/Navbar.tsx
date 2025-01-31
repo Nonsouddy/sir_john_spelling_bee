@@ -1,60 +1,58 @@
- "use client"
+"use client"
+
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import "../Style/navBar.css"
-import logo from "../../public/Svgs/Logo.svg"
+import { usePathname } from 'next/navigation';
+
+//Images and Icons
+import logo from "../../public/Svgs/Logo.svg";
+import navHover from "../../public/Svgs/navHover.svg";
+import { HambergerMenu } from 'iconsax-react';
+
+// Navigation Links Configuration
+const NAV_LINKS = [
+  { path: "/", label: "Home" },
+  { path: "/about", label: "About Us" },
+  { path: "/contact", label: "Contact Us" },
+  { path: "/resources", label: "Resources" },
+  { path: "/faqs", label: "FAQs" },
+];
+
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const pathName = usePathname()
+
+  //Functions
+  const toggleMenu = () => setIsOpen((prev) => !prev)
 
   return (
-    <div className="navbar">
-      <div className="navbar-container">
-        <div className="logo">
-          <Link href="/">
-            <Image src={logo} alt="Logo"/>
-          </Link>
+    <nav className='font-comic'>
+      <div className="flex justify-between items-center bg-[#FFFFFA] shadow-[0px_4px_26px_0px_rgba(0,0,0,0.07)] px-5 sm:px-10 md:px-20 xl:px-32 py-6">
+        <Link href="/"><Image src={logo} alt='Logo' className='w-fit h-8 md:h-12 xl:h-16' /></Link>
+        <div className='lg:flex gap-x-5 xl:gap-x-10 hidden'>
+          {NAV_LINKS.map((link) => (
+            <div className='relative'>
+              <Link href={link.path} className={`${pathName === link.path ? "text-accentOrange font-bold" : "text-textGray hover:text-accentOrange duration-300 font-medium"}`}>{link.label}</Link>
+              <Image src={navHover} className={`${pathName === link.path ? "absolute left-1/2 transform -translate-x-1/2" : "hidden"}`} alt='Hover Image' />
+            </div>
+          ))}
         </div>
-        
-        <div className={`menu-icon ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
-          <div className="bar1"></div>
-          <div className="bar2"></div>
-          <div className="bar3"></div>
-        </div>
-        
-        <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>
-          <li className="nav-item">
-            <Link href="/" className="nav-link">Home</Link>
-          </li>
-          <li className="nav-item">
-            <Link href="/about" className="nav-link">About Us</Link>
-          </li>
-          <li className="nav-item">
-            <Link href="/contact" className="nav-link">Contact Us</Link>
-          </li>
-          <li className="nav-item">
-            <Link href="/resources" className="nav-link">Resources</Link>
-          </li>
-          <li className="nav-item">
-            <Link href="/#faq-container" className="nav-link">FAQs</Link>
-          </li>
-          <div className='nav_log'>
-         
-          <li className="nav-item register">
-            <Link href="/instructions" className="register-btn">Register</Link>
-          </li>
-          </div>
-         
-        </ul>
+        <Link href="/register" className='lg:block hidden bg-primaryYellow px-2.5 py-3.5 rounded-[30px] w-48 font-bold text-[#1C1B17] text-center hover:-translate-y-1 duration-300'>Register Now</Link>
+        <HambergerMenu color="#000" className='lg:hidden cursor-pointer size-9 md:size-10' variant="Bold" onClick={toggleMenu} />
       </div>
 
-   
-    </div>
+      {/* Mobile Screen */}
+      <div className={`lg:hidden fixed inset-0 bg-black opacity-50 ${isOpen ? "translate-x-0" : "-translate-x-full delay-500"} transition-transform duration-500 ease-in-out`} onClick={toggleMenu}></div>
+      <div onClick={toggleMenu} className={`lg:hidden flex flex-col gap-y-10 ${isOpen ? "translate-x-0 delay-500" : "-translate-x-full"} bg-[#FFFFFA] w-72 border-r border-[#413d3d] z-10 fixed top-0 left-0 h-screen transition-transform duration-500 ease-in-out p-8 py-20`}>
+        {NAV_LINKS.map((link) => (
+            <Link href={link.path} className={`${pathName === link.path ? "text-accentOrange font-bold" : "text-textGray hover:text-accentOrange duration-300 font-medium"} text-sm md:text-base`}>{link.label}</Link>
+        ))}
+        <Link href="/register" className='block lg:hidden bg-primaryYellow px-2.5 py-3.5 rounded-[30px] w-48 font-bold text-[#1C1B17] text-center hover:-translate-y-1 duration-300'>Register Now</Link>
+      </div>
+    </nav>
   );
 };
 
