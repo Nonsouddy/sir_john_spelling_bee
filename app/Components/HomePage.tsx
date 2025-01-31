@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import "../Style/homePage.css"
 import Image from 'next/image'
-import FAQPage from '../faqPage/Page'
+import FAQPage from '../faq/page'
 import Footer from './Footer'
 import Navbar from './Navbar'
 import HomeImg from "../../public/Svgs/homePageImg.svg"
@@ -46,7 +46,7 @@ function HomePage() {
                     <div className='home-head-section'>
                         <div className='home-head-col1'>
                             <div className='home-head-color-text'>
-                                <div className=' Buzz'>Buzz</div>
+                                <div className='Buzz'>Buzz</div>
                                 <div> Into </div>
                                 <div id ="hh" className='text-[#59C5F3]'>Brilliance:</div>
                             </div>
@@ -129,7 +129,7 @@ function HomePage() {
                     <Image src={polygon1} alt='' />
                 </div>
 
-                <div className=' home-head-section'>
+                <div className='home-head-section'>
                     <div className='home-head-section3'>
 
                         <div className='home-head-section3-Top'>

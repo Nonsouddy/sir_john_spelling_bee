@@ -14,7 +14,7 @@ import MaintenancePage from "../Components/MaintenancePage";
 
 const Contact = () => {
     return (
-        <MaintenancePage />
+        <MaintenancePage page="Contact Us" />
         // <div className="contact-main">
         //     <div className="contact-page">
         //         {/* Hero Section */}

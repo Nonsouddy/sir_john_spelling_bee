@@ -15,13 +15,17 @@ import Student from '@assets/img/Students.png'
 import Teacher from '@assets/img/Teacher.png'
 import Parent from '@assets/img/Parent.png'
 import stake from '@assets/svg/Vector 2516.svg'
-import FAQPage from '../faqPage/Page'
+import FAQPage from '../faq/page'
+
+//Components
+import MaintenancePage from '../Components/MaintenancePage'
 
 
 function About() {
     return (
         <>
-            <div className='about-main' id='about'>
+        <MaintenancePage page="About Us" />
+            {/* <div className='about-main' id='about'>
                 <div className='about-section'>
                     <div>
                         <div className='about-rect'><Image src={Rect} alt='image' /></div>
@@ -128,14 +132,11 @@ function About() {
                             </div>
                         </div>
                     </div>
-
-
-
-                </div>
+                </div> */}
 
                 {/* Key Stakeholder Section */}
 
-                <div className='stakeholder-main'>
+                {/* <div className='stakeholder-main'>
                     <div className='stakeholder-section'>
                         <div className='stakeholder-heading'>Key Stakeholders</div>
                         <div >
@@ -164,10 +165,10 @@ function About() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
                 {/* Category & Prizes */}
-                
-                <div className='prize-main'>
+
+                {/* <div className='prize-main'>
                     <div className='prize-section'>
                         <div className='prize-head-text'>
                             <h2> Category </h2><div>& </div>
@@ -211,21 +212,12 @@ function About() {
                                     <li>1st: ₦100,000 </li>
                                     <li> 2nd: ₦50,000</li>
                                     <li> 3rd: ₦30,000</li>
-
-
-
                                 </div>
-
-
                             </div>
                         </div>
                     </div>
-
-
                 </div>
-                </div>
-                
-          
+            </div> */}
         </>
     )
 }
