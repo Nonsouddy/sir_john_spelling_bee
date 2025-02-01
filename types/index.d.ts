@@ -14,3 +14,12 @@ declare type StudentFormData = {
     tutorName: string;
     tutorPhoneNumber: string;
 }
+
+//Button
+declare type ButtonProps = {
+    type: "submit" | "reset" | "button";
+    text: string;
+    loading: boolean;
+    onClick?: () => void;
+    classNames?: string;
+};

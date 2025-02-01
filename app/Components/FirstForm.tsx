@@ -1,7 +1,10 @@
 import Image from 'next/image';
+import { useSearchParams, useRouter } from 'next/navigation';
+
 
 //Components
 import Input from './Input';
+import Button from './Button';
 
 //Images
 import logo from '../../public/Svgs/Auth_logo.svg';
@@ -31,6 +34,18 @@ const CATEGORY_OPTIONS = [
 ];
 
 const FirstForm = () => {
+
+    const router = useRouter();
+    const searchParams = useSearchParams();
+
+    //Functions
+    const updatePage = (newPage: number) => {
+        const params = new URLSearchParams(searchParams);
+        params.set('page', newPage.toString());
+        // Push the new URL with updated query parameters
+        router.push(`?${params.toString()}`);
+    };
+
     return (
         <main>
             <div className='flex justify-center items-center'>
@@ -90,6 +105,7 @@ const FirstForm = () => {
                         ))}
                     </select>
                 </div>
+                <Button type="button" text="Next" loading={false} onClick={() => updatePage(2)} />
             </form>
         </main>
     );
