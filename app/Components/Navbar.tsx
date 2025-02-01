@@ -40,17 +40,17 @@ const Navbar = () => {
             </div>
           ))}
         </div>
-        <Link href="/instructions" className='lg:block hidden bg-primaryYellow px-2.5 py-3.5 rounded-[30px] w-48 font-bold text-[#1C1B17] text-center hover:-translate-y-1 duration-300'>Register Now</Link>
+        <Link href="/register?page=1" className={`${pathName === "/register" ? "bg-accentOrange text-white" : "bg-primaryYellow text-[#1C1B17]"} lg:block hidden px-2.5 py-3.5 rounded-[30px] w-48 font-bold text-center hover:-translate-y-1 duration-300`}>Register Now</Link>
         <HambergerMenu color="#000" className='lg:hidden cursor-pointer size-9 md:size-10' variant="Bold" onClick={toggleMenu} />
       </div>
 
       {/* Mobile Screen */}
-      <div className={`lg:hidden fixed inset-0 bg-black opacity-50 ${isOpen ? "translate-x-0" : "-translate-x-full delay-500"} transition-transform duration-500 ease-in-out`} onClick={toggleMenu}></div>
+      <div className={`lg:hidden fixed inset-0 bg-black opacity-50 ${isOpen ? "translate-x-0" : "-translate-x-full delay-500"} transition-transform duration-500 ease-in-out z-[5]`} onClick={toggleMenu}></div>
       <div onClick={toggleMenu} className={`lg:hidden flex flex-col gap-y-10 ${isOpen ? "translate-x-0 delay-500" : "-translate-x-full"} bg-[#FFFFFA] w-72 border-r border-[#413d3d] z-10 fixed top-0 left-0 h-screen transition-transform duration-500 ease-in-out p-8 py-20`}>
         {NAV_LINKS.map((link) => (
             <Link key={link.path} href={link.path} className={`${pathName === link.path ? "text-accentOrange font-bold" : "text-textGray hover:text-accentOrange duration-300 font-medium"} text-sm md:text-base`}>{link.label}</Link>
         ))}
-        <Link href="/instructions" className='block lg:hidden bg-primaryYellow px-2.5 py-3.5 rounded-[30px] w-48 font-bold text-[#1C1B17] text-center hover:-translate-y-1 duration-300'>Register Now</Link>
+        <Link href="/register?page=1" className={`${pathName === "/register" ? "bg-accentOrange text-white" : "bg-primaryYellow text-[#1C1B17]"} block lg:hidden px-2.5 py-3.5 rounded-[30px] w-48 font-bold text-center hover:-translate-y-1 duration-300`}>Register Now</Link>
       </div>
     </nav>
   );
