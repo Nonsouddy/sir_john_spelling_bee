@@ -18,8 +18,8 @@ module.exports = {
       colors: {
         accentOrange: "#EB8733",
         textGray: "#37372F",
-		primaryYellow: "#FEF506",
-		textBlack: "#1C1B17"
+        primaryYellow: "#FEF506",
+        textBlack: "#1C1B17",
       },
       fontFamily: {
         inter: ["var(--font-inter)"],

@@ -18,9 +18,9 @@ type InputProps = {
 
 const Input = ({ type, placeholder, label, id, value, onChange, pattern, title, widthClass = 'w-full', otherClass, required, autoComplete = 'off'}: InputProps) => {
     return (
-        <main className="flex flex-col gap-y-1 font-inter text-xs sm:text-sm xl:text-base">
+        <main className="flex flex-col gap-y-2 font-inter text-xs sm:text-sm xl:text-base">
             {label && (
-                <label className="font-semibold text-textBlack cursor-pointer" htmlFor={id}>
+                <label className="font-semibold cursor-pointer" htmlFor={id}>
                     {label}
                     {required && <span className="text-red-500">*</span>}
                 </label>

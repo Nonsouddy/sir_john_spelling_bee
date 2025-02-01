@@ -23,3 +23,9 @@ declare type ButtonProps = {
     onClick?: () => void;
     classNames?: string;
 };
+
+//Registration Toast
+declare type RegistrationToastProps = {
+    uniqueId: string
+    onClose: () => void
+}

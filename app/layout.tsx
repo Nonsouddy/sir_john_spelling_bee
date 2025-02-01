@@ -37,7 +37,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${comic_neue.variable} text-xs md:text-sm xl:text-base`} suppressHydrationWarning>
+      <body className={`${inter.variable} ${comic_neue.variable} text-xs md:text-sm xl:text-base text-textBlack`} suppressHydrationWarning>
         <ReactQueryProvider>
           <Navbar />
           {children}
