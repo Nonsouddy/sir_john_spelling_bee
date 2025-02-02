@@ -19,8 +19,8 @@ const page = () => {
   const page = parseInt(searchParams.get('page') || '1');
 
   return (
-    <main className='flex w-full h-dvh'>
-      <section className="lg:block hidden rounded-tr-[50px] rounded-br-[50px] lg:w-[40%] h-full">
+    <main className='flex h-fit'>
+      <section className="lg:block hidden rounded-tr-[50px] rounded-br-[50px] lg:w-[40%]">
         {page === 1 ?
           <Image src={regImg} alt='Registration Image' className='rounded-tr-[50px] rounded-br-[50px] w-full' />
           : page === 2 ?
@@ -29,7 +29,7 @@ const page = () => {
             <Image src={regImg} alt='Registration Image' className='rounded-tr-[50px] rounded-br-[50px] w-full' />
         }
       </section>
-      <section className='px-4 py-10 w-full lg:w-[60%] h-full overflow-y-auto'>
+      <section className='px-4 py-10 w-full lg:w-[60%]'>
         <div className='flex justify-center items-center'>
           <h1 className='font-bold font-comic text-2xl text-textBlack sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl'>Welcome!</h1>
           <div className='relative -ml-4'>

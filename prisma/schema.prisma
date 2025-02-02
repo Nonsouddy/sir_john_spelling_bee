@@ -32,6 +32,7 @@ model Contestants {
   schoolPhoneNumber  String
   tutorName          String
   tutorPhoneNumber   String
+  hasPaid            Boolean?
   createdAt          DateTime @default(now())
   updatedAt          DateTime @updatedAt
 }

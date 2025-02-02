@@ -1,11 +1,19 @@
 import { useState } from "react";
+import { toast } from "sonner";
 
 //Icons
-import { Whatsapp, TickCircle, Copy, CopySuccess } from "iconsax-react";
+import { Whatsapp, TickCircle, Copy, CopySuccess, CloseSquare } from "iconsax-react";
 
 export function RegistrationToast({ uniqueId, onClose }: RegistrationToastProps) {
 
-    const [copy, isCopied] = useState<boolean>(false)
+    const [copy, setCopy] = useState<boolean>(false);
+
+    //Functions
+    const copyText = () => {
+        navigator.clipboard.writeText(uniqueId);
+        toast.success(`${uniqueId} was copied clipboard.`)
+        setCopy(true);
+    }
 
     const handleWhatsAppClick = () => {
         window.open(`https://wa.me/your_number_here?text=My%20Unique%20ID%20is%20${uniqueId}`, "_blank")
@@ -18,7 +26,7 @@ export function RegistrationToast({ uniqueId, onClose }: RegistrationToastProps)
                     <TickCircle size="24" className="mr-2 text-white" />
                     <h3 className="font-semibold text-white">Registration Successful</h3>
                     <button onClick={onClose} className="ml-auto text-white hover:text-green-200">
-                        &times;
+                        <CloseSquare />
                     </button>
                 </div>
                 <div className="p-4">
@@ -29,7 +37,7 @@ export function RegistrationToast({ uniqueId, onClose }: RegistrationToastProps)
                     <div className="flex justify-between items-center">
                         <p className="mb-2 font-semibold text-gray-800">Your Unique ID: {uniqueId}</p>
                         {copy ?
-                            <Copy className="size-6" />
+                            <Copy className="size-6" onClick={copyText} />
                             :
                             <CopySuccess className="text-green-600 size-6" variant="Bold" />
                         }

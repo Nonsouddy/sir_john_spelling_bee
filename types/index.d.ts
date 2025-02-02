@@ -4,8 +4,8 @@ declare type StudentFormData = {
     studentFullName: string;
     studentEmail: string;
     studentPhoneNumber: string;
-    gender: "male" | "female";
-    studentDateOfBirth: Date;
+    gender: "male" | "female" | "";
+    studentDateOfBirth: string;
     studentClass: string;
     category: string;
     schoolName: string;
@@ -13,7 +13,7 @@ declare type StudentFormData = {
     schoolPhoneNumber: string;
     tutorName: string;
     tutorPhoneNumber: string;
-}
+};
 
 //Button
 declare type ButtonProps = {
