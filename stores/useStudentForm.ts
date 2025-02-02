@@ -1,13 +1,13 @@
 import { create } from "zustand"
 
 type StudentFormStore = {
-    formData: StudentFormData;
+    data: StudentFormData;
     updateField: (field: keyof StudentFormData, value: string) => void;
     resetForm: () => void;
 };
 
 export const useStudentFormStore = create<StudentFormStore>((set) => ({
-    formData: {
+    data: {
         studentFullName: "",
         studentEmail: "",
         studentPhoneNumber: "",
@@ -22,10 +22,10 @@ export const useStudentFormStore = create<StudentFormStore>((set) => ({
         tutorPhoneNumber: "",
     },
     updateField: (field, value) => set((state) => ({
-        formData: { ...state.formData, [field]: value }
+        data: { ...state.data, [field]: value }
     })),
     resetForm: () => set(() => ({
-        formData: {
+        data: {
             studentFullName: "",
             studentEmail: "",
             studentPhoneNumber: "",

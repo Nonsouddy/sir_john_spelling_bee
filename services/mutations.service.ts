@@ -4,8 +4,8 @@ import { useMutation } from "@tanstack/react-query";
 import { registerUserFn } from "./api.service";
 
 
-//Hook for the registration
-export function useAuthAdmin() {
+//Hook for the student registration
+export function useStudentRegistration() {
 
     return useMutation({
         mutationFn: (data: StudentFormData) => registerUserFn(data),
