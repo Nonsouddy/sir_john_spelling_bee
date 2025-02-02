@@ -1,5 +1,8 @@
 import { useSearchParams, useRouter } from 'next/navigation';
+import { toast } from 'sonner';
 
+//Stores
+import { useStudentFormStore } from '@/stores/useStudentForm';
 
 //Components
 import Input from '../Input';
@@ -32,9 +35,14 @@ const FirstForm = () => {
 
     const router = useRouter();
     const searchParams = useSearchParams();
+    const { formData, updateField } = useStudentFormStore();
 
     //Functions
     const updatePage = (newPage: number) => {
+        if (!formData.studentFullName || !formData.studentEmail || !formData.studentPhoneNumber || !formData.gender || !formData.studentDateOfBirth || !formData.studentClass || !formData.category) {
+            toast.warning("Please fill in all fields before proceeding.");
+            return;
+        }
         const params = new URLSearchParams(searchParams);
         params.set('page', newPage.toString());
         // Push the new URL with updated query parameters
@@ -44,13 +52,16 @@ const FirstForm = () => {
     return (
         <main className='font-inter'>
             <form action="" className='flex flex-col gap-y-5 px-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 py-10'>
-                <Input type='text' placeholder='First, Middle, Last Name' label='Full Name' id='fullName' autoComplete='off' required />
+                <Input type='text' placeholder='First, Middle, Last Name' label='Full Name' id='fullName' autoComplete='off' required value={formData.studentFullName}
+                    onChange={(e) => updateField("studentFullName", e.target.value)} />
                 <div className='flex justify-between gap-x-2 md:gap-x-3 xl:gap-x-5'>
                     <div className='w-[50%]'>
-                        <Input type='email' placeholder='Enter email address' label='Email' id='email' autoComplete='off' widthClass='w-full' required />
+                        <Input type='email' placeholder='Enter email address' label='Email' id='email' autoComplete='off' widthClass='w-full' required value={formData.studentEmail}
+                            onChange={(e) => updateField("studentEmail", e.target.value)} />
                     </div>
                     <div className='w-[50%]'>
-                        <Input type='tel' placeholder='000 000 0000' label='Phone Number' id='fullName' autoComplete='off' widthClass='w-full' required />
+                        <Input type='tel' placeholder='000 000 0000' label='Phone Number' id='fullName' autoComplete='off' widthClass='w-full' required value={formData.studentPhoneNumber}
+                            onChange={(e) => updateField("studentPhoneNumber", e.target.value)} />
                     </div>
                 </div>
                 <div className='flex justify-between items-center gap-x-2 md:gap-x-3 xl:gap-x-5'>
@@ -60,14 +71,16 @@ const FirstForm = () => {
                                 Gender
                                 <span className="text-red-500">*</span>
                             </label>
-                            <select name="gender" id="gender" className="border-[#6E6E5E] focus:border-0 px-2 xl:px-4 py-3 border rounded-[10px] duration-300 focus:outline-accentOrange focus:outline">
+                            <select name="gender" id="gender" className="border-[#6E6E5E] focus:border-0 px-2 xl:px-4 py-3 border rounded-[10px] duration-300 focus:outline-accentOrange focus:outline" value={formData.gender}
+                                onChange={(e) => updateField("gender", e.target.value)} >
                                 <option value="male">Male</option>
                                 <option value="female">Female</option>
                             </select>
                         </div>
                     </div>
                     <div className='w-[50%]'>
-                        <Input type='date' label='Date of Birth' id='dateOfBirth' autoComplete='off' widthClass='w-full' required />
+                        <Input type='date' label='Date of Birth' id='dateOfBirth' autoComplete='off' widthClass='w-full' required value={formData.studentDateOfBirth}
+                            onChange={(e) => updateField("studentDateOfBirth", e.target.value)} />
                     </div>
                 </div>
                 <div className='flex flex-col gap-y-2'>
@@ -75,7 +88,8 @@ const FirstForm = () => {
                         Class
                         <span className="text-red-500">*</span>
                     </label>
-                    <select name="class" id="class" className="border-[#6E6E5E] focus:border-0 px-2 xl:px-4 py-3 border rounded-[10px] duration-300 focus:outline-accentOrange focus:outline capitalize">
+                    <select name="class" id="class" className="border-[#6E6E5E] focus:border-0 px-2 xl:px-4 py-3 border rounded-[10px] duration-300 focus:outline-accentOrange focus:outline capitalize" value={formData.studentClass}
+                        onChange={(e) => updateField("studentClass", e.target.value)} >
                         {CLASS_OPTIONS.map((classes) => (
                             <option key={classes.class} value={classes.class}>{classes.class}</option>
                         ))}
@@ -86,7 +100,8 @@ const FirstForm = () => {
                         Category
                         <span className="text-red-500">*</span>
                     </label>
-                    <select name="class" id="class" className="border-[#6E6E5E] focus:border-0 px-2 xl:px-4 py-3 border rounded-[10px] duration-300 focus:outline-accentOrange focus:outline capitalize">
+                    <select name="category" id="category" className="border-[#6E6E5E] focus:border-0 px-2 xl:px-4 py-3 border rounded-[10px] duration-300 focus:outline-accentOrange focus:outline capitalize" value={formData.category}
+                        onChange={(e) => updateField("category", e.target.value)} >
                         {CATEGORY_OPTIONS.map((category) => (
                             <option key={category.category} value={category.category}>{category.category}</option>
                         ))}
