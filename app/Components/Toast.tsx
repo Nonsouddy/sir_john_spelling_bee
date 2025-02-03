@@ -22,7 +22,7 @@ export default function RegistrationToast({ uniqueId, onClose }: RegistrationToa
     return (
         <main className="z-[3] fixed inset-0 place-content-center grid bg-black/80">
             <div className="border-green-500 bg-white shadow-lg border rounded-lg min-w-[16rem] max-w-[30rem]">
-                <div className="flex items-center bg-green-500 px-4 py-2 rounded-t-lg">
+                <div className="flex items-center bg-green-500 px-4 py-3 rounded-t-lg">
                     <TickCircle variant="Bold" size="24" color="#FFF" className="mr-2" />
                     <h3 className="font-semibold text-white">Registration Successful</h3>
                     <button onClick={onClose} className="ml-auto">
@@ -34,7 +34,7 @@ export default function RegistrationToast({ uniqueId, onClose }: RegistrationToa
                         Congratulations! You have successfully registered. Please copy your unique ID and click the WhatsApp icon to
                         proceed with your payment.
                     </p>
-                    <div className="flex justify-between items-center my-2">
+                    <div className="flex justify-between items-center my-4">
                         <p className="mb-2 font-semibold text-gray-800">Your Unique ID: {uniqueId}</p>
                         {copy ?
                             <CopySuccess color="#16a34a" className="cursor-pointer size-6" variant="Bold" />

@@ -1,11 +1,20 @@
-import { Body, Container, Head, Heading, Hr, Html, Img, Section, Text } from "@react-email/components";
+import { Body, Container, Head, Heading, Hr, Html, Img, Section, Button, Text } from "@react-email/components";
+
+//Icons
+import { Whatsapp } from "iconsax-react";
 
 type uniqueProps = {
     uniqueId: string;
 }
 
 
+
 export default function RegisterTemplate({ uniqueId }: uniqueProps) {
+
+    const handleWhatsAppClick = () => { 
+        window.open(`https://wa.me/2348144118744?text=My%20Unique%20ID%20is%20${uniqueId}`, "_blank")
+    }
+
     return (
         <Html>
             <Head />
@@ -16,25 +25,29 @@ export default function RegisterTemplate({ uniqueId }: uniqueProps) {
                             <Img
                                 style={imageStyle}
                                 src={`https://res.cloudinary.com/dpmx02shl/image/upload/v1738560514/logo_lyf9ib.png`}
-                                width="60"
-                                height="60"
+                                width="50"
+                                height="50"
                                 alt="Sir John Spelling Bee Logo"
                             />
                         </Section>
                         <Section style={upperSection}>
                             <Heading style={h1}>Registration Confirmation</Heading>
                             <Text style={mainText}>
-                                Thank you for registering with our service. Your registration has been successfully processed. To complete your registration, please follow these steps:
+                                Thank you for registering for the Spelling Bee . Your registration has been successfully processed. To complete your registration, please follow these steps:
                             </Text>
                             <Hr className="!border-gray-300 mx-0 my-[8px] border border-solid w-full" />
                             <Section style={verificationSection}>
                                 <Text style={verifyText}>Unique ID</Text>
                                 <Text style={uniqueCode}>{uniqueId}</Text>
                             </Section>
-                            <Text style={text}>1. Copy your unique ID</Text>
-                            <Text style={text}>2. Click on the WhatsApp icon below to open a chat with our organizer.</Text>
-                            <Text style={text}>3. Paste your Unique ID into the message box.</Text>
-                            <Text style={text}>4. Follow the instructions provided by the organizer to make your payment.</Text>
+                            <Text style={list}>1. Copy your unique ID</Text>
+                            <Text style={list}>2. Click on the WhatsApp icon below to open a chat with our organizer.</Text>
+                            <Text style={list}>3. Paste your Unique ID into the message box.</Text>
+                            <Text style={list}>4. Follow the instructions provided by the organizer to make your payment.</Text>
+                            <Button onClick={handleWhatsAppClick} className="flex justify-center items-center bg-green-500 hover:bg-green-600 px-4 py-3 rounded w-full font-bold text-white">
+                                <Whatsapp size="20" variant="Bold" color="#FFF" className="mr-2" />
+                                Proceed to WhatsApp
+                            </Button>
                             <Hr className="!border-gray-300 mx-0 my-[8px] border border-solid w-full" />
                         </Section>
                         <Hr />
@@ -83,6 +96,14 @@ const text = {
     margin: "24px 0",
 };
 
+const list = {
+    color: "#333",
+    fontFamily:
+        "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
+    fontSize: "14px",
+    margin: "8px 0",
+};
+
 const imageSection = {
     backgroundColor: "#3a81ef",
     textAlign: "center" as const,
@@ -110,7 +131,6 @@ const verifyText = {
     ...text,
     margin: 0,
     fontWeight: "bold",
-    textAlign: "center" as const,
 };
 
 const uniqueCode = {

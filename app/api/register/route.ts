@@ -8,51 +8,60 @@ import { generateUserId } from './../../../lib/generateUserId';
 import { sendEmail } from '@/lib/email';
 import RegisterTemplate from '@/app/emails/Register';
 
+//Type
+import { Gender } from '@prisma/client';
+
 export async function POST(request: NextRequest) {
 
     const body = await request.json();
-
     try {
-
         const { studentFullName, studentEmail, studentPhoneNumber, gender, studentDateOfBirth, studentClass, category, schoolName, schoolLocation, schoolPhoneNumber, tutorName, tutorPhoneNumber } = body;
 
         if (!studentFullName || !studentEmail || !studentPhoneNumber || !gender || !studentDateOfBirth || !studentClass || !category || !schoolName || !schoolLocation || !schoolPhoneNumber || !tutorName || !tutorPhoneNumber) {
-            return new NextResponse("Incomplete student details, kindly complete the details and try again.", { status: 500 });
+            return new NextResponse("Incomplete student details, kindly complete the details and try again.", { status: 404 });
         }
 
-        const studentId = generateUserId();
+        let studentId: string;
 
-        //Create a new student registration
+        // Generate a unique studentId
+        do {
+            studentId = generateUserId();
+        } while (await prisma.contestants.findUnique({ where: { studentId } }));
+
+        //Create a new student registration 
         const newContestant = await prisma.contestants.create({
             data: {
                 studentId,
-                studentFullName,
-                studentEmail,
+                studentFullName: studentFullName.toLowerCase(),
+                studentEmail: studentEmail.toLowerCase(),
                 studentPhoneNumber,
-                gender,
-                studentDateOfBirth,
+                gender: gender.toLowerCase() as Gender,
+                studentDateOfBirth: studentDateOfBirth,
                 studentClass,
                 category,
-                schoolName,
-                schoolLocation,
+                schoolName: schoolName.toLowerCase(),
+                schoolLocation: schoolLocation.toLowerCase(),
                 schoolPhoneNumber,
-                tutorName,
+                tutorName: tutorName.toLowerCase(),
                 tutorPhoneNumber
             }
         })
-        
-        // Send the welcome email
+
+        // Generate Template
+        const emailTemplate = await render(RegisterTemplate({ uniqueId: studentId }));
+
+        // Send the registration email
         await sendEmail({
             to: studentEmail,
             subject: "Registration Confirmation",
-            html: await render(RegisterTemplate({ uniqueId: studentId })),
+            html: emailTemplate,
         });
 
         return NextResponse.json(newContestant);
 
-    } catch (error) {
-        console.error("Error creating a new contestant:", error);
+    } catch (error: any) {
 
+        console.error("Error creating a new contestant:", error.stack);
         if (error instanceof Error) {
             return new NextResponse(error.message);
         }

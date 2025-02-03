@@ -1,12 +1,10 @@
 "use client"
 
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
-import { SubmitHandler } from 'react-hook-form';
 
 //Stores and Hooks
 import { useStudentFormStore } from '@/stores/useStudentForm';
-import { useStudentRegistration } from '@/services/mutations.service';
 
 //Components
 import Button from "../Button";
@@ -16,13 +14,15 @@ import RegistrationToast from '../Toast';
 //Icons
 import { Back } from 'iconsax-react';
 import { toast } from 'sonner';
+import { makeApiRequest } from '@/lib/apiUtils';
 
 const SecondForm = () => {
 
     const router = useRouter();
     const searchParams = useSearchParams();
-    const [show, setShow] = useState<boolean>(true);
+    const [show, setShow] = useState<boolean>(false);
     const [userId, setUserId] = useState<string>("");
+    const [loading, setLoading] = useState<boolean>(false);
     const { data, updateField, resetForm } = useStudentFormStore();
 
 
@@ -36,24 +36,27 @@ const SecondForm = () => {
         router.push(`?${params.toString()}`);
     };
 
-    // TanStack Query mutation for user authentication
-    const registerStudent = useStudentRegistration();
-
     //OnSubmit Function
-    const onSubmit: SubmitHandler<StudentFormData> = (data) => {
+    const onSubmit = async (e: FormEvent) => {
+
+        e.preventDefault()
+        setLoading(true);
 
         if (!data.studentFullName || !data.studentEmail || !data.studentPhoneNumber || !data.gender || !data.studentDateOfBirth || !data.studentClass || !data.category || !data.schoolName || !data.schoolLocation || !data.schoolPhoneNumber || !data.tutorName || !data.tutorPhoneNumber) {
             toast.info("Incomplete student details, kindly complete the details and try again.");
             return
         }
-        registerStudent.mutate(data, {
+
+        await makeApiRequest("/register", "post", data, {
             onSuccess: (response) => {
                 setShow(true);
                 setUserId(response.data.studentId);
+                setLoading(false);
                 resetForm();
             },
             onError: () => {
                 toast.error("Couldn't register user please try again later.");
+                setLoading(false);
                 resetForm();
             },
         });
@@ -64,7 +67,7 @@ const SecondForm = () => {
             {show && <RegistrationToast onClose={toggleShow} uniqueId={userId} />}
             <main className="px-2 sm:px-4 md:px-6 lg:px-8 xl:px-10">
                 <p className="my-8 font-inter font-semibold text-base sm:text-lg md:text-xl xl:text-2xl">School Information</p>
-                <form action="" className="flex flex-col gap-y-5">
+                <form onSubmit={onSubmit} className="flex flex-col gap-y-5">
                     <Input type='text' placeholder='Enter school name' label='Name of School' id='schoolName' autoComplete='off' required value={data.schoolName}
                         onChange={(e) => updateField("schoolName", e.target.value)} />
                     <div className='flex justify-between gap-x-2 md:gap-x-3 xl:gap-x-5'>
@@ -82,7 +85,7 @@ const SecondForm = () => {
                         onChange={(e) => updateField("tutorName", e.target.value)} />
                     <Input type='tel' placeholder='000 000 0000' label='Phone Number' id='tutorPhoneNumber' autoComplete='off' widthClass='w-full' required value={data.tutorPhoneNumber}
                         onChange={(e) => updateField("tutorPhoneNumber", e.target.value)} />
-                    <Button type="submit" text="Register" loading={false} />
+                    <Button type="submit" text="Register" loading={loading} />
                 </form>
                 <div onClick={() => updatePage(1)} className='flex justify-end items-center cursor-pointer'>Go Back <Back color='#EB8733' className='size-6' variant='Bold' /></div>
             </main>

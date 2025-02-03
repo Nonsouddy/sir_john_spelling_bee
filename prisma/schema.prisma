@@ -24,7 +24,7 @@ model Contestants {
   studentEmail       String
   studentPhoneNumber String
   gender             Gender
-  studentDateOfBirth DateTime
+  studentDateOfBirth String
   studentClass       String
   category           String
   schoolName         String
@@ -32,7 +32,7 @@ model Contestants {
   schoolPhoneNumber  String
   tutorName          String
   tutorPhoneNumber   String
-  hasPaid            Boolean?
+  hasPaid            Boolean? @default(false)
   createdAt          DateTime @default(now())
   updatedAt          DateTime @updatedAt
 }

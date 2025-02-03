@@ -19,9 +19,9 @@ const CLASS_OPTIONS = [
     { class: 'jss 1' },
     { class: 'jss 2' },
     { class: 'jss 3' },
-    { class: 'ss1 1' },
-    { class: 'ss1 2' },
-    { class: 'ss1 3 ' },
+    { class: 'ss 1' },
+    { class: 'ss 2' },
+    { class: 'ss 3' },
 ];
 
 const CATEGORY_OPTIONS = [
@@ -39,6 +39,7 @@ const FirstForm = () => {
 
     //Functions
     const updatePage = (newPage: number) => {
+
         if (!data.studentFullName || !data.studentEmail || !data.studentPhoneNumber || !data.gender || !data.studentDateOfBirth || !data.studentClass || !data.category) {
             toast.warning("Please fill in all fields before proceeding.");
             return;
@@ -73,6 +74,7 @@ const FirstForm = () => {
                             </label>
                             <select name="gender" id="gender" className="border-[#6E6E5E] focus:border-0 px-2 xl:px-4 py-3 border rounded-[10px] duration-300 focus:outline-accentOrange focus:outline" value={data.gender}
                                 onChange={(e) => updateField("gender", e.target.value)} >
+                                <option value="">Select Your Gender</option>
                                 <option value="male">Male</option>
                                 <option value="female">Female</option>
                             </select>
@@ -88,8 +90,9 @@ const FirstForm = () => {
                         Class
                         <span className="text-red-500">*</span>
                     </label>
-                    <select name="class" id="class" className="border-[#6E6E5E] focus:border-0 px-2 xl:px-4 py-3 border rounded-[10px] duration-300 focus:outline-accentOrange focus:outline capitalize" value={data.studentClass}
+                    <select name="class" id="class" className="border-[#6E6E5E] focus:border-0 px-2 xl:px-4 py-3 border rounded-[10px] duration-300 focus:outline-accentOrange focus:outline uppercase" value={data.studentClass}
                         onChange={(e) => updateField("studentClass", e.target.value)} >
+                        <option value="">Select Your Class</option>
                         {CLASS_OPTIONS.map((classes) => (
                             <option key={classes.class} value={classes.class}>{classes.class}</option>
                         ))}
@@ -100,8 +103,9 @@ const FirstForm = () => {
                         Category
                         <span className="text-red-500">*</span>
                     </label>
-                    <select name="category" id="category" className="border-[#6E6E5E] focus:border-0 px-2 xl:px-4 py-3 border rounded-[10px] duration-300 focus:outline-accentOrange focus:outline capitalize" value={data.category}
-                        onChange={(e) => updateField("category", e.target.value)} >
+                    <select name="category" id="category" className="border-[#6E6E5E] focus:border-0 px-2 xl:px-4 py-3 border rounded-[10px] duration-300 focus:outline-accentOrange focus:outline uppercase" value={data.category}
+                        onChange={(e) => updateField("category", e.target.value)}>
+                        <option value="">Select Your Category</option>
                         {CATEGORY_OPTIONS.map((category) => (
                             <option key={category.category} value={category.category}>{category.category}</option>
                         ))}
