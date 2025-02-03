@@ -1,18 +1,6 @@
 "use client"
 import { useState } from 'react';
-import {
-  Users,
-  Package,
-  UserCog,
-  Image,
-  Calendar,
-  LogOut,
-  Mail,
-  Search,
-  Trash2,
-  Menu,
-  Link
-} from 'lucide-react';
+import { Users, Package, UserCog, Image as ImageIcon, Calendar, LogOut, Mail, Search, Trash2, Menu, Link } from 'lucide-react';
 import '@assets/css/dashboard.css'
 
 const Dashboard = () => {
@@ -76,7 +64,7 @@ const Dashboard = () => {
           {/* <h2>Admin Panel</h2> */}
         </div>
         <nav className="sidebar-nav">
-          <a href="/dashboard" className="nav-item active">
+          <a href="/dashboard" className="active nav-item">
             <Users size={20} />
             <span>Users</span>
           </a>
@@ -89,14 +77,14 @@ const Dashboard = () => {
             <span>Staff</span>
           </a>
           <a href="/adminGalleryPage" className="nav-item">
-            <Image size={20} />
+            <ImageIcon size={20} />
             <span>Gallery</span>
           </a>
           <a href="/eventManagementDashboard" className="nav-item">
             <Calendar size={20} />
             <span>Events</span>
           </a>
-          <a href="#" className="nav-item logout">
+          <a href="#" className="logout nav-item">
             <LogOut size={20} />
             <span>Logout</span>
           </a>

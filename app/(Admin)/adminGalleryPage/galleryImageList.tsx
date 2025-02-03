@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import Image from 'next/image';
+
+
 import '@assets/css/adminGallery.css'
 
 
@@ -41,7 +44,7 @@ export const GalleryImageList: React.FC<GalleryImageListProps> = ({
       ) : (
         images.map((image) => (
           <div key={image.id} className= "galleryImageItem">
-            <img 
+            <Image 
               src={image.url} 
               alt={image.description} 
               className= "galleryImage" 

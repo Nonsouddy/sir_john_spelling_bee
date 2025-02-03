@@ -2,7 +2,7 @@
 
 import React, { useState, useRef } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { FileDocument } from '../Type/Document';
+import { FileDocument } from '../app/Type/Document';
 import '@assets/css/material.css';
 
 const FileUploadForm: React.FC = () => {

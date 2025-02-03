@@ -1,6 +1,6 @@
 import Dashboard from './(Admin)/dashboard/page'
-import HomePage from './Components/HomePage'
-import MaintenancePage from './Components/MaintenancePage'
+import HomePage from '../components/HomePage'
+import MaintenancePage from '../components/MaintenancePage'
 
 
 function page() {

@@ -6,8 +6,8 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 //Images and Icons
-import logo from "../../public/Svgs/Logo.svg";
-import navHover from "../../public/Svgs/navHover.svg";
+import logo from "../public/Svgs/Logo.svg";
+import navHover from "../public/Svgs/navHover.svg";
 import { HambergerMenu } from 'iconsax-react';
 
 // Navigation Links Configuration

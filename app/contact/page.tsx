@@ -9,7 +9,7 @@ import Youtube from "../../public/Svgs/Youtube.svg"
 import Tiktok from "../../public/Svgs/Tiktok.svg"
 
 //Components
-import MaintenancePage from "../Components/MaintenancePage";
+import MaintenancePage from "../../components/MaintenancePage";
 
 
 const Contact = () => {

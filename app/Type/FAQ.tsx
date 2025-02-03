@@ -15,7 +15,7 @@ interface FAQItem {
 const faqData: FAQItem[] = [
   {
     id: 1,
-    question: "Who can participate in Sir John’/s Spelling Bee?",
+    question: "Who can participate in Sir John’s Spelling Bee?",
     answer:
       "Any pupil or student between the ages of 5 and 17 can participate. Participants are grouped into four categories: <ul><li>Early Spellers (Primary 1-2) </li><li>Upper Primary (Primary 3-5)</li><li> Junior Secondary (JSS 1-3)</li> <li>Senior Secondary (SS 1-3)</li></ul>",
   },
@@ -44,12 +44,12 @@ const FAQ: React.FC = () => {
   };
 
   return (
-    <div className="faq-container " id='faq-container'>
+    <div className="faq-container" id='faq-container'>
       <div className="faq-content">
         <div className=''>
           <div className="faq-sidebar">
-            <h2>Got Questions? We’ve Got Answers!</h2>
-            <p>Find answers to common questions about our services. Can't find what you're looking for? Contact our support team.</p>
+            <h2>Got Questions? We&apos;ve Got Answers!</h2>
+            <p>Find answers to common questions about our services. Can&apos;t find what you&apos;re looking for? Contact our support team.</p>
           </div>
           <div className='FAQ-bee-section'>
             <div className='bee_home'>

@@ -5,8 +5,8 @@ import { Toaster } from 'sonner';
 import ReactQueryProvider from './providers/TanstackQuery';
 
 //Components
-import Navbar from './Components/Navbar';
-import Footer from './Components/Footer';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 //Styles
 import './Style/globals.css';
@@ -27,7 +27,7 @@ const comic_neue = Comic_Neue({
 
 export const metadata: Metadata = {
   title: 'Spelling Bee',
-  description: 'Sit John Spelling Bee Web App',
+  description: 'Sir John Spelling Bee Web App',
 }
 
 export default function RootLayout({

@@ -18,7 +18,7 @@ import stake from '@assets/svg/Vector 2516.svg'
 import FAQPage from '../faq/page'
 
 //Components
-import MaintenancePage from '../Components/MaintenancePage'
+import MaintenancePage from '../../components/MaintenancePage'
 
 
 function About() {

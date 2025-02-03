@@ -33,7 +33,7 @@ const Footer = () => {
                             <span>Subscribe to Stay in the Loop! Never Miss a Buzz.</span>
                         </div>
                         <div className='newsletter-smallText'>
-                            <span>Be the first to get exciting updates, tips, and exclusive content from Sir John’s Spelling Bee!"</span>
+                            <span>Be the first to get exciting updates, tips, and exclusive content from Sir John&apos;s Spelling Bee!</span>
                         </div>
                     </div>
                     <div className='news-letter-input'>
@@ -123,7 +123,7 @@ const Footer = () => {
                 <div>
 
                     <div className='footer-copy'>  &copy;
-                        <div>AllRightReserved.2024,Deals</div> </div>
+                        <div>AllRightReserved. 2025, Deals</div> </div>
                 </div>
 
               

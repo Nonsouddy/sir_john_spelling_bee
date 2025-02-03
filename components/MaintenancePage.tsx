@@ -49,7 +49,7 @@ export default function MaintenancePage({ page }: { page: string }) {
                         <h1 className="font-black font-comic text-3xl text-gray-900 md:text-4xl xl:text-5xl dark:text-white">Coming Soon</h1>
                     </div>
                     <p className="text-gray-600 text-sm md:text-base xl:text-lg dark:text-gray-300">
-                        We're working hard to bring you something amazing. Our team is putting the finishing touches on this page.
+                        We&apos;re working hard to bring you something amazing. Our team is putting the finishing touches on this page.
                     </p>
 
                     <div className="flex justify-center items-center gap-2 text-gray-500 dark:text-gray-400">

@@ -1,10 +1,11 @@
 "use client"
 
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 
 //Components
-import FirstForm from '../Components/Registeration/FirstForm';
-import SecondForm from '../Components/Registeration/SecondForm';
+import FirstForm from '../../components/Registration/FirstForm';
+import SecondForm from '../../components/Registration/SecondForm';
 
 //Images and Icons
 import Image from 'next/image';
@@ -13,7 +14,7 @@ import regImg1 from '../../public/Svgs/Auth_img2.svg';
 import logo from '../../public/Svgs/Auth_logo.svg';
 import strike from '../../public/Svgs/Auth_strike.svg';
 
-const page = () => {
+const Page = () => {
 
   const searchParams = useSearchParams();
   const page = parseInt(searchParams.get('page') || '1');
@@ -47,4 +48,8 @@ const page = () => {
   );
 }
 
-export default page;
+export default function RegisterPage() {
+  <Suspense>
+    <Page />
+  </Suspense>
+};

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import "../Style/homePage.css"
 import Image from 'next/image'
-import FAQPage from '../faq/page'
+import FAQPage from '../app/faq/page'
 import Footer from './Footer'
 import Navbar from './Navbar'
 import HomeImg from "../../public/Svgs/homePageImg.svg"
