@@ -19,14 +19,14 @@ const page = () => {
   const page = parseInt(searchParams.get('page') || '1');
 
   return (
-    <main className='flex h-fit'>
-      <section className="lg:block hidden rounded-tr-[50px] rounded-br-[50px] lg:w-[40%]">
+    <main className='flex'>
+      <section className="lg:block hidden rounded-tr-[50px] rounded-br-[50px] w-full lg:w-[40%] h-dvh">
         {page === 1 ?
-          <Image src={regImg} alt='Registration Image' className='rounded-tr-[50px] rounded-br-[50px] w-full' />
+          <Image src={regImg} alt='Registration Image' className='rounded-tr-[50px] rounded-br-[50px] w-full h-dvh object-cover' />
           : page === 2 ?
-            <Image src={regImg1} alt='Registration Image' className='rounded-tr-[50px] rounded-br-[50px] w-full' />
+            <Image src={regImg1} alt='Registration Image' className='rounded-tr-[50px] rounded-br-[50px] w-full h-dvh object-cover' />
             :
-            <Image src={regImg} alt='Registration Image' className='rounded-tr-[50px] rounded-br-[50px] w-full' />
+            <Image src={regImg} alt='Registration Image' className='rounded-tr-[50px] rounded-br-[50px] w-full h-dvh object-cover' />
         }
       </section>
       <section className='px-4 py-10 w-full lg:w-[60%]'>

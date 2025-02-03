@@ -11,12 +11,12 @@ export default function RegistrationToast({ uniqueId, onClose }: RegistrationToa
     //Functions
     const copyText = () => {
         navigator.clipboard.writeText(uniqueId);
-        toast.success(`${uniqueId} was copied clipboard.`)
+        toast.success(`${uniqueId} was copied to your clipboard.`)
         setCopy(true);
     }
 
     const handleWhatsAppClick = () => {
-        window.open(`https://wa.me/your_number_here?text=My%20Unique%20ID%20is%20${uniqueId}`, "_blank")
+        window.open(`https://wa.me/2348144118744?text=My%20Contestant%20Unique%20ID%20is%20${uniqueId}`, "_blank")
     }
 
     return (
@@ -31,7 +31,7 @@ export default function RegistrationToast({ uniqueId, onClose }: RegistrationToa
                 </div>
                 <div className="p-4">
                     <p className="mb-2 text-gray-700">
-                        Congratulations! You have successfully registered. Please copy your unique ID and click the WhatsApp icon to
+                        Congratulations! You have successfully registered. Please copy your Contestant Unique ID and click the WhatsApp icon to
                         proceed with your payment.
                     </p>
                     <div className="flex justify-between items-center my-4">

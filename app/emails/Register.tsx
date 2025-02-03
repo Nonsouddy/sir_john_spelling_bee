@@ -1,7 +1,5 @@
-import { Body, Container, Head, Heading, Hr, Html, Img, Section, Button, Text } from "@react-email/components";
+import { Body, Container, Head, Heading, Hr, Html, Img, Section, Link, Text } from "@react-email/components";
 
-//Icons
-import { Whatsapp } from "iconsax-react";
 
 type uniqueProps = {
     uniqueId: string;
@@ -10,10 +8,6 @@ type uniqueProps = {
 
 
 export default function RegisterTemplate({ uniqueId }: uniqueProps) {
-
-    const handleWhatsAppClick = () => { 
-        window.open(`https://wa.me/2348144118744?text=My%20Unique%20ID%20is%20${uniqueId}`, "_blank")
-    }
 
     return (
         <Html>
@@ -37,17 +31,16 @@ export default function RegisterTemplate({ uniqueId }: uniqueProps) {
                             </Text>
                             <Hr className="!border-gray-300 mx-0 my-[8px] border border-solid w-full" />
                             <Section style={verificationSection}>
-                                <Text style={verifyText}>Unique ID</Text>
+                                <Text style={verifyText}>Contestant Unique ID</Text>
                                 <Text style={uniqueCode}>{uniqueId}</Text>
                             </Section>
-                            <Text style={list}>1. Copy your unique ID</Text>
+                            <Text style={list}>1. Copy your contestant unique ID</Text>
                             <Text style={list}>2. Click on the WhatsApp icon below to open a chat with our organizer.</Text>
                             <Text style={list}>3. Paste your Unique ID into the message box.</Text>
                             <Text style={list}>4. Follow the instructions provided by the organizer to make your payment.</Text>
-                            <Button onClick={handleWhatsAppClick} className="flex justify-center items-center bg-green-500 hover:bg-green-600 px-4 py-3 rounded w-full font-bold text-white">
-                                <Whatsapp size="20" variant="Bold" color="#FFF" className="mr-2" />
+                            <Link href={`https://wa.me/2348144118744?text=My%20Contestant%20Unique%20ID%20is%20${uniqueId}`} style={button}>
                                 Proceed to WhatsApp
-                            </Button>
+                            </Link>
                             <Hr className="!border-gray-300 mx-0 my-[8px] border border-solid w-full" />
                         </Section>
                         <Hr />
@@ -86,6 +79,18 @@ const h1 = {
     fontSize: "20px",
     fontWeight: "bold",
     marginBottom: "15px",
+};
+
+const button = {
+    backgroundColor: "#4FCE5D",
+    width: "100%",
+    padding: "12px 20px",
+    borderRadius: "16px",
+    margin: "16px 0", 
+    color: "#FFF",
+    fontFamily:
+        "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
+    fontSize: "14px",
 };
 
 const text = {

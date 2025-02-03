@@ -53,6 +53,7 @@ const SecondForm = () => {
                 setUserId(response.data.studentId);
                 setLoading(false);
                 resetForm();
+                updatePage(1);
             },
             onError: () => {
                 toast.error("Couldn't register user please try again later.");
