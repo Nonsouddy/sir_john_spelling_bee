@@ -1,9 +1,12 @@
 import { prisma } from '@/lib/prismadb';
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
+import { render } from '@react-email/components';
 
-//Libs
+//Libs and Templates
 import { generateUserId } from './../../../lib/generateUserId';
+import { sendEmail } from '@/lib/email';
+import RegisterTemplate from '@/app/emails/Register';
 
 export async function POST(request: NextRequest) {
 
@@ -37,6 +40,13 @@ export async function POST(request: NextRequest) {
                 tutorPhoneNumber
             }
         })
+        
+        // Send the welcome email
+        await sendEmail({
+            to: studentEmail,
+            subject: "Registration Confirmation",
+            html: await render(RegisterTemplate({ uniqueId: studentId })),
+        });
 
         return NextResponse.json(newContestant);
 

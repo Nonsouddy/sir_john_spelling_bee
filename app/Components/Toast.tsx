@@ -4,7 +4,7 @@ import { toast } from "sonner";
 //Icons
 import { Whatsapp, TickCircle, Copy, CopySuccess, CloseSquare } from "iconsax-react";
 
-export function RegistrationToast({ uniqueId, onClose }: RegistrationToastProps) {
+export default function RegistrationToast({ uniqueId, onClose }: RegistrationToastProps) {
 
     const [copy, setCopy] = useState<boolean>(false);
 
@@ -20,13 +20,13 @@ export function RegistrationToast({ uniqueId, onClose }: RegistrationToastProps)
     }
 
     return (
-        <main className="z-[3] fixed inset-0 place-content-center grid bg-black/70">
-            <div className="border-green-500 bg-white shadow-lg border rounded-lg min-w-[16rem] max-w-96">
-                <div className="flex items-center bg-green-500 px-4 py-2">
-                    <TickCircle size="24" className="mr-2 text-white" />
+        <main className="z-[3] fixed inset-0 place-content-center grid bg-black/80">
+            <div className="border-green-500 bg-white shadow-lg border rounded-lg min-w-[16rem] max-w-[30rem]">
+                <div className="flex items-center bg-green-500 px-4 py-2 rounded-t-lg">
+                    <TickCircle variant="Bold" size="24" color="#FFF" className="mr-2" />
                     <h3 className="font-semibold text-white">Registration Successful</h3>
-                    <button onClick={onClose} className="ml-auto text-white hover:text-green-200">
-                        <CloseSquare />
+                    <button onClick={onClose} className="ml-auto">
+                        <CloseSquare color="#FFF" variant="Bold" className="size-4 md:size-5 xl:size-6" />
                     </button>
                 </div>
                 <div className="p-4">
@@ -34,16 +34,16 @@ export function RegistrationToast({ uniqueId, onClose }: RegistrationToastProps)
                         Congratulations! You have successfully registered. Please copy your unique ID and click the WhatsApp icon to
                         proceed with your payment.
                     </p>
-                    <div className="flex justify-between items-center">
+                    <div className="flex justify-between items-center my-2">
                         <p className="mb-2 font-semibold text-gray-800">Your Unique ID: {uniqueId}</p>
                         {copy ?
-                            <Copy className="size-6" onClick={copyText} />
+                            <CopySuccess color="#16a34a" className="cursor-pointer size-6" variant="Bold" />
                             :
-                            <CopySuccess className="text-green-600 size-6" variant="Bold" />
+                            <Copy color="#000" className="cursor-pointer size-6" onClick={copyText} />
                         }
                     </div>
                     <button onClick={handleWhatsAppClick} className="flex justify-center items-center bg-green-500 hover:bg-green-600 px-4 py-2 rounded w-full font-bold text-white">
-                        <Whatsapp size="20" className="mr-2" />
+                        <Whatsapp size="20" variant="Bold" color="#FFF" className="mr-2" />
                         Proceed to WhatsApp
                     </button>
                     <p className="mt-2 text-[10px] text-red-500 xl:text-sm md:text-xs">
