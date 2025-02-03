@@ -1,7 +1,7 @@
 "use client"
 
-import { useSearchParams } from 'next/navigation';
-import { Suspense } from 'react';
+
+import { Usable, use } from "react"
 
 //Components
 import FirstForm from '../../components/Registration/FirstForm';
@@ -14,10 +14,9 @@ import regImg1 from '../../public/Svgs/Auth_img2.svg';
 import logo from '../../public/Svgs/Auth_logo.svg';
 import strike from '../../public/Svgs/Auth_strike.svg';
 
-const Page = () => {
-
-  const searchParams = useSearchParams();
-  const page = parseInt(searchParams.get('page') || '1');
+const Page = (props: { params: Usable<unknown>; searchParams: Usable<unknown>; }) => {
+  const searchParams: any = use(props.searchParams)
+  const page = parseInt(searchParams.page ?? "1");
 
   return (
     <main className='flex'>
@@ -48,8 +47,4 @@ const Page = () => {
   );
 }
 
-export default function RegisterPage() {
-  <Suspense>
-    <Page />
-  </Suspense>
-};
+export default Page;
