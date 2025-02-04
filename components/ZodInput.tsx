@@ -36,9 +36,9 @@ const ZodInput = <T extends FieldValues>({
     autoComplete = 'off',
 }: InputProps<T>) => {
     return (
-        <main className="flex flex-col gap-y-1 text-xs sm:text-sm xl:text-base">
+        <main className="flex flex-col gap-y-1 w-full text-xs sm:text-sm xl:text-base">
             {label && (
-                <label className="cursor-pointer" htmlFor={id}>
+                <label className="text-white cursor-pointer" htmlFor={id}>
                     {label}
                     {required && <span className="text-red-500">*</span>}
                 </label>
@@ -53,7 +53,7 @@ const ZodInput = <T extends FieldValues>({
                 pattern={pattern}
                 title={title}
                 autoComplete={autoComplete}
-                className={`px-2 xl:px-4 py-3 border rounded-[4px] border-[#E8E8E8] duration-300 focus:outline-burntOrange focus:outline focus:border-0 ${widthClass} ${otherClass}`}
+                className={`px-2 xl:px-4 py-3 border rounded-[10px] border-[#6E6E5E] duration-300 focus:outline-accentOrange focus:outline focus:border-0 ${widthClass} ${otherClass}`}
                 required={required}
             />
         </main>

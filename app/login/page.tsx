@@ -2,13 +2,11 @@
 import LoginForm from "@/components/Auth/LoginForm";
 
 const page = () => {
-    return ( 
-        <main className="place-content-center grid bg-black">
-            <section className="bg-gray-800 rounded-2xl">
-                <LoginForm />
-            </section>
+    return (
+        <main className="place-content-center grid bg-black h-dvh">
+            <LoginForm />
         </main>
-     );
+    );
 }
- 
+
 export default page;
