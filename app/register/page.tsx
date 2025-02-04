@@ -14,7 +14,7 @@ import regImg1 from '../../public/Svgs/Auth_img2.svg';
 import logo from '../../public/Svgs/Auth_logo.svg';
 import strike from '../../public/Svgs/Auth_strike.svg';
 
-const Page = (props: { params: Usable<unknown>; searchParams: Usable<unknown>; }) => {
+const Page = (props: any) => {
   const searchParams: any = use(props.searchParams)
   const page = parseInt(searchParams.page ?? "1");
 
