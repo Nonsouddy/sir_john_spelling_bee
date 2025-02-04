@@ -35,7 +35,7 @@ export async function POST(request: NextRequest) {
                 studentFullName: studentFullName.toLowerCase(),
                 studentEmail: studentEmail.toLowerCase(),
                 studentPhoneNumber,
-                gender: gender.toLowerCase() as Gender,
+                gender: gender as Gender,
                 studentDateOfBirth: studentDateOfBirth,
                 studentClass,
                 category,

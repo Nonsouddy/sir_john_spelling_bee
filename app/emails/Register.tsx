@@ -1,12 +1,9 @@
-import { Body, Container, Head, Heading, Hr, Html, Img, Section, Link, Text } from "@react-email/components";
-import Image from "next/image";
+import { Body, Container, Head, Heading, Hr, Html, Section, Img, Link, Text } from "@react-email/components";
 
 
 type uniqueProps = {
     uniqueId: string;
 }
-
-
 
 export default function RegisterTemplate({ uniqueId }: uniqueProps) {
 
@@ -17,7 +14,7 @@ export default function RegisterTemplate({ uniqueId }: uniqueProps) {
                 <Container style={container}>
                     <Section style={coverSection}>
                         <Section style={imageSection}>
-                            <Image
+                            <Img
                                 style={imageStyle}
                                 src={`https://res.cloudinary.com/dpmx02shl/image/upload/v1738560514/logo_lyf9ib.png`}
                                 width="50"

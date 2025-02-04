@@ -63,7 +63,7 @@ const LoginForm = () => {
                         <ZodInput type={seePassword ? "text" : "password"} placeholder="Enter your password" onChange={(e: any) => setPassword(e.target.value)} id="password" name="password" register={register} required={true} label="Password" />
                         {errors.password && <ErrorText message={errors.password.message as string} />}
                     </div>
-                    <div className="top-7 md:top-8 xl:top-9 right-1 absolute bg-blue-300 p-1 md:p-1.5 xl:p-2 rounded-md cursor-pointer" onClick={toggleShowPassword}>
+                    <div className="top-[1.85rem] md:top-[2.1rem] xl:top-[2.35rem] right-2 absolute bg-blue-300 p-1 md:p-1.5 xl:p-2 rounded-md cursor-pointer" onClick={toggleShowPassword}>
                         {seePassword ? <Lock color="#000" size={20} /> : <Unlock color="#000" size={20} />}
                     </div>
                 </div>

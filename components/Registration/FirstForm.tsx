@@ -72,7 +72,7 @@ const FirstForm = () => {
                                 Gender
                                 <span className="text-red-500">*</span>
                             </label>
-                            <select name="gender" id="gender" className="border-[#6E6E5E] focus:border-0 px-2 xl:px-4 py-3 border rounded-[10px] duration-300 focus:outline-accentOrange focus:outline" value={data.gender}
+                            <select name="gender" id="gender" className="border-[#6E6E5E] focus:border-0 bg-inherit px-2 xl:px-4 py-3 border rounded-[10px] duration-300 focus:outline-accentOrange focus:outline" value={data.gender}
                                 onChange={(e) => updateField("gender", e.target.value)} >
                                 <option value="">Select Your Gender</option>
                                 <option value="male">Male</option>
@@ -90,7 +90,7 @@ const FirstForm = () => {
                         Class
                         <span className="text-red-500">*</span>
                     </label>
-                    <select name="class" id="class" className="border-[#6E6E5E] focus:border-0 px-2 xl:px-4 py-3 border rounded-[10px] duration-300 focus:outline-accentOrange focus:outline uppercase" value={data.studentClass}
+                    <select name="class" id="class" className="border-[#6E6E5E] focus:border-0 bg-inherit px-2 xl:px-4 py-3 border rounded-[10px] duration-300 focus:outline-accentOrange focus:outline uppercase" value={data.studentClass}
                         onChange={(e) => updateField("studentClass", e.target.value)} >
                         <option value="">Select Your Class</option>
                         {CLASS_OPTIONS.map((classes) => (
@@ -103,7 +103,7 @@ const FirstForm = () => {
                         Category
                         <span className="text-red-500">*</span>
                     </label>
-                    <select name="category" id="category" className="border-[#6E6E5E] focus:border-0 px-2 xl:px-4 py-3 border rounded-[10px] duration-300 focus:outline-accentOrange focus:outline uppercase" value={data.category}
+                    <select name="category" id="category" className="border-[#6E6E5E] focus:border-0 bg-inherit px-2 xl:px-4 py-3 border rounded-[10px] duration-300 focus:outline-accentOrange focus:outline uppercase" value={data.category}
                         onChange={(e) => updateField("category", e.target.value)}>
                         <option value="">Select Your Category</option>
                         {CATEGORY_OPTIONS.map((category) => (
