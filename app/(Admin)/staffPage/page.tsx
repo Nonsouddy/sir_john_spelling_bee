@@ -223,7 +223,7 @@ const AdminStaffManagement: React.FC = () => {
   const handleCreateAdmin = (adminData: Omit<Admin, 'id' | 'status' | 'createdAt'>) => {
     const newAdmin: Admin = {
       ...adminData,
-      id: Math.random().toString(36).substr(2, 9),
+      id: "12",
       status: 'active',
       createdAt: new Date()
     };

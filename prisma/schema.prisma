@@ -1,0 +1,49 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+//Schemas
+model Admin {
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
+  email          String    @unique
+  hashedPassword String
+  role           AdminRole @default(super_admin)
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+}
+
+model Contestants {
+  id                 String   @id @default(auto()) @map("_id") @db.ObjectId
+  studentId          String   @unique
+  studentFullName    String
+  studentEmail       String
+  studentPhoneNumber String
+  gender             Gender
+  studentDateOfBirth String
+  studentClass       String
+  category           String
+  schoolName         String
+  schoolLocation     String
+  schoolPhoneNumber  String
+  tutorName          String
+  tutorPhoneNumber   String
+  hasPaid            Boolean? @default(false)
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+}
+
+//Enums
+enum AdminRole {
+  admin
+  super_admin
+}
+
+enum Gender {
+  male
+  female
+}

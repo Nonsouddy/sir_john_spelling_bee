@@ -2,7 +2,7 @@
 
 import React, { useState, useRef } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { FileDocument } from '../Type/Document';
+import { FileDocument } from '../app/Type/Document';
 import '@assets/css/material.css';
 
 const FileUploadForm: React.FC = () => {
@@ -16,7 +16,7 @@ const FileUploadForm: React.FC = () => {
         id: uuidv4(),
         name: file.name,
         uploadDate: new Date(),
-        accessCode: Math.random().toString(36).substring(7),
+        accessCode: "14",
         fileType: file.type,
         size: file.size,
         url: URL.createObjectURL(file)
@@ -56,18 +56,18 @@ const FileUploadForm: React.FC = () => {
       
 
       {files.length > 0 && (
-        <div className="file-list mt-4">
+        <div className="mt-4 file-list">
           {files.map(file => (
             <div 
            
               key={file.id} 
-              className="file-item flex justify-between items-center p-2 border-b border-t"
+              className="flex justify-between items-center p-2 border-t border-b file-item"
             >
              
 
               <div>
                 <p>{file.name}</p>
-                <p className="text-sm text-gray-500">
+                <p className="text-gray-500 text-sm">
                   Access Code: {file.accessCode}
                 </p>
               </div>

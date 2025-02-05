@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import '@assets/css/adminGallery.css'
+import Image from 'next/image';
 
 interface GalleryUploadFormProps {
   onImageUpload: (file: File, description: string) => Promise<void>;
@@ -49,7 +50,7 @@ export const GalleryUploadForm: React.FC<GalleryUploadFormProps> = ({
       <div className= "formGroup">
         <label htmlFor="imageUpload" className="fileInputLabel">
           {previewImage ? (
-            <img 
+            <Image 
               src={previewImage} 
               alt="Preview" 
               className= "imagePreview"

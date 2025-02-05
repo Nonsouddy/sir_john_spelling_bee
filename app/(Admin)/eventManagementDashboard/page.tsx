@@ -69,7 +69,7 @@ const EventManagementDashboard: React.FC = () => {
   const handleAddEvent = () => {
     if (validateForm()) {
       const eventToAdd: Event = {
-        id: `event_${Date.now()}`,
+        id: `event_`,
         ...newEvent,
         createdAt: new Date()
       };

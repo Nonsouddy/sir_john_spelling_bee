@@ -1,30 +1,16 @@
-import React from 'react'
 import Dashboard from './(Admin)/dashboard/page'
-import HomePage from './components/HomePage'
-
-
-
-
-
-
+import HomePage from '../components/HomePage'
+import MaintenancePage from '../components/MaintenancePage'
 
 
 function page() {
   return (
     <>
-<HomePage/>
- 
-  {/* <Dashboard/> */}
+      <MaintenancePage page="Home Page" />
+      {/* <HomePage /> */}
+      {/* <Dashboard/> */}
+    </>
 
-
-
-
-
-
-  
-
-  </>
-   
   )
 }
 
