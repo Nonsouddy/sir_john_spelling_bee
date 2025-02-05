@@ -6,9 +6,9 @@ import MaintenancePage from '../components/MaintenancePage'
 function page() {
   return (
     <>
-      <MaintenancePage page="Home Page" />
+      {/* <MaintenancePage page="Home Page" /> */}
       {/* <HomePage /> */}
-      {/* <Dashboard/> */}
+      <Dashboard/>
     </>
 
   )

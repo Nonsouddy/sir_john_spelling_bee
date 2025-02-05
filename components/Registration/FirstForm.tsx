@@ -10,12 +10,12 @@ import Button from '../Button';
 
 // Predefined options for dropdowns
 const CLASS_OPTIONS = [
-    { class: 'elementary 1' },
-    { class: 'elementary 2' },
-    { class: 'elementary 3' },
-    { class: 'elementary 4' },
-    { class: 'elementary 5' },
-    { class: 'elementary 6' },
+    { class: 'primary 1' },
+    { class: 'primary 2' },
+    { class: 'primary 3' },
+    { class: 'primary 4' },
+    { class: 'primary 5' },
+    { class: 'primary 6' },
     { class: 'jss 1' },
     { class: 'jss 2' },
     { class: 'jss 3' },

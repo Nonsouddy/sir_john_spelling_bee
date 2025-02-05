@@ -20,6 +20,8 @@ module.exports = {
         textGray: "#37372F",
         primaryYellow: "#FEF506",
         textBlack: "#1C1B17",
+        emailButton: "#2ecc71",
+        emailButtonHover: "#209f55",
       },
       fontFamily: {
         inter: ["var(--font-inter)"],
