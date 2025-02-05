@@ -80,7 +80,6 @@ const ContactPage = () => {
                 className="mt-1 block w-full rounded-md border-gray-300 outline-none shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
               />
             </div>
-            {/* handle massege sent to admin email */}
             <button
               type="submit"
               className="w-full bg-emailButton text-white py-3 px-4 rounded-md hover:bg-emailButtonHover transition-colors"
