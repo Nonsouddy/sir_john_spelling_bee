@@ -111,11 +111,11 @@ const Footer: React.FC = () => {
                 <div className="footer-social">
                     <div className="social-icon">
                         <Link href="https://www.facebook.com/profile.php?id=61560930817507" target="_blank" rel="noopener noreferrer"><Image src={FaceBook} alt='' /></Link>
-                        <Link href="https://x.com" target="_blank" rel="noopener noreferrer"><Image src={x} alt='' /> </Link>
-                        <Link href="https://tiktok.com" target="_blank" rel="noopener noreferrer" ><Image src={Tiktok} alt='' /> </Link>
-                        <Link href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer"><Image src={WhatsApp} alt='' /> </Link>
-                        <Link href="https://youtube.com" target="_blank" rel="noopener noreferrer"><Image src={Youtube} alt='' /></Link>
-                        <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer"><Image src={Insta} alt='' /></Link>
+                        <Link href="https://x.com/sjs_bee?s=09" target="_blank" rel="noopener noreferrer"><Image src={x} alt='' /> </Link>
+                        <Link href="https://vm.tiktok.com/ZMk42sQCk/" target="_blank" rel="noopener noreferrer" ><Image src={Tiktok} alt='' /> </Link>
+                        <Link href="https://wa.me/2348144118744" target="_blank" rel="noopener noreferrer"><Image src={WhatsApp} alt='' /> </Link>
+                        <Link href="https://youtube.com/@sirjohnspellingbee-l2m?si=clWYl_3rT7HRFQgH" target="_blank" rel="noopener noreferrer"><Image src={Youtube} alt='' /></Link>
+                        <Link href="https://www.instagram.com/sjspellingbee?utm_source=qr&igsh=aW1scDEwcGo3OW1j" target="_blank" rel="noopener noreferrer"><Image src={Insta} alt='' /></Link>
                         {/* <a href="#" className="social-icon"> <Image src={Tiktok} alt=''/>Instagram</a> */}
                     </div>
                 </div>
