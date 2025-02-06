@@ -2,8 +2,9 @@
 
 import { usePathname } from "next/navigation";
 
-//Icons
-import { ArrowRight2 } from "iconsax-react";
+//Libs and Icons
+import { formatSubheading } from "@/lib/format";
+import { ArrowRight2, LogoutCurve } from "iconsax-react";
 
 const AdminHeader = () => {
 
@@ -17,9 +18,12 @@ const AdminHeader = () => {
                 <p><ArrowRight2 size="18" color="#6b7280" /></p>
                 <p className="font-semibold text-white capitalize">{updatedPathname}</p>
             </div>
-            <div className="flex flex-col gap-y-5 mt-8">
-                <p className="font-semibold text-textLight text-xl md:text-2xl xl:text-3xl capitalize">{updatedPathname}</p>
-
+            <div className="flex flex-col gap-y-2 mt-8 text-textLight">
+                <div className="flex justify-between items-center">
+                    <p className="font-semibold text-xl md:text-2xl xl:text-3xl capitalize">{updatedPathname}</p>
+                    <p className="inline-flex gap-x-1 lg:hidden font-bold text-red-400 cursor-pointer"><LogoutCurve color="#f87171" size={18} variant="Bold" /><span>Logout</span></p>
+                </div>
+                <p>{formatSubheading(updatedPathname)}</p>
             </div>
         </main>
     );
