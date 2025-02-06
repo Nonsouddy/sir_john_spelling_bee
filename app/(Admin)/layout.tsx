@@ -7,6 +7,7 @@ import getAdmin from "@/actions/fetch/getAdmin";
 //Components
 import DownBar from "@/components/Downbar";
 import SideBar from "@/components/SideBar";
+import AdminHeader from "@/components/AdminHeader";
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
 
@@ -20,9 +21,12 @@ export default async function AdminLayout({ children }: { children: React.ReactN
 
 
     return (
-        <main className="h-dvh overflow-y-auto" suppressHydrationWarning>
+        <main className="bg-black h-dvh font-inter overflow-y-auto" suppressHydrationWarning>
             <section className="mainWidth">
-                {children}
+                <AdminHeader />
+                <div className="px-2 sm:px-3 md:px-4 lg:px-2 xl:px-4 2xl:px-6">
+                    {children}
+                </div>
             </section>
             <div className="lg:block hidden"><SideBar role={currentAdmin.role} /></div>
             <div className="lg:hidden"><DownBar role={currentAdmin.role} /></div>

@@ -20,6 +20,8 @@ module.exports = {
         textGray: "#37372F",
         primaryYellow: "#FEF506",
         textBlack: "#1C1B17",
+        lightBlack: "#262626",
+        textLight: "#C8C8C9",
         emailButton: "#2ecc71",
         emailButtonHover: "#209f55",
       },
