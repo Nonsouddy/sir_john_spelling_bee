@@ -1,7 +1,7 @@
 "use client"
 
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+// import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 //Tanstack Query Client Settings
 const queryClient = new QueryClient({
@@ -18,7 +18,7 @@ export default function ReactQueryProvider({ children }: { children: React.React
     return (
         <QueryClientProvider client={queryClient}>
             {children}
-            <ReactQueryDevtools initialIsOpen={false} />
+            {/* <ReactQueryDevtools initialIsOpen={false} /> */}
         </QueryClientProvider>
     );
 }

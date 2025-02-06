@@ -29,6 +29,6 @@
       "@assets/img/*":["./public/images/*"],
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/(Admin)/user_table.tsx", "app/(Admin)/users.tsx", "app/(Admin)/AdminGalleryPage", "app/(Admin)/materialPage/page.tsx", "app/(Admin)/dashboard/page.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/(Admin)/user_table.tsx", "app/(Admin)/users.tsx", "app/(Admin)/gallery", "app/(Admiapp/(Admin)/materials/page.tsxAdmin)/admin/dashboard/page.tsx"],
   "exclude": ["node_modules"]
 }

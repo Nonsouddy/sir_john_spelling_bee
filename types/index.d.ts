@@ -26,6 +26,25 @@ declare type ButtonProps = {
 
 //Registration Toast
 declare type RegistrationToastProps = {
-    uniqueId: string
-    onClose: () => void
+    uniqueId: string;
+    onClose: () => void;
+}
+
+//Admin Details
+declare type Admin = {
+    email: string;
+    hashedPassword: string;
+    role: string;
+    id: string;
+    suspended: boolean;
+    createdAt: Date;
+    updatedAt: Date;
+}
+
+//DownBar and SideBar NavItem
+declare type NavItem = {
+    href: string;
+    icon: React.ElementType;
+    currentPath: string;
+    label: string;
 }

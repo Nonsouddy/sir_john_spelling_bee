@@ -4,10 +4,6 @@ import { Comic_Neue } from 'next/font/google';
 import { Toaster } from 'sonner';
 import ReactQueryProvider from './providers/TanstackQuery';
 
-//Components
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-
 //Styles
 import './Style/globals.css';
 
@@ -41,9 +37,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} ${comic_neue.variable} text-xs md:text-sm xl:text-base text-textBlack`} suppressHydrationWarning>
         <ReactQueryProvider>
-          <Navbar />
           {children}
-          {/* <Footer /> */}
           <Toaster theme="system" richColors={true} position="top-right" closeButton={true} />
         </ReactQueryProvider>
       </body>

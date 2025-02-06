@@ -80,6 +80,7 @@ const h1 = {
 };
 
 const button = {
+    display: "block",
     backgroundColor: "#4FCE5D",
     width: "100%",
     padding: "12px 20px",
