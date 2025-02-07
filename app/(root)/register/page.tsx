@@ -9,10 +9,10 @@ import SecondForm from '../../../components/Registration/SecondForm';
 
 //Images and Icons
 import Image from 'next/image';
-import regImg from '../../public/Svgs/Auth_image1.svg';
-import regImg1 from '../../public/Svgs/Auth_img2.svg';
-import logo from '../../public/Svgs/Auth_logo.svg';
-import strike from '../../public/Svgs/Auth_strike.svg';
+import regImg from '../../../public/Svgs/Auth_image1.svg';
+import regImg1 from '../../../public/Svgs/Auth_img2.svg';
+import logo from '../../../public/Svgs/Auth_logo.svg';
+import strike from '../../../public/Svgs/Auth_strike.svg';
 
 const Page = (props: any) => {
   const searchParams: any = use(props.searchParams)
