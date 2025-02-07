@@ -1,12 +1,12 @@
 "use client"
 import { useState } from 'react';
 import Image from 'next/image';
-import Facebook from "../../public/Svgs/FaceBook.svg"
-import Twitter from "../../public/Svgs/X.svg"
-import WhatsApp from "../../public/Svgs/Whatsapp.svg"
-import Insta from "../../public/Svgs/Instagram.svg"
-import Youtube from "../../public/Svgs/Youtube.svg"
-import Tiktok from "../../public/Svgs/Tiktok.svg"
+import Facebook from "../../../public/Svgs/FaceBook.svg";
+import Twitter from "../../../public/Svgs/X.svg";
+import WhatsApp from "../../../public/Svgs/Whatsapp.svg";
+import Insta from "../../../public/Svgs/Instagram.svg";
+import Youtube from "../../../public/Svgs/Youtube.svg";
+import Tiktok from "../../../public/Svgs/Tiktok.svg";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -30,16 +30,16 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8 font-comic ">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 ">
+    <div className="bg-gray-100 px-4 sm:px-6 lg:px-8 py-12 min-h-screen font-comic">
+      <div className="gap-8 grid md:grid-cols-2 mx-auto max-w-7xl">
         {/* Contact Form */}
-        <div className="bg-white shadow-lg rounded-lg p-8">
-          <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">
+        <div className="bg-white shadow-lg p-8 rounded-lg">
+          <h2 className="mb-6 font-bold text-3xl text-center text-gray-800">
             Contact Us
           </h2>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="name" className="block font-medium text-gray-700 text-sm">
                 Name
               </label>
               <input
@@ -49,11 +49,11 @@ const ContactPage = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="mt-1 pl-2 block w-full rounded-md border-gray-300 outline-none shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                className="block border-gray-300 focus:border-indigo-500 shadow-sm mt-1 pl-2 rounded-md focus:ring-indigo-500 w-full sm:text-sm outline-none"
               />
             </div>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="email" className="block font-medium text-gray-700 text-sm">
                 Email
               </label>
               <input
@@ -63,11 +63,11 @@ const ContactPage = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="mt-1  pl-2 block w-full rounded-md border-gray-300 outline-none shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                className="block border-gray-300 focus:border-indigo-500 shadow-sm mt-1 pl-2 rounded-md focus:ring-indigo-500 w-full sm:text-sm outline-none"
               />
             </div>
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="message" className="block font-medium text-gray-700 text-sm">
                 Message
               </label>
               <textarea
@@ -77,12 +77,12 @@ const ContactPage = () => {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                className="mt-1 block w-full rounded-md border-gray-300 outline-none shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                className="block border-gray-300 focus:border-indigo-500 shadow-sm mt-1 rounded-md focus:ring-indigo-500 w-full sm:text-sm outline-none"
               />
             </div>
             <button
               type="submit"
-              className="w-full bg-emailButton text-white py-3 px-4 rounded-md hover:bg-emailButtonHover transition-colors"
+              className="bg-emailButton hover:bg-emailButtonHover px-4 py-3 rounded-md w-full text-white transition-colors"
             >
               Send Message
             </button>
@@ -90,13 +90,13 @@ const ContactPage = () => {
         </div>
 
         {/* Contact Information and Social Media */}
-        <div className="bg-white shadow-lg rounded-lg p-8 flex flex-col justify-between">
+        <div className="flex flex-col justify-between bg-white shadow-lg p-8 rounded-lg">
           {/* Google Maps Embed */}
           <div className="mb-6">
-            <h3 className="text-2xl font-bold text-gray-800 mb-4">
+            <h3 className="mb-4 font-bold text-2xl text-gray-800">
               Our Location
             </h3>
-            <div className="w-full h-64 bg-gray-200 rounded-lg overflow-hidden">
+            <div className="bg-gray-200 rounded-lg w-full h-64 overflow-hidden">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d63058.319847516446!2d7.333816658508896!3d8.958784721425543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x104e724ce523c71b%3A0xd9e4fb48232178e7!2sLugbe%20900107%2C%20Federal%20Capital%20Territory!3m2!1d8.9640864!2d7.3813708!5e0!3m2!1sen!2sng!4v1738764332884!5m2!1sen!2sng"
                 width="100%"
@@ -110,13 +110,13 @@ const ContactPage = () => {
 
           {/* Contact Details */}
           <div className="mb-6">
-            <h3 className="text-2xl font-bold text-gray-800 mb-4">
+            <h3 className="mb-4 font-bold text-2xl text-gray-800">
               Contact Details
             </h3>
-            <p className="text-gray-600 mb-2">
+            <p className="mb-2 text-gray-600">
             Email us at: <a href="mailto:help@sirjohnspellingbee.com">help@sirjohnspellingbee.com</a></p>
     
-            <p className="text-gray-600 mb-2">
+            <p className="mb-2 text-gray-600">
             Call us: <a href="tel:+2349039129125">+ 234 9039129125,7036658383</a>
             </p>
             <p className="text-gray-600">Adress: B69, Yenagoa Street, Airport Road, Lugbe, Abuja-FCT Nigeria.</p>
@@ -124,10 +124,10 @@ const ContactPage = () => {
 
           {/* Social Media Icons */}
           <div>
-            <h3 className="text-2xl font-bold text-gray-800 mb-4">
+            <h3 className="mb-4 font-bold text-2xl text-gray-800">
               Connect With Us
             </h3>
-            <div className="flex  space-x-4">
+            <div className="flex space-x-4">
               <a 
                 href="https://www.facebook.com/profile.php?id=61560930817507" 
                 target="_blank" 
