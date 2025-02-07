@@ -243,7 +243,7 @@ const AdminDashboard = () => {
                       <div className="text-sm text-gray-500">{user.schoolAddress}</div>
                     </td>
                     <td className="px-6 py-4">
-                      <div className="text-sm text-textGray">{user.coachName}</div>
+                      <div className="text-sm">{user.coachName}</div>
                       <div className="text-sm text-gray-500">{user.coachPhone}</div>
                     </td>
                   </tr>

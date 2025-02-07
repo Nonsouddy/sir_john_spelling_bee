@@ -22,12 +22,19 @@ module.exports = {
         textBlack: "#1C1B17",
         emailButton: "#2ecc71",
         emailButtonHover: "#209f55",
+        defaultColor: "#1C1B17",
+        normalBlue: "#007bff",
+        orange800: "#6B360A",
+        orange50: "#FEFAF6",
+
       },
       fontFamily: {
         inter: ["var(--font-inter)"],
         comic: ["var(--font-comic-neue)"],
+
       },
     },
   },
   plugins: [require("tailwindcss-animate")],
 };
+''
