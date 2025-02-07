@@ -19,9 +19,9 @@ const AdminHeader = () => {
                 <p className="font-semibold text-white capitalize">{updatedPathname}</p>
             </div>
             <div className="flex flex-col gap-y-2 mt-8 text-textLight">
-                <div className="flex justify-between items-center">
+                <div className="flex justify-between items-center my-2 lg:my-0">
                     <p className="font-semibold text-xl md:text-2xl xl:text-3xl capitalize">{updatedPathname}</p>
-                    <p className="inline-flex gap-x-1 lg:hidden font-bold text-red-400 cursor-pointer"><LogoutCurve color="#f87171" size={18} variant="Bold" /><span>Logout</span></p>
+                    <p className="inline-flex gap-x-1 lg:hidden font-bold text-red-400 cursor-pointer"><span>Logout</span><LogoutCurve color="#f87171" size={18} variant="Bold" /></p>
                 </div>
                 <p>{formatSubheading(updatedPathname)}</p>
             </div>

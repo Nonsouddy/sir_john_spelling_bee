@@ -21,7 +21,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
 
 
     return (
-        <main className="bg-black h-dvh font-inter overflow-y-auto" suppressHydrationWarning>
+        <main className="bg-black h-dvh font-inter text-textLight overflow-y-auto" suppressHydrationWarning>
             <section className="mainWidth">
                 <AdminHeader />
                 <div className="px-2 sm:px-3 md:px-4 lg:px-2 xl:px-4 2xl:px-6">
@@ -29,7 +29,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
                 </div>
             </section>
             <div className="lg:block hidden"><SideBar role={currentAdmin.role} /></div>
-            <div className="lg:hidden"><DownBar role={currentAdmin.role} /></div>
+            <div className="lg:hidden mt-20 lg:mt-10"><DownBar role={currentAdmin.role} /></div>
         </main>
 
     )
