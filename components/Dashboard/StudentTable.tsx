@@ -4,16 +4,17 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { toast } from 'sonner';
 
-//Utils
-import { makeApiRequest } from '@/lib/apiUtils';
+//actions
+import updateHasPaid from '@/actions/server/updateContestant';
 
 //Icons
 import { Trash, ChartCircle, TickSquare } from "iconsax-react";
 
-export default function StudentTable({ contestants, role }: { contestants: Contestant[], role: string }) {
+export default function StudentTable({ fetchedContestants, role }: { fetchedContestants: Contestant[], role: string }) {
 
     const [selectedIds, setSelectedIds] = useState<string[]>([]);
     const [loading, setLoading] = useState<boolean>(false);
+    const [contestants, setContestants] = useState<Contestant[]>(fetchedContestants)
 
     //Functions
     const handleSelect = (id: string) => {
@@ -23,26 +24,33 @@ export default function StudentTable({ contestants, role }: { contestants: Conte
     }
 
     //For the deleting of images
-    const handleDelete = async (uniqueId?: string, selectedIds?: string[]) => {
+    const handleUpdate = async (studentId: string, email: string) => {
 
-        toast.message("Deleting contestant(s)...")
+        toast.message("Updating Payment Status")
         setLoading(true)
 
-        const formData = { uniqueId, selectedIds };
-
-        await makeApiRequest("/deleteOrder", "delete", formData, {
-            onSuccess: () => {
-                toast.success(`The contestant was deleted successfully.`);
-                setLoading(false);
-                window.location.reload();
-            },
-            onError: () => {
-                toast.error("Couldn't delete order now, please try again later.");
-                setLoading(false);
-                window.location.reload();
-            },
-        });
+        const { success, message, error } = await updateHasPaid(studentId, email);
+        if(success){
+            setContestants(contestants.filter((contestant) => contestant.studentId !== studentId))
+            toast.success(`${message}`)
+            return
+        }
+        if (error){
+            console.log(`Error updating the payment status of ${studentId}`, error);
+            toast.error("Couldn't update the contestant payment status. Kindly try again.")
+            return
+        }
     }
+
+    const handleDelete = async (studentId: string) => {
+        toast.message("Deleting Student Details")
+        setLoading(true)
+    }
+
+    const handleDeleteMany = async (studentIds: string[]) => {
+
+    }
+
     return (
         <div>
             <div className="overflow-x-auto">
@@ -105,7 +113,7 @@ export default function StudentTable({ contestants, role }: { contestants: Conte
                                 </td>
                                 <td className="px-6 py-4">
                                     {contestant.studentClass}
-                                   <p>{contestant.category}</p> 
+                                    <p>{contestant.category}</p>
                                 </td>
                                 <td className="px-6 py-4">
                                     {contestant.schoolName}
@@ -123,14 +131,12 @@ export default function StudentTable({ contestants, role }: { contestants: Conte
                                         {contestant.hasPaid ? "Yes" : "No"}
                                     </span>
                                 </td>
-                                <td className="flex mt-2 md:mt-3 px-6 py-4">
-                                    <Link href={`/admin/students/${contestant.studentId}`} className="mr-4 text-indigo-400 hover:text-indigo-200">
-                                        <TickSquare color='#4ade80' variant='Bold' className="w-5 h-5" />
-                                    </Link>
+                                <td className="flex gap-x-5 mt-2 md:mt-3 px-6 py-4">
+                                    <TickSquare onClick={() => handleUpdate(contestant.studentId, contestant.studentEmail)} color='#4ade80' variant='Bold' className="cursor-pointer size-6" />
                                     {role === "super_admin" &&
-                                        <button onClick={() => handleDelete(contestant.studentId, undefined)} className="text-red-400 hover:text-red-200" disabled={loading}>
+                                        <button onClick={() => handleDelete(contestant.studentId)} className="text-red-400 hover:text-red-200" disabled={loading}>
                                             {loading ? <ChartCircle size={14} color="#2ccce4" className="animate-spin" />
-                                                : <Trash color='#f87171' className="w-5 h-5" />
+                                                : <Trash variant='Bold' color='#f87171' className="size-6" />
                                             }
                                         </button>
                                     }
@@ -144,7 +150,7 @@ export default function StudentTable({ contestants, role }: { contestants: Conte
                 <div className="flex justify-between mt-6">
                     <p>Selected Contestant IDs: {selectedIds.join(', ')}</p>
                     {role === "super_admin" &&
-                        <button disabled={loading} className="flex items-center gap-x-5 bg-red-400 hover:bg-red-200 p-3 rounded-[2rem] text-black cursor-pointer" onClick={() => handleDelete(undefined, selectedIds)}>
+                        <button disabled={loading} className="flex items-center gap-x-5 bg-red-400 hover:bg-red-200 p-3 rounded-[2rem] text-black cursor-pointer" onClick={() => handleDeleteMany(selectedIds)}>
                             {loading ? <ChartCircle size={14} color="#FFF" className="animate-spin" />
                                 : <>
                                     <p>Delete Registration(s)</p>

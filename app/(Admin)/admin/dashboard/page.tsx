@@ -17,7 +17,7 @@ const page = async () => {
 
   const accessTokenUser = await getCurrentUser();
   const currentAdmin = await getAdmin(accessTokenUser.id);
-  const { allContestants, nonPaidContestants, paidContestants, lastTenUnPaidContestants, totalSchools } = await getContestants()
+  const { allContestants, nonPaidContestants, paidContestants, lastTenUnPaidContestants, totalSchools } = await getContestants();
 
   const summaryItems = [
     { title: "Total Contestants", icon: UserSquare, color: "#516fff", amount: allContestants.length, description: "Number of Students", classNames: "text-[#516fff]" },
@@ -39,7 +39,7 @@ const page = async () => {
           <p className="sm:block hidden text-[10px] xl:text-sm md:text-xs">Last 10 (Ten) Unpaid Contestants</p>
         </div>
         <div className="mt-5">
-          <StudentTable contestants={lastTenUnPaidContestants} role={currentAdmin.role} />
+          <StudentTable fetchedContestants={allContestants} role={currentAdmin.role} />
         </div>
       </div>
     </main>
