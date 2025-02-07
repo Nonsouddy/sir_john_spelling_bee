@@ -26,7 +26,7 @@ import moon from '@assets/svg/aboutHalfMoon.svg'
 import halfmoon from '@assets/svg/halfMoon.svg'
 import vector13 from '@assets/svg/vector13.svg'
 import Link from 'next/link'
-import MaintenancePage from '../../components/MaintenancePage'
+import MaintenancePage from '../../../components/MaintenancePage'
 
 
 function ResourcesPage() {

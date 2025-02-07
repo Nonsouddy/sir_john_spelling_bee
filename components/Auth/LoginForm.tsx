@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from '@hookform/resolvers/zod';
+import { toast } from "sonner";
 import { useRouter } from 'next/navigation';
 
 //Import Needed types and Utils
@@ -41,19 +42,23 @@ const LoginForm = () => {
 
         const formData = { ...data };
 
-        await makeApiRequest("/emailSignUp", "post", formData, {
-            onSuccess: () => {
-
+        await makeApiRequest("/login", "post", formData, {
+            onSuccess: (response) => {
+                toast.success("Welcome Back")
+                reset();
+                router.replace(`/admin/dashboard`);
             },
             onError: (error: any) => {
-
+                toast.error(error.response.data)
+                reset();
             }
         });
     }
 
     return (
         <main className="bg-gray-700 p-4 md:p-6 xl:p-8 rounded-2xl">
-            <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-y-5 mt-8 w-[16rem] sm:w-[20rem] md:w-[24rem] lg:w-[28rem] xl:w-[32rem]">
+            <h1 className="my-4 font-semibold text-lg text-white sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">Login</h1>
+            <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-y-5 mt-8 w-[16rem] sm:w-[22rem] md:w-[26rem] lg:w-[30rem] xl:w-[34rem]">
                 <div className="flex flex-col">
                     <ZodInput type="email" placeholder="Enter your email address" id="email" name="email" register={register} required={true} label="Email" />
                     {errors.email && <ErrorText message={errors.email.message as string} />}

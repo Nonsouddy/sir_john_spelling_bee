@@ -1,11 +1,11 @@
-import { Body, Container, Head, Heading, Hr, Html, Section, Img, Link, Text } from "@react-email/components";
+import { Body, Container, Head, Heading, Hr, Html, Section, Img, Text } from "@react-email/components";
 
 
 type uniqueProps = {
     uniqueId: string;
 }
 
-export default function RegisterTemplate({ uniqueId }: uniqueProps) {
+export default function PaymentConfirmation({ uniqueId }: uniqueProps) {
 
     return (
         <Html>
@@ -23,23 +23,15 @@ export default function RegisterTemplate({ uniqueId }: uniqueProps) {
                             />
                         </Section>
                         <Section style={upperSection}>
-                            <Heading style={h1}>Registration Confirmation</Heading>
+                            <Heading style={h1}>Payment Confirmation</Heading>
                             <Text style={mainText}>
-                                Thank you for registering for the Spelling Bee . Your registration has been successfully processed. To complete your registration, please follow these steps:
+                                Thank you. Your payment for the Spelling Bee has been successfully processed. Please stay tuned for further updates, which will be communicated via email, your school, or your tutor.
                             </Text>
                             <Hr className="!border-gray-300 mx-0 my-[8px] border border-solid w-full" />
                             <Section style={verificationSection}>
-                                <Text style={verifyText}>Contestant Unique ID</Text>
+                                <Text style={verifyText}>Your Contestant Unique ID Remains</Text>
                                 <Text style={uniqueCode}>{uniqueId}</Text>
                             </Section>
-                            <Text style={list}>1. Copy your contestant unique ID</Text>
-                            <Text style={list}>2. Click on the WhatsApp icon below to open a chat with our organizer.</Text>
-                            <Text style={list}>3. Paste your Unique ID into the message box.</Text>
-                            <Text style={list}>4. Follow the instructions provided by the organizer to make your payment.</Text>
-                            <Link href={`https://wa.me/2348144118744?text=My%20Contestant%20Unique%20ID%20is%20${uniqueId}`} style={button}>
-                                Proceed to WhatsApp
-                            </Link>
-                            <Hr className="!border-gray-300 mx-0 my-[8px] border border-solid w-full" />
                         </Section>
                         <Hr />
                         <Section style={lowerSection}>
@@ -79,19 +71,6 @@ const h1 = {
     marginBottom: "15px",
 };
 
-const button = {
-    display: "block",
-    backgroundColor: "#4FCE5D",
-    width: "100%",
-    padding: "12px 20px",
-    borderRadius: "16px",
-    margin: "16px 0", 
-    color: "#FFF",
-    fontFamily:
-        "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
-    fontSize: "14px",
-};
-
 const text = {
     color: "#333",
     fontFamily:
@@ -100,13 +79,6 @@ const text = {
     margin: "24px 0",
 };
 
-const list = {
-    color: "#333",
-    fontFamily:
-        "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
-    fontSize: "14px",
-    margin: "8px 0",
-};
 
 const imageSection = {
     backgroundColor: "#3a81ef",
