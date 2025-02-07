@@ -4,8 +4,8 @@
 import { Usable, use } from "react"
 
 //Components
-import FirstForm from '../../components/Registration/FirstForm';
-import SecondForm from '../../components/Registration/SecondForm';
+import FirstForm from '../../../components/Registration/FirstForm';
+import SecondForm from '../../../components/Registration/SecondForm';
 
 //Images and Icons
 import Image from 'next/image';
