@@ -1,4 +1,4 @@
-import Dashboard from '../(Admin)/admin/dashboard/page'
+import Dashboard from '../(admin)/admin/dashboard/page'
 import HomePage from '../../components/HomePage'
 import Contact from './contact/page'
 import MaintenancePage from '../../components/MaintenancePage'
