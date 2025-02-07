@@ -11,6 +11,10 @@ export default async function getContestants() {
         const nonPaidContestants = allContestants.filter(contestant => !contestant.hasPaid);
         const paidContestants = allContestants.filter(contestant => contestant.hasPaid);
 
+        //Get the last 10 Unpaid
+        const lastTenUnPaidContestants = nonPaidContestants.slice(0, 10);
+
+
         // Fetch distinct school names
         const distinctSchools = await prisma.contestants.findMany({
             select: { schoolName: true },
@@ -20,7 +24,7 @@ export default async function getContestants() {
         // Count the number of unique schools
         const totalSchools = distinctSchools.length;
 
-        return { allContestants, nonPaidContestants, paidContestants, totalSchools };
+        return { allContestants, nonPaidContestants, paidContestants, lastTenUnPaidContestants, totalSchools };
 
     } catch (error: any) {
         console.error('Error fetching contestants:', error);
