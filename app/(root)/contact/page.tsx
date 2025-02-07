@@ -1,12 +1,12 @@
 "use client"
 import { useState } from 'react';
 import Image from 'next/image';
-import Facebook from "../../../public/svgs/FaceBook.svg"
-import Twitter from "../../../public/svgs/X.svg"
-import WhatsApp from "../../../public/svgs/Whatsapp.svg"
-import Insta from "../../../public/svgs/Instagram.svg"
-import Youtube from "../../../public/svgs/Youtube.svg"
-import Tiktok from "../../../public/svgs/Tiktok.svg"
+import Facebook from "../public/Svgs/FaceBook.svg"
+import Twitter from "../public/Svgs/X.svg"
+import WhatsApp from "../public/Svgs/Whatsapp.svg"
+import Insta from "../public/Svgs/Instagram.svg"
+import Youtube from "../public/Svgs/Logo.svgYoutube.svg"
+import Tiktok from "../public/Svgs/Tiktok.svg"
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
