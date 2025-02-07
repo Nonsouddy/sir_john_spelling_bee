@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { ArrowDown, ArrowRight, MoreHorizontal } from 'lucide-react';
 import Image from 'next/image';
- import beeImage from '../../public/images/beeImage.png'
+ import beeImage from '../../public/Images/beeImage.png'
 
 // Define the FAQ item type
 interface FAQItem {
