@@ -1,4 +1,3 @@
-import Dashboard from '../(admin)/admin/dashboard/page'
 import HomePage from '../../components/HomePage'
 import Contact from './contact/page'
 import MaintenancePage from '../../components/MaintenancePage'
@@ -7,10 +6,10 @@ import MaintenancePage from '../../components/MaintenancePage'
 function page() {
   return (
     <>
-      {/* <MaintenancePage page="Home Page" /> */}
+      <MaintenancePage page="Home Page" />
       {/* <HomePage /> */}
       {/* <Dashboard/> */}
-      <Contact/>
+      {/* <Contact/> */}
     </>
 
   )
