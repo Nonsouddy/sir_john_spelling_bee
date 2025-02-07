@@ -6,6 +6,7 @@ import { toast } from 'sonner';
 
 //actions
 import updateHasPaid from '@/actions/server/updateContestant';
+import { deleteContestant, deleteContestants } from '@/actions/server/deleteContestant';
 
 //Icons
 import { Trash, ChartCircle, TickSquare } from "iconsax-react";
@@ -26,16 +27,16 @@ export default function StudentTable({ fetchedContestants, role }: { fetchedCont
     //For the deleting of images
     const handleUpdate = async (studentId: string, email: string) => {
 
-        toast.message("Updating Payment Status")
+        toast.message("Updating Payment Status...")
         setLoading(true)
 
         const { success, message, error } = await updateHasPaid(studentId, email);
-        if(success){
+        if (success) {
             setContestants(contestants.filter((contestant) => contestant.studentId !== studentId))
             toast.success(`${message}`)
             return
         }
-        if (error){
+        if (error) {
             console.log(`Error updating the payment status of ${studentId}`, error);
             toast.error("Couldn't update the contestant payment status. Kindly try again.")
             return
@@ -43,12 +44,37 @@ export default function StudentTable({ fetchedContestants, role }: { fetchedCont
     }
 
     const handleDelete = async (studentId: string) => {
-        toast.message("Deleting Student Details")
+        toast.message("Deleting Contestant...")
         setLoading(true)
+
+        const { success, message, error } = await deleteContestant(studentId)
+        if (success) {
+            setContestants(contestants.filter((contestant) => contestant.studentId !== studentId))
+            toast.success(`${message}`)
+            return
+        }
+        if (error) {
+            console.log(`Error deleting the contestant with the studentId of ${studentId}`, error);
+            toast.error("Couldn't delete contestant kindly try again later. Kindly try again.")
+            return
+        }
     }
 
     const handleDeleteMany = async (studentIds: string[]) => {
+        toast.message("Deleting Contestants...")
+        setLoading(true)
 
+        const { success, message, error } = await deleteContestants(studentIds)
+        if (success) {
+            setContestants(contestants.filter((contestant) => !studentIds.includes(contestant.studentId)));
+            toast.success(`${message}`)
+            return
+        }
+        if (error) {
+            console.log(`Error deleting the contestants with the studentIds of ${studentIds}`, error);
+            toast.error("Couldn't delete contestants kindly try again later. Kindly try again.")
+            return
+        }
     }
 
     return (
