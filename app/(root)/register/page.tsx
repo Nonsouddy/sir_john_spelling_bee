@@ -1,7 +1,7 @@
 "use client"
 
 
-import { Usable, use } from "react"
+import { use } from "react";
 
 //Components
 import FirstForm from '../../../components/Registration/FirstForm';
