@@ -11,7 +11,6 @@ interface FAQItem {
   answer: string;
 }
 
-// Sample FAQ data
 const faqData: FAQItem[] = [
   
   { question: "Who can participate in Sir John’s Spelling Bee?",
