@@ -123,7 +123,7 @@ const FQAPage: React.FC = () => {
         }}
       />
 
-      <div className="relative z-10 w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8 overflow-hidden">
+      <div className="relative z-2 w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8 overflow-hidden">
         {/* Sidebar with Large Text */}
         <div className="hidden lg:flex flex-col justify-center p-12 space-y-6 transform transition-all duration-300 hover:scale-[1.02]">
           <h2 className="text-4xl font-bold mb-4 animate-pulse font-comic text-defaultColor">
