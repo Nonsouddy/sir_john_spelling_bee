@@ -114,10 +114,10 @@ const ContactPage = () => {
               Contact Details
             </h3>
             <p className="text-gray-600 mb-2">
-            Email us at: <a href="mailto:help@sirjohnspellingbee.com">help@sirjohnspellingbee.com</a></p>
+            Email us at: <a href="mailto:sirjohnspellingbee8@gmail.com">sirjohnspellingbee8@gmail.com</a></p>
     
             <p className="text-gray-600 mb-2">
-            Call us: <a href="tel:+2349039129125">+ 234 9039129125,7036658383</a>
+            Call us: <a href="tel:+2348144118744">+ 2348144118744,08126492629</a>
             </p>
             <p className="text-gray-600">Adress: B69, Yenagoa Street, Airport Road, Lugbe, Abuja-FCT Nigeria.</p>
           </div>

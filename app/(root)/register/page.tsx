@@ -37,7 +37,7 @@ const Page = (props: any) => {
             <Image src={strike} alt="scribble" className='left-1/2 absolute -mt-2 md:-mt-3 xl:-mt-4 transform -translate-x-1/2' />
           </div>
         </div>
-        <p className='font-inter text-center text-lg text-textBlack md:text-xl lg:text-2xl xl:text-3xl'>Register your pupils here</p>
+        <p className='font-inter text-center text-lg text-textBlack md:text-xl lg:text-2xl xl:text-3xl'>Register your Speller here</p>
         {page === 1 ? <FirstForm />
           : page === 2 ? <SecondForm />
             : <FirstForm />
