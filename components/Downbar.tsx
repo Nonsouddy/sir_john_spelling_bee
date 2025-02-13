@@ -23,7 +23,7 @@ const DownBar = ({ role }: { role: string }) => {
   const filteredNavItems = navItems.filter(item => !item.role || item.role === role);
 
   return (
-    <main className="bottom-0 left-0 absolute bg-[#F0F0F0] p-2 w-full">
+    <main className="bottom-0 left-0 fixed bg-[#F0F0F0] p-2 w-full">
       <div className="flex justify-between items-center bg-black p-2 rounded-[2rem]">
         {filteredNavItems.map((item) => (
           <NavItem key={item.label} currentPath={currentPath} href={item.href} icon={item.icon} label={item.label} />

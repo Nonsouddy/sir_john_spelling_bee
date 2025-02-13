@@ -27,7 +27,7 @@ export default function RegisterTemplate({ uniqueId }: uniqueProps) {
                             <Text style={mainText}>
                                 Thank you for registering for the Spelling Bee . Your registration has been successfully processed. To complete your registration, please follow these steps:
                             </Text>
-                            <Hr className="!border-gray-300 mx-0 my-[8px] border border-solid w-full" />
+                            <Hr className="mx-0 my-[8px] border !border-gray-300 border-solid w-full" />
                             <Section style={verificationSection}>
                                 <Text style={verifyText}>Contestant Unique ID</Text>
                                 <Text style={uniqueCode}>{uniqueId}</Text>
@@ -39,7 +39,7 @@ export default function RegisterTemplate({ uniqueId }: uniqueProps) {
                             <Link href={`https://wa.me/2348144118744?text=My%20Contestant%20Unique%20ID%20is%20${uniqueId}`} style={button}>
                                 Proceed to WhatsApp
                             </Link>
-                            <Hr className="!border-gray-300 mx-0 my-[8px] border border-solid w-full" />
+                            <Hr className="mx-0 my-[8px] border !border-gray-300 border-solid w-full" />
                         </Section>
                         <Hr />
                         <Section style={lowerSection}>
@@ -83,8 +83,9 @@ const button = {
     display: "block",
     backgroundColor: "#4FCE5D",
     width: "100%",
-    padding: "12px 20px",
+    padding: "12px 0",
     borderRadius: "16px",
+    textAlign: "center" as const,
     margin: "16px 0", 
     color: "#FFF",
     fontFamily:
@@ -140,7 +141,7 @@ const verifyText = {
 const uniqueCode = {
     ...text,
     fontWeight: "bold",
-    fontSize: "36px",
+    fontSize: "24px",
     margin: "10px 0",
     textAlign: "center" as const,
     color: "#3a81ef",
