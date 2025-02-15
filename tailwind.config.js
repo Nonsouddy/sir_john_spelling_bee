@@ -28,6 +28,9 @@ module.exports = {
         normalBlue: "#007bff",
         orange800: "#6B360A",
         orange50: "#FEFAF6",
+        footerBG: "#2E1805",
+        footerBorder: "#F3B886",
+        naturalColor: "FFFFFA",
 
       },
       fontFamily: {

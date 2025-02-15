@@ -114,7 +114,7 @@ const ContactPage = () => {
               Contact Details
             </h3>
             <p className="text-gray-600 mb-2">
-            Email us at: <a href="mailto:sirjohnspellingbee8@gmail.com">sirjohnspellingbee8@gmail.com</a></p>
+            Email us at: <a href="mailto:contact@sirjohnspellingbee.com.ng">contact@sirjohnspellingbee.com.ng</a></p>
     
             <p className="text-gray-600 mb-2">
             Call us: <a href="tel:+2348144118744">+ 2348144118744,08126492629</a>
