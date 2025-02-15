@@ -40,7 +40,7 @@ const Navbar = () => {
             </div>
           ))}
         </div>
-        <Link href="/register?page=1" className={`${pathName === "/register" ? "bg-accentOrange text-white" : "bg-primaryYellow text-[#1C1B17]"} lg:block hidden px-2.5 py-3.5 rounded-[30px] w-48 font-bold text-center hover:-translate-y-1 duration-300`}>Register Now</Link>
+        <Link href="/instructions?page=1" className={`${pathName === "/instructions" ? "bg-accentOrange text-white" : "bg-primaryYellow text-[#1C1B17]"} lg:block hidden px-2.5 py-3.5 rounded-[30px] w-48 font-bold text-center hover:-translate-y-1 duration-300`}>Register Now</Link>
         <HambergerMenu color="#000" className='lg:hidden cursor-pointer size-9 md:size-10' variant="Bold" onClick={toggleMenu} />
       </div>
 
@@ -50,7 +50,7 @@ const Navbar = () => {
         {NAV_LINKS.map((link) => (
             <Link key={link.path} href={link.path} className={`${pathName === link.path ? "text-accentOrange font-bold" : "text-textGray hover:text-accentOrange duration-300 font-medium"} text-sm md:text-base`}>{link.label}</Link>
         ))}
-        <Link href="/register?page=1" className={`${pathName === "/register" ? "bg-accentOrange text-white" : "bg-primaryYellow text-[#1C1B17]"} block lg:hidden px-2.5 py-3.5 rounded-[30px] w-48 font-bold text-center hover:-translate-y-1 duration-300`}>Register Now</Link>
+        <Link href="/instructions?page=1" className={`${pathName === "/instructions" ? "bg-accentOrange text-white" : "bg-primaryYellow text-[#1C1B17]"} block lg:hidden px-2.5 py-3.5 rounded-[30px] w-48 font-bold text-center hover:-translate-y-1 duration-300`}>Register Now</Link>
       </div>
     </nav>
   );

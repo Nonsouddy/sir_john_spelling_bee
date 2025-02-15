@@ -29,15 +29,15 @@ function page() {
                         <div className="TandC-content">
                             <p>As a user of our platform, you are responsible for:</p>
                             <ul>
-                                <li>Registration is done online via the SJS Bee e-portal after payment of N10,000 (Ten Thousand Naira) per speller has been confirmed.
+                                <li>✓ Registration is done online via the SJS Bee e-portal after payment of N10,000 (Ten Thousand Naira) per speller has been confirmed.
                                 </li>
-                                <li> Registration from schools on every 10 spellers are eligible for a discount. For every 10 spellers, one registration is free.
+                                <li>✓ Registration from schools on every 10 spellers are eligible for a discount. For every 10 spellers, one registration is free.
                                 </li>
-                                <li> All payments should be made directly to the official bank account on our website. No payments should be made to individuals claiming to represent Sir John’s Spelling Bee.
+                                <li>✓ All payments should be made directly to the official bank account on our website. No payments should be made to individuals claiming to represent Sir John’s Spelling Bee.
                                 </li>
-                                <li> Spellers should keep their proof of payments and bring it to the competition venue.
+                                <li>✓ Spellers should keep their proof of payments and bring it to the competition venue.
                                 </li>
-                                <li>Sir John’s Spelling Bee shall at no time refund money paid for registration as payment is non-refundable.
+                                <li>✓ Sir John’s Spelling Bee shall at no time refund money paid for registration as payment is non-refundable.
                                 </li>
                             </ul>
                         </div>
@@ -47,21 +47,20 @@ function page() {
                         <div className="TandC-content">
                             {/* <p>As a user of our platform, you are responsible for:</p> */}
                             <ul>
-                                <li> SJS Bee team hold exclusive right to disqualify participant(s) during competition if they are caught cheating, all rendering assistance of any sort to aid others during the written or oral stages of the competition. Assistance from a tutor or coach to his or her speller(s) during competition shall also lead to the disqualification of such speller(s).</li>
-                                <li> Unruly behaviour amongst participants during competition is punishable by automatic disqualification.</li>
-                                <li>All rules guiding the conduct of the competition must be adhered to, strictly by participants, coaches and the audience</li>
+                                <li>✓ SJS Bee team hold exclusive right to disqualify participant(s) during competition if they are caught cheating, all rendering assistance of any sort to aid others during the written or oral stages of the competition. Assistance from a tutor or coach to his or her speller(s) during competition shall also lead to the disqualification of such speller(s).</li>
+                                <li>✓ Unruly behaviour amongst participants during competition is punishable by automatic disqualification.</li>
+                                <li>✓ All rules guiding the conduct of the competition must be adhered to, strictly by participants, coaches and the audience</li>
                                 
                             </ul>
                         </div>
                     </div>
                     <div className="TandC-card">
-                        <h2 className="TandC-section-title"> 4.PRIZES:
- </h2>
+                        <h2 className="TandC-section-title"> 4.PRIZES:</h2>
                         <div className="TandC-content">
                             {/* <p>As a user of our platform, you are responsible for:</p> */}
                             <ul>
-                                <li>Sir John’s Spelling Bee have exclusive right to decide the pattern to which the winners are to receive their prize money. This shall be communicated to the respective winners and their school.</li>
-                                <li> SJS Bee Team hold exclusive right to withdraw the winnings of a speller or spellers if after the competition, it is discovered that such speller or spellers falsified their information leading to their participation in the competition.</li>
+                                <li>✓ Sir John’s Spelling Bee have exclusive right to decide the pattern to which the winners are to receive their prize money. This shall be communicated to the respective winners and their school.</li>
+                                <li>✓ SJS Bee Team hold exclusive right to withdraw the winnings of a speller or spellers if after the competition, it is discovered that such speller or spellers falsified their information leading to their participation in the competition.</li>
                                
                             </ul>
                         </div>

@@ -22,7 +22,7 @@ const Footer = () => {
 
   const company = [
 
-    { name: 'Privacy Policies', href: '/PrivacyPolicies' },
+    { name: 'Privacy Policies', href: '/instructions' },
     { name: 'Terms and condition', href: '/termsAndConditions' },
   ];
 
@@ -136,7 +136,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className=" "
               >
-                <Image src={Facebook} alt='' className='w-9 h-9 mt-4' />
+                <Image src={Facebook} alt='' className='w-9 h-9 mt-4 ' />
               </a>
               <div className='mt-5 text-blue-600 md:mt-6'>Facebook</div>
             </div>
@@ -158,9 +158,9 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className=""
               >
-                <Image src={Twitter} alt='' className='w-9 h-9 mt-4' />
+                <Image src={Twitter} alt='' className='w-9 h-9 mt-4 ' />
               </a>
-              <div className='mt-5 text-black md:mt-6'> X</div>
+              <div className='mt-5 md:mt-6'>X</div>
             </div>
             <div className=' flex border-footerBorder gap-3 lg:border-r -mt-4 -mb-4 md:border-r pr-2 -ml-2 gap-0 sm:border-r-none center' >
             <a

@@ -31,6 +31,7 @@ module.exports = {
         footerBG: "#2E1805",
         footerBorder: "#F3B886",
         naturalColor: "FFFFFA",
+        strokeColor2: "#007bff",
 
       },
       fontFamily: {

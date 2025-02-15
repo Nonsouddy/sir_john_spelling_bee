@@ -37,15 +37,15 @@ export default function Instructions() {
                             <h2>GENERAL RULES & GUIDELINES</h2>
                             <p>Contestants are required to comply with the stated general rules and guidelines:</p>
                             <ul>
-                                <li> The pronouncer, judges and other officials shall be in charge of affairs concerning the competition. Any question or complaints about the spelling of a word must be referred to the officials at the end of each round.
+                                <li> The pronouncer, judges and other officials shall be in charge of affairs concerning the competition. Any question or complaints about the spelling of a word <strong>MUST</strong>  be referred to the officials at the end of each round.
                                 </li>
                                 <li> This competition is open to pupils in Primary one and two (Early Speller Category), three to five (Upper Primary Category), JSS 1 to JSS 3 (Junior Secondary Category) and SSS 1 – 3 (Senior Secondary Category)
                                 </li>
                                 <li> The “Oxford Dictionary of English” is the official dictionary for the Sir John’s Spelling Bee. All issues concerning a word MUST be resolved using this dictionary.
                                 </li>
-                                <li> During the written stage, contestants MUST write their words in CAPITAL LETTERS. They must not shade, cancel or change the spellings earlier written.
+                                <li> During the written stage, contestants <strong>MUST</strong> write their words in <strong>CAPITAL LETTERS.</strong> They must not shade, cancel or change the spellings earlier written.
                                 </li>
-                                <li> A contestant during spelling MUST pronounce the given word, spell and pronounce again to indicate the end of his\her spelling. That is, contestants MUST Pronounce – Spell – Pronounce.
+                                <li> A contestant during spelling <strong>MUST</strong> pronounce the given word, spell and pronounce again to indicate the end of his\her spelling. That is, contestants <strong>MUST</strong>  Pronounce – Spell – Pronounce.
                                 </li>
                                 <li> Once a contestant starts to spell a word, he\she cannot go back to change the letter(s) that he\she had already spelt, but could start spelling again using the same letters and the order in which the letters were called.
                                 </li>
@@ -59,7 +59,8 @@ export default function Instructions() {
                                 </li>
                                 <li>Contestants should expect new set of words during the state level and the final\grand finale of the competition. The manual is a guide on the nature of words to expect during championship.
                                 </li>
-                                <li>Note: You have until the last day to your state level competition to exhaust the study manual for this competition. For an excellent performance, you need to have good mastery of the pronunciation of each word in the study manual. It is advisable to study the words and not to cram. During competition, words from the manual shall be selected randomly and in no particular order, you are therefore expected to exhaust the study list for an excellent performance.</li>
+                                <li><strong>Note: You have until the last day to your state level competition to exhaust the study manual for this competition. For an excellent performance, you need to have good mastery of the pronunciation of each word in the study manual. It is advisable to study the words and not to cram. During competition, words from the manual shall be selected randomly and in no particular order, you are therefore expected to exhaust the study list for an excellent performance.</strong></li>
+                                
                             </ul>
                         </section>
 
@@ -67,11 +68,11 @@ export default function Instructions() {
                             <h2>FEATURES OF THE SJS BEE</h2>
                             <p>Features of the competition inculde:</p>
                             <ul>
-                                <li> WRITTEN: Spellers at every level of the competition will be given five (5) to ten (10) words to write. The word(s) information such as part of speech, definition, origin and sentence examples will be provided to aid spellers understand the exact word(s) they are required to spell before writing.
+                                <li><strong>WRITTEN:</strong>  Spellers at every level of the competition will be given five (5) to ten (10) words to write. The word(s) information such as part of speech, definition, origin and sentence examples will be provided to aid spellers understand the exact word(s) they are required to spell before writing.
                                 </li>
-                                <li>VOCABULARY: SJS Bee understands the importance of words in communication and as such, the spellers shall be tested on the right application and usage of words. This may include synonyms, antonyms and some special words often misused by English speakers. This feature shall involve options for spellers to pick from.
+                                <li><strong>VOCABULARY:</strong> SJS Bee understands the importance of words in communication and as such, the spellers shall be tested on the right application and usage of words. This may include synonyms, antonyms and some special words often misused by English speakers. This feature shall involve options for spellers to pick from.
                                 </li>
-                                <li>ORAL: Here, spellers will mount the stage and be required to carefully and correctly spell their words. There are no second changes in the SJS Bee, every letter a speller articulates counts and shall stand for or against them. A speller can start over again but cannot change the letter(s) used earlier. The spellers will NOT be under duress to spell their words, hence, they are allowed time to ask for word information at this stage.
+                                <li><strong>ORAL:</strong> Here, spellers will mount the stage and be required to carefully and correctly spell their words. There are no second changes in the SJS Bee, every letter a speller articulates counts and shall stand for or against them. A speller can start over again but cannot change the letter(s) used earlier. The spellers will NOT be under duress to spell their words, hence, they are allowed time to ask for word information at this stage.
                                 </li>
                             </ul>
                         </section>
@@ -94,13 +95,17 @@ export default function Instructions() {
                             <h2>REGISTRATION</h2>
                             {/* <p>Registration made easy by:</p> */}
                             <ul>
-                                <li>Registration fee per participant is N10,000. Schools can make bulk payment for all their participants. Example, N90,000 for ten (10) participants from the same school is acceptable. That is, schools get discount of N10,000 for every ten (10) participants registered. For 20 participants, a school pays N180,000 instead of N200,000 etc.
-                                    Payment should be made to:
-                                    Account Name: SIR JOHN SPELLING BEE
-                                    Account Number: 1229156554
+                                <li>Registration fee per participant is <strong>N10,000.</strong>Schools can make bulk payment for all their participants. Example,<strong>N90,000</strong> for ten (10) participants from the same school is acceptable. That is, schools get discount of <strong>N10,000.</strong> for every ten (10) participants registered. For 20 participants, a school pays  <strong>N180,000</strong> instead of <strong>N200,000</strong> etc.
+                                    Payment should be made to:<br/>
+                                    <strong>Account Name: SIR JOHN SPELLING BEE <br/>
+                                    Account Number: 1229156554  <br/>
                                     Bank: ZENITH BANK PLC
+                                    </strong>
+                                    
                                 </li>
-                                <li>NOTE: Once your payment is made, proceed to register your speller or spellers in their respective categories by filling out and submitting their details.</li>
+                                <li> <strong>NOTE: Once your payment is made, proceed to register your speller or spellers in their respective categories by filling out the registration form on the website,  <em>please ensure you keep and attach all registration ID(s) to your prove of payment </em> before submitting.
+                                </strong> <a href='/termsAndConditions'><em className='text-strokeColor2'>Terms and condition</em></a>
+                                </li>
                             </ul>
                         </section>
                     </div>
