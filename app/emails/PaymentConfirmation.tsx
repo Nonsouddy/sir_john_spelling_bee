@@ -27,7 +27,7 @@ export default function PaymentConfirmation({ uniqueId }: uniqueProps) {
                             <Text style={mainText}>
                                 Thank you. Your payment for the Spelling Bee has been successfully processed. Please stay tuned for further updates, which will be communicated via email, your school, or your tutor.
                             </Text>
-                            <Hr className="!border-gray-300 mx-0 my-[8px] border border-solid w-full" />
+                            <Hr className="mx-0 my-[8px] border !border-gray-300 border-solid w-full" />
                             <Section style={verificationSection}>
                                 <Text style={verifyText}>Your Contestant Unique ID Remains</Text>
                                 <Text style={uniqueCode}>{uniqueId}</Text>
@@ -112,7 +112,7 @@ const verifyText = {
 const uniqueCode = {
     ...text,
     fontWeight: "bold",
-    fontSize: "36px",
+    fontSize: "24px",
     margin: "10px 0",
     textAlign: "center" as const,
     color: "#3a81ef",

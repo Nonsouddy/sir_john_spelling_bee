@@ -57,7 +57,7 @@ const LoginForm = () => {
 
     return (
         <main className="bg-gray-700 p-4 md:p-6 xl:p-8 rounded-2xl">
-            <h1 className="my-4 font-semibold text-lg text-white sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">Login</h1>
+            <h1 className="my-4 font-semibold text-white text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">Login</h1>
             <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-y-5 mt-8 w-[16rem] sm:w-[22rem] md:w-[26rem] lg:w-[30rem] xl:w-[34rem]">
                 <div className="flex flex-col">
                     <ZodInput type="email" placeholder="Enter your email address" id="email" name="email" register={register} required={true} label="Email" />
@@ -72,7 +72,7 @@ const LoginForm = () => {
                         {seePassword ? <Lock color="#000" size={20} /> : <Unlock color="#000" size={20} />}
                     </div>
                 </div>
-                <Button type="submit" text="Register" loading={isSubmitting} />
+                <Button type="submit" text="Login" loading={isSubmitting} />
             </form>
         </main>
     );
