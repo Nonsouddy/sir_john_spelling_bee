@@ -16,14 +16,14 @@ const Footer = () => {
 
   const quickLinks = [
     { name: 'About Us', href: '/about' },
-    { name: 'Resources', href: '/esources' },
+    { name: 'Resources', href: '/resources' },
     { name: 'Events', href: '/events' },
   ];
 
   const company = [
 
     { name: 'Privacy Policies', href: '/PrivacyPolicies' },
-    { name: 'Terms and condition', href: '/Terms and condition' },
+    { name: 'Terms and condition', href: '/termsAndConditions' },
   ];
 
   // const socialLinks = [
