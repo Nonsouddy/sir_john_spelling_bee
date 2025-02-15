@@ -22,7 +22,7 @@ const Footer = () => {
 
   const company = [
 
-    { name: 'Privacy Policies', href: '/instructions' },
+    { name: 'Privacy Policies', href: '/termsAndConditions' },
     { name: 'Terms and condition', href: '/termsAndConditions' },
   ];
 
