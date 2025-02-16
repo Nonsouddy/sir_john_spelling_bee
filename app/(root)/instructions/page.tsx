@@ -37,27 +37,27 @@ export default function Instructions() {
                             <h2>GENERAL RULES & GUIDELINES</h2>
                             <p>Contestants are required to comply with the stated general rules and guidelines:</p>
                             <ul>
-                                <li> The pronouncer, judges and other officials shall be in charge of affairs concerning the competition. Any question or complaints about the spelling of a word <strong>MUST</strong>  be referred to the officials at the end of each round.
+                                <li>1. The pronouncer, judges and other officials shall be in charge of affairs concerning the competition. Any question or complaints about the spelling of a word <strong>MUST</strong>  be referred to the officials at the end of each round.
                                 </li>
-                                <li> This competition is open to pupils in Primary one and two (Early Speller Category), three to five (Upper Primary Category), JSS 1 to JSS 3 (Junior Secondary Category) and SSS 1 – 3 (Senior Secondary Category)
+                                <li>2. This competition is open to pupils in Primary one and two (Early Speller Category), three to five (Upper Primary Category), JSS 1 to JSS 3 (Junior Secondary Category) and SSS 1 – 3 (Senior Secondary Category)
                                 </li>
-                                <li> The “Oxford Dictionary of English” is the official dictionary for the Sir John’s Spelling Bee. All issues concerning a word MUST be resolved using this dictionary.
+                                <li>3. The “Oxford Dictionary of English” is the official dictionary for the Sir John’s Spelling Bee. All issues concerning a word MUST be resolved using this dictionary.
                                 </li>
-                                <li> During the written stage, contestants <strong>MUST</strong> write their words in <strong>CAPITAL LETTERS.</strong> They must not shade, cancel or change the spellings earlier written.
+                                <li> 4. During the written stage, contestants <strong>MUST</strong> write their words in <strong>CAPITAL LETTERS.</strong> They must not shade, cancel or change the spellings earlier written.
                                 </li>
-                                <li> A contestant during spelling <strong>MUST</strong> pronounce the given word, spell and pronounce again to indicate the end of his\her spelling. That is, contestants <strong>MUST</strong>  Pronounce – Spell – Pronounce.
+                                <li>5. A contestant during spelling <strong>MUST</strong> pronounce the given word, spell and pronounce again to indicate the end of his\her spelling. That is, contestants <strong>MUST</strong>  Pronounce – Spell – Pronounce.
                                 </li>
-                                <li> Once a contestant starts to spell a word, he\she cannot go back to change the letter(s) that he\she had already spelt, but could start spelling again using the same letters and the order in which the letters were called.
+                                <li>6. Once a contestant starts to spell a word, he\she cannot go back to change the letter(s) that he\she had already spelt, but could start spelling again using the same letters and the order in which the letters were called.
                                 </li>
-                                <li> Contestants will be allowed to ask the pronouncer to repeat a word, define it and provide alternative pronunciation(s), part of speech, sentence examples and word origin within the allotted time. Information will be provided only when requested for by a speller.
+                                <li>7. Contestants will be allowed to ask the pronouncer to repeat a word, define it and provide alternative pronunciation(s), part of speech, sentence examples and word origin within the allotted time. Information will be provided only when requested for by a speller.
                                 </li>
-                                <li> The pronouncer may offer word information on a word if it has a homophone, homonym or sounds similar to another word.
+                                <li>8. The pronouncer may offer word information on a word if it has a homophone, homonym or sounds similar to another word.
                                 </li>
-                                <li> Upper Primary (3 – 5) and secondary category will have forty seconds to spell each word they are given. Early Spellers (1 and 2) will have one minute each to spell a word. The time begins when a speller calls out the first letter of the spelling he\she intends to spell.
+                                <li>9. Upper Primary (3 – 5) and secondary category will have forty seconds to spell each word they are given. Early Spellers (1 and 2) will have one minute each to spell a word. The time begins when a speller calls out the first letter of the spelling he\she intends to spell.
                                 </li>
-                                <li> Spellers are advised to study the given words carefully with the use of a dictionary as words may not be pronounced the way they are spelt. However, there is a provision for the pronunciation of words underneath each word in the manual.
+                                <li>10. Spellers are advised to study the given words carefully with the use of a dictionary as words may not be pronounced the way they are spelt. However, there is a provision for the pronunciation of words underneath each word in the manual.
                                 </li>
-                                <li>Contestants should expect new set of words during the state level and the final\grand finale of the competition. The manual is a guide on the nature of words to expect during championship.
+                                <li>11. Contestants should expect new set of words during the state level and the final\grand finale of the competition. The manual is a guide on the nature of words to expect during championship.
                                 </li>
                                 <li><strong>Note: You have until the last day to your state level competition to exhaust the study manual for this competition. For an excellent performance, you need to have good mastery of the pronunciation of each word in the study manual. It is advisable to study the words and not to cram. During competition, words from the manual shall be selected randomly and in no particular order, you are therefore expected to exhaust the study list for an excellent performance.</strong></li>
                                 
@@ -82,12 +82,12 @@ export default function Instructions() {
                             </h2>
                             {/* <p>Explore our key features and functionalities:</p> */}
                             <ul>
-                                <li> It is fun.</li>
-                                <li> It is challenging.</li>
-                                <li> It improves vocabulary and reading ability.</li>
-                                <li> To develop self-confidence and poise.</li>
-                                <li> To develop public speaking skills.</li>
-                                <li> To get learners to the library. The Sir John’s Spelling Bee is a great way to get learners to use the library through the activities and network it creates around spelling.</li>
+                                <li>✓ It is fun.</li>
+                                <li>✓ It is challenging.</li>
+                                <li>✓ It improves vocabulary and reading ability.</li>
+                                <li>✓  To develop self-confidence and poise.</li>
+                                <li>✓ To develop public speaking skills.</li>
+                                <li>✓ To get learners to the library. The Sir John’s Spelling Bee is a great way to get learners to use the library through the activities and network it creates around spelling.</li>
                             </ul>
                         </section>
 
