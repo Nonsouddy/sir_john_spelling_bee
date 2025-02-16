@@ -5,15 +5,15 @@ import '@assets/css/instructions.css';
 import Link from 'next/link';
 
 export default function Instructions() {
-    const [isButtonEnabled, setIsButtonEnabled] = useState(false);
+    // const [isButtonEnabled, setIsButtonEnabled] = useState(false);
 
     // Enable button when user scrolls to bottom
-    const handleScroll = (e: { target: any; }) => {
-        const element = e.target;
-        if (element.scrollHeight - element.scrollTop === element.clientHeight) {
-            setIsButtonEnabled(true);
-        }
-    };
+    // const handleScroll = (e: { target: any; }) => {
+    //     const element = e.target;
+    //     if (element.scrollHeight - element.scrollTop === element.clientHeight) {
+    //         setIsButtonEnabled(true);
+    //     }
+    // };
 
     const handleProceed = () => {
         // Add your navigation logic here
@@ -27,7 +27,7 @@ export default function Instructions() {
                 <main className="inst-main">
                     <h1 className="inst-title">Instructions</h1>
 
-                    <div className="inst-contentWrapper" onScroll={handleScroll}>
+                    <div className="inst-contentWrapper">
                         <section className="inst-section">
                             <h2>Getting Started</h2>
                             <p>Welcome to Sir John’s Spelling Bee (SJS Bee)! Please read these instructions carefully before proceeding.</p>
@@ -112,9 +112,9 @@ export default function Instructions() {
 
                    <Link href="/register" >
                     <button
-                        className={`$ inst-proceedButton ${isButtonEnabled ? "inst-enabled" : ''}`}
-                        onClick={handleProceed}
-                        disabled={!isButtonEnabled}
+                        className={`$ inst-proceedButton  "inst-enabled" : ''}`}
+                        // onClick={handleProceed}
+                        // disabled={!isButtonEnabled}
                     >
                         Proceed
                     </button>

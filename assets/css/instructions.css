@@ -74,7 +74,7 @@
     transition: all 0.3s ease;
   }
   
-  .inst-proceedButton.inst-enabled {
+  .inst-proceedButton{
     background-color:var(--active-btn-color);
     cursor: pointer;
   }
