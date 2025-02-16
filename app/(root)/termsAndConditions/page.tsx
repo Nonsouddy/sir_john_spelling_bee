@@ -47,7 +47,7 @@ function page() {
                         <div className="TandC-content">
                             {/* <p>As a user of our platform, you are responsible for:</p> */}
                             <ul>
-                                <li>✓ SJS Bee team hold exclusive right to disqualify participant(s) during competition if they are caught cheating, all rendering assistance of any sort to aid others during the written or oral stages of the competition. Assistance from a tutor or coach to his or her speller(s) during competition shall also lead to the disqualification of such speller(s).</li>
+                                <li>✓ SJS Bee team hold exclusive right to disqualify participant(s) during competition if they are caught cheating, or rendering assistance of any sort to aid others during the written or oral stages of the competition. Assistance from a tutor or coach to his or her speller(s) during competition shall also lead to the disqualification of such speller(s).</li>
                                 <li>✓ Unruly behaviour amongst participants during competition is punishable by automatic disqualification.</li>
                                 <li>✓ All rules guiding the conduct of the competition must be adhered to, strictly by participants, coaches and the audience</li>
                                 
