@@ -1,9 +1,11 @@
+"use client"
+
 import Image from 'next/image'
 import '@assets/css/about.css'
-import Img1 from '@assets/svg/aboutImg1.svg'
-import Rect from '@assets/svg/about_square.svg'
+import Img1 from '../public/Svgs/aboutImg1.svg'
+import Rect from '../public/Svgs/about_square.svg'
 import VisionTag from '@assets/svg/visionTag.svg'
-import moon from '@assets/svg/aboutHalfMoon.svg'
+import moon from '../public/Svgs/aboutHalfMoon.svg'
 import MissionTag from '@assets/svg/missionTag.svg'
 import line from '@assets/svg/line 83.svg'
 import beeImage from '@assets/img/beeImage.png'
