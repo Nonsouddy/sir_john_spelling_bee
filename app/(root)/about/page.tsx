@@ -27,21 +27,21 @@ function About() {
   return (
     <>
       {/* <MaintenancePage page="About Us" /> */}
-      <div className=' min-h-screen '>
-        <div className='container mx-auto' >
-          <div className='flex  lg:flex-row items-center gap-20'>
+      <div className=' min-h-screen  w-full'>
+        <div className='container  max-w-7xl mx-auto px-4 py-8 md:px-8  md:ml-0 sm:ml-2' >
+          <div className='flex lg:flex-row items-center gap-20'>
             <div  className='w-full h-full '>
               <div className='hidden lg:block lg:w-[24.71px] lg:h-[24.71px] lg:ml-[455px] lg:mt-[100px] lg:mb-4 '><Image src={Rect} alt='image' /></div>
-              <div className=" font-['Comic_Sans_MS'] flex flex-col items-start gap-3.5 w-full max-w-[530px] min-h-[443px] mx-4 md:mx-auto md:left-[122px] md:top-[338px] p-4 md:p-0 ">
-                <h1 className=" w-full max-w-[530px] min-h-[78px] font-bold text-3xl md:text-4xl lg:text-[44px] leading-tight md:leading-[61px] text-center  text-accentOrange self-stretch">Sir John’s <span className='text-heroBlue'>Spelling</span> Bee</h1>
-                <p className=" text-xl md:text-2xl lg:text-[28px] leading-[1.4] md:leading-[39px] text-center text-defaultColor">Sir John’s Spelling Bee is a competition for children aged 5–17, aimed at fostering effective communication skills, enriching vocabulary, improving pronunciation, and cultivating poise and confidence. It promotes literacy by emphasizing the power of words as tools for dreaming, building, and exploring.</p>
+              <div className=" font-['Comic_Sans_MS'] flex flex-col items-start gap-3.5 w-full max-w-[530px] min-h-[443px] mx-4 md:mx-auto md:left-[122px] md:top-[338px] p-4 md:p-0 sm:p-0 sm:item-center sm:m-0">
+                <h1 className=" w-full max-w-[530px] min-h-[78px] font-bold text-3xl md:text-4xl lg:text-[44px] leading-tight md:leading-[61px] text-center text-accentOrange self-stretch sm:p-0 sm:item-center sm:m-0">Sir John’s <span className='text-heroBlue'>Spelling</span> Bee</h1>
+                <p className=" text-xl md:text-2xl lg:text-[28px] leading-[1.4] md:leading-[39px] text-center text-defaultColor sm:p-0 sm:item-center sm:m-0">Sir John’s Spelling Bee is a competition for children aged 5–17, aimed at fostering effective communication skills, enriching vocabulary, improving pronunciation, and cultivating poise and confidence. It promotes literacy by emphasizing the power of words as tools for dreaming, building, and exploring.</p>
               </div>
               <div className='hidden lg:block lg:w-[58px] lg:h-[58px] lg:ml-[124px] lg:mt-4'><Image src={moon} alt='image'/></div>
             </div>
             <div className='hidden -mr-8 lg:block lg:w-full lg:h-full lg:left-[739px] lg:top-[133px] md:w-full md:top-[133px]'>
            
            
-                <Image src={Img1} alt='School Image' className=" w-full h-full md:w-full h-full" />
+                <Image src={Img1} alt='School Image' className=" w-full h-full md:w-full h-full " />
                 
             </div>
           </div>
