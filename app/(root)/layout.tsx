@@ -10,7 +10,7 @@ export default async function PagesLayout({ children }: { children: React.ReactN
             <section>
                 <Navbar />
                 {children}
-                {/* <Footer /> */}
+                <Footer />
             </section>
         </main>
 

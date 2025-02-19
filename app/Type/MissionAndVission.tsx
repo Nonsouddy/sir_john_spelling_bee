@@ -22,7 +22,7 @@ function MissionAndVission() {
 
                             <div className="flex flex-col items-center gap-3 mx-auto md:mx-0 w-[90%] sm:w-[375px] md:w-[451px]  h-[150px] sm:h-[170px] mt-[50px] mb-[100px] sm:text-center md:h-[187px]  md:ml-[20px] md:mt-[50px] p-0">
                                 < h2 className="w-[90%] sm:w-[350px] md:w-[451px] h-[50px] sm:h-[60px] md:h-[66px] font-['Comic_Sans_MS'] font-bold  text-3xl sm:text-4xl md:text-[48px] leading-[112%] text-center text-accentOrange mx-auto md:mx-0 flex-none order-0 self-stretch ">
-                                    Vission </h2>
+                                    Vision </h2>
                                 <p className="w-[90%] sm:w-[350px]  md:w-[451px] h-auto min-h-[70px] sm:min-h-[80px] md:min-h-[92px] font-['Istok_Web'] font-normal  text-base sm:text-lg md:text-2xl leading-relaxed md:leading-[35px] text-center text-gray-900 mx-auto md:mx-0 flex-none order-1 self-stretch">Through words, we can raise children with tools to dream, build, create, break away boundaries and explore the world.</p>
                             </div>
                         </div>
