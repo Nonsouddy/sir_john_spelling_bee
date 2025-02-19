@@ -33,6 +33,7 @@ module.exports = {
         naturalColor: "FFFFFA",
         strokeColor2: "#007bff",
         heroBlue: "#59C5F3",
+        
       
 
       },
