@@ -38,6 +38,35 @@ model Contestants {
   updatedAt          DateTime @updatedAt
 }
 
+model Events {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  title     String
+  subtitle  String?
+  body      String?
+  image     String?
+  date      DateTime
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Materials {
+  id             String   @id @default(auto()) @map("_id") @db.ObjectId
+  downloadedUser String   @unique
+  title          String
+  author         String?
+  body           String?
+  downloadLink   String
+  type           String
+  size           Float
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model Gallery {
+  id             String   @id @default(auto()) @map("_id") @db.ObjectId
+  
+}
+
 //Enums
 enum AdminRole {
   admin

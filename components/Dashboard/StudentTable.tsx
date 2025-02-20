@@ -83,37 +83,37 @@ export default function StudentTable({ fetchedContestants, role }: { fetchedCont
                 <table className="bg-lightBlack shadow-md mb-4 rounded-xl min-w-full overflow-hidden">
                     <thead className="bg-gray-700">
                         <tr>
-                            <th className="px-6 py-3 w-12 font-medium text-left text-xs uppercase">
+                            <th className="px-6 py-3 w-12 font-medium text-xs text-left uppercase">
                                 Select
                             </th>
-                            <th className="px-6 py-3 font-medium text-left text-xs uppercase">
+                            <th className="px-6 py-3 font-medium text-xs text-left uppercase">
                                 IDs
                             </th>
-                            <th className="px-6 py-3 font-medium text-left text-xs uppercase">
+                            <th className="px-6 py-3 font-medium text-xs text-left uppercase">
                                 Contestant Name
                             </th>
-                            <th className="px-6 py-3 font-medium text-left text-xs uppercase">
+                            <th className="px-6 py-3 font-medium text-xs text-left uppercase">
                                 Email and Phone Number
                             </th>
-                            <th className="px-6 py-3 font-medium text-left text-xs uppercase">
+                            <th className="px-6 py-3 font-medium text-xs text-left uppercase">
                                 Gender and Date of Birth
                             </th>
-                            <th className="px-6 py-3 font-medium text-left text-xs uppercase">
+                            <th className="px-6 py-3 font-medium text-xs text-left uppercase">
                                 Class and Category
                             </th>
-                            <th className="px-6 py-3 font-medium text-left text-xs uppercase">
+                            <th className="px-6 py-3 font-medium text-xs text-left uppercase">
                                 School name
                             </th>
-                            <th className="px-6 py-3 font-medium text-left text-xs uppercase">
+                            <th className="px-6 py-3 font-medium text-xs text-left uppercase">
                                 Location and Phone Number
                             </th>
-                            <th className="px-6 py-3 font-medium text-left text-xs uppercase">
+                            <th className="px-6 py-3 font-medium text-xs text-left uppercase">
                                 Tutor Name and Phone Number
                             </th>
-                            <th className="px-6 py-3 font-medium text-left text-xs uppercase">
+                            <th className="px-6 py-3 font-medium text-xs text-left uppercase">
                                 Has Paid?
                             </th>
-                            <th className="px-6 py-3 font-medium text-left text-xs uppercase">
+                            <th className="px-6 py-3 font-medium text-xs text-left uppercase">
                                 Actions
                             </th>
                         </tr>
@@ -124,10 +124,10 @@ export default function StudentTable({ fetchedContestants, role }: { fetchedCont
                                 <td className="px-6 py-4">
                                     <input type="checkbox" checked={selectedIds.includes(contestant.studentId)} onChange={() => handleSelect(contestant.studentId)} className="w-4 h-4 text-generalBlue dark:text-cloudBlue cursor-pointer" />
                                 </td>
-                                <td className="px-6 py-4"><Link href={`/admin/students/${contestant.studentId}`}>{contestant.studentId}</Link>
+                                <td className="px-6 py-4"><Link href={`/admin/contestants/${contestant.studentId}`}>{contestant.studentId}</Link>
                                 </td>
                                 <td className="px-6 py-4">
-                                    {contestant.studentFullName}
+                                    <Link href={`/admin/contestants/${contestant.studentId}`}>{contestant.studentFullName}</Link>
                                 </td>
                                 <td className="px-6 py-4">
                                     {contestant.studentEmail}
@@ -158,7 +158,7 @@ export default function StudentTable({ fetchedContestants, role }: { fetchedCont
                                     </span>
                                 </td>
                                 <td className="flex gap-x-5 mt-2 md:mt-3 px-6 py-4">
-                                    <TickSquare onClick={() => handleUpdate(contestant.studentId, contestant.studentEmail)} color='#4ade80' variant='Bold' className="cursor-pointer size-6" />
+                                    <TickSquare onClick={() => handleUpdate(contestant.studentId, contestant.studentEmail)} color='#4ade80' variant='Bold' className="size-6 cursor-pointer" />
                                     {role === "super_admin" &&
                                         <button onClick={() => handleDelete(contestant.studentId)} className="text-red-400 hover:text-red-200" disabled={loading}>
                                             {loading ? <ChartCircle size={14} color="#2ccce4" className="animate-spin" />

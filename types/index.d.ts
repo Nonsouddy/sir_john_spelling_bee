@@ -61,21 +61,21 @@ declare type SummaryProps = {
 
 //Contestant
 declare type Contestant = {
-    id: string;
-    studentId: string;
-    studentFullName: string;
-    studentEmail: string;
-    studentPhoneNumber: string;
-    gender: "male" | "female" | "";
-    studentDateOfBirth: string;
-    studentClass: string;
-    category: string;
-    schoolName: string;
-    schoolLocation: string;
-    schoolPhoneNumber: string;
-    tutorName: string;
-    tutorPhoneNumber: string;
-    hasPaid: boolean | null;
-    createdAt: Date;
-    updatedAt: Date;
+    category: string
+    createdAt: Date
+    gender: string
+    hasPaid: boolean | null
+    id: string
+    schoolLocation: string
+    schoolName: string
+    schoolPhoneNumber: string
+    studentClass: string
+    studentDateOfBirth: string
+    studentEmail: string
+    studentFullName: string
+    studentId: string
+    studentPhoneNumber: string
+    tutorName: string
+    tutorPhoneNumber: string
+    updatedAt: Date
 };
