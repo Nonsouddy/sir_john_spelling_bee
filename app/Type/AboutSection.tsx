@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
-import strike from '../../public/Svgs/vector 5.svg'
-import vector from '../../public/Svgs/vector 12.svg'
+import strike from '../../public/svgs/vector 5.svg'
+import vector from '../../public/svgs/vector12.svg'
 
 
 const WhySirJohnsSection = () => {
