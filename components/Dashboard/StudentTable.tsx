@@ -24,7 +24,7 @@ export default function StudentTable({ fetchedContestants, role }: { fetchedCont
         )
     }
 
-    //For the deleting of images
+    //Handle updates
     const handleUpdate = async (studentId: string, email: string) => {
 
         toast.message("Updating Payment Status...")
