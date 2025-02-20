@@ -1,4 +1,4 @@
-const UnPaidTable = ({ contestants }: { contestants: Contestant[] }) => {
+const UnPaidTable = ({ contestants, role }: { contestants: Contestant[], role: string }) => {
     return (
         <main>
 
