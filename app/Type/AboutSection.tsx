@@ -1,10 +1,10 @@
-import React from 'react';
+
 import Image from 'next/image';
 import strike from '../../public/Svgs/vector 5.svg'
-// import vector from '../../public/Svgs/vector_12.svg'
+import vector from '../../public/Svgs/vector_12.svg'
 
 
-const WhySirJohnsSection = () => {
+function WhySirJohnsSection() {
   return (
     <>
     <section className='bg-paleYellow '><div className="flex flex-col lg:flex-row gap-8 p-8 max-w-7xl mx-auto w-full">
@@ -56,7 +56,8 @@ const WhySirJohnsSection = () => {
               {/* Box 3 */}
               <div className="bg-paleYellow p-6 rounded-lg shadow-md  lg:text-center">
                   <h2 className="text-xl font-bold mb-3">Boost <div>Confidence</div> 
-                  <Image className=" lg:ml-[60px] md:ml-[60px] sm:-ml-6" src={strike} alt='' /></h2>
+                  {/* <Image className=" lg:ml-[60px] md:ml-[60px] sm:-ml-6" src={strike} alt='' />  */}
+                  </h2>
                   <p className="text-darkGray  font-['Istok_Web']">
                       Develop self-assurance and poise through engaging activities.
                   </p>
@@ -76,7 +77,7 @@ const WhySirJohnsSection = () => {
       </div>
       </section>
       </>
-  );
+  )
 };
 
 export default WhySirJohnsSection;
