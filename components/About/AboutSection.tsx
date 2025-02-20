@@ -17,7 +17,7 @@ const AboutSection = () =>{
                       <div className="text-3xl font-bold text-heroBlue">Bee</div>
                   </div>
               </div>
-              <p className="text-darkGray leading-normal w-80">
+              <p className="text-darkGray leading-normal w-80 sm:w-full">
                   Words are powerful—they are the building blocks of language and key to expressing ourselves.
                   At Sir John&apos;s Spelling Bee, we create a fair and inclusive platform where learners can grow
                   their confidence, showcase their abilities, and embrace the challenge of effective communication.
@@ -43,7 +43,7 @@ const AboutSection = () =>{
                   <div className="mb-3 ">
                       <h2 className="text-xl font-bold">
                           Build<span className="">Skills</span>
-                          <Image className=' hidden lg:-mt-8 ml-[115px] md: -mt-8 ml-[116px] lg:block md:block ' src={vector} alt='' />
+                          <Image className=' hidden lg:-mt-8 ml-[115px] md: -mt-8 ml-[115px] lg:block md:block ' src={vector} alt='' />
                       </h2>
                   </div>
                   <p className="text-darkGray  font-['Istok_Web']">
