@@ -63,7 +63,7 @@ export default MissionAndVission;
 
 
 
-// function MissionAndVission() {
+
 //     return (
 //         <>
 //             <div className="min-h-screen w-full ">
