@@ -12,7 +12,7 @@ function MissionAndVission() {
   return (
     <>
     <div className="min-h-screen w-full flex flex-col items-center px-4 md:px-8 lg:px-16  ">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-7xl lg:grid-cols-2 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-7xl lg:grid-cols-2 md:overflow-hidden sm:overflow-hidden ">
         {/* Vision Section */}
         
         <div className=" font-['Comic_Sans_MS'] flex flex-col items-center md:items-center bg-heroBlue text-white  md:p-10 rounded-lg  md:rounded-r-xl ">
@@ -45,7 +45,7 @@ function MissionAndVission() {
     
     </div>
       {/* Bee Image and Letters Section */}
-      <div className='flex gap-6 mt-[-50px] ml-[100px] sm:block hidden md:flex '>
+      <div className='flex gap-6 mt-[-50px] ml-[100px] sm:block hidden md:flex'>
                         <div className='pt-10'>
                            <Image className='' src={beeImage} alt='' />
                         </div>

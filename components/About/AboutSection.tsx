@@ -7,7 +7,8 @@ import vector from '../../public/Svgs/Vector_12.svg'
 const AboutSection = () =>{
   return (
     <>
-    <section className='bg-paleYellow'><div className="flex flex-col lg:flex-row gap-8 p-8 max-w-7xl mx-auto w-full">
+    <section className='bg-paleYellow'>
+        <div className="flex flex-col lg:flex-row gap-8 p-8 max-w-7xl mx-auto w-full lg:overflow-hidden md:overflow-hidden sm:overflow-hidden">
           {/* Left Column */}
           <div className="lg:w-1/2 font-['Comic_Sans_MS'] lg:mt-[100px]">
               <div className="mb-6">
@@ -17,7 +18,7 @@ const AboutSection = () =>{
                       <div className="text-3xl font-bold text-heroBlue">Bee</div>
                   </div>
               </div>
-              <p className="text-darkGray leading-normal w-80 sm:w-full">
+              <p className="text-darkGray leading-normal lg:w-80 md:w-80 sm:w-60">
                   Words are powerful—they are the building blocks of language and key to expressing ourselves.
                   At Sir John&apos;s Spelling Bee, we create a fair and inclusive platform where learners can grow
                   their confidence, showcase their abilities, and embrace the challenge of effective communication.
@@ -42,8 +43,8 @@ const AboutSection = () =>{
               <div className="bg-paleYellow p-6 rounded-lg shadow-md lg:text-center">
                   <div className="mb-3 ">
                       <h2 className="text-xl font-bold">
-                          Build<span className="">Skills</span>
-                          <Image className=' hidden lg:-mt-8 ml-[115px] md: -mt-8 ml-[115px] lg:block md:block ' src={vector} alt='' />
+                          Build<span className="pl-1">Skills</span>
+                          <Image className=' hidden lg:ml-[7.1rem]-mt-8 md:-mt-8 ml-[5.7rem] xl:ml-[4.6rem] -mt-8  lg:block md:block ' src={vector} alt='' />
                       </h2>
                   </div>
                   <p className="text-darkGray  font-['Istok_Web']">

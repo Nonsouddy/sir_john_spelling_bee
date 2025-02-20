@@ -32,7 +32,7 @@ const stakeholders = [
 export default function StakeholderSection() {
   return (
     <div className="py-12 bg-white ">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6 md:overflow-hidden sm:overflow-hidden">
         <h2 className="text-3xl font-extrabold text-center pb-[40px] pt-[40px]  font-['Comic_Sans_MS'] text-textBlack">Key Stakeholders</h2>
 
         <div className="gap-8  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">

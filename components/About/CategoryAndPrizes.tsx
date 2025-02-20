@@ -12,7 +12,7 @@ function CategoryPrizesSection()  {
   ];
 
   return (
-    <div className="w-full bg-heroBlue py-12 px-4 sm:px-6 lg:px-8">
+    <div className="w-full bg-heroBlue py-12 px-4 sm:px-6 lg:px-8 md:overflow-hidden sm:overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="flex flex-wrap justify-center items-center gap-4 mb-12 font-['Comic_Sans_MS']">
