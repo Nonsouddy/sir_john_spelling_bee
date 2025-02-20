@@ -22,7 +22,7 @@ const faqData: FAQItem[] = [
   },
   {
     question: "How Can I Participate in the SJS Bee?",
-    answer: "You can participate in the Sir John's Spelling Bee by registering online on https://www.sirjohnspellingbee.com.ng as long as you meet the eligibility criteria.The Bee is open to all pupils and students in Nigeria within the criteria, both spellers registering under their schools or registered independently by parents"
+    answer: "You can participate in the Sir John's Spelling Bee by registering online on www.sirjohnspellingbee.com.ng as long as you meet the eligibility criteria.The Bee is open to all pupils and students in Nigeria within the criteria, both spellers registering under their schools or registered independently by parents"
 },
   
   {
@@ -58,7 +58,7 @@ const faqData: FAQItem[] = [
   },
   {
     question: "How Can I Download The Study Guide?",
-    answer: "The study guide will be available for download once your registration is completed and for the category registered only. If you encounter any issues or could not download it, please email us at sirjohnspellingbee8@gmail.com. Make sure to include the speller's ID in your request for prompt assistance."
+    answer: "The study guide will be available for download once your registration is completed and for the category registered only. If you encounter any issues or could not download it, please email contact@sirjohnspellingbee.com.ng Make sure to include the speller's ID in your request for prompt assistance."
   },
   {
     question: "My Question Is Not Answered Above / I Need More Clarification",
