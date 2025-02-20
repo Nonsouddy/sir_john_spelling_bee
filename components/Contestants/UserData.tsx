@@ -1,90 +1,87 @@
-
-//Icons
-import { User, MedalStar, Sms, Calendar, Location, Clock, Call } from "iconsax-react";
-
-//Utils
-import { formatDate } from "@/lib/format"
-
+import Link from "next/link";
+import { formatDate } from "@/lib/format";
+import {
+    User, MedalStar, Sms, Calendar, Location, Clock, Call, TagUser, Man, Woman, Book, Tag2, Building, Teacher, Note, UserTick
+} from "iconsax-react";
 
 export default function UserDataDisplay({ contestant }: { contestant: Contestant }) {
-
     return (
-        <div className="bg-white shadow-lg mx-auto rounded-lg max-w-2xl overflow-hidden">
-            <div className="bg-blue-600 px-6 py-4 text-white">
-                <h2 className="flex items-center font-bold text-2xl">
-                    <User className="mr-2" /> Student Information
-                </h2>
+        <main className="mt-6">
+            <div className="flex justify-between items-center mb-4">
+                <p>View Contestants?</p>
+                <Link href="/admin/contestants" className="bg-primaryYellow hover:bg-inherit px-8 py-3 hover:border border-primaryYellow rounded-3xl w-fit text-black hover:text-white duration-300">Contestants</Link>
             </div>
-            <div className="space-y-4 p-6">
-                <div className="gap-4 grid grid-cols-2">
-                    <InfoItem icon={<User />} label="Full Name" value={contestant.studentFullName} />
-                    <InfoItem icon={<User />} label="Gender" value={contestant.gender} />
-                    <InfoItem icon={<MedalStar />} label="Category" value={contestant.category} />
-                    <InfoItem icon={<MedalStar />} label="Class" value={contestant.studentClass} />
-                    <InfoItem icon={<Calendar />} label="Date of Birth" value={contestant.studentDateOfBirth} />
-                    <InfoItem icon={<Sms />} label="Email" value={contestant.studentEmail} />
-                    <InfoItem icon={<Call />} label="Phone Number" value={contestant.studentPhoneNumber} />
-                    <InfoItem icon={<User />} label="Student ID" value={contestant.studentId} />
-                </div>
+            
+            <Section title="Student Information" icon={<User size={24} color="#FFF" variant="Bold" />}>
+                <InfoGrid>
+                    <InfoItem icon={<TagUser size={20} color="#FFF" variant="Bold" />} label="Full Name" value={contestant.studentFullName} />
+                    <InfoItem icon={contestant.gender === "male" ? <Man size={20} color="#FFF" variant="Bold" /> : <Woman size={20} color="#FFF" variant="Bold" />} label="Gender" value={contestant.gender} />
+                    <InfoItem icon={<MedalStar size={20} color="#FFF" variant="Bold" />} label="Category" value={contestant.category} />
+                    <InfoItem icon={<Book size={20} color="#FFF" variant="Bold" />} label="Class" value={contestant.studentClass} />
+                    <InfoItem icon={<Calendar size={20} color="#FFF" variant="Bold" />} label="Date of Birth" value={contestant.studentDateOfBirth} />
+                    <InfoItem icon={<Sms size={20} color="#FFF" variant="Bold" />} label="Email" value={contestant.studentEmail} />
+                    <InfoItem icon={<Call size={20} color="#FFF" variant="Bold" />} label="Phone Number" value={contestant.studentPhoneNumber} />
+                    <InfoItem icon={<Tag2 size={20} color="#FFF" variant="Bold" />} label="Student ID" value={contestant.studentId} />
+                </InfoGrid>
+            </Section>
+            
+            <Section title="School Information" icon={<Building size={24} color="#FFF" variant="Bold" />}>
+                <InfoGrid>
+                    <InfoItem icon={<MedalStar size={20} color="#FFF" variant="Bold" />} label="School Name" value={contestant.schoolName} />
+                    <InfoItem icon={<Call size={20} color="#FFF" variant="Bold" />} label="School Phone" value={contestant.schoolPhoneNumber} />
+                    <InfoItem icon={<Location size={20} color="#FFF" variant="Bold" />} label="School Location" value={contestant.schoolLocation} span={2} />
+                </InfoGrid>
+            </Section>
+            
+            <Section title="Tutor Information" icon={<Teacher size={24} color="#FFF" variant="Bold" />}>
+                <InfoGrid>
+                    <InfoItem icon={<User size={20} color="#FFF" variant="Bold" />} label="Tutor Name" value={contestant.tutorName} />
+                    <InfoItem icon={<Call size={20} color="#FFF" variant="Bold" />} label="Tutor Phone" value={contestant.tutorPhoneNumber} />
+                </InfoGrid>
+            </Section>
+            
+            <Section title="Additional Information" icon={<Note size={24} color="#FFF" variant="Bold" />}>
+                <InfoGrid>
+                    <InfoItem icon={<Clock size={20} color="#FFF" variant="Bold" />} label="Created At" value={formatDate(contestant.createdAt)} span={2} />
+                    <InfoItem icon={<Clock size={20} color="#FFF" variant="Bold" />} label="Updated At" value={formatDate(contestant.updatedAt)} span={2} />
+                    <InfoItem icon={<UserTick />} label="Payment Status" value={contestant.hasPaid ? "Paid" : "Not Paid"} valueClass={contestant.hasPaid ? "text-green-600 font-semibold" : "text-red-600 font-semibold"} />
+                </InfoGrid>
+            </Section>
+        </main>
+    );
+}
 
-                <div className="pt-4 border-t">
-                    <h3 className="flex items-center mb-2 font-semibold text-lg">
-                        <MedalStar className="mr-2" /> School Information
-                    </h3>
-                    <div className="gap-4 grid grid-cols-2">
-                        <InfoItem icon={<MedalStar />} label="School Name" value={contestant.schoolName} />
-                        <InfoItem icon={<Call />} label="School Phone" value={contestant.schoolPhoneNumber} />
-                        <InfoItem icon={<Location />} label="School Location" value={contestant.schoolLocation} span={2} />
-                    </div>
-                </div>
-
-                <div className="pt-4 border-t">
-                    <h3 className="flex items-center mb-2 font-semibold text-lg">
-                        <User className="mr-2" /> Tutor Information
-                    </h3>
-                    <div className="gap-4 grid grid-cols-2">
-                        <InfoItem icon={<User />} label="Tutor Name" value={contestant.tutorName} />
-                        <InfoItem icon={<Call />} label="Tutor Phone" value={contestant.tutorPhoneNumber} />
-                    </div>
-                </div>
-
-                <div className="pt-4 border-t">
-                    <h3 className="flex items-center mb-2 font-semibold text-lg">
-                        <Clock className="mr-2" /> Additional Information
-                    </h3>
-                    <div className="gap-4 grid grid-cols-2">
-                        <InfoItem icon={<Clock />} label="Created At" value={formatDate(contestant.createdAt)} span={2} />
-                        <InfoItem icon={<Clock />} label="Updated At" value={formatDate(contestant.updatedAt)} span={2} />
-                        <InfoItem
-                            icon={<User />}
-                            label="Payment Status"
-                            value={contestant.hasPaid ? "Paid" : "Not Paid"}
-                            valueClass={contestant.hasPaid ? "text-green-600 font-semibold" : "text-red-600 font-semibold"}
-                        />
-                    </div>
-                </div>
-            </div>
+function Section({ title, icon, children }: { title: string, icon: React.ReactNode, children: React.ReactNode }) {
+    return (
+        <div className="pt-4 border-t">
+            <h3 className="flex items-center bg-normalBlue mb-2 px-6 py-4 font-semibold text-white text-base md:text-lg xl:text-xl">
+                {icon} <span className="ml-2">{title}</span>
+            </h3>
+            {children}
         </div>
-    )
+    );
 }
 
-interface InfoItemProps {
-    icon: React.ReactNode
-    label: string
-    value: string | boolean
-    span?: number
-    valueClass?: string
+function InfoGrid({ children }: { children: React.ReactNode }) {
+    return <div className="gap-4 grid grid-cols-2 p-2 md:p-4 xl:p-6">{children}</div>;
 }
+
+type InfoItemProps = {
+    icon: React.ReactNode;
+    label: string;
+    value: string | boolean;
+    span?: number;
+    valueClass?: string;
+};
 
 function InfoItem({ icon, label, value, span = 1, valueClass = "" }: InfoItemProps) {
     return (
         <div className={`flex items-start space-x-2 col-span-${span}`}>
-            <div className="text-blue-600">{icon}</div>
+            <div>{icon}</div>
             <div>
-                <p className="text-gray-600 text-sm">{label}</p>
-                <p className={`font-medium ${valueClass}`}>{value.toString()}</p>
+                <p className="text-gray-500">{label}</p>
+                <p className={`font-medium capitalize text-white break-all ${valueClass}`}>{value.toString()}</p>
             </div>
         </div>
-    )
+    );
 }
-
