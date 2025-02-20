@@ -18,7 +18,7 @@ import FAQPage from '../faq/page'
 
 //Components
 import CategoryAndPrizes from '../../Type/CategoryAndPrizes'
-import AboutSection from '../../Type/AboutSection'
+// import AboutSection from '../../Type/AboutSection'
 import KeyStakeHolders from '../../Type/KeyStakeHolders'
 import MissionAndVission from '../../Type/MissionAndVission'
 
@@ -59,7 +59,7 @@ function About() {
 
             </div>
             <MissionAndVission/>
-            <AboutSection/>
+            {/* <AboutSection/> */}
             <KeyStakeHolders/>
 
             <CategoryAndPrizes/>
