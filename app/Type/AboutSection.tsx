@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
-import strike from '../../public/svgs/vector 5.svg'
-import vector from '../../public/svgs/vector12.svg'
+import strike from '../../public/Svgs/vector 5.svg'
+// import vector from '../../public/Svgs/vector_12.svg'
 
 
 const WhySirJohnsSection = () => {
@@ -43,7 +43,7 @@ const WhySirJohnsSection = () => {
                   <div className="mb-3 ">
                       <h2 className="text-xl font-bold">
                           Build<span className="">Skills</span>
-                          <Image className=' hidden lg:-mt-8 ml-[115px] md: -mt-8 ml-[116px] lg:block md:block ' src={vector} alt='' />
+                          {/* <Image className=' hidden lg:-mt-8 ml-[115px] md: -mt-8 ml-[116px] lg:block md:block ' src={vector} alt='' /> */}
                       </h2>
                   </div>
                   <p className="text-darkGray  font-['Istok_Web']">
