@@ -1,9 +1,9 @@
-const UnPaidTable = () => {
-    return ( 
+const UnPaidTable = ({ contestants }: { contestants: Contestant[] }) => {
+    return (
         <main>
-            
+
         </main>
-     );
+    );
 }
- 
+
 export default UnPaidTable;

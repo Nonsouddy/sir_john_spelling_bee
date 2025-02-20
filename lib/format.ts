@@ -2,6 +2,8 @@ export const formatSubheading = (page: string) => {
     switch (page) {
         case "dashboard":
             return "Unified Dashboard for Seamless Management Operations.";
+        case "contestants":
+            return "Management Contestants Details.";
 
         default:
             return "Seamless Management Operations.";

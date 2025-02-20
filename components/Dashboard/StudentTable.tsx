@@ -119,7 +119,7 @@ export default function StudentTable({ fetchedContestants, role }: { fetchedCont
                         </tr>
                     </thead>
                     <tbody>
-                        {contestants.map((contestant, index) => (
+                        {contestants.length > 0 && contestants.map((contestant, index) => (
                             <tr key={contestant.id} className={`${index % 2 === 0 ? "bg-black" : "bg-lightBlack"} whitespace-nowrap capitalize`}>
                                 <td className="px-6 py-4">
                                     <input type="checkbox" checked={selectedIds.includes(contestant.studentId)} onChange={() => handleSelect(contestant.studentId)} className="w-4 h-4 text-generalBlue dark:text-cloudBlue cursor-pointer" />
@@ -170,7 +170,13 @@ export default function StudentTable({ fetchedContestants, role }: { fetchedCont
                             </tr>
                         ))}
                     </tbody>
+
                 </table>
+                {contestants.length === 0 &&
+                    <p className="px-6 py-4 text-center">
+                        Payment is confirmed for all contestants.
+                    </p>
+                }
             </div>
             {selectedIds.length > 0 &&
                 <div className="flex justify-between mt-6">
