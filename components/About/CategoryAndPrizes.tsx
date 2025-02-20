@@ -1,7 +1,7 @@
+'use client'
 
-import React from 'react';
 
-const CategoryPrizesSection = () => {
+function CategoryPrizesSection()  {
   const prizeTitle = [
     { letter: 'P', color: 'text-[#FEF506]' },
     { letter: 'r', color: 'text-[#EB8733]' },

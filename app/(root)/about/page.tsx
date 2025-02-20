@@ -17,10 +17,10 @@ import stake from '@assets/svg/Vector 2516.svg'
 import FAQPage from '../faq/page'
 
 //Components
-import CategoryAndPrizes from '../../Type/CategoryAndPrizes'
-// import AboutSection from '../../Type/AboutSection'
-import KeyStakeHolders from '../../Type/KeyStakeHolders'
-import MissionAndVission from '../../Type/MissionAndVission'
+import CategoryAndPrizes from '../../../components/About/CategoryAndPrizes'
+import AboutSection from '../../../components/About/AboutSection'
+import KeyStakeHolders from '../../../components/About/KeyStakeHolders'
+import MissionAndVission from '../../../components/About/MissionAndVission'
 
 
 function About() {
@@ -59,7 +59,7 @@ function About() {
 
             </div>
             <MissionAndVission/>
-            {/* <AboutSection/> */}
+            <AboutSection/>
             <KeyStakeHolders/>
 
             <CategoryAndPrizes/>

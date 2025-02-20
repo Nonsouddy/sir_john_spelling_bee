@@ -1,7 +1,11 @@
+'use client'
 import Image from "next/image"
 import MissionTag from '../../public/Svgs/mission.svg'
 import VisionTag from '../../public/Svgs/vision.svg'
 import beeImage from '../../public/Images/beeImage.png'
+
+
+
 
 
 function MissionAndVission() {

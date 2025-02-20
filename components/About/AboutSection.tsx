@@ -1,17 +1,17 @@
 
 import Image from 'next/image';
-import strike from '../../public/Svgs/vector 5.svg'
-import vector from '../../public/Svgs/vector_12.svg'
+import strike from '../../public/svgs/vector 5.svg'
+import vector from '../../public/svgs/vector_12.svg'
 
 
-const WhySirJohnsSection = () =>{
+const AboutSection = () =>{
   return (
     <>
-    <section className='bg-paleYellow '><div className="flex flex-col lg:flex-row gap-8 p-8 max-w-7xl mx-auto w-full">
+    <section className='bg-paleYellow'><div className="flex flex-col lg:flex-row gap-8 p-8 max-w-7xl mx-auto w-full">
           {/* Left Column */}
           <div className="lg:w-1/2 font-['Comic_Sans_MS'] lg:mt-[100px]">
               <div className="mb-6">
-                  <h2 className="text-3xl font-bold mb-4 text-paleLemon">Why Sir John's</h2>
+                  <h2 className="text-3xl font-bold mb-4 text-paleLemon">Why Sir John&apos;s</h2>
                   <div className="mb-4 flex gap-3">
                       <span className="text-3xl font-bold block text-accentOrange">Spelling</span>
                       <div className="text-3xl font-bold text-heroBlue">Bee</div>
@@ -19,7 +19,7 @@ const WhySirJohnsSection = () =>{
               </div>
               <p className="text-darkGray leading-normal w-80">
                   Words are powerful—they are the building blocks of language and key to expressing ourselves.
-                  At Sir John's Spelling Bee, we create a fair and inclusive platform where learners can grow
+                  At Sir John&apos;s Spelling Bee, we create a fair and inclusive platform where learners can grow
                   their confidence, showcase their abilities, and embrace the challenge of effective communication.
                   Through words, we empower participants to connect, share, and explore their world.
               </p>
@@ -43,7 +43,7 @@ const WhySirJohnsSection = () =>{
                   <div className="mb-3 ">
                       <h2 className="text-xl font-bold">
                           Build<span className="">Skills</span>
-                          {/* <Image className=' hidden lg:-mt-8 ml-[115px] md: -mt-8 ml-[116px] lg:block md:block ' src={vector} alt='' /> */}
+                          <Image className=' hidden lg:-mt-8 ml-[115px] md: -mt-8 ml-[116px] lg:block md:block ' src={vector} alt='' />
                       </h2>
                   </div>
                   <p className="text-darkGray  font-['Istok_Web']">
@@ -80,4 +80,4 @@ const WhySirJohnsSection = () =>{
   );
 };
 
-export default WhySirJohnsSection;
+export default AboutSection;

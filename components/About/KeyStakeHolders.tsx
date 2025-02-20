@@ -1,8 +1,10 @@
+'use client'
 import Image from "next/image";
 import { motion } from 'framer-motion';
 import Teacher from '../../public/Images/Teacher.png';
 import Student from '../../public/Images/Students.png';
 import Parent from '../../public/Images/Parent.png';
+
 const stakeholders = [
   {
     img: Teacher,
