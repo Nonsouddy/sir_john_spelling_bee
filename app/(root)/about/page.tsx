@@ -12,14 +12,14 @@ import text from '@assets/svg/text.svg'
 import ball from '@assets/svg/Ball.svg'
 import strike from '@assets/svg/vector 5.svg'
 import vector from '@assets/svg/vector 12.svg'
-import Student from '@assets/img/Students.png'
-import Teacher from '@assets/img/Teacher.png'
-import Parent from '@assets/img/Parent.png'
+
 import stake from '@assets/svg/Vector 2516.svg'
 import FAQPage from '../faq/page'
 
 //Components
 import CategoryAndPrizes from '../../Type/CategoryAndPrizes'
+import AboutSection from '../../Type/AboutSection'
+import KeyStakeHolders from '../../Type/KeyStakeHolders'
 import MissionAndVission from '../../Type/MissionAndVission'
 
 
@@ -59,9 +59,14 @@ function About() {
 
             </div>
             <MissionAndVission/>
+            <AboutSection/>
+            <KeyStakeHolders/>
+
+            <CategoryAndPrizes/>
 
 
         </>
+        
 
     )
 }
