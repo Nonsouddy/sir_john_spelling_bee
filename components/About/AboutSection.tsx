@@ -1,7 +1,7 @@
 
 import Image from 'next/image';
-import strike from '../../public/svgs/vector 5.svg'
-import vector from '../../public/svgs/vector_12.svg'
+import strike from '../../public/Svgs/Vector 5.svg'
+import vector from '../../public/Svgs/Vector_12.svg'
 
 
 const AboutSection = () =>{
