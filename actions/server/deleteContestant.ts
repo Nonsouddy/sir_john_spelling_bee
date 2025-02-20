@@ -13,8 +13,8 @@ export async function deleteContestant(studentId: string) {
 
         return { success: true, message: "The contestant was deleted successfully." }
 
-    } catch (error) {
-        console.error('Error deleting contestant', error)
+    } catch (error: any) {
+        console.error('Error deleting contestant', error.stack)
         return { success: false, error: error }
     }
 }
@@ -31,8 +31,8 @@ export async function deleteContestants(studentIds: string[]) {
 
         return { success: true, message: "The contestants were deleted successfully." }
 
-    } catch (error) {
-        console.error('Error deleting contestants', error)
+    } catch (error: any) {
+        console.error('Error deleting contestants', error.stack)
         return { success: false, error: error }
     }
 }

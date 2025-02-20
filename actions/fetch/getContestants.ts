@@ -27,7 +27,7 @@ export default async function getContestants() {
         return { allContestants, nonPaidContestants, paidContestants, lastTenUnPaidContestants, totalSchools };
 
     } catch (error: any) {
-        console.error('Error fetching contestants:', error);
+        console.error('Error fetching contestants:', error.stack);
         throw error;
     }
 }

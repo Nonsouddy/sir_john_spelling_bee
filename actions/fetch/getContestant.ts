@@ -16,7 +16,7 @@ export default async function getContestant(id: string) {
         return { success: !!contestant, contestant };
 
     } catch (error: any) {
-        console.error('Error fetching contestant:', error);
+        console.error('Error fetching contestant:', error.stack);
         return { success: false, contestant: null }
     }
 }
