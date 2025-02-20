@@ -60,7 +60,7 @@ function CategoryPrizesSection()  {
           {/* Winners Prizes */}
           <div className="bg-primaryYellow rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
             <h3 className="text-xl md:text-2xl font-extrabold mb-6 font-['Comic_Sans_MS']">
-              For Winners
+              For Winners (For Each Category)
             </h3>
             <ul className="space-y-3 font-bold text-[#032230] font-['Istok_Web']">
               <li className="flex items-center space-x-2">
@@ -83,13 +83,20 @@ function CategoryPrizesSection()  {
                 <span className="w-2 h-2 bg-yellow-500 rounded-full"></span>
                 <span>5th: ₦100,000</span>
               </li>
+              <li className="flex items-center space-x-2">
+                <span className="w-2 h-2 bg-yellow-500 rounded-full"></span>
+                <span>Consolation prize for 6th-10th place winners.</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <span className=" pt-1">Trophies, medals, plaques and recognition for winners schools.</span>
+              </li>
             </ul>
           </div>
 
           {/* Coaches Prizes */}
           <div className="bg-primaryYellow rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
             <h3 className="text-xl md:text-2xl font-extrabold mb-6 font-['Comic_Sans_MS']">
-              For Coaches
+              For Coaches (For Each Category)
             </h3>
             <ul className="space-y-3 font-bold text-[#032230] font-['Istok_Web']">
               <li className="flex items-center space-x-2 ">

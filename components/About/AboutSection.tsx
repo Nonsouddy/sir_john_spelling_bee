@@ -19,7 +19,7 @@ const AboutSection = () =>{
                   </div>
               </div>
               <p className="text-darkGray leading-normal lg:w-80 md:w-80 sm:w-60">
-                  Words are powerful—they are the building blocks of language and key to expressing ourselves.
+                  Words are powerful—they are the building blocks of any language and key to expressing ourselves.
                   At Sir John&apos;s Spelling Bee, we create a fair and inclusive platform where learners can grow
                   their confidence, showcase their abilities, and embrace the challenge of effective communication.
                   Through words, we empower participants to connect, share, and explore their world.
@@ -44,7 +44,7 @@ const AboutSection = () =>{
                   <div className="mb-3 ">
                       <h2 className="text-xl font-bold">
                           Build<span className="pl-1">Skills</span>
-                          <Image className=' hidden lg:ml-[7.1rem]-mt-8 md:-mt-8 ml-[5.7rem] xl:ml-[4.6rem] -mt-8  lg:block md:block ' src={vector} alt='' />
+                          <Image className=' hidden lg:-mt-8 ml-[7.7rem] md:-mt-8 ml-[6rem] xl:ml-[4.6rem] -mt-8 lg:block md:block ' src={vector} alt='' />
                       </h2>
                   </div>
                   <p className="text-darkGray  font-['Istok_Web']">

@@ -11,7 +11,7 @@ const stakeholders = [
     title: 'Teachers',
     color: 'text-[#59C5F3]',
     description:
-      'They play a vital role by serving as mentors, spelling coaches, and motivators. They create engaging learning experiences that inspire their pupils and students while also acting as school bee coordinators and judges to ensure student success.',
+      'They play a vital role by serving as mentors, spelling coaches, and motivators. They create engaging learning experiences that inspire their pupils and students while also acting as school bee coordinators and judges to ensure their learners success.',
   },
   {
     img: Student,
@@ -25,7 +25,7 @@ const stakeholders = [
     title: 'Parents/Guardians',
     color: 'text-[#D0C901]',
     description:
-      'They play a crucial role in supporting the overall well-being of their wards. They experience joy and fulfillment in seeing their children achieve success and grow through their participation in Sir John’s Spelling Bee.',
+      'They play a crucial role in supporting the overall well-being of their wards. They experience joy and fulfilment in seeing their children achieve success and grow through their participation in Sir John’s Spelling Bee.',
   },
 ];
 
