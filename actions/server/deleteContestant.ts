@@ -1,8 +1,9 @@
 "use server"
 
 import { prisma } from "@/lib/prismadb";
+import { revalidatePath } from "next/cache";
 
-export async function deleteContestant(studentId: string) {
+export async function deleteContestant(studentId: string, page: string) {
 
     try {
         await prisma.contestants.delete({
@@ -11,15 +12,16 @@ export async function deleteContestant(studentId: string) {
             },
         });
 
+        revalidatePath(`/admin/${page}`)
         return { success: true, message: "The contestant was deleted successfully." }
 
-    } catch (error) {
-        console.error('Error deleting contestant', error)
+    } catch (error: any) {
+        console.error('Error deleting contestant', error.stack)
         return { success: false, error: error }
     }
 }
 
-export async function deleteContestants(studentIds: string[]) {
+export async function deleteContestants(studentIds: string[], page: string) {
 
     try {
         await prisma.contestants.deleteMany({
@@ -29,10 +31,11 @@ export async function deleteContestants(studentIds: string[]) {
             }
         });
 
+        revalidatePath(`/admin/${page}`)
         return { success: true, message: "The contestants were deleted successfully." }
 
-    } catch (error) {
-        console.error('Error deleting contestants', error)
+    } catch (error: any) {
+        console.error('Error deleting contestants', error.stack)
         return { success: false, error: error }
     }
 }

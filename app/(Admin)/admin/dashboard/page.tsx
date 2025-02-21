@@ -17,7 +17,7 @@ const page = async () => {
 
   const accessTokenUser = await getCurrentUser();
   const currentAdmin = await getAdmin(accessTokenUser.id);
-  const { allContestants, nonPaidContestants, paidContestants, lastTenUnPaidContestants, totalSchools } = await getContestants();
+  const { allContestants, nonPaidContestants, paidContestants, lastTwentyUnPaidContestants, totalSchools } = await getContestants();
 
   const summaryItems = [
     { title: "Total Contestants", icon: UserSquare, color: "#516fff", amount: allContestants.length, description: "Number of Students", classNames: "text-[#516fff]" },
@@ -33,13 +33,13 @@ const page = async () => {
           <SummaryBox key={`summary-${index}`} title={item.title} icon={item.icon} color={item.color} amount={item.amount} description={item.description} classNames={item.classNames} />
         ))}
       </div>
-      <div key={"table"} className="border-slate-800 mt-10 p-4 border rounded-xl">
-        <div className="flex sm:flex-row flex-col sm:justify-between sm:items-center gap-y-1 border-slate-800 pb-2 border-b">
-          <p className="font-semibold text-sm text-white md:text-base xl:text-lg">Latest Contestants<span className="sm:hidden ml-6 text-[10px] xl:text-sm md:text-xs">Last 10 (Ten) Unpaid Contestants</span></p>
-          <p className="sm:block hidden text-[10px] xl:text-sm md:text-xs">Last 10 (Ten) Unpaid Contestants</p>
+      <div key={"table"} className="mt-10 p-4 border border-slate-800 rounded-xl">
+        <div className="flex sm:flex-row flex-col sm:justify-between sm:items-center gap-y-1 pb-2 border-slate-800 border-b">
+          <p className="font-semibold text-white text-sm md:text-base xl:text-lg">Latest Contestants<span className="sm:hidden ml-6 text-[10px] md:text-xs xl:text-sm">Last 10 (Ten) Unpaid Contestants</span></p>
+          <p className="hidden sm:block text-[10px] md:text-xs xl:text-sm">Last 20 (Twenty) Unpaid Contestants</p>
         </div>
         <div className="mt-5">
-          <StudentTable fetchedContestants={allContestants} role={currentAdmin.role} />
+          <StudentTable contestants={lastTwentyUnPaidContestants} role={currentAdmin.role} />
         </div>
       </div>
     </main>

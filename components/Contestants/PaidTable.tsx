@@ -1,17 +1,14 @@
-'use client'
+import { useState } from "react";
+import Link from "next/link";
+import { toast } from "sonner";
 
-import Link from 'next/link';
-import { useState } from 'react';
-import { toast } from 'sonner';
-
-//actions
-import updateHasPaid from '@/actions/server/updateContestant';
-import { deleteContestant, deleteContestants } from '@/actions/server/deleteContestant';
+//Actions
+import { deleteContestant, deleteContestants } from "@/actions/server/deleteContestant";
 
 //Icons
-import { Trash, ChartCircle, TickSquare } from "iconsax-react";
+import { ChartCircle, Trash } from "iconsax-react";
 
-export default function StudentTable({ contestants, role }: { contestants: Contestant[], role: string }) {
+const PaidTable = ({ contestants, role }: { contestants: Contestant[], role: string }) => {
 
     const [selectedIds, setSelectedIds] = useState<string[]>([]);
     const [loading, setLoading] = useState<boolean>(false);
@@ -23,49 +20,34 @@ export default function StudentTable({ contestants, role }: { contestants: Conte
         )
     }
 
-    //Handle updates
-    const handleUpdate = async (studentId: string, email: string) => {
-
-        toast.message("Updating Payment Status...")
-        setLoading(true)
-
-        const { success, message } = await updateHasPaid(studentId, email, "dashboard");
-        if (!success) {
-            toast.error("Couldn't update the contestant payment status. Kindly try again.")
-            return
-        }
-        toast.success(`${message}`)
-        return
-    }
-
     const handleDelete = async (studentId: string) => {
-        toast.message("Deleting Contestant...")
+        toast.info("Deleting Contestant...")
         setLoading(true)
 
-        const { success, message } = await deleteContestant(studentId, "dashboard")
+        const { success, message } = await deleteContestant(studentId, "contestants")
         if (!success) {
             toast.error("Couldn't delete contestant kindly try again later. Kindly try again.")
             return
         }
         toast.success(`${message}`)
-        return
+        window.location.reload()
     }
 
     const handleDeleteMany = async (studentIds: string[]) => {
-        toast.message("Deleting Contestants...")
+        toast.info("Deleting Contestants...")
         setLoading(true)
 
-        const { success, message } = await deleteContestants(studentIds, "dashboard")
+        const { success, message, error } = await deleteContestants(studentIds, "contestants")
         if (!success) {
             toast.error("Couldn't delete contestants kindly try again later. Kindly try again.")
             return
         }
         toast.success(`${message}`)
-        return
+        window.location.reload()
     }
 
     return (
-        <div>
+        <main>
             <div className="overflow-x-auto">
                 <table className="bg-lightBlack shadow-md mb-4 rounded-xl min-w-full overflow-hidden">
                     <thead className="bg-gray-700">
@@ -145,7 +127,6 @@ export default function StudentTable({ contestants, role }: { contestants: Conte
                                     </span>
                                 </td>
                                 <td className="flex gap-x-5 mt-2 md:mt-3 px-6 py-4">
-                                    <TickSquare onClick={() => handleUpdate(contestant.studentId, contestant.studentEmail)} color='#4ade80' variant='Bold' className="size-6 cursor-pointer" />
                                     {role === "super_admin" &&
                                         <button onClick={() => handleDelete(contestant.studentId)} className="text-red-400 hover:text-red-200" disabled={loading}>
                                             {loading ? <ChartCircle size={14} color="#2ccce4" className="animate-spin" />
@@ -162,7 +143,6 @@ export default function StudentTable({ contestants, role }: { contestants: Conte
                 {contestants.length === 0 &&
                     <p className="px-6 py-4 text-center">
                         Payment is confirmed for all contestants.
-                        <span><Link href="/admin/contestants" className='text-normalBlue'>View Contestants</Link></span>
                     </p>
                 }
             </div>
@@ -181,6 +161,8 @@ export default function StudentTable({ contestants, role }: { contestants: Conte
                     }
                 </div>
             }
-        </div>
-    )
+        </main>
+    );
 }
+
+export default PaidTable;

@@ -12,7 +12,7 @@ export default async function getContestants() {
         const paidContestants = allContestants.filter(contestant => contestant.hasPaid);
 
         //Get the last 10 Unpaid
-        const lastTenUnPaidContestants = nonPaidContestants.slice(0, 10);
+        const lastTwentyUnPaidContestants = nonPaidContestants.slice(0, 20);
 
 
         // Fetch distinct school names
@@ -24,10 +24,10 @@ export default async function getContestants() {
         // Count the number of unique schools
         const totalSchools = distinctSchools.length;
 
-        return { allContestants, nonPaidContestants, paidContestants, lastTenUnPaidContestants, totalSchools };
+        return { allContestants, nonPaidContestants, paidContestants, lastTwentyUnPaidContestants, totalSchools };
 
     } catch (error: any) {
-        console.error('Error fetching contestants:', error);
+        console.error('Error fetching contestants:', error.stack);
         throw error;
     }
 }

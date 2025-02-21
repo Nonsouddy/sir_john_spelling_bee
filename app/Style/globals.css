@@ -1,15 +1,13 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-
-  --background-color: #FFFFFA;
-  --border-color: #A1A191;
-  --border-color-2: #6E6E5E;
-  --default-color: #1C1B17;
-  --yellow-color: #FEF506;
+  --background-color: #fffffa;
+  --border-color: #a1a191;
+  --border-color-2: #6e6e5e;
+  --default-color: #1c1b17;
+  --yellow-color: #fef506;
   --logout-color: #c50e0ede;
   --sideText-color: #448297;
   --Table-background-color: #2c3e50;
@@ -22,8 +20,8 @@
   --ban-row-color: #fdedec;
   --gallery-background-color: #f4f4f4;
   --gallery-dash-color: #ccc;
-  --navBar-text-color: #37372F;
-  --orange-color: #EB8733;
+  --navBar-text-color: #37372f;
+  --orange-color: #eb8733;
   --menu-bar-color: #333;
   --input-color: #7C7C7C;
   --btn-text-color: #1C1B17;
@@ -38,23 +36,22 @@
   --DEF3FD: #DEF3FD;
   --FFFDD1: #FFFDD1;
   --blue-900: #032230;
-  --blue-500: #F5FCFE;
-  --blue-800: #084F6D;
+  --blue-500: #f5fcfe;
+  --blue-800: #084f6d;
   --gray-700: #535246;
-  --gray-500: #8A8975;
-  --home-learn: #F1F1EE;
-  --orange-800: #6B360A;
-  --orange-50: #FEFAF6;
-  --FDF1E8: #FDF1E8;
+  --gray-500: #8a8975;
+  --home-learn: #f1f1ee;
+  --orange-800: #6b360a;
+  --orange-50: #fefaf6;
+  --FDF1E8: #fdf1e8;
   --f8c8d: #7f8c8d;
-  --f1f3f4:#f1f3f4;
+  --f1f3f4: #f1f3f4;
   --Natural-color: #212121;
   --dashboard-border-color: #eee;
   --dashboard-btn-color: #f8f9fa;
   --dashboard-email-color: #0d6efd;
   --dashboard-delete-color: #dc3545;
   --dashboard-nav-item-color: #2d2d2d;
- 
 }
 
 .register-btn {
@@ -75,5 +72,35 @@
 
 #img {
   padding-top: 10px;
+}
 
+/* For the Sidebar layout */
+.mainWidth {
+  width: calc(100% - 20rem);
+  float: right;
+}
+@media screen and (max-width: 1023px) {
+  .mainWidth {
+    width: 100%;
+  }
+}
+
+/* Scroll bar */
+::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #0874e3;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #262c35;
+}
+
+.scroll-container {
+  scrollbar-color: #0874e3 #262c35;
+  scrollbar-width: thin;
 }
