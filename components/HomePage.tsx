@@ -1,16 +1,18 @@
+"use client"
+
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import beeImage from '../../public/Images/beeImage.png'
-import HomeImg from "../../public/Svgs/homePageImg.svg"
-import Ellipse1 from "../../public/Svgs/Ellipse 1.svg"
-import Ellipse5 from "../../public/Svgs/Ellipse 5.svg"
-import Ellipse4 from "../../public/Svgs/Ellipse 4.svg"
-import Ellipse6 from "../../public/Svgs/Ellipse 6.svg"
-import Ellipse2 from "../../public/Svgs/Ellipse 2.svg"
-import Ellipse3 from "../../public/Svgs/Ellipse 3.svg"
-import crulArrow from "../../public/Svgs/crulArrow.svg"
+import beeImage from '../public/Images/beeImage.png'
+import HomeImg from "../public/Svgs/homePageImg.svg"
+import Ellipse1 from "../public/Svgs/Ellipse 1.svg"
+import Ellipse5 from "../public/Svgs/Ellipse 5.svg"
+import Ellipse4 from "../public/Svgs/Ellipse 4.svg"
+import Ellipse6 from "../public/Svgs/Ellipse 6.svg"
+import Ellipse2 from "../public/Svgs/Ellipse 2.svg"
+import Ellipse3 from "../public/Svgs/Ellipse 3.svg"
+import crulArrow from "../public/Svgs/crulArrow.svg"
 
-import Arrow from "../../public/Svgs/Arrow 1.svg"
+import Arrow from "../public/Svgs/Arrow 1.svg"
 
 
 const HomeSection = () => {
