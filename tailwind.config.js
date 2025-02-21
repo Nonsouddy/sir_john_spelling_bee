@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
+  enablePX:true,
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -28,6 +29,16 @@ module.exports = {
         normalBlue: "#007bff",
         orange800: "#6B360A",
         orange50: "#FEFAF6",
+        footerBG: "#2E1805",
+        footerBorder: "#F3B886",
+        naturalColor: "FFFFFA",
+        strokeColor2: "#007bff",
+        heroBlue: "#59C5F3",
+        paleYellow:"#FFFDD1",
+        paleLemon:"#9D9801",
+        darkGray:"#37372F",
+        
+      
 
       },
       fontFamily: {
