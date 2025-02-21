@@ -39,7 +39,7 @@ const page = async () => {
           <p className="hidden sm:block text-[10px] md:text-xs xl:text-sm">Last 20 (Twenty) Unpaid Contestants</p>
         </div>
         <div className="mt-5">
-          <StudentTable fetchedContestants={lastTwentyUnPaidContestants} role={currentAdmin.role} />
+          <StudentTable contestants={lastTwentyUnPaidContestants} role={currentAdmin.role} />
         </div>
       </div>
     </main>
