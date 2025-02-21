@@ -25,12 +25,11 @@ export default function UserDataDisplay({ contestant }: { contestant: Contestant
             return;
         }
         toast.success(message);
-        window.location.reload();
     }
 
     const deleteFn = async (id: string) => {
         toast.info("Deleting Contestant...")
-        const { success, message } = await deleteContestant(id);
+        const { success, message } = await deleteContestant(id, `/contestants/${id}`);
         if (!success) {
             toast.error("Couldn't delete contestant, try again later.");
             return

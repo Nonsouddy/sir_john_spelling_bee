@@ -29,39 +29,39 @@ const UnPaidTable = ({ contestants, role }: { contestants: Contestant[], role: s
         toast.message("Updating Payment Status...")
         setLoading(true)
 
-        const { success, message, error } = await updateHasPaid(studentId, email);
+        const { success, message, } = await updateHasPaid(studentId, email, "contestants");
         if (!success) {
             toast.error("Couldn't update the contestant payment status. Kindly try again.")
             return
         }
         toast.success(`${message}`)
-        window.location.reload()
+        return
     }
 
     const handleDelete = async (studentId: string) => {
         toast.info("Deleting Contestant...")
         setLoading(true)
 
-        const { success, message } = await deleteContestant(studentId)
+        const { success, message } = await deleteContestant(studentId, "contestants")
         if (!success) {
             toast.error("Couldn't delete contestant kindly try again later. Kindly try again.")
             return
         }
         toast.success(`${message}`)
-        window.location.reload()
+        return
     }
 
     const handleDeleteMany = async (studentIds: string[]) => {
         toast.info("Deleting Contestants...")
         setLoading(true)
 
-        const { success, message, error } = await deleteContestants(studentIds)
+        const { success, message } = await deleteContestants(studentIds, "contestants")
         if (!success) {
             toast.error("Couldn't delete contestants kindly try again later. Kindly try again.")
             return
         }
         toast.success(`${message}`)
-        window.location.reload()
+        return
     }
 
     return (

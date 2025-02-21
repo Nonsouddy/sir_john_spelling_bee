@@ -24,7 +24,7 @@ const PaidTable = ({ contestants, role }: { contestants: Contestant[], role: str
         toast.info("Deleting Contestant...")
         setLoading(true)
 
-        const { success, message } = await deleteContestant(studentId)
+        const { success, message } = await deleteContestant(studentId, "contestants")
         if (!success) {
             toast.error("Couldn't delete contestant kindly try again later. Kindly try again.")
             return
@@ -37,7 +37,7 @@ const PaidTable = ({ contestants, role }: { contestants: Contestant[], role: str
         toast.info("Deleting Contestants...")
         setLoading(true)
 
-        const { success, message, error } = await deleteContestants(studentIds)
+        const { success, message, error } = await deleteContestants(studentIds, "contestants")
         if (!success) {
             toast.error("Couldn't delete contestants kindly try again later. Kindly try again.")
             return

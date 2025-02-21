@@ -11,11 +11,10 @@ import { deleteContestant, deleteContestants } from '@/actions/server/deleteCont
 //Icons
 import { Trash, ChartCircle, TickSquare } from "iconsax-react";
 
-export default function StudentTable({ fetchedContestants, role }: { fetchedContestants: Contestant[], role: string }) {
+export default function StudentTable({ contestants, role }: { contestants: Contestant[], role: string }) {
 
     const [selectedIds, setSelectedIds] = useState<string[]>([]);
     const [loading, setLoading] = useState<boolean>(false);
-    const [contestants, setContestants] = useState<Contestant[]>(fetchedContestants)
 
     //Functions
     const handleSelect = (id: string) => {
@@ -30,51 +29,39 @@ export default function StudentTable({ fetchedContestants, role }: { fetchedCont
         toast.message("Updating Payment Status...")
         setLoading(true)
 
-        const { success, message, error } = await updateHasPaid(studentId, email);
-        if (success) {
-            setContestants(contestants.filter((contestant) => contestant.studentId !== studentId))
-            toast.success(`${message}`)
-            return
-        }
-        if (error) {
-            console.log(`Error updating the payment status of ${studentId}`, error);
+        const { success, message } = await updateHasPaid(studentId, email, "dashboard");
+        if (!success) {
             toast.error("Couldn't update the contestant payment status. Kindly try again.")
             return
         }
+        toast.success(`${message}`)
+        return
     }
 
     const handleDelete = async (studentId: string) => {
         toast.message("Deleting Contestant...")
         setLoading(true)
 
-        const { success, message, error } = await deleteContestant(studentId)
-        if (success) {
-            setContestants(contestants.filter((contestant) => contestant.studentId !== studentId))
-            toast.success(`${message}`)
-            return
-        }
-        if (error) {
-            console.log(`Error deleting the contestant with the studentId of ${studentId}`, error);
+        const { success, message } = await deleteContestant(studentId, "dashboard")
+        if (!success) {
             toast.error("Couldn't delete contestant kindly try again later. Kindly try again.")
             return
         }
+        toast.success(`${message}`)
+        return
     }
 
     const handleDeleteMany = async (studentIds: string[]) => {
         toast.message("Deleting Contestants...")
         setLoading(true)
 
-        const { success, message, error } = await deleteContestants(studentIds)
-        if (success) {
-            setContestants(contestants.filter((contestant) => !studentIds.includes(contestant.studentId)));
-            toast.success(`${message}`)
-            return
-        }
-        if (error) {
-            console.log(`Error deleting the contestants with the studentIds of ${studentIds}`, error);
+        const { success, message } = await deleteContestants(studentIds, "dashboard")
+        if (!success) {
             toast.error("Couldn't delete contestants kindly try again later. Kindly try again.")
             return
         }
+        toast.success(`${message}`)
+        return
     }
 
     return (
@@ -175,6 +162,7 @@ export default function StudentTable({ fetchedContestants, role }: { fetchedCont
                 {contestants.length === 0 &&
                     <p className="px-6 py-4 text-center">
                         Payment is confirmed for all contestants.
+                        <span><Link href="/admin/contestants" className='text-normalBlue'>View Contestants</Link></span>
                     </p>
                 }
             </div>

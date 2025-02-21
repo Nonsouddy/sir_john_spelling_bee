@@ -2,12 +2,13 @@
 
 import { prisma } from "@/lib/prismadb";
 import { render } from '@react-email/components';
+import { revalidatePath } from "next/cache";
 
 //Utils and Templates
 import { sendEmail } from '@/lib/email';
 import PaymentConfirmation from "@/app/emails/PaymentConfirmation";
 
-export default async function updateHasPaid(studentId: string, email: string) {
+export default async function updateHasPaid(studentId: string, email: string, page: string) {
 
     try {
 
@@ -30,6 +31,7 @@ export default async function updateHasPaid(studentId: string, email: string) {
             html: emailTemplate,
         });
 
+        revalidatePath(`/admin/${page}`)
         return { success: true, message: "The contestant payment status was updated successfully." }
 
     } catch (error: any) {

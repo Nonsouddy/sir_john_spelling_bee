@@ -1,6 +1,7 @@
 "use server"
 
 import { prisma } from "@/lib/prismadb";
+import { revalidatePath } from "next/cache";
 
 export default async function toggleHasPaid(studentId: string, status: boolean) {
 
@@ -15,6 +16,7 @@ export default async function toggleHasPaid(studentId: string, status: boolean) 
             },
         });
 
+        revalidatePath(`/admin/contestants/${studentId}`)
         return { success: true, message: "The contestant payment status was updated successfully." }
 
     } catch (error: any) {
