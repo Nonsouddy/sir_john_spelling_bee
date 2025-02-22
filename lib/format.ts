@@ -4,7 +4,9 @@ export const formatSubheading = (page: string) => {
             return "Unified Dashboard for Seamless Management Operations.";
         case "contestants":
             return "Management Contestants Details.";
-
+        case "events":
+            return "Management Spelling Bee Events.";
+            
         default:
             return "Seamless Management Operations.";
     }
