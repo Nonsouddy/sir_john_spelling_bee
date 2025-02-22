@@ -5,8 +5,10 @@ export const formatSubheading = (page: string) => {
         case "contestants":
             return "Management Contestants Details.";
         case "events":
-            return "Management Spelling Bee Events.";
-            
+            return "Managing All The Spelling Bee Events.";
+        case "events/new":
+            return "Creating New Events.";
+
         default:
             return "Seamless Management Operations.";
     }
