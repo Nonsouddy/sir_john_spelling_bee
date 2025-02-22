@@ -1,6 +1,6 @@
 import { FieldValues, UseFormRegister, Path } from 'react-hook-form';
 
-type InputType = 'text' | 'number' | 'email' | 'password' | 'checkbox' | 'radio' | 'date' | 'file' | 'tel';
+type InputType = 'text' | 'number' | 'email' | 'password' | 'checkbox' | 'radio' | 'datetime' | 'file' | 'tel';
 
 type InputProps<T extends FieldValues> = {
     type: InputType;
