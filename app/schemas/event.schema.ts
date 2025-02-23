@@ -11,18 +11,16 @@ export const eventSchema = z
             .string()
             .optional(),
         image: z
-            .instanceof(File)
-            .refine(
-                (file) =>
-                    [
-                        "image/png",
-                        "image/jpeg",
-                        "image/jpg",
-                        "image/svg+xml",
-                        "image/gif",
-                    ].includes(file.type),
-                { message: "Invalid image file type" }
-            ),
+            .array(
+                z
+                    .instanceof(File)
+                    .refine(
+                        (file) =>
+                            ["image/png", "image/jpeg", "image/jpg", "image/webp", "image/gif"].includes(file.type),
+                        { message: "Invalid image file type" }
+                    )
+            )
+            .nonempty({ message: "At least one image is required" }),
         date: z
             .string({ required_error: "Event Date is required" })
             .datetime()

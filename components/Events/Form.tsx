@@ -1,6 +1,5 @@
 "use client"
 
-import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from '@hookform/resolvers/zod';
 import { toast } from "sonner";
@@ -30,7 +29,7 @@ const Form = () => {
 
         const formData = { ...data };
 
-        await makeApiRequest("/login", "post", formData, {
+        await makeApiRequest("/event", "post", formData, {
             onSuccess: () => {
                 toast.success("Event was created successfully")
                 reset();
@@ -60,13 +59,14 @@ const Form = () => {
                     <ZodInput type="file" placeholder="Event Image" id="image" name="image" register={register} required={true} label="Event Image" otherClass="bg-inherit" />
                     {errors.image && <ErrorText message={errors.image.message as string} />}
                 </div>
-                <div className="flex flex-col">
-                    <ZodInput type="datetime" placeholder="Event Date and Time" id="date" name="date" register={register} required={true} label="Event Date and Ttime" otherClass="bg-inherit" />
+                <div className="flex flex-col gap-y-1">
+                    <label htmlFor="date" className="text-white cursor-pointer">Event Date and Time</label>
+                    <input {...register("date")} type="datetime-local" name="date" id="date" className="bg-inherit px-2 xl:px-4 py-3 border border-[#6E6E5E] focus:border-0 rounded-[10px] focus:outline focus:outline-accentOrange duration-300" />
                     {errors.date && <ErrorText message={errors.date.message as string} />}
                 </div>
                 <div className="flex flex-col gap-y-1">
                     <label htmlFor="otherDetails" className="text-white cursor-pointer">Other Event Details</label>
-                    <textarea name="otherDetails" id="otherDetails" className="bg-inherit px-2 xl:px-4 py-3 border border-[#6E6E5E] focus:border-0 rounded-[10px] focus:outline focus:outline-accentOrange w-full h-40 duration-300 resize-y"></textarea>
+                    <textarea {...register("otherDetails")} name="otherDetails" id="otherDetails" className="bg-inherit px-2 xl:px-4 py-3 border border-[#6E6E5E] focus:border-0 rounded-[10px] focus:outline focus:outline-accentOrange w-full h-40 duration-300 resize-y"></textarea>
                     {errors.otherDetails && <ErrorText message={errors.otherDetails.message as string} />}
                 </div>
                 <Button type="submit" text="Create New Event" loading={isSubmitting} />
