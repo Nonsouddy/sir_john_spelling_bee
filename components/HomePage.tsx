@@ -11,8 +11,12 @@ import Ellipse6 from "../public/Svgs/Ellipse 6.svg"
 import Ellipse2 from "../public/Svgs/Ellipse 2.svg"
 import Ellipse3 from "../public/Svgs/Ellipse 3.svg"
 import crulArrow from "../public/Svgs/crulArrow.svg"
-
+import polygon1 from "../public/Svgs/polygon-1.svg"
+import polygon2 from "../public/Svgs/polygon-2.svg"
 import Arrow from "../public/Svgs/Arrow 1.svg"
+
+//Components
+import HomeStardom from '../components/Home/HomeStardom'
 
 
 const HomeSection = () => {
@@ -101,10 +105,10 @@ const HomeSection = () => {
                     </div>
                 </div>
             </div>
-           
+
             <div className="hidden gap-[10px] md:flex mt-[-120px] lg:gap-[200px]  md:gap-[10px] items-center space-y-4 md:space-y-8 flex-wrap">
 
-                
+
                 {/* Top Section */}
                 <div className="relative flex ml-6 items-center">
                     <div className="relative w-28 h-28 md:w-36 md:h-36 animate-spin-slow">
@@ -133,7 +137,7 @@ const HomeSection = () => {
 
 
                     {/* Text Section */}
-                    <div className='flex gap-6 '> 
+                    <div className='flex gap-6 '>
 
                         <div className='text-2xl flex gap-6 pt-6 mt-[-100px] animate-bounce '>
                             <div className='text-center font-bold justify-center pt-1 w-[30px] h-[40px] bg-orange50 text-orange800 ml-2 '>B</div>
@@ -150,6 +154,23 @@ const HomeSection = () => {
 
                 </div>
             </div>
+
+            <div className="relative flex justify-start items-center w-full">
+                <div className="hidden sm:flex sm:ml-[-85px] w-[200px] h-[70px] sm:w-[180px] sm:h-[65px] md:w-[220px] md:h-[75px] md:ml-[-105px] 
+                  lg:w-[250px] lg:h-[85px] lg:ml-[-120px] xl:w-[280px] xl:ml-[-130px] xl:h-[95px] 2xl:w-[300px] 2xl:h-[100px] 2xl:ml-[-130px]
+                  transform rotate-[180deg] scale-x-[-1] 
+                  animate-floating transition-all duration-500 ease-in-out">
+                    <Image src={polygon1} alt="Polygon Shape" className="w-full h-full object-contain" />
+                </div>
+            </div>
+            {/* Home Page Section 2 */}
+          
+            <HomeStardom/>
+
+
+
+
+
 
 
         </div>
