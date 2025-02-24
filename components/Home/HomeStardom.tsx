@@ -7,7 +7,8 @@ import star from "../../public/Images/star.png"
 
 const HomeStardom = () => {
     return (
-        <section className="flex flex-col md:flex-row items-center justify-between w-full p-6 md:p-12 space-y-6 md:space-y-0 md:space-x-8">
+        <section className="flex flex-col md:flex-row items-center justify-between w-full p-6 md:p-12 space-y-6 md:space-y-0 md:space-x-8 ">
+            <div className='mt-0 md:mt-0 lg:mt-0 sm: mt-[-350px]'></div>
             {/* Big Text Section */}
            
             <div className="  font-['Comic_Sans_MS'] flex-1 p-8 flex flex-col items-center justify-center text-start h-auto md:h-[400px] max-w-lg mx-auto">
