@@ -79,3 +79,15 @@ declare type Contestant = {
     tutorPhoneNumber: string
     updatedAt: Date
 };
+
+//Events
+declare type EventProperties = {
+    id: string
+    venue: string
+    name: string
+    otherDetails: string | null
+    images: string[]
+    date: Date
+    createdAt: Date
+    updatedAt: Date
+}

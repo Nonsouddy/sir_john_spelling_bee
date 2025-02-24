@@ -10,7 +10,7 @@ const Heading = ({ totalEvents }: { totalEvents: number }) => {
                 <CalendarTick size="28" color="#007bff" />
                 <p className="font-semibold text-base md:text-lg xl:text-xl">All Events <sup>{totalEvents}</sup></p>
             </div>
-            <Link href="/admin/events/new" className="bg-primaryYellow hover:bg-inherit px-4 md:px-6 xl:px-8 py-3 border border-primaryYellow rounded-3xl font-medium text-textBlack hover:text-primaryYellow duration-300">Create New Event</Link>
+            <Link href="/admin/events/new" className="bg-primaryYellow hover:bg-inherit px-4 md:px-6 xl:px-8 py-3 border border-primaryYellow rounded-3xl font-medium text-textBlack hover:text-primaryYellow text-center duration-300">Create New Event</Link>
         </main>
     );
 }

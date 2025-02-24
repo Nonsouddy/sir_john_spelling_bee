@@ -3,6 +3,7 @@ import getEvents from "@/actions/fetch/getEvents";
 
 //Components
 import Heading from "@/components/Events/Heading";
+import EventList from "@/components/Events/EventList";
 
 const page = async () => {
 
@@ -11,6 +12,7 @@ const page = async () => {
   return (
     <main>
       <Heading totalEvents={events.length} />
+      <EventList events={events} />
     </main>
   );
 }

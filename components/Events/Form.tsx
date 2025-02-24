@@ -42,12 +42,11 @@ const Form = () => {
 
         if (!success) {
             toast.error("Couldn't process the selected image, kindly try again later.")
-            //reset();
+            reset();
             return
         }
 
         const formData = { ...data, images: imageLinks };
-        console.log("The formData", formData)
 
         await makeApiRequest("/event", "post", formData, {
             onSuccess: () => {

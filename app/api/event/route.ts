@@ -11,7 +11,8 @@ export async function POST(request: NextRequest) {
 
         const { name, venue, otherDetails, images, date } = body;
 
-        const formattedDate = new Date(body.date).toISOString();
+        const formattedDate = new Date(date).toISOString();
+
         // Create event
         const newEvent = await prisma.events.create({
             data: {
