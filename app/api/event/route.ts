@@ -28,7 +28,7 @@ const maxFileSize = 1024 * 1024 * parseInt(fileSize);
 export async function POST(request: NextRequest) {
 
     const body = await request.json();
-    console.log("The Body", body)
+    console.log("The Images", body.image)
 
     try {
 
