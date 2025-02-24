@@ -7,7 +7,7 @@ type InputProps<T extends FieldValues> = {
     placeholder?: string;
     label?: string;
     id?: string;
-    value?: string;
+    defaultValue?: string;
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
     pattern?: string;
     title?: string;
@@ -24,7 +24,7 @@ const ZodInput = <T extends FieldValues>({
     placeholder,
     label,
     id,
-    value,
+    defaultValue,
     onChange,
     pattern,
     title,
@@ -48,7 +48,7 @@ const ZodInput = <T extends FieldValues>({
                 type={type}
                 placeholder={placeholder}
                 id={id}
-                value={value}
+                defaultValue={defaultValue}
                 onChange={onChange}
                 pattern={pattern}
                 title={title}

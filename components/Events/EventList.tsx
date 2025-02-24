@@ -1,19 +1,26 @@
 "use client"
 import { toast } from "sonner";
+import { useState } from "react";
 
 //Actions
 import deleteEvent from "@/actions/server/deleteEvent";
 
 //Component
 import EventCard from "./EventCard";
+import UpdateForm from "./UpdateForm";
 
 export default function EventList({ events }: { events: EventProperties[] }) {
 
-    const handleEdit = async (id: string) => {
+    const [isOpen, setIsOpen] = useState<boolean>(false);
+    const [selectedEvent, setSelectedEvent] = useState<EventProperties>()
 
-        // Implement your edit logic here
-        console.log(`Editing event with id: ${id}`)
+    //Functions
+    const handleEdit = async (event: EventProperties) => {
+        setIsOpen((prev) => !prev);
+        setSelectedEvent(event)
     }
+
+    const toggleOpen = () => setIsOpen((prev) => !prev)
 
     const handleDelete = async (id: string) => {
 
@@ -32,12 +39,15 @@ export default function EventList({ events }: { events: EventProperties[] }) {
     };
 
 
-
     return (
-        <div className="gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            {events.map((event) => (
-                <EventCard key={event.id} event={event} onEdit={handleEdit} onDelete={handleDelete} />
-            ))}
-        </div>
+        <>
+            {isOpen && <UpdateForm toggleFn={toggleOpen} event={selectedEvent} />}
+            <div className="gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                {events.map((event) => (
+                    <EventCard key={event.id} event={event} onEdit={handleEdit} onDelete={handleDelete} />
+                ))}
+            </div>
+        </>
+
     )
 }

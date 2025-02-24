@@ -5,6 +5,8 @@ import getEvents from "@/actions/fetch/getEvents";
 import Heading from "@/components/Events/Heading";
 import EventList from "@/components/Events/EventList";
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 const page = async () => {
 
   const events = await getEvents();

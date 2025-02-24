@@ -13,7 +13,7 @@ import { Trash, Edit } from "iconsax-react";
 import logo from "../../public/Svgs/Logo.svg";
 import { formatDate } from "@/lib/format";
 
-function EventCard({ event, onEdit, onDelete }: { event: EventProperties; onEdit: (id: string) => void; onDelete: (id: string) => void }) {
+function EventCard({ event, onEdit, onDelete }: { event: EventProperties; onEdit: (event: EventProperties) => void; onDelete: (id: string) => void }) {
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
@@ -44,7 +44,7 @@ function EventCard({ event, onEdit, onDelete }: { event: EventProperties; onEdit
                 <div className="flex justify-between items-center">
                     <CardTitle className="font-semibold text-normalBlue text-sm md:text-base xl:text-lg">{event.name}</CardTitle>
                     <div className="flex gap-x-3">
-                        <Button className="bg-[#EB8733]" size="icon" onClick={() => onEdit(event.id)}>
+                        <Button className="bg-[#EB8733]" size="icon" onClick={() => onEdit(event)}>
                             <Edit size="18" color="#FFF" />
                             <span className="sr-only">Edit</span>
                         </Button>

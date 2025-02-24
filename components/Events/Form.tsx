@@ -87,7 +87,7 @@ const Form = () => {
                 </div>
                 <div className="flex flex-col gap-y-1">
                     <label htmlFor="otherDetails" className="text-white cursor-pointer">Other Event Details</label>
-                    <textarea {...register("otherDetails")} name="otherDetails" id="otherDetails" className="bg-inherit px-2 xl:px-4 py-3 border border-[#6E6E5E] focus:border-0 rounded-[10px] focus:outline focus:outline-accentOrange w-full h-28 duration-300 resize-y"></textarea>
+                    <textarea {...register("otherDetails")} name="otherDetails" id="otherDetails" className="bg-inherit px-2 xl:px-4 py-3 border border-[#6E6E5E] focus:border-0 rounded-[10px] focus:outline focus:outline-accentOrange w-full h-40 duration-300 resize-y"></textarea>
                     {errors.otherDetails && <ErrorText message={errors.otherDetails.message as string} />}
                 </div>
                 <Button type="submit" text="Create New Event" loading={isSubmitting} />
