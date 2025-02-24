@@ -40,26 +40,28 @@ const Form = () => {
         //Upload Images
         const { success, imageLinks } = await uploadFiles(images);
 
-        if (success) {
-
-            const formData = { ...data, images: imageLinks };
-            console.log("The formData", formData)
-
-            await makeApiRequest("/event", "post", formData, {
-                onSuccess: () => {
-                    toast.success("Event was created successfully")
-                    //reset();
-                    // router.replace(`/admin/events`);
-                    return
-                },
-                onError: (error: any) => {
-                    toast.error(error.response.data)
-                    //reset();
-                    return
-                }
-            });
+        if (!success) {
+            toast.error("Couldn't process the selected image, kindly try again later.")
+            //reset();
+            return
         }
 
+        const formData = { ...data, images: imageLinks };
+        console.log("The formData", formData)
+
+        await makeApiRequest("/event", "post", formData, {
+            onSuccess: () => {
+                toast.success("Event was created successfully")
+                reset();
+                router.push(`/admin/events`);
+                return
+            },
+            onError: (error: any) => {
+                toast.error(error.response.data)
+                reset();
+                return
+            }
+        });
     }
 
 

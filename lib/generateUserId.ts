@@ -12,7 +12,7 @@ export const generateUserId = (): string => {
 };
 
 export function generateFileName(originalName: string): string {
-    console.log("The original Name", originalName)
+    
     const uniqueId = uuidv4();
     const extension = originalName.split(".").pop();
 

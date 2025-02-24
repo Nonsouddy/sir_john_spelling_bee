@@ -6,12 +6,12 @@ import type { NextRequest } from 'next/server';
 export async function POST(request: NextRequest) {
 
     const body = await request.json();
-    console.log("The Images", body.image)
 
     try {
 
         const { name, venue, otherDetails, images, date } = body;
 
+        const formattedDate = new Date(body.date).toISOString();
         // Create event
         const newEvent = await prisma.events.create({
             data: {
@@ -19,7 +19,7 @@ export async function POST(request: NextRequest) {
                 venue,
                 otherDetails,
                 images,
-                date,
+                date: formattedDate,
             }
         });
 
