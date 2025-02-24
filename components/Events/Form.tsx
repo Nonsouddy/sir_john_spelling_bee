@@ -6,9 +6,10 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { toast } from "sonner";
 import { useRouter } from 'next/navigation';
 
-//Import Needed types and Utils
+//Types, Utils and Actions
 import { EventInput, eventSchema } from "@/app/schemas/event.schema";
 import { makeApiRequest } from "@/lib/apiUtils";
+import { uploadFiles } from "@/actions/server/upload";
 
 //Import Needed Components
 import ZodInput from "../ZodInput";;
@@ -36,21 +37,29 @@ const Form = () => {
     // OnSubmit function
     const onSubmit: SubmitHandler<EventInput> = async (data) => {
 
-        const formData = { ...data, image: images };
-        console.log("The formData", formData)
-        await makeApiRequest("/event", "post", formData, {
-            onSuccess: () => {
-                toast.success("Event was created successfully")
-                //reset();
-                // router.replace(`/admin/events`);
-                return
-            },
-            onError: (error: any) => {
-                toast.error(error.response.data)
-                //reset();
-                return
-            }
-        });
+        //Upload Images
+        const { success, imageLinks } = await uploadFiles(images);
+
+        if (success) {
+
+            const formData = { ...data, images: imageLinks };
+            console.log("The formData", formData)
+
+            await makeApiRequest("/event", "post", formData, {
+                onSuccess: () => {
+                    toast.success("Event was created successfully")
+                    //reset();
+                    // router.replace(`/admin/events`);
+                    return
+                },
+                onError: (error: any) => {
+                    toast.error(error.response.data)
+                    //reset();
+                    return
+                }
+            });
+        }
+
     }
 
 

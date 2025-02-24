@@ -1,3 +1,5 @@
+"use server"
+
 import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 
@@ -24,40 +26,48 @@ const maxFileSize = 1024 * 1024 * parseInt(fileSize);
 
 export const uploadFiles = async (images: File[]) => {
 
-    // Upload images and store their URLs
-    const uploadedUrls: string[] = await Promise.all(
+    try {
 
-        images.map(async (file: File) => {
+        // Upload images and store their URLs
+        const uploadedUrls: string[] = await Promise.all(
 
-            if (file.size > maxFileSize) {
-                throw new Error("File too large");
-            }
+            images.map(async (file: File) => {
 
-            // Generate unique file name
-            const fileName = generateFileName(file.name)
+                if (file.size > maxFileSize) {
+                    throw new Error("File too large");
+                }
 
-            // Prepare S3 upload command
-            const putObjectCommand = new PutObjectCommand({
-                Bucket: bucketName,
-                Key: fileName,
-                ContentType: file.type,
-                ContentLength: file.size,
-                Metadata: { userName: "super admin" },
-            });
+                // Generate unique file name
+                const fileName = generateFileName(file.name)
 
-            // Generate signed URL
-            const signedUrl = await getSignedUrl(s3, putObjectCommand, { expiresIn: 3600 });
+                // Prepare S3 upload command
+                const putObjectCommand = new PutObjectCommand({
+                    Bucket: bucketName,
+                    Key: fileName,
+                    ContentType: file.type,
+                    ContentLength: file.size,
+                    Metadata: { userName: "super admin" },
+                });
 
-            // Upload file to S3
-            await fetch(signedUrl, {
-                method: "PUT",
-                body: file,
-                headers: { "Content-Type": file.type },
-            });
+                // Generate signed URL
+                const signedUrl = await getSignedUrl(s3, putObjectCommand, { expiresIn: 3600 });
 
-            return `https://${bucketName}.s3.${region}.amazonaws.com/${fileName}`;
-        })
-    );
+                // Upload file to S3
+                await fetch(signedUrl, {
+                    method: "PUT",
+                    body: file,
+                    headers: { "Content-Type": file.type },
+                });
 
-    console.log("The uploaded image urls", uploadedUrls)
+                return `https://${bucketName}.s3.${region}.amazonaws.com/${fileName}`;
+            })
+        );
+
+        return { success: true, imageLinks: uploadedUrls }
+
+    } catch (error: any) {
+
+        console.error('Error toggling contestant payment status', error.stack)
+        return { success: false, error: error }
+    }
 }
