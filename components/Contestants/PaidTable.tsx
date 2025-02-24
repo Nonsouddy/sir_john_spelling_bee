@@ -21,6 +21,10 @@ const PaidTable = ({ contestants, role }: { contestants: Contestant[], role: str
     }
 
     const handleDelete = async (studentId: string) => {
+
+        const confirmDelete = window.confirm("Are you sure you want to delete this contestant?");
+        if (!confirmDelete) return;
+
         toast.info("Deleting Contestant...")
         setLoading(true)
 
@@ -34,6 +38,10 @@ const PaidTable = ({ contestants, role }: { contestants: Contestant[], role: str
     }
 
     const handleDeleteMany = async (studentIds: string[]) => {
+
+        const confirmDelete = window.confirm("Are you sure you want to delete all these contestants?");
+        if (!confirmDelete) return;
+
         toast.info("Deleting Contestants...")
         setLoading(true)
 

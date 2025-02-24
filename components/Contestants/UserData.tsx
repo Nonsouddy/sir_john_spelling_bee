@@ -28,6 +28,10 @@ export default function UserDataDisplay({ contestant }: { contestant: Contestant
     }
 
     const deleteFn = async (id: string) => {
+
+        const confirmDelete = window.confirm("Are you sure you want to delete this contestant?");
+        if (!confirmDelete) return;
+
         toast.info("Deleting Contestant...")
         const { success, message } = await deleteContestant(id, `/contestants/${id}`);
         if (!success) {

@@ -1,19 +1,36 @@
 "use client"
+import { toast } from "sonner";
+
+//Actions
+import deleteEvent from "@/actions/server/deleteEvent";
 
 //Component
 import EventCard from "./EventCard";
 
 export default function EventList({ events }: { events: EventProperties[] }) {
 
-    const handleEdit = (id: string) => {
+    const handleEdit = async (id: string) => {
+
         // Implement your edit logic here
         console.log(`Editing event with id: ${id}`)
     }
 
-    const handleDelete = (id: string) => {
-        // Implement your delete logic here
-        console.log(`Deleting event with id: ${id}`)
-    }
+    const handleDelete = async (id: string) => {
+
+        const confirmDelete = window.confirm("Are you sure you want to delete this event?");
+        if (!confirmDelete) return;
+
+        toast.info("Deleting event...")
+        const { success, message } = await deleteEvent(id);
+
+        if (!success) {
+            toast.error("Couldn't delete event now, kindly try again later");
+            return;
+        }
+
+        toast.success(message);
+    };
+
 
 
     return (
