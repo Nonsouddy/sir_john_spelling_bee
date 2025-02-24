@@ -49,8 +49,8 @@ const UpdateForm = ({ event, toggleFn }: { event?: EventProperties, toggleFn: ()
                 reset();
                 return
             }
-            
-            const formData = { ...data, newImages: imageLinks };
+
+            const formData = { ...data, newImages: imageLinks, id: event?.id };
 
             await makeApiRequest("/updateEvent", "post", formData, {
                 onSuccess: () => {
@@ -68,7 +68,7 @@ const UpdateForm = ({ event, toggleFn }: { event?: EventProperties, toggleFn: ()
 
         } else {
 
-            const formData = { ...data, images: event?.images };
+            const formData = { ...data, images: event?.images, id: event?.id };
 
             await makeApiRequest("/updateEvent", "post", formData, {
                 onSuccess: () => {
