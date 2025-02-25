@@ -122,12 +122,12 @@ const FQAPage: React.FC = () => {
     <div
       className="min-h-screen flex items-center justify-center p-4 bg-primaryYellow relative overflow-hidden"
     >
-      
-     <div className="relative z-2 w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8 overflow-hidden">
+
+      <div className="relative z-2 w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8 overflow-hidden">
         {/* Sidebar with Large Text and Background Image */}
         <div
-       className="hidden lg:flex flex-col justify-center p-12 space-y-6 transform transition-all  bg-cover bg-center"
-          style={{ backgroundImage: `url('/Images/cup.png')`}} 
+          className="hidden lg:flex flex-col justify-center p-12 space-y-6 transform transition-all  bg-cover bg-center"
+          style={{ backgroundImage: `url('/Images/cup.png')` }}
         >
           <h2 className="text-4xl font-bold mb-4 animate-pulse font-comic text-defaultColor">
             Got Questions? We&apos;ve Got Answers!
@@ -171,13 +171,13 @@ const FQAPage: React.FC = () => {
                 onClick={() => toggleQuestion(index)}
                 className="flex justify-between items-center cursor-pointer"
               >
-                <h2 className="text-l font-semibold text-defaultColor transition-colors">
+                <h2 className=" w-30 text-l font-semibold text-defaultColor transition-colors word-breake ">
                   {faq.question}
                 </h2>
                 {expandedIndex === index ? (
-                  <ArrowDown className="w-6 h-6  text-normalBlue group-hover:text-accentOrange" />
+                  <ArrowDown className="w-6 h-6 sm:w-auto sm:h-auto md:w-8 md:h-8 text-black" />
                 ) : (
-                  <ArrowRight className="w-6 h-6 -mt-6 text-normalBlue group-hover:text-accentOrange" />
+                  <ArrowRight className="w-6 h-6 sm:w-auto sm:h-auto md:w-8 md:h-8 -mt-6 text-black" />
                 )}
               </div>
 
