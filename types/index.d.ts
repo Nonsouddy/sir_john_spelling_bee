@@ -61,33 +61,33 @@ declare type SummaryProps = {
 
 //Contestant
 declare type Contestant = {
-    category: string
-    createdAt: Date
-    gender: string
-    hasPaid: boolean | null
-    id: string
-    schoolLocation: string
-    schoolName: string
-    schoolPhoneNumber: string
-    studentClass: string
-    studentDateOfBirth: string
-    studentEmail: string
-    studentFullName: string
-    studentId: string
-    studentPhoneNumber: string
-    tutorName: string
-    tutorPhoneNumber: string
-    updatedAt: Date
+    category: string;
+    createdAt: Date;
+    gender: string;
+    hasPaid: boolean | null;
+    id: string;
+    schoolLocation: string;
+    schoolName: string;
+    schoolPhoneNumber: string;
+    studentClass: string;
+    studentDateOfBirth: string;
+    studentEmail: string;
+    studentFullName: string;
+    studentId: string;
+    studentPhoneNumber: string;
+    tutorName: string;
+    tutorPhoneNumber: string;
+    updatedAt: Date;
 };
 
 //Events
 declare type EventProperties = {
-    id: string
-    venue: string
-    name: string
-    otherDetails: string | null
-    images: string[]
-    date: Date
-    createdAt: Date
-    updatedAt: Date
+    id: string;
+    venue: string;
+    name: string;
+    otherDetails: string | null;
+    images: string[];
+    date: Date;
+    createdAt: Date;
+    updatedAt: Date;
 }

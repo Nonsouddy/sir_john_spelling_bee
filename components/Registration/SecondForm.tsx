@@ -3,8 +3,9 @@
 import { FormEvent, useState } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 
-//Stores and Hooks
+//Stores and Utils
 import { useStudentFormStore } from '@/stores/useStudentForm';
+import { makeApiRequest } from '@/lib/apiUtils';
 
 //Components
 import Button from "../Button";
@@ -14,7 +15,6 @@ import RegistrationToast from '../Toast';
 //Icons
 import { Back } from 'iconsax-react';
 import { toast } from 'sonner';
-import { makeApiRequest } from '@/lib/apiUtils';
 
 const SecondForm = () => {
 
