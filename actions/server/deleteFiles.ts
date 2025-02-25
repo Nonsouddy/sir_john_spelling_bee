@@ -16,7 +16,7 @@ const s3 = new S3Client({
     }
 });
 
-export const deleteFileFromS3 = async (fileUrl: string) => {
+export const deleteFile = async (fileUrl: string) => {
     try {
         const fileName = fileUrl.split("/").pop();
 

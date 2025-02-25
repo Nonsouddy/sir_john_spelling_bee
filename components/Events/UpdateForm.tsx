@@ -10,11 +10,14 @@ import { useRouter } from 'next/navigation';
 import { EventInput, eventSchema } from "@/app/schemas/event.schema";
 import { makeApiRequest } from "@/lib/apiUtils";
 import { uploadFiles } from "@/actions/server/upload";
+import { deleteFile } from "@/actions/server/deleteFiles";
 
 //Import Needed Components
 import ZodInput from "../ZodInput";;
 import Button from "../Button";
 import ErrorText from "../Auth/error-message";
+
+//Icons
 import { CloseCircle } from "iconsax-react";
 
 
@@ -27,7 +30,7 @@ const UpdateForm = ({ event, toggleFn }: { event?: EventProperties, toggleFn: ()
     const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
         if (!e.target.files) return;
 
-        const maxFileSize = 50 * 1024 * 1024; 
+        const maxFileSize = 50 * 1024 * 1024;
         const files: File[] = Array.from(e.target.files);
 
         // Filter out files that exceed the size limit
@@ -55,6 +58,7 @@ const UpdateForm = ({ event, toggleFn }: { event?: EventProperties, toggleFn: ()
 
     // OnSubmit function
     const onSubmit: SubmitHandler<EventInput> = async (data) => {
+
         console.log("The images", images)
 
         //Upload Images if they exists
@@ -68,7 +72,7 @@ const UpdateForm = ({ event, toggleFn }: { event?: EventProperties, toggleFn: ()
                 return
             }
 
-            const formData = { ...data, newImages: imageLinks, id: event?.id };
+            const formData = { ...data, newImages: imageLinks, id: event?.id, formerImages: event?.images };
             console.log("The formData", formData)
 
             await makeApiRequest("/updateEvent", "post", formData, {
