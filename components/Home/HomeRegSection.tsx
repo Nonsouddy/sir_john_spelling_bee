@@ -54,7 +54,7 @@ const HomeRegisterSection = () => {
                             </div>
 
                             {/* Step 2 */}
-                            <div className="flex flex-col md:flex-row items-center justify-end mb-16 mt-24 relative">
+                            <div className="flex flex-col md:flex-row items-center justify-start mb-16 mt-24 relative">
                                 <div className="absolute left-10 top-1/2 -translate-y-1/2 hidden md:block">
                                     <div className="relative">
                                         <Image src={Ellipse7} alt="" width={32} height={32} className="w-8 h-8" />
@@ -120,12 +120,12 @@ const HomeRegisterSection = () => {
                             </div>
 
                             {/* Step 4 */}
-                            <div className="flex flex-col md:flex-row items-center mb-24 relative mt-24">
+                            <div className="flex flex-col md:flex-row items-center justify-start mb-24 relative mt-24">
                                 <div className="absolute left-[20%] top-1/4 md:right-0 hidden md:block">
                                     <Image src={Ellipse10} alt="" width={64} height={64} className="w-16 h-16" />
                                 </div>
 
-                                <div className=" p-8 flex flex-col  items-end mx-auto transition-transform duration-300 hover:-translate-y-1">
+                                <div className=" p-8 flex flex-col items-end mx-auto transition-transform duration-300 hover:-translate-y-1">
                                     <div className="mb-4">
                                         <Image src={step4} alt="Registration step" className="w-full h-auto" />
                                     </div>
