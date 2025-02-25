@@ -59,8 +59,6 @@ const UpdateForm = ({ event, toggleFn }: { event?: EventProperties, toggleFn: ()
     // OnSubmit function
     const onSubmit: SubmitHandler<EventInput> = async (data) => {
 
-        console.log("The images", images)
-
         //Upload Images if they exists
         if (Array.isArray(images) && images.length > 0) {
 
@@ -72,14 +70,13 @@ const UpdateForm = ({ event, toggleFn }: { event?: EventProperties, toggleFn: ()
                 return
             }
 
-            const formData = { ...data, newImages: imageLinks, id: event?.id, formerImages: event?.images };
-            console.log("The formData", formData)
+            const formData = { ...data, images: imageLinks, id: event?.id, formerImages: event?.images };
 
             await makeApiRequest("/updateEvent", "post", formData, {
                 onSuccess: () => {
                     toast.success("Event was updated successfully")
                     reset();
-                    router.push(`/admin/events`);
+                    toggleFn();
                     return
                 },
                 onError: (error: any) => {
@@ -97,7 +94,7 @@ const UpdateForm = ({ event, toggleFn }: { event?: EventProperties, toggleFn: ()
                 onSuccess: () => {
                     toast.success("Event was updated successfully")
                     reset();
-                    router.push(`/admin/events`);
+                    toggleFn();
                     return
                 },
                 onError: (error: any) => {
