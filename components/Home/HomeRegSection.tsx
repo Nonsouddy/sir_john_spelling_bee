@@ -64,9 +64,9 @@ const HomeRegisterSection = () => {
                                     </div>
                                 </div>
 
-                                <div className="p-8 flex flex-col items-end mx-auto transition-transform duration-300 hover:-translate-y-1">
+                                <div className="p-8 flex flex-col items-end mx-auto transition-transform duration-300 hover:-translate-y-1 sm:items-start">
                                     <div className="mb-4">
-                                        <Image src={step2} alt="Registration step" className=" relative w-full h-auto z-20 " />
+                                        <Image src={step2} alt="Registration step" className=" relative w-full h-auto " />
                                     </div>
                                     <p className="w-full text-start textGray md:w-[56%] lg:w-[56%]">
                                         Gain access to official study guides, word lists, and tips to help you prepare like a pro.
@@ -125,7 +125,7 @@ const HomeRegisterSection = () => {
                                     <Image src={Ellipse10} alt="" width={64} height={64} className="w-16 h-16" />
                                 </div>
 
-                                <div className=" p-8 flex flex-col items-end mx-auto transition-transform duration-300 hover:-translate-y-1">
+                                <div className=" p-8 flex flex-col items-end mx-auto transition-transform duration-300 hover:-translate-y-1 sm:items-start">
                                     <div className="mb-4">
                                         <Image src={step4} alt="Registration step" className="w-full h-auto" />
                                     </div>
