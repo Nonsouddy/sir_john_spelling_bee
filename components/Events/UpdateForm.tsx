@@ -23,13 +23,30 @@ const UpdateForm = ({ event, toggleFn }: { event?: EventProperties, toggleFn: ()
     const [images, setImages] = useState<File[]>([]);
     const router = useRouter();
 
-    //For the Images
+    //For the Image selection
     const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
-        if (e.target.files) {
-            const files: File[] = Array.from(e.target.files);
-            setImages(files)
+        if (!e.target.files) return;
+
+        const maxFileSize = 50 * 1024 * 1024; 
+        const files: File[] = Array.from(e.target.files);
+
+        // Filter out files that exceed the size limit
+        const validFiles = files.filter(file => {
+            if (file.size > maxFileSize) {
+                toast.error(`"${file.name}" is too large! Max size is 50MB.`);
+                return false;
+            }
+            return true;
+        });
+
+        if (validFiles.length === 0) {
+            e.target.value = "";
+            return;
         }
+
+        setImages(validFiles);
     };
+
 
     // Data validation
     const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<EventInput>({
@@ -38,9 +55,10 @@ const UpdateForm = ({ event, toggleFn }: { event?: EventProperties, toggleFn: ()
 
     // OnSubmit function
     const onSubmit: SubmitHandler<EventInput> = async (data) => {
+        console.log("The images", images)
 
         //Upload Images if they exists
-        if (images.length > 0) {
+        if (Array.isArray(images) && images.length > 0) {
 
             const { success, imageLinks } = await uploadFiles(images);
 
@@ -51,12 +69,13 @@ const UpdateForm = ({ event, toggleFn }: { event?: EventProperties, toggleFn: ()
             }
 
             const formData = { ...data, newImages: imageLinks, id: event?.id };
+            console.log("The formData", formData)
 
             await makeApiRequest("/updateEvent", "post", formData, {
                 onSuccess: () => {
-                    toast.success("Event was created successfully")
+                    toast.success("Event was updated successfully")
                     reset();
-                    toggleFn
+                    router.push(`/admin/events`);
                     return
                 },
                 onError: (error: any) => {
@@ -72,9 +91,9 @@ const UpdateForm = ({ event, toggleFn }: { event?: EventProperties, toggleFn: ()
 
             await makeApiRequest("/updateEvent", "post", formData, {
                 onSuccess: () => {
-                    toast.success("Event was created successfully")
+                    toast.success("Event was updated successfully")
                     reset();
-                    toggleFn
+                    router.push(`/admin/events`);
                     return
                 },
                 onError: (error: any) => {
@@ -114,7 +133,7 @@ const UpdateForm = ({ event, toggleFn }: { event?: EventProperties, toggleFn: ()
                     </div>
                     <div className="flex flex-col gap-y-1">
                         <label htmlFor="otherDetails" className="text-white cursor-pointer">Update Other Event Details</label>
-                        <textarea {...register("otherDetails")} name="otherDetails" id="otherDetails" placeholder={event?.otherDetails ?? ""} className="bg-inherit px-2 xl:px-4 py-3 border border-[#6E6E5E] focus:border-0 rounded-[10px] focus:outline focus:outline-accentOrange w-full h-40 text-white duration-300 resize-y"></textarea>
+                        <textarea {...register("otherDetails")} name="otherDetails" id="otherDetails" defaultValue={event?.otherDetails ?? ""} className="bg-inherit px-2 xl:px-4 py-3 border border-[#6E6E5E] focus:border-0 rounded-[10px] focus:outline focus:outline-accentOrange w-full h-40 text-white duration-300 resize-y"></textarea>
                         {errors.otherDetails && <ErrorText message={errors.otherDetails.message as string} />}
                     </div>
                     <Button type="submit" text={`Update ${event?.name}`} loading={isSubmitting} />

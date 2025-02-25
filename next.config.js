@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
+    serverActions: {
+      bodySizeLimit: "100mb",
+    },
     serverExternalPackages: [
       "@aws-sdk/client-s3",
       "@aws-sdk/s3-request-presigner",

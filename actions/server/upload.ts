@@ -68,6 +68,6 @@ export const uploadFiles = async (images: File[]) => {
     } catch (error: any) {
 
         console.error('Error toggling contestant payment status', error.stack)
-        return { success: false, error: error }
+        return { success: false, message: "Couldn't upload file now, kindly try again later" }
     }
 }

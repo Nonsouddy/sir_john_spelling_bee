@@ -82,7 +82,7 @@ const Form = () => {
                 </div>
                 <div className="flex flex-col gap-y-1">
                     <label htmlFor="date" className="text-white cursor-pointer">Event Date and Time</label>
-                    <input {...register("date")} type="datetime-local" name="date" id="date" className="bg-inherit px-2 xl:px-4 py-3 border border-[#6E6E5E] focus:border-0 rounded-[10px] focus:outline focus:outline-accentOrange duration-300" />
+                    <input required {...register("date")} type="datetime-local" name="date" id="date" className="bg-inherit px-2 xl:px-4 py-3 border border-[#6E6E5E] focus:border-0 rounded-[10px] focus:outline focus:outline-accentOrange duration-300" />
                     {errors.date && <ErrorText message={errors.date.message as string} />}
                 </div>
                 <div className="flex flex-col gap-y-1">

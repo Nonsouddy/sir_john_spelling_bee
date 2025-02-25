@@ -28,7 +28,7 @@ function EventCard({ event, onEdit, onDelete }: { event: EventProperties; onEdit
     return (
         <Card className="overflow-hidden">
             <div className="relative h-52">
-                <Image src={event.images[currentImageIndex] || logo} alt={event.name} fill className="object-cover object-top" />
+                <Image src={event.images[currentImageIndex] || logo} alt={event.name} fill className="object-cover object-top" priority />
                 {event.images.length > 1 && (
                     <>
                         <button onClick={prevImage} className="top-1/2 left-2 absolute bg-black bg-opacity-50 p-1 rounded-full text-white -translate-y-1/2 transform">
