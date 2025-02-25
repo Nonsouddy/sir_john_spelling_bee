@@ -17,6 +17,8 @@ import Arrow from "../public/Svgs/Arrow 1.svg"
 
 //Components
 import HomeStardom from '../components/Home/HomeStardom'
+import HomeRegSection from '../components/Home/HomeRegSection'
+import FAQ from '../app/Type/FAQ';
 
 
 const HomeSection = () => {
@@ -166,6 +168,9 @@ const HomeSection = () => {
             {/* Home Page Section 2 */}
           
             <HomeStardom/>
+            <HomeRegSection/>
+            <FAQ/>
+            
 
 
 

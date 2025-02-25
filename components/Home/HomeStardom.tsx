@@ -7,7 +7,7 @@ import beeImage from '../../public/Images/beeImage.png'
 
 
 const HomeStardom = () => {
-    return (
+    return ( 
         <>
             <section className="flex flex-col md:flex-row items-center justify-between w-full p-6 md:p-12 space-y-6 md:space-y-0 md:space-x-8 ">
                 <div className='mt-0 md:mt-0 lg:mt-0 sm: mt-[-400px]'></div>
