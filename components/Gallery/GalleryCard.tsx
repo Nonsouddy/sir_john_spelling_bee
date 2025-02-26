@@ -3,9 +3,10 @@
 import { useState } from "react";
 import Image from "next/image";
 
-//Components
+//Components, Utils
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { formatDate } from "@/lib/format";
 
 //Images and Icons
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -27,7 +28,7 @@ const GalleryCard = ({ gallery, onDelete }: { gallery: Gallery, onDelete: (id: s
 
     return (
         <Card className="overflow-hidden">
-            <div className="relative h-52">
+            <div className="relative h-48 md:h-52 xl:h-60">
                 <Image src={gallery.images[currentImageIndex] || logo} alt={"gallery images"} fill className="object-cover object-top" priority />
                 {gallery.images.length > 1 && (
                     <>
@@ -40,7 +41,7 @@ const GalleryCard = ({ gallery, onDelete }: { gallery: Gallery, onDelete: (id: s
                     </>
                 )}
             </div>
-            <CardHeader>
+            <CardHeader className="flex items-end">
                 <Button className="bg-[#dc2626]" size="icon" onClick={() => onDelete(gallery.id)}>
                     <Trash size="18" color="#FFF" />
                     <span className="sr-only">Delete</span>
@@ -56,7 +57,7 @@ const GalleryCard = ({ gallery, onDelete }: { gallery: Gallery, onDelete: (id: s
                 </div>
             </CardContent>
             <CardFooter className="text-muted-foreground text-xs">
-                Created: {new Date(gallery.createdAt).toLocaleDateString()}
+                Created: {formatDate(gallery.createdAt)}
             </CardFooter>
         </Card>
     );

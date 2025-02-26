@@ -10,14 +10,14 @@ export default async function deleteGalleryItem(id: string) {
 
     try {
         //Fetch gallery
-        const gallery = await prisma.events.findUnique({
+        const gallery = await prisma.gallery.findUnique({
             where: {
                 id
             }
         })
 
         //Delete gallery
-        await prisma.events.delete({
+        await prisma.gallery.delete({
             where: {
                 id
             },
