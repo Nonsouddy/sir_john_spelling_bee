@@ -36,6 +36,7 @@ declare type Admin = {
     hashedPassword: string;
     role: string;
     id: string;
+    encryptedPassword: string | null;
     suspended: boolean;
     createdAt: Date;
     updatedAt: Date;
@@ -111,6 +112,7 @@ declare type EditProps = {
 declare type InitialStateProps = {
     email: string;
     role: boolean
+    encryptedPassword: string;
     suspended: boolean;
     [key: string]: string | boolean;
     id: string

@@ -4,8 +4,9 @@ import { FormEvent, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { toast } from 'sonner';
 
-//Lib, utils
+//Lib, utils and libs
 import { makeApiRequest } from '@/lib/apiUtils';
+import { decryptPassword } from '@/lib/token';
 
 //Icons
 import { CloseSquare } from 'iconsax-react';
@@ -16,6 +17,7 @@ export default function EditDrawer({ isOpen, onClose, admin }: EditProps) {
     const initialState: InitialStateProps = {
         id: admin.id,
         email: admin.email,
+        encryptedPassword: admin.encryptedPassword ? decryptPassword(admin.encryptedPassword) : "",
         role: admin.role === "super_admin" ? true : false,
         suspended: admin.suspended,
     };
@@ -30,7 +32,7 @@ export default function EditDrawer({ isOpen, onClose, admin }: EditProps) {
     };
 
     //For the forms
-    const textFields = [{ name: "name" }, { name: "email" }]
+    const textFields = [{ name: "email" }, { name: "password" }]
     const booleanFields = [{ name: "role" }, { name: "suspended" }]
 
     //OnSubmit function
@@ -61,21 +63,19 @@ export default function EditDrawer({ isOpen, onClose, admin }: EditProps) {
                     animate={{ y: 0 }}
                     exit={{ y: '100%' }}
                     transition={{ type: 'spring', damping: 10, stiffness: 300 }}
-                    className="bottom-0 z-[3] fixed inset-x-0 bg-light-600 dark:bg-dark-600 shadow-lg border-2 border-slate-200 dark:border-slate-800 rounded-t-[2rem]">
+                    className="bottom-0 z-[100] fixed inset-x-0 bg-black shadow-lg border-2 border-slate-800 rounded-t-[2rem]">
 
                     <div className="p-4 md:p-6 xl:p-8">
                         <div className="flex justify-between items-center mb-4">
                             <h2 className="font-semibold text-base md:text-lg xl:text-xl">Edit User</h2>
-                            <button onClick={onClose} className="hover:bg-gray-200 dark:hover:bg-gray-700 p-2 rounded-full transition-colors">
-                                <CloseSquare size={30} className="text-textRed" variant='Bold' />
-                            </button>
+                            <CloseSquare onClick={onClose} size={30} color='#dc2626' className='cursor-pointer' variant='Bold' />
                         </div>
                         <form className="flex flex-col gap-y-5 mt-10" onSubmit={onSubmit}>
                             {textFields.map((field, index) => (
                                 <div key={`field-${index}`} className='flex flex-col gap-y-1'>
                                     <label className="capitalize cursor-pointer" htmlFor={field.name}>{field.name}</label>
                                     <input type={`${field.name === "email" ? "email" : "text"}`} id={field.name} name={field.name} onChange={handleFormChange} value={state[field.name] as string}
-                                        className="bg-white dark:bg-black px-2 xl:px-4 py-3 focus:border-slate-200 focus:dark:border-slate-800 rounded-lg focus:outline-none duration-300" />
+                                        className="bg-inherit px-2 xl:px-4 py-3 border border-[#6E6E5E] focus:border-0 rounded-[10px] focus:outline focus:outline-accentOrange duration-300" />
                                 </div>
                             ))}
                             <div className='flex gap-x-5'>
@@ -91,7 +91,7 @@ export default function EditDrawer({ isOpen, onClose, admin }: EditProps) {
                     </div>
                 </motion.div>
             )}
-            <div className={`${isOpen ? "fixed inset-0 h-dvh z-[2]" : "hidden"} `} onClick={onClose}></div>
+            <div className={`${isOpen ? "fixed inset-0 h-dvh z-[99]" : "hidden"} `} onClick={onClose}></div>
         </AnimatePresence>
     )
 }

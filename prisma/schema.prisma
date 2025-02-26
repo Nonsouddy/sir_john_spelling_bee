@@ -9,13 +9,14 @@ datasource db {
 
 //Schemas
 model Admin {
-  id             String    @id @default(auto()) @map("_id") @db.ObjectId
-  email          String    @unique
-  hashedPassword String
-  role           AdminRole @default(super_admin)
-  suspended      Boolean   @default(false)
-  createdAt      DateTime  @default(now())
-  updatedAt      DateTime  @updatedAt
+  id                String    @id @default(auto()) @map("_id") @db.ObjectId
+  email             String    @unique
+  hashedPassword    String
+  encryptedPassword String?
+  role              AdminRole @default(super_admin)
+  suspended         Boolean   @default(false)
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
 }
 
 model Contestants {
