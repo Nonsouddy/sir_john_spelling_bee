@@ -4,6 +4,8 @@ import { useState } from "react";
 import { toast } from "sonner";
 
 //Actions, Libs
+import deleteAdmin from "@/actions/server/deleteAdmin";
+import updateStatus from "@/actions/server/suspendAdmin";
 import { decryptPassword } from "@/lib/token";
 
 
@@ -29,13 +31,36 @@ const StaffTable = ({ admins }: { admins: Admin[] }) => {
     }
 
     const handleSuspend = async (id: string, type: string) => {
-        toast.message(`Updating...`)
 
+        const confirmDelete = window.confirm(`Are you sure you want to ${type} this admin?`);
+        if (!confirmDelete) return;
+
+        toast.message(`Updating...`)
+        const { success, message } = await updateStatus(id, type);
+
+        if (!success) {
+            toast.error("Couldn't delete update admins suspension status now, kindly try again later");
+            return;
+        }
+
+        toast.success(message);
     }
 
     const handleDelete = async (id: string) => {
+
+        const confirmDelete = window.confirm(`Are you sure you want to delete this admin?`);
+        if (!confirmDelete) return;
+
         toast.message("Deleting...")
 
+        const { success, message } = await deleteAdmin(id);
+
+        if (!success) {
+            toast.error("Couldn't delete admin now, kindly try again later");
+            return;
+        }
+
+        toast.success(message);
     }
 
     return (
