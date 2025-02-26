@@ -13,9 +13,9 @@ import { Trash, Edit } from "iconsax-react";
 import logo from "../../public/Svgs/Logo.svg";
 import { formatDate } from "@/lib/format";
 
-function EventCard({ event, onEdit, onDelete }: { event: EventProperties; onEdit: (event: EventProperties) => void; onDelete: (id: string) => void }) {
+function EventCard({ event, onEdit, onDelete }: { event: EventProperties; onEdit: (event: EventProperties) => void; onDelete: (id: string) => void; }) {
 
-    const [currentImageIndex, setCurrentImageIndex] = useState(0)
+    const [currentImageIndex, setCurrentImageIndex] = useState<number>(0)
 
     const nextImage = () => {
         setCurrentImageIndex((prevIndex) => (prevIndex + 1 >= event.images.length ? 0 : prevIndex + 1))

@@ -91,3 +91,12 @@ declare type EventProperties = {
     createdAt: Date;
     updatedAt: Date;
 }
+
+//Gallery
+declare type Gallery = {
+    id: string;
+    images: string[];
+    description: string | null;
+    createdAt: Date;
+    updatedAt: Date;
+}

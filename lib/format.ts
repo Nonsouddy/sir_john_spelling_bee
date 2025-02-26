@@ -8,6 +8,8 @@ export const formatSubheading = (page: string) => {
             return "Managing All The Spelling Bee Events.";
         case "events/new":
             return "Creating New Events.";
+        case "gallery/new":
+            return "Add new images to your gallery.";
 
         default:
             return "Seamless Management Operations.";
