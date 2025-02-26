@@ -10,6 +10,10 @@ export const formatSubheading = (page: string) => {
             return "Creating New Events.";
         case "gallery/new":
             return "Add new images to your gallery.";
+        case "staff":
+            return "Comprehensive Staff Oversight for Optimal Performance.";
+        case "staff/new":
+            return "Add New Staff Member to Enhance Efficiency.";
 
         default:
             return "Seamless Management Operations.";

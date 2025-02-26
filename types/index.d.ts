@@ -100,3 +100,18 @@ declare type Gallery = {
     createdAt: Date;
     updatedAt: Date;
 }
+
+//Edit Admin
+declare type EditProps = {
+    isOpen: boolean;
+    onClose: () => void;
+    admin: Admin;
+}
+
+declare type InitialStateProps = {
+    email: string;
+    role: boolean
+    suspended: boolean;
+    [key: string]: string | boolean;
+    id: string
+};
