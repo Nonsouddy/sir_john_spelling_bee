@@ -2,11 +2,12 @@
 
 import { FormEvent, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import CryptoJS from "crypto-js";
 import { toast } from 'sonner';
+import { useRouter } from 'next/navigation';
 
 //Lib, utils and libs
 import { makeApiRequest } from '@/lib/apiUtils';
-import { decryptPassword } from '@/lib/token';
 
 //Icons
 import { CloseSquare } from 'iconsax-react';
@@ -14,16 +15,23 @@ import Button from '../Button';
 
 export default function EditDrawer({ isOpen, onClose, admin }: EditProps) {
 
+    function decryptPassword(encryptedText: string): string {
+        const bytes = CryptoJS.AES.decrypt(encryptedText, "sir-john-spelling-bee");
+        return bytes.toString(CryptoJS.enc.Utf8);
+    }
+
+    //States
     const initialState: InitialStateProps = {
         id: admin.id,
         email: admin.email,
-        encryptedPassword: admin.encryptedPassword ? decryptPassword(admin.encryptedPassword) : "",
+        password: admin.encryptedPassword ? decryptPassword(admin.encryptedPassword) : "",
         role: admin.role === "super_admin" ? true : false,
         suspended: admin.suspended,
     };
 
     const [state, setState] = useState(initialState);
     const [loading, setLoading] = useState<boolean>(false)
+    const router = useRouter()
 
     //Functions
     const handleFormChange = (event: any) => {
@@ -37,16 +45,17 @@ export default function EditDrawer({ isOpen, onClose, admin }: EditProps) {
 
     //OnSubmit function
     const onSubmit = async (event: FormEvent) => {
-        toast.message("Updating User...")
+        toast.message("Updating Admin...")
         event.preventDefault()
         setLoading(true)
 
         const formData = { ...state };
 
         await makeApiRequest("/editAdmin", "post", formData, {
-            onSuccess: (response) => {
-                toast.success(`${response.data.name}'s Profile was updated successfully.`);
+            onSuccess: () => {
+                toast.success(`Admin was Profile was updated successfully.`);
                 onClose();
+                router.push("/admin/staff")
             },
             onError: () => {
                 toast.error("Couldn't update Admin details, try again later.");
@@ -86,7 +95,7 @@ export default function EditDrawer({ isOpen, onClose, admin }: EditProps) {
                                     </div>
                                 ))}
                             </div>
-                            <Button type='submit' text='Update Values' loading={loading} />
+                            <Button type='submit' text='Update Details' loading={loading} />
                         </form>
                     </div>
                 </motion.div>

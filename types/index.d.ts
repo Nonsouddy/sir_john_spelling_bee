@@ -112,7 +112,7 @@ declare type EditProps = {
 declare type InitialStateProps = {
     email: string;
     role: boolean
-    encryptedPassword: string;
+    password: string;
     suspended: boolean;
     [key: string]: string | boolean;
     id: string

@@ -2,11 +2,11 @@
 
 import { useState } from "react";
 import { toast } from "sonner";
+import CryptoJS from "crypto-js";
 
 //Actions, Libs
 import deleteAdmin from "@/actions/server/deleteAdmin";
 import updateStatus from "@/actions/server/suspendAdmin";
-import { decryptPassword } from "@/lib/token";
 
 
 //Libs and Components
@@ -22,6 +22,11 @@ const StaffTable = ({ admins }: { admins: Admin[] }) => {
     const [selectAdmin, setSelectAdmin] = useState<Admin>()
 
     //Functions
+    function decryptPassword(encryptedText: string): string {
+        const bytes = CryptoJS.AES.decrypt(encryptedText, "sir-john-spelling-bee");
+        return bytes.toString(CryptoJS.enc.Utf8);
+    }
+
     const toggleIsOpen = () => {
         setIsOpen((prev) => !prev)
     }
@@ -35,7 +40,7 @@ const StaffTable = ({ admins }: { admins: Admin[] }) => {
         const confirmDelete = window.confirm(`Are you sure you want to ${type} this admin?`);
         if (!confirmDelete) return;
 
-        toast.message(`Updating...`)
+        toast.message(`Updating Suspension Status...`)
         const { success, message } = await updateStatus(id, type);
 
         if (!success) {

@@ -57,19 +57,18 @@ const Form = () => {
         });
     };
 
-
     return (
         <main className="mx-auto my-10 p-2 md:p-4 xl:p-6 border border-gray-600 rounded-3xl w-[95%] sm:w-[90%] md:w-[80%] lg:w-[70%] xl:w-[60%]">
             <h1 className="my-4 font-semibold text-white text-lg md:text-xl xl:text-2xl">Add a new admin</h1>
             <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-y-5 mt-10">
 
                 <div className="flex flex-col">
-                    <ZodInput type="email" placeholder="Enter your email address" id="email" name="email" register={register} required={true} label="Email" />
+                    <ZodInput type="email" placeholder="Enter your email address" id="email" name="email" register={register} required={true} label="Email" otherClass="bg-inherit"  />
                     {errors.email && <ErrorText message={errors.email.message as string} />}
                 </div>
                 <div className="relative">
                     <div>
-                        <ZodInput type={seePassword ? "text" : "password"} placeholder="Enter your password" id="password" name="password" register={register} required={true} label="Password" />
+                        <ZodInput type={seePassword ? "text" : "password"} placeholder="Enter your password" id="password" name="password" register={register} required={true} label="Password" otherClass="bg-inherit"  />
                         {errors.password && <ErrorText message={errors.password.message as string} />}
                     </div>
                     <div className="top-[1.85rem] md:top-[2.1rem] xl:top-[2.35rem] right-2 absolute bg-blue-300 p-1 md:p-1.5 xl:p-2 rounded-md cursor-pointer" onClick={toggleShowPassword}>
