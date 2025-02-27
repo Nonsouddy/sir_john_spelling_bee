@@ -44,7 +44,7 @@ function CategoryPrizesSection()  {
               </li>
               <li className="flex items-center space-x-2">
                 <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
-                <span>Upper Primary (Primary 3–5)</span>
+                <span>Upper Primary (Primary 3–6)</span>
               </li>
               <li className="flex items-center space-x-2">
                 <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
@@ -60,7 +60,7 @@ function CategoryPrizesSection()  {
           {/* Winners Prizes */}
           <div className="bg-primaryYellow rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
             <h3 className="text-xl md:text-2xl font-extrabold mb-6 font-['Comic_Sans_MS']">
-              For Winners (For Each Category)
+              For Winners (Each Category)
             </h3>
             <ul className="space-y-3 font-bold text-[#032230] font-['Istok_Web']">
               <li className="flex items-center space-x-2">
@@ -85,7 +85,7 @@ function CategoryPrizesSection()  {
               </li>
               <li className="flex items-center space-x-2">
                 <span className="w-2 h-2 bg-yellow-500 rounded-full"></span>
-                <span>Consolation prize for 6th-10th place winners.</span>
+                <span>Consolation prizes for 6th-10th place winners.</span>
               </li>
               <li className="flex items-center space-x-2">
                 <span className=" pt-1">Trophies, medals, plaques and recognition for winners schools.</span>
@@ -96,7 +96,7 @@ function CategoryPrizesSection()  {
           {/* Coaches Prizes */}
           <div className="bg-primaryYellow rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
             <h3 className="text-xl md:text-2xl font-extrabold mb-6 font-['Comic_Sans_MS']">
-              For Coaches (For Each Category)
+              For Coaches (Each Category)
             </h3>
             <ul className="space-y-3 font-bold text-[#032230] font-['Istok_Web']">
               <li className="flex items-center space-x-2 ">

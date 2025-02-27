@@ -66,7 +66,7 @@ export default function Instructions() {
 
                         <section className="inst-section">
                             <h2>FEATURES OF THE SJS BEE</h2>
-                            <p>Features of the competition inculde:</p>
+                            <p>Features of the competition include:</p>
                             <ul>
                                 <li><strong>WRITTEN:</strong>  Spellers at every level of the competition will be given five (5) to ten (10) words to write. The word(s) information such as part of speech, definition, origin and sentence examples will be provided to aid spellers understand the exact word(s) they are required to spell before writing.
                                 </li>

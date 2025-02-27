@@ -36,8 +36,11 @@ module.exports = {
         heroBlue: "#59C5F3",
         paleYellow:"#FFFDD1",
         paleLemon:"#9D9801",
-        darkGray:"#37372F",
-        
+       darkGray:"#37372F",
+        regSectionBg1:"#DEF3FD",
+        regSectionBg2:"#FDF1E8",
+
+      
       
 
       },
