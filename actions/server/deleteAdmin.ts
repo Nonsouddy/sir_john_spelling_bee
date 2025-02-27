@@ -15,8 +15,8 @@ export default async function deleteAdmin(id: string) {
             },
         });
 
-        revalidatePath(`/admin/staff`)
-        return { success: true, message: "The admin was deleted successfully." }
+        revalidatePath(`/admin/staff`);
+        return { success: true, message: "The admin was deleted successfully." };
 
     } catch (error: any) {
         console.error('Error deleting admin', error.stack)

@@ -1,11 +1,12 @@
 "use server"
 
 import { prisma } from "@/lib/prismadb"
+import { revalidatePath } from "next/cache";
 
 export default async function updateStatus(id: string, type: string) {
 
     try {
-        
+
         await prisma.admin.update({
             where: {
                 id
@@ -15,7 +16,8 @@ export default async function updateStatus(id: string, type: string) {
             },
         });
 
-        return { success: true, message: "Admin status was updated successfully." }
+        revalidatePath(`/admin/staff`);
+        return { success: true, message: "Admin status was updated successfully." };
 
     } catch (error) {
         console.error('Error updating admin suspension status', error)

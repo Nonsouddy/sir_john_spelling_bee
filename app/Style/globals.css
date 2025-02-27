@@ -104,18 +104,3 @@
   scrollbar-color: #0874e3 #262c35;
   scrollbar-width: thin;
 }
-
-
-
-@layer base {}
-
-
-
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
