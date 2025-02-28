@@ -117,3 +117,19 @@ declare type InitialStateProps = {
     [key: string]: string | boolean;
     id: string
 };
+
+declare type Material = {
+    id: string;
+    title: string;
+    author: string | null;
+    body: string | null;
+    downloadLink: string;
+    type: string;
+    size: number;
+    createdAt: Date;
+    updatedAt: Date;
+}
+
+declare type MaterialsDisplayProps = {
+    materials: Material[];
+}
