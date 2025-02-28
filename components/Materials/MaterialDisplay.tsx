@@ -15,7 +15,7 @@ import { Download } from "lucide-react";
 
 
 export default function MaterialsDisplay({ materials }: MaterialsDisplayProps) {
-
+    console.log("The materials", materials)
     const handleDelete = async (id: string) => {
 
         const confirmDelete = window.confirm("Are you sure you want to delete this material?");
@@ -33,7 +33,7 @@ export default function MaterialsDisplay({ materials }: MaterialsDisplayProps) {
     };
 
     return (
-        <main className="gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10">
+        <main className="gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10">
             {materials.map((material) => (
                 <Card key={material.id}>
                     <CardHeader className="flex flex-row justify-between items-center">

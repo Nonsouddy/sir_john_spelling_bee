@@ -69,7 +69,7 @@ const Form = () => {
         }
 
         const formData = { ...data, downloadLink: fileDetails![0].fileUrl, type: fileDetails![0].fileType, size: fileDetails![0].fileSize };
-
+        console.log("Form Data", formData)
         await makeApiRequest("/material", "post", formData, {
             onSuccess: () => {
                 toast.success("The material was added successfully")
@@ -102,8 +102,8 @@ const Form = () => {
                     <input required onChange={handleFileChange} id="material" type="file" accept=".doc,.docx,application/pdf,text/plain" className="bg-inherit px-2 xl:px-4 py-3 border border-[#6E6E5E] focus:border-0 rounded-[10px] focus:outline focus:outline-accentOrange duration-300" />
                 </div>
                 <div className="flex flex-col gap-y-1">
-                    <label htmlFor="body" className="text-white cursor-pointer">Other Material Details</label>
-                    <textarea {...register("bodyText")} name="body" id="body" className="bg-inherit px-2 xl:px-4 py-3 border border-[#6E6E5E] focus:border-0 rounded-[10px] focus:outline focus:outline-accentOrange w-full h-40 duration-300 resize-y"></textarea>
+                    <label htmlFor="bodyText" className="text-white cursor-pointer">Other Material Details</label>
+                    <textarea {...register("bodyText")} name="bodyText" id="bodyText" className="bg-inherit px-2 xl:px-4 py-3 border border-[#6E6E5E] focus:border-0 rounded-[10px] focus:outline focus:outline-accentOrange w-full h-40 duration-300 resize-y"></textarea>
                     {errors.bodyText && <ErrorText message={errors.bodyText.message as string} />}
                 </div>
                 <Button type="submit" text="Add Material" loading={isSubmitting} />
