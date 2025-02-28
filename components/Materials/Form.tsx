@@ -22,7 +22,7 @@ const Form = () => {
     const router = useRouter();
 
     //For the Images
-    const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
         if (!e.target.files) return;
 
         const maxFileSize = 50 * 1024 * 1024;
@@ -53,8 +53,14 @@ const Form = () => {
     // OnSubmit function
     const onSubmit: SubmitHandler<MaterialInput> = async (data) => {
 
+        if (selectedDocs.length === 0) {
+            toast.error("No file was selected, kindly select a docs and try again.")
+            reset();
+            return
+        }
+
         //Upload Images
-        const { success, fileDetails  } = await uploadFiles(selectedDocs);
+        const { success, fileDetails } = await uploadFiles(selectedDocs);
 
         if (!success) {
             toast.error("Couldn't process the selected image, kindly try again later.")
@@ -93,7 +99,7 @@ const Form = () => {
                 </div>
                 <div className="flex flex-col gap-y-1">
                     <label htmlFor="material" className="text-white cursor-pointer">Select Material</label>
-                    <input id="material" type="file" accept=".doc,.docx,application/pdf,text/plain" className="bg-inherit px-2 xl:px-4 py-3 border border-[#6E6E5E] focus:border-0 rounded-[10px] focus:outline focus:outline-accentOrange duration-300" />
+                    <input required onChange={handleFileChange} id="material" type="file" accept=".doc,.docx,application/pdf,text/plain" className="bg-inherit px-2 xl:px-4 py-3 border border-[#6E6E5E] focus:border-0 rounded-[10px] focus:outline focus:outline-accentOrange duration-300" />
                 </div>
                 <div className="flex flex-col gap-y-1">
                     <label htmlFor="body" className="text-white cursor-pointer">Other Material Details</label>

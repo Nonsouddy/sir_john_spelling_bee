@@ -71,7 +71,7 @@ const uploadFiles = async (files: File[]) => {
                 return {
                     fileUrl: `https://${bucketName}.s3.${region}.amazonaws.com/${fileName}`,
                     fileType: file.type,
-                    fileSize: (file.size / (1024 * 1024)).toFixed(2) + " MB",
+                    fileSize: (file.size / (1024 * 1024)).toFixed(2),
                 };
             })
         );

@@ -53,6 +53,12 @@ const Form = () => {
     // OnSubmit function
     const onSubmit: SubmitHandler<EventInput> = async (data) => {
 
+        if (images.length === 0) {
+            toast.error("No image was selected, kindly select an image and try again.")
+            reset();
+            return
+        }
+
         //Upload Images
         const { success, imageLinks } = await uploadFiles(images);
 

@@ -15,9 +15,9 @@ export const formatSubheading = (page: string) => {
         case "staff/new":
             return "Add New Staff Member to Enhance Efficiency.";
         case "materials":
-            return "Explore a Wealth of Educational Reading Materials.";
-        case "materials":
-            return "Contribute New Reading Materials to Expand Our Library";
+            return "Explore a Wealth of Educational Materials.";
+        case "materials/new":
+            return "Contribute New Reading Materials";
 
         default:
             return "Seamless Management Operations.";

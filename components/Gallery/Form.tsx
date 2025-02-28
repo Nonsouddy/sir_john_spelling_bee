@@ -54,6 +54,11 @@ const Form = () => {
         e.preventDefault()
         setLoading(true);
 
+        if (images.length === 0) {
+            toast.error("No Image was selected, kindly select an image and try again.")
+            return
+        }
+
         //Upload Images
         const { success, imageLinks } = await uploadFiles(images);
 

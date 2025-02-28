@@ -15,11 +15,11 @@ export async function POST(request: NextRequest) {
         const material = await prisma.materials.create({
             data: {
                 title,
-                author,
+                author: author.toLowerCase(),
                 body: bodyText,
                 downloadLink,
                 type,
-                size
+                size: parseFloat(size)
             }
         });
 
