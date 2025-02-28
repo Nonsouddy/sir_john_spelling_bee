@@ -4,13 +4,11 @@ import { ChangeEvent, useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from '@hookform/resolvers/zod';
 import { toast } from "sonner";
-import { useRouter } from 'next/navigation';
 
 //Types, Utils and Actions
 import { EventInput, eventSchema } from "@/app/schemas/event.schema";
 import { makeApiRequest } from "@/lib/apiUtils";
 import { uploadFiles } from "@/actions/server/upload";
-import { deleteFile } from "@/actions/server/deleteFiles";
 
 //Import Needed Components
 import ZodInput from "../ZodInput";;
@@ -24,7 +22,6 @@ import { CloseCircle } from "iconsax-react";
 const UpdateForm = ({ event, toggleFn }: { event?: EventProperties, toggleFn: () => void; }) => {
 
     const [images, setImages] = useState<File[]>([]);
-    const router = useRouter();
 
     //For the Image selection
     const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
