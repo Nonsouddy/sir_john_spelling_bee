@@ -96,9 +96,9 @@ const Form = () => {
                     <input id="material" type="file" accept=".doc,.docx,application/pdf,text/plain" className="bg-inherit px-2 xl:px-4 py-3 border border-[#6E6E5E] focus:border-0 rounded-[10px] focus:outline focus:outline-accentOrange duration-300" />
                 </div>
                 <div className="flex flex-col gap-y-1">
-                    <label htmlFor="otherDetails" className="text-white cursor-pointer">Other Material Details</label>
-                    <textarea {...register("body")} name="body" id="otherDetails" className="bg-inherit px-2 xl:px-4 py-3 border border-[#6E6E5E] focus:border-0 rounded-[10px] focus:outline focus:outline-accentOrange w-full h-40 duration-300 resize-y"></textarea>
-                    {errors.body && <ErrorText message={errors.body.message as string} />}
+                    <label htmlFor="body" className="text-white cursor-pointer">Other Material Details</label>
+                    <textarea {...register("bodyText")} name="body" id="body" className="bg-inherit px-2 xl:px-4 py-3 border border-[#6E6E5E] focus:border-0 rounded-[10px] focus:outline focus:outline-accentOrange w-full h-40 duration-300 resize-y"></textarea>
+                    {errors.bodyText && <ErrorText message={errors.bodyText.message as string} />}
                 </div>
                 <Button type="submit" text="Add Material" loading={isSubmitting} />
             </form>

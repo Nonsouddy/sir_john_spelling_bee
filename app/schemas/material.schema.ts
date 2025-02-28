@@ -6,7 +6,7 @@ export const materialSchema = z.object({
     author: z
         .string()
         .optional(),
-    body: z
+    bodyText: z
         .string()
         .optional(),
 });
