@@ -25,7 +25,7 @@ const page = async () => {
   }
 
   const admins = await getStaff();
-  const staff = admins.filter((admin) => admin.email !== "developer@admin.com")
+  const staff = admins.filter((admin) => admin.email !== "developer@email.com")
 
   return (
     <main>

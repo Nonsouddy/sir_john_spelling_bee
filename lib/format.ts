@@ -14,6 +14,10 @@ export const formatSubheading = (page: string) => {
             return "Comprehensive Staff Oversight for Optimal Performance.";
         case "staff/new":
             return "Add New Staff Member to Enhance Efficiency.";
+        case "materials":
+            return "Explore a Wealth of Educational Reading Materials.";
+        case "materials":
+            return "Contribute New Reading Materials to Expand Our Library";
 
         default:
             return "Seamless Management Operations.";

@@ -1,9 +1,12 @@
+//Components
+import Form from "@/components/Staff/Form";
+
 const page = () => {
-    return ( 
+    return (
         <main>
-            
+            <Form />
         </main>
-     );
+    );
 }
- 
+
 export default page;

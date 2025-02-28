@@ -1,18 +1,24 @@
-'use client';
 
-import React from 'react';
-import FileUploadForm from '../../../../components/FileUploadForm';
-import '@assets/css/material.css';
+//Actions
+import getMaterials from "@/actions/fetch/getMaterials";
 
-const AdminPage = () => {
-  return (
-    <div className='MathHead'>
-    <h1 className="mb-6 pb-5 font-400 text-center text-xl">Admin Document Upload</h1>
-    <div className= "container">
-      <FileUploadForm />
-    </div>
-    </div>
-  );
-};
-      
-export default AdminPage;
+//Components
+import Heading from "@/components/Heading";
+
+//Icons
+import { Book1 } from "iconsax-react";
+
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+const page = async () => {
+
+  const materials = await getMaterials();
+
+  return ( 
+    <main>
+      <Heading totalEvents={materials.length} page="material(s)" Icon={<Book1 variant="Bold" size="28" color="#FFF" />} />
+    </main>
+   );
+}
+ 
+export default page;
