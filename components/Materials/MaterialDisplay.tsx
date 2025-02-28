@@ -1,84 +1,62 @@
 "use client"
 
-import { useState } from "react"
-import { Table } from "@/components/ui/table"
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Download, FileIcon, Grid, List } from "lucide-react"
+import { toast } from "sonner";
 
+//Actions
+import deleteMaterial from "@/actions/server/deleteMaterial";
+
+//Components
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+
+//Icons
+import { Trash, DocumentText1 } from "iconsax-react";
+import { Download } from "lucide-react";
 
 
 export default function MaterialsDisplay({ materials }: MaterialsDisplayProps) {
-    const [view, setView] = useState<"table" | "grid">("table")
 
-    const formatFileSize = (size: number) => {
-        const units = ["B", "KB", "MB", "GB", "TB"]
-        let unitIndex = 0
-        while (size >= 1024 && unitIndex < units.length - 1) {
-            size /= 1024
-            unitIndex++
+    const handleDelete = async (id: string) => {
+
+        const confirmDelete = window.confirm("Are you sure you want to delete this material?");
+        if (!confirmDelete) return;
+
+        toast.info("Deleting event...")
+        const { success, message } = await deleteMaterial(id);
+
+        if (!success) {
+            toast.error("Couldn't delete event now, kindly try again later");
+            return;
         }
-        return `${size.toFixed(2)} ${units[unitIndex]}`
-    }
 
-    const TableView = () => (
-        <Table>
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Author</th>
-                    <th>Type</th>
-                    <th>Size</th>
-                    <th>Created</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                {materials.map((material) => (
-                    <tr key={material.id}>
-                        <td>{material.title}</td>
-                        <td>{material.author || "N/A"}</td>
-                        <td>{material.type}</td>
-                        <td>{formatFileSize(material.size)}</td>
-                        <td>{new Date(material.createdAt).toLocaleDateString()}</td>
-                        <td>
-                            <Button asChild size="sm">
-                                <a href={material.downloadLink} download>
-                                    <Download className="mr-2 w-4 h-4" />
-                                    Download
-                                </a>
-                            </Button>
-                        </td>
-                    </tr>
-                ))}
-            </tbody>
-        </Table>
-    )
+        toast.success(message);
+    };
 
-    const GridView = () => (
-        <div className="gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    return (
+        <main className="gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10">
             {materials.map((material) => (
                 <Card key={material.id}>
-                    <CardHeader>
+                    <CardHeader className="flex flex-row justify-between items-center">
                         <CardTitle className="flex items-center">
-                            <FileIcon className="mr-2 w-4 h-4" />
+                            <DocumentText1 className="mr-2 size-5 md:size-6 xl:size-7" color="#16a34a" variant="Bold" />
                             {material.title}
                         </CardTitle>
+                        <Trash onClick={() => handleDelete(material.id)} className="size-5 md:size-6 xl:size-7 cursor-pointer" color="#dc2626" variant="Bold" />
                     </CardHeader>
                     <CardContent>
-                        <p>
+                        <p className="capitalize">
                             <strong>Author:</strong> {material.author || "N/A"}
                         </p>
                         <p>
                             <strong>Type:</strong> {material.type}
                         </p>
                         <p>
-                            <strong>Size:</strong> {formatFileSize(material.size)}
+                            <strong>Size:</strong> {material.size}MB
                         </p>
                         {material.body && <p className="mt-2">{material.body}</p>}
                     </CardContent>
                     <CardFooter className="flex justify-between">
-                        <span className="text-muted-foreground text-sm">
+                        <span>
                             Created: {new Date(material.createdAt).toLocaleDateString()}
                         </span>
                         <Button asChild size="sm">
@@ -90,23 +68,7 @@ export default function MaterialsDisplay({ materials }: MaterialsDisplayProps) {
                     </CardFooter>
                 </Card>
             ))}
-        </div>
-    )
-
-    return (
-        <div>
-            <div className="flex justify-end mb-4">
-                <Button variant="outline" size="sm" onClick={() => setView("table")} className="mr-2">
-                    <List className="mr-2 w-4 h-4" />
-                    Table
-                </Button>
-                <Button variant="outline" size="sm" onClick={() => setView("grid")}>
-                    <Grid className="mr-2 w-4 h-4" />
-                    Grid
-                </Button>
-            </div>
-            {view === "table" ? <TableView /> : <GridView />}
-        </div>
+        </main>
     )
 }
 
