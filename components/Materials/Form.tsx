@@ -9,7 +9,7 @@ import { useRouter } from 'next/navigation';
 //Types, Utils and Actions
 import { MaterialInput, materialSchema } from "@/app/schemas/material.schema";
 import { makeApiRequest } from "@/lib/apiUtils";
-import { uploadFiles } from "@/actions/server/upload";
+import uploadFiles from "@/actions/server/uploadFIle";
 
 //Import Needed Components
 import ZodInput from "../ZodInput";;
@@ -18,7 +18,7 @@ import ErrorText from "../Auth/error-message";
 
 const Form = () => {
 
-    const [images, setImages] = useState<File[]>([]);
+    const [selectedDocs, setSelectedDocs] = useState<File[]>([]);
     const router = useRouter();
 
     //For the Images
@@ -42,7 +42,7 @@ const Form = () => {
             return;
         }
 
-        setImages(validFiles);
+        setSelectedDocs(validFiles);
     };
 
     // Data validation
@@ -54,7 +54,7 @@ const Form = () => {
     const onSubmit: SubmitHandler<MaterialInput> = async (data) => {
 
         //Upload Images
-        const { success, imageLinks } = await uploadFiles(images);
+        const { success, fileDetails  } = await uploadFiles(selectedDocs);
 
         if (!success) {
             toast.error("Couldn't process the selected image, kindly try again later.")
@@ -62,7 +62,7 @@ const Form = () => {
             return
         }
 
-        const formData = { ...data, images: imageLinks };
+        const formData = { ...data, downloadLink: fileDetails![0].fileUrl, type: fileDetails![0].fileType, size: fileDetails![0].fileSize };
 
         await makeApiRequest("/material", "post", formData, {
             onSuccess: () => {
