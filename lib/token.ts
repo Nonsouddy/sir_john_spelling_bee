@@ -1,6 +1,8 @@
+import CryptoJS from "crypto-js";
 import { SignJWT, jwtVerify } from 'jose';
 
 // Secret key (should be a Uint8Array)
+const SECRET_KEY = process.env.SECRET_KEY || "default_super_secret_key";
 const secretKey = new TextEncoder().encode(process.env.SECRET_KEY);
 
 // Function to sign and encode the admin details
@@ -16,4 +18,9 @@ export async function signSession(adminDetails: object) {
 export async function verifySession(token: string) {
   const { payload } = await jwtVerify(token, secretKey);
   return payload.adminDetails as unknown as Admin;
+}
+
+//Encrypt the passwords
+export function encryptPassword(text: string): string {
+    return CryptoJS.AES.encrypt(text, SECRET_KEY).toString();
 }

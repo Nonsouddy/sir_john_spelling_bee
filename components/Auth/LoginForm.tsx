@@ -16,7 +16,6 @@ import ZodInput from "../ZodInput";;
 import Button from "../Button";
 import ErrorText from "./error-message";
 
-
 //Import Needed Icons
 import { Lock, Unlock } from "iconsax-react";
 
@@ -24,7 +23,6 @@ const LoginForm = () => {
 
     const router = useRouter();
     const [seePassword, setSeePassword] = useState<boolean>(false);
-    const [password, setPassword] = useState<string>("")
 
     //Toggle See Password
     const toggleShowPassword = () => {
@@ -43,7 +41,7 @@ const LoginForm = () => {
         const formData = { ...data };
 
         await makeApiRequest("/login", "post", formData, {
-            onSuccess: (response) => {
+            onSuccess: () => {
                 toast.success("Welcome Back")
                 reset();
                 router.replace(`/admin/dashboard`);
@@ -65,7 +63,7 @@ const LoginForm = () => {
                 </div>
                 <div className="relative">
                     <div>
-                        <ZodInput type={seePassword ? "text" : "password"} placeholder="Enter your password" onChange={(e: any) => setPassword(e.target.value)} id="password" name="password" register={register} required={true} label="Password" />
+                        <ZodInput type={seePassword ? "text" : "password"} placeholder="Enter your password" id="password" name="password" register={register} required={true} label="Password" />
                         {errors.password && <ErrorText message={errors.password.message as string} />}
                     </div>
                     <div className="top-[1.85rem] md:top-[2.1rem] xl:top-[2.35rem] right-2 absolute bg-blue-300 p-1 md:p-1.5 xl:p-2 rounded-md cursor-pointer" onClick={toggleShowPassword}>

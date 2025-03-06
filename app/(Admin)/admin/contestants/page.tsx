@@ -6,6 +6,8 @@ import getContestants from "@/actions/fetch/getContestants";
 //Components
 import Heading from "@/components/Contestants/Heading";
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 const page = async () => {
 
     const accessTokenUser = await getCurrentUser();

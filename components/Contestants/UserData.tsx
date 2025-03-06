@@ -28,6 +28,10 @@ export default function UserDataDisplay({ contestant }: { contestant: Contestant
     }
 
     const deleteFn = async (id: string) => {
+
+        const confirmDelete = window.confirm("Are you sure you want to delete this contestant?");
+        if (!confirmDelete) return;
+
         toast.info("Deleting Contestant...")
         const { success, message } = await deleteContestant(id, `/contestants/${id}`);
         if (!success) {
@@ -83,7 +87,6 @@ export default function UserDataDisplay({ contestant }: { contestant: Contestant
                 <div className="flex sm:flex-row flex-col sm:justify-between sm:items-center gap-x-2 gap-y-2 p-2 md:p-4 xl:p-6">
                     <button onClick={() => deleteFn(contestant.studentId)} className="inline-flex justify-center items-center bg-red-600 px-4 py-3 rounded-3xl text-white"><Trash color="#fff" className="mr-1" size={20} />Delete Contestant</button>
                     <button onClick={() => toggleFn(contestant.studentId, contestant.hasPaid ?? false)} className="inline-flex justify-center items-center bg-blue-600 px-4 py-3 rounded-3xl text-white"><Edit2 color="#fff" className="mr-1" size={20} />Update Status</button>
-                    <button className="inline-flex justify-center items-center bg-primaryYellow px-4 py-3 rounded-3xl text-textBlack"><UserEdit color="#1c1b17" className="mr-1" size={20} />Edit Contestant Details</button>
                 </div>
             </Section>
         </main>

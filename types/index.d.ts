@@ -36,6 +36,7 @@ declare type Admin = {
     hashedPassword: string;
     role: string;
     id: string;
+    encryptedPassword: string | null;
     suspended: boolean;
     createdAt: Date;
     updatedAt: Date;
@@ -61,21 +62,74 @@ declare type SummaryProps = {
 
 //Contestant
 declare type Contestant = {
-    category: string
-    createdAt: Date
-    gender: string
-    hasPaid: boolean | null
-    id: string
-    schoolLocation: string
-    schoolName: string
-    schoolPhoneNumber: string
-    studentClass: string
-    studentDateOfBirth: string
-    studentEmail: string
-    studentFullName: string
-    studentId: string
-    studentPhoneNumber: string
-    tutorName: string
-    tutorPhoneNumber: string
-    updatedAt: Date
+    category: string;
+    createdAt: Date;
+    gender: string;
+    hasPaid: boolean | null;
+    id: string;
+    schoolLocation: string;
+    schoolName: string;
+    schoolPhoneNumber: string;
+    studentClass: string;
+    studentDateOfBirth: string;
+    studentEmail: string;
+    studentFullName: string;
+    studentId: string;
+    studentPhoneNumber: string;
+    tutorName: string;
+    tutorPhoneNumber: string;
+    updatedAt: Date;
 };
+
+//Events
+declare type EventProperties = {
+    id: string;
+    venue: string;
+    name: string;
+    otherDetails: string | null;
+    images: string[];
+    date: Date;
+    createdAt: Date;
+    updatedAt: Date;
+}
+
+//Gallery
+declare type Gallery = {
+    id: string;
+    images: string[];
+    description: string | null;
+    createdAt: Date;
+    updatedAt: Date;
+}
+
+//Edit Admin
+declare type EditProps = {
+    isOpen: boolean;
+    onClose: () => void;
+    admin: Admin;
+}
+
+declare type InitialStateProps = {
+    email: string;
+    role: boolean
+    password: string;
+    suspended: boolean;
+    [key: string]: string | boolean;
+    id: string
+};
+
+declare type Material = {
+    id: string;
+    title: string;
+    author: string | null;
+    body: string | null;
+    downloadLink: string;
+    type: string;
+    size: number;
+    createdAt: Date;
+    updatedAt: Date;
+}
+
+declare type MaterialsDisplayProps = {
+    materials: Material[];
+}
