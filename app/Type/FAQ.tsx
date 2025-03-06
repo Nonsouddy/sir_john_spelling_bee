@@ -169,7 +169,7 @@ const FQAPage: React.FC = () => {
             >
               <div
                 onClick={() => toggleQuestion(index)}
-                className="flex justify-between items-center cursor-pointer"
+                className="flex justify-between items-center cursor-pointer shrink-0"
               >
                 <h2 className=" w-30 text-l font-semibold text-defaultColor transition-colors word-breake ">
                   {faq.question}

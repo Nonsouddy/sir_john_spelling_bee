@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
-  enablePX:true,
+  enablePX: true,
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -34,14 +34,31 @@ module.exports = {
         naturalColor: "FFFFFA",
         strokeColor2: "#007bff",
         heroBlue: "#59C5F3",
-        paleYellow:"#FFFDD1",
-        paleLemon:"#9D9801",
-       darkGray:"#37372F",
-        regSectionBg1:"#DEF3FD",
-        regSectionBg2:"#FDF1E8",
+        paleYellow: "#FFFDD1",
+        paleLemon: "#9D9801",
+        darkGray: "#37372F",
+        regSectionBg1: "#DEF3FD",
+        regSectionBg2: "#FDF1E8",
+        blue50: "#F5FCFE",
+        yellow600: "#D0C901",
+        fFFEEB: "#FFFEEB",
+        gray500: "#8A8975",
+        gray700: "#424242",
+        gray50: "#FAFAF9",
+        orange600: "#D16B14",
+        blue600: "#16AEEE",
+        blue800: "#084F6D",
+        yellow700: "#9D9801",
+        yellow800: "#6B6700",
+        
+    
 
-      
-      
+
+
+
+
+
+
 
       },
       fontFamily: {

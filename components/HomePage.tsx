@@ -12,13 +12,12 @@ import Ellipse2 from "../public/Svgs/Ellipse 2.svg"
 import Ellipse3 from "../public/Svgs/Ellipse 3.svg"
 import crulArrow from "../public/Svgs/crulArrow.svg"
 import polygon1 from "../public/Svgs/polygon-1.svg"
-import polygon2 from "../public/Svgs/polygon-2.svg"
 import Arrow from "../public/Svgs/Arrow 1.svg"
 
 //Components
 import HomeStardom from '../components/Home/HomeStardom'
 import HomeRegSection from '../components/Home/HomeRegSection'
-import FAQ from '../app/Type/FAQ';
+
 
 
 const HomeSection = () => {
@@ -169,7 +168,7 @@ const HomeSection = () => {
           
             <HomeStardom/>
             <HomeRegSection/>
-            <FAQ/>
+          
             
 
 

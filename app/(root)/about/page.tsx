@@ -5,16 +5,6 @@ import { useState } from 'react'
 import Img1 from '../../../public/Svgs/aboutImg1.svg'
 import Rect from '../../../public/Svgs/about_square.svg'
 import moon from '../../../public/Svgs/aboutHalfMoon.svg'
-import MissionTag from '@assets/svg/missionTag.svg'
-import line from '@assets/svg/line 83.svg'
-import beeImage from '@assets/img/beeImage.png'
-import text from '@assets/svg/text.svg'
-import ball from '@assets/svg/Ball.svg'
-import strike from '@assets/svg/vector 5.svg'
-import vector from '@assets/svg/vector 12.svg'
-
-import stake from '@assets/svg/Vector 2516.svg'
-import FAQPage from '../faq/page'
 
 //Components
 import CategoryAndPrizes from '../../../components/About/CategoryAndPrizes'
@@ -58,15 +48,15 @@ function About() {
 
 
             </div>
-            <MissionAndVission/>
-            <AboutSection/>
-            <KeyStakeHolders/>
+            <MissionAndVission />
+            <AboutSection />
+            <KeyStakeHolders />
 
-            <CategoryAndPrizes/>
+            <CategoryAndPrizes />
 
 
         </>
-        
+
 
     )
 }
