@@ -1,47 +1,40 @@
+import { prisma } from '@/lib/prismadb';
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
-import { revalidatePath } from 'next/cache';
 
-//Utils and Actions
-import { prisma } from '@/lib/prismadb';
-import { deleteFile } from '@/actions/server/deleteFiles';
-
+// Handle creating a new gallery item
 export async function POST(request: NextRequest) {
-
     const body = await request.json();
 
     try {
+        const { images, description } = body;
 
-        const { id, name, venue, otherDetails, images, date, formerImages } = body;
-
-        const formattedDate = new Date(date).toISOString();
-
-        // Create event
-        const updatedEvent = await prisma.events.update({
-            where: {
-                id
-            },
+        const newGalleryItem = await prisma.gallery.create({
             data: {
-                name,
-                venue,
-                otherDetails,
                 images,
-                date: formattedDate,
+                description
             }
         });
 
-        //Delete former images
-        if (formerImages && formerImages.length > 0) {
-            for (const image of formerImages) {
-                await deleteFile(image)
-            }
-        }
-
-        revalidatePath("/admin/events")
-        return NextResponse.json(updatedEvent);
+        return NextResponse.json(newGalleryItem);
 
     } catch (error: any) {
-        console.error("Error updating event:", error.stack);
+        console.error("Error creating new gallery item:", error.stack);
+        return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
+    }
+}
+
+// Handle fetching all gallery items
+export async function GET(request: NextRequest) {
+    try {
+        const galleryItems = await prisma.gallery.findMany({
+            orderBy: { createdAt: 'desc' }, // Optional: latest first
+        });
+
+        return NextResponse.json(galleryItems);
+
+    } catch (error: any) {
+        console.error("Error fetching gallery items:", error.stack);
         return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
     }
 }
