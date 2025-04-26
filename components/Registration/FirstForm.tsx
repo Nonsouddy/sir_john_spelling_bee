@@ -44,6 +44,25 @@ const FirstForm = () => {
             toast.warning("Please fill in all fields before proceeding.");
             return;
         }
+
+        // Calculate age
+    const birthDate = new Date(data.studentDateOfBirth);
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDiff = today.getMonth() - birthDate.getMonth();
+
+    // Adjust age if birthday hasn't occurred yet this year
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+
+    // Validate age
+    if (age < 6 || age > 18) {
+        toast.warning("Student's age must be between 6 and 18 years to register.");
+        return;
+    }
+
+    // Proceed if validation passed 
         const params = new URLSearchParams(searchParams);
         params.set('page', newPage.toString());
         // Push the new URL with updated query parameters

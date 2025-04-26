@@ -1,40 +1,47 @@
-import { prisma } from '@/lib/prismadb';
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
+import { revalidatePath } from 'next/cache';
 
-// Handle creating a new gallery item
+//Utils and Actions
+import { prisma } from '@/lib/prismadb';
+import { deleteFile } from '@/actions/server/deleteFiles';
+
 export async function POST(request: NextRequest) {
+
     const body = await request.json();
 
     try {
-        const { images, description } = body;
 
-        const newGalleryItem = await prisma.gallery.create({
+        const { id, name, venue, otherDetails, images, date, formerImages } = body;
+
+        const formattedDate = new Date(date).toISOString();
+
+        // Create event
+        const updatedEvent = await prisma.events.update({
+            where: {
+                id
+            },
             data: {
+                name,
+                venue,
+                otherDetails,
                 images,
-                description
+                date: formattedDate,
             }
         });
 
-        return NextResponse.json(newGalleryItem);
+        //Delete former images
+        if (formerImages && formerImages.length > 0) {
+            for (const image of formerImages) {
+                await deleteFile(image)
+            }
+        }
+
+        revalidatePath("/admin/events")
+        return NextResponse.json(updatedEvent);
 
     } catch (error: any) {
-        console.error("Error creating new gallery item:", error.stack);
-        return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
-    }
-}
-
-// Handle fetching all gallery items
-export async function GET(request: NextRequest) {
-    try {
-        const galleryItems = await prisma.gallery.findMany({
-            orderBy: { createdAt: 'desc' }, // Optional: latest first
-        });
-
-        return NextResponse.json(galleryItems);
-
-    } catch (error: any) {
-        console.error("Error fetching gallery items:", error.stack);
+        console.error("Error updating event:", error.stack);
         return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
     }
 }
