@@ -1,5 +1,5 @@
 
-"use client"
+// "use client"
 import Image from 'next/image'
 import '@assets/css/resourcesPage.css'
 import Ellipse11 from "../../../public/Svgs/Ellipse11.svg"
@@ -7,14 +7,20 @@ import Ellipse11 from "../../../public/Svgs/Ellipse11.svg"
 import halfmoon from '../../../public/Svgs/halfMoon.svg'
 import vector13 from '../../../public/Svgs/vector13.svg'
 import moon from '../../../public/Svgs/aboutHalfMoon.svg'
-// import Link from 'next/link'
-// import MaintenancePage from '../../../components/MaintenancePage'
+
 //Components
-import EventSection from '../../../components/Resources/eventSection'
 import MaterialSection from '../../../components/Resources/material'
+import EventSection from '../../../components/Resources/eventSection'
+import dynamic from 'next/dynamic'
+import EventsSection from '../../../components/Resources/eventSection'
 
 
-function ResourcesPage() {
+
+
+
+
+export default async function ResourcesPage() {
+    const eventsComponent = await EventsSection()
     return (
         <>
             {/* <MaintenancePage page="Resources Page" /> */}
@@ -36,8 +42,9 @@ function ResourcesPage() {
 
  
                
-                 <MaterialSection/>
-                 <EventSection/>
+                 {/* <MaterialSection/> */}
+                 {/* <EventSection/> */}
+                 {eventsComponent}
             </div >
             
 
@@ -48,4 +55,4 @@ function ResourcesPage() {
 
 }
 
-export default ResourcesPage
+// export default ResourcesPage
