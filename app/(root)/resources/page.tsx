@@ -10,8 +10,8 @@ import moon from '../../../public/Svgs/aboutHalfMoon.svg'
 
 //Components
 import MaterialSection from '../../../components/Resources/material'
-import EventSection from '../../../components/Resources/eventSection'
-import dynamic from 'next/dynamic'
+// import EventSection from '../../../components/Resources/eventSection'
+// import dynamic from 'next/dynamic'
 import EventsSection from '../../../components/Resources/eventSection'
 
 
