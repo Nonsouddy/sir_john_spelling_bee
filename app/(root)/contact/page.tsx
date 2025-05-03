@@ -195,7 +195,10 @@ const ContactPage = () => {
                   className="bg-red-100 p-3 rounded-full hover:bg-red-200 transition-colors shadow-md hover:shadow-lg"
                   aria-label="YouTube"
                 >
-                  <Image src="/Svgs/YouTube.svg" alt="YouTube" width={40} height={40} />
+                  <Image src="/Svgs/Youtube.svg" alt="YouTube" width={40} height={40} />
+                
+
+
                 </a>
                 <a
                   href="https://wa.me/2348144118744"
@@ -204,7 +207,9 @@ const ContactPage = () => {
                   className="bg-green-100 p-3 rounded-full hover:bg-green-200 transition-colors shadow-md hover:shadow-lg"
                   aria-label="WhatsApp"
                 >
-                  <Image src="/Svgs/WhatsApp.svg" alt="WhatsApp" width={40} height={40} />
+                  <Image src="/Svgs/Whatsapp.svg" alt="Whatsapp" width={40} height={40} />
+               
+                 
                 </a>
                 <a
                   href="https://vm.tiktok.com/ZMk42sQCk/"
@@ -214,7 +219,8 @@ const ContactPage = () => {
                   aria-label="TikTok"
                 >
 
-                  <Image src="/Svgs/TikTok.svg" alt="TikTok" width={40} height={40} />
+                  <Image src="/Svgs/Tiktok.svg" alt="TikTok" width={40} height={40} />
+                 
                 </a>
               </div>
               <p className="text-center mt-4 text-lg text-gray-600 font-comic">
