@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { FC, useEffect, useState } from 'react';
+import { makeApiRequest } from "@/lib/apiUtils"; 
 
 interface Event {
   title: string;
@@ -24,17 +25,24 @@ const EventsSection: FC = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await fetch('/api/event');
+        const response = await makeApiRequest(
+          '/event', // Endpoint (baseURL is already set to /api in makeApiRequest)
+          'get',
+          undefined, // No data needed for GET request
+          {
+            onSuccess: (res) => {
+              console.log('Events fetched successfully');
+            },
+            onError: (err) => {
+              setError(`Failed to load events: ${err.message}`);
+            }
+          }
+        );
         
-        if (!response.ok) {
-          throw new Error('Failed to fetch events');
-        }
-        
-        const data = await response.json();
-        setEvents(data);
+        setEvents(response.data);
       } catch (err) {
-        console.error('Error fetching events:', err);
-        setError('Failed to load events. Please try again later.');
+        // Error is already handled by onError callback
+        console.error('Error in fetchEvents function:', err);
       } finally {
         setLoading(false);
       }
