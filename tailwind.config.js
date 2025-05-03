@@ -50,24 +50,58 @@ module.exports = {
         blue800: "#084F6D",
         yellow700: "#9D9801",
         yellow800: "#6B6700",
-        
-    
-
-
-
-
-
-
-
-
       },
       fontFamily: {
         inter: ["var(--font-inter)"],
         comic: ["var(--font-comic-neue)"],
-
+      },
+      animation: {
+        'float': 'float 6s ease-in-out infinite',
+        'floating': 'floating 8s ease-in-out infinite',
+        'wave': 'wave 5s ease-in-out infinite',
+        'spin-slow': 'spin 8s linear infinite',
+        'spin-slower': 'spin 12s linear infinite',
+        'spin-reverse-slow': 'spin-reverse 7s linear infinite',
+        'spin-reverse-slower': 'spin-reverse 10s linear infinite',
+        'bounce-subtle': 'bounce-subtle 3s ease-in-out infinite',
+        'pulse-subtle': 'pulse-subtle 4s ease-in-out infinite',
+        'pulse-slow': 'pulse-slow 3s ease-in-out infinite',
+      },
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-15px)' },
+        },
+        floating: {
+          '0%, 100%': { transform: 'translateY(0) rotate(180deg) scaleX(-1)' },
+          '50%': { transform: 'translateY(-20px) rotate(185deg) scaleX(-1.05)' },
+        },
+        wave: {
+          '0%': { transform: 'rotate(0deg)' },
+          '20%': { transform: 'rotate(-5deg)' },
+          '40%': { transform: 'rotate(5deg)' },
+          '60%': { transform: 'rotate(-2deg)' },
+          '80%': { transform: 'rotate(2deg)' },
+          '100%': { transform: 'rotate(0deg)' },
+        },
+        'spin-reverse': {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(-360deg)' },
+        },
+        'bounce-subtle': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-5px)' },
+        },
+        'pulse-subtle': {
+          '0%, 100%': { opacity: 1, transform: 'scale(1)' },
+          '50%': { opacity: 0.9, transform: 'scale(1.03)' },
+        }, 
+        'pulse-slow': {
+          '0%, 100%': { opacity: 1, transform: 'scale(1)' },
+          '50%': { opacity: 0.95, transform: 'scale(1.05)' },
+        },
       },
     },
   },
   plugins: [require("tailwindcss-animate")],
 };
-''
