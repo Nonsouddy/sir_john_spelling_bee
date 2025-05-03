@@ -14,7 +14,7 @@ interface FAQItem {
 
 const faqData: FAQItem[] = [
   {
-    question: "Who can participate in Sir John’s Spelling Bee?",
+    question: "Who can participate in Sir John's Spelling Bee?",
     answer:
       "Any pupil or student between the ages of 5 and 17 can participate. Participants are grouped into four categories: Early Spellers (Primary 1-2),Upper Primary (Primary 3-5),Junior Secondary (JSS 1-3),Senior Secondary (SS 1-3)",
   },
@@ -171,14 +171,16 @@ const FQAPage: React.FC = () => {
                 onClick={() => toggleQuestion(index)}
                 className="flex justify-between items-center cursor-pointer shrink-0"
               >
-                <h2 className=" w-30 text-l font-semibold text-defaultColor transition-colors word-breake ">
+                <h2 className="w-30 text-l font-semibold text-defaultColor transition-colors word-breake">
                   {faq.question}
                 </h2>
-                {expandedIndex === index ? (
-                  <ArrowDown className="w-6 h-6 sm:w-auto sm:h-auto md:w-8 md:h-8 text-black" />
-                ) : (
-                  <ArrowRight className="w-6 h-6 sm:w-auto sm:h-auto md:w-8 md:h-8 -mt-6 text-black" />
-                )}
+                <div className="flex-shrink-0 w-6 h-6 flex items-center justify-center">
+                  {expandedIndex === index ? (
+                    <ArrowDown className="w-6 h-6 text-black" />
+                  ) : (
+                    <ArrowRight className="w-6 h-6 text-black" />
+                  )}
+                </div>
               </div>
 
               {expandedIndex === index && renderAnswer(faq.answer, index)}
