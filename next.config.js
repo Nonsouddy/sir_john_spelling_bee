@@ -16,7 +16,12 @@ const nextConfig = {
         hostname: "john-spelling-bee.s3.af-south-1.amazonaws.com",
         port: "",
         pathname: "/**",
-      },
+      },{
+        protocol: "https",
+        hostname: "cdn.sanity.io",
+        port: "",
+        pathname: "/**"
+      }
     ],
   },
 };

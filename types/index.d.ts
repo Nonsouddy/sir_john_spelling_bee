@@ -133,3 +133,16 @@ declare type Material = {
 declare type MaterialsDisplayProps = {
     materials: Material[];
 }
+
+declare type Post = {
+    _id: string;
+    title: string;
+    slug: { current: string };
+    mainImage: { asset: { url: string } };
+    body: any;
+    comments: Array<{
+      _id: string;
+      name: string;
+      comment: string;
+    }>;
+  }
