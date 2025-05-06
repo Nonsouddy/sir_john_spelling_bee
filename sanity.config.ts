@@ -14,6 +14,8 @@ import {schema} from './sanity/schemaTypes';
 import {structure} from './sanity/structure';
 
 export default defineConfig({
+  name: 'sir_john_spelling_bee',
+  title: 'Sir John Spelling Bee Studio',
   basePath: '/studio',
   projectId,
   dataset,

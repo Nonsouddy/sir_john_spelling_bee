@@ -13,6 +13,5 @@ export default async function PagesLayout({ children }: { children: React.ReactN
                 <Footer />
             </section>
         </main>
-
     )
 }
