@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { client } from '@/sanity/lib/client';
 
-export default async function POST(request: NextRequest) {
+export async function POST(request: NextRequest) {
 
     const body = await request.json();
 
