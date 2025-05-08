@@ -71,50 +71,48 @@ const EventsSection: FC = () => {
   const eventsList = events || [];
 
   return (
-    <div className="px-4 sm:px-6 py-10 w-full">
-      <h2 className="text-2xl sm:text-3xl font-bold text-start mb-6 sm:mb-8 font-['Comic_Sans_MS'] text-defaultColor">
+    <div className="px-6 py-10">
+      <h2 className="text-3xl font-bold text-start mb-8 font-['Comic_Sans_MS'] text-defaultColor">
         Upcoming Events
       </h2>
       {eventsList.length === 0 ? (
         <p className="text-center text-gray-500">No upcoming events at the moment.</p>
       ) : (
-        <div className="grid gap-4 sm:gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 w-full">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
           {eventsList.map((event, index) => (
             <div
               key={index}
-              className={`bg-white shadow-md rounded-lg overflow-hidden border-2 ${borderColors[index % borderColors.length]} flex flex-col items-center p-3 sm:p-6 w-full`}
+              className={`bg-white shadow-md rounded-lg overflow-hidden border-2 ${borderColors[index % borderColors.length]} flex flex-col items-center p-6`}
             >
               <div
-                className={`relative w-full border-2 rounded-lg ${borderColors[index % borderColors.length]} overflow-hidden`}
-                style={{ minHeight: "200px", maxHeight: "400px" }}
+                className={`relative w-full mb-4 border-2 rounded-lg  ${borderColors[index % borderColors.length]} overflow-hidden flex items-center justify-center`}
+                style={{ minHeight: "240px" }}
               >
                 <Image
                   src={event.image}
                   alt={event.title}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  style={{
-                    objectFit: 'cover',
-                    objectPosition: 'center'
-                  }}
+                  width={800}
+                  height={600}
+                  layout="responsive"
+                  className="w-full h-auto"
                   priority
                 />
               </div>
 
-              <div className="p-3 sm:p-5 w-full flex flex-col sm:flex-row sm:justify-between sm:items-center font-['Istok_Web'] mt-2">
+              <div className="p-5 w-full flex flex-col sm:flex-row sm:justify-between sm:items-center font-['Istok_Web']">
                 <div className="w-full sm:w-auto">
                   <h3
-                    className={`text-lg sm:text-xl ${headColors[index % headColors.length]} font-semibold flex font-['Comic_Sans_MS']`}
+                    className={`text-xl ${headColors[index % headColors.length]} font-semibold flex font-['Comic_Sans_MS']`}
                   >
                     {event.title}
                   </h3>
-                  <p className={`${pColors[index % pColors.length]} text-sm sm:text-base`}>
+                  <p className={`${pColors[index % pColors.length]}`}>
                     {event.description}
                   </p>
                 </div>
 
                 <div
-                  className={`border-2 text-defaultColor ${borderColors[index % borderColors.length]} ${backgroundColors[index % backgroundColors.length]} mt-2 p-1 gap-1 sm:gap-2 text-xs sm:text-sm flex sm:space-x-4`}
+                  className={`border-2 text-defaultColor ${borderColors[index % borderColors.length]} ${backgroundColors[index % backgroundColors.length]} mt-2 p-1 gap-2 text-sm flex sm:space-x-4`}
                 >
                   <p>Date: {event.date}</p>
                   <p>Time: {event.time}</p>
@@ -122,7 +120,7 @@ const EventsSection: FC = () => {
               </div>
 
               <p
-                className={`mt-2 sm:mt-4 mx-3 sm:ml-6 text-sm sm:text-base font-['Istok_Web'] ${desColors[index % desColors.length]}`}
+                className={`mt-4 ml-6 font-['Istok_Web'] ${desColors[index % desColors.length]}`}
               >
                 {event.details}
               </p>
