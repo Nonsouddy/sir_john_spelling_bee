@@ -4,7 +4,7 @@ import { prisma } from "@/lib/prismadb";
 
 
 export default async function downloadMaterial(studentId: string, materialLink: string) {
-    
+
     try {
         // Find the user by studentId
         const user = await prisma.contestants.findUnique({
@@ -13,6 +13,10 @@ export default async function downloadMaterial(studentId: string, materialLink: 
 
         if (!user) {
             return { success: false, message: "Contestant details not found, kindly enter another one." }
+        }
+
+        if (!user.hasPaid) {
+            return { success: false, message: "Only paid contestants can download materials." }
         }
 
         // Check if the material has already been downloaded
@@ -37,5 +41,5 @@ export default async function downloadMaterial(studentId: string, materialLink: 
         console.error('Error downloading material', error.stack)
         return { success: false, error: error }
     }
-}  
+}
 

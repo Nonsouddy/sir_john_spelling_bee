@@ -69,7 +69,7 @@ const Form = () => {
         }
 
         const formData = { ...data, downloadLink: fileDetails![0].fileUrl, type: fileDetails![0].fileType, size: fileDetails![0].fileSize };
-        console.log("Form Data", formData)
+
         await makeApiRequest("/material", "post", formData, {
             onSuccess: () => {
                 toast.success("The material was added successfully")

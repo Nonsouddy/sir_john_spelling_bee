@@ -39,7 +39,7 @@ export async function POST(request: NextRequest) {
 export async function GET(request: NextRequest) {
     try {
       const events = await getPublicEvents();
-      return NextResponse.json(events);  // Sends the fetched events as a JSON response.
+      return NextResponse.json(events); 
     } catch (error) {
       console.error('Error fetching events:', error);
       return NextResponse.json({ error: 'Failed to fetch events' }, { status: 500 });

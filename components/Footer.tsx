@@ -18,6 +18,7 @@ const Footer = () => {
     { name: 'About Us', href: '/about' },
     { name: 'Resources', href: '/resources' },
     { name: 'Events', href: '/events' },
+    {name: "Blog", href: '/blog'}
   ];
 
   const company = [
@@ -36,27 +37,27 @@ const Footer = () => {
   // ];
 
   return (
-    <footer className="w-full bg-footerBG text-white font-inter">
-      <div className="max-w-7xl mx-auto px-4 py-8 md:px-8  md:ml-2 sm:ml-2">
+    <footer className="bg-footerBG w-full font-inter text-white">
+      <div className="mx-auto sm:ml-2 md:ml-2 px-4 md:px-8 py-8 max-w-7xl">
         {/* Main Content */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4  lg:gap-3 mb-8 lg:pt-20 md:mt-0 gap-6 sm:mt-0 gap-6 ">
+        <div className="gap-6 gap-6 lg:gap-3 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 sm:mt-0 md:mt-0 mb-8 lg:pt-20">
           {/* Logo Section */}
-          <div className="flex ">
-            <div className="flex items-center lg:ml-20 md:ml-20 ">
-              <Link href="/"><Image src={logo} alt='Logo' className='w-fit h-8 md:h-16 xl:h-18 ' /></Link>
+          <div className="flex">
+            <div className="flex items-center md:ml-20 lg:ml-20">
+              <Link href="/"><Image src={logo} alt='Logo' className='w-fit h-8 md:h-16 xl:h-18' /></Link>
 
             </div>
           </div>
 
           {/* Quick Links Section */}
-          <div className="text-whiteColor md:border-l border-footerBorder md:pl-8 lg:h-[200px] ">
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+          <div className="md:pl-8 border-footerBorder md:border-l lg:h-[200px] text-whiteColor">
+            <h3 className="mb-4 font-semibold text-lg">Quick Links</h3>
             <nav className="flex flex-col space-y-3">
               {quickLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className=" transition-colors duration-200"
+                  className="transition-colors duration-200"
                 >
                   {link.name}
                 </a>
@@ -65,8 +66,8 @@ const Footer = () => {
           </div>
 
           {/* Company Info */}
-          <div className="md:pl-8 lg:-ml-20">
-            <h3 className="text-lg font-semibold mb-4">Company</h3>
+          <div className="lg:-ml-20 md:pl-8">
+            <h3 className="mb-4 font-semibold text-lg">Company</h3>
             <nav className="flex flex-col space-y-3">
               {company.map((link) => (
                 <a
@@ -81,8 +82,8 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div className=" lg:-ml-20">
-            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+          <div className="lg:-ml-20">
+            <h3 className="mb-4 font-semibold text-lg">Contact Us</h3>
             <div className="space-y-2">
               <p>
                 Email us at: <a href="mailto: contact@sirjohnspellingbee.com.ng">contact@sirjohnspellingbee.com.ng</a></p>
@@ -98,8 +99,8 @@ const Footer = () => {
 
 
         {/* Social Media Section */}
-        <div className="relative md:border-t md:border-b border-footerBorder py-4 lg:-mt-8 md:mt-0 sm:mt-0 ">
-          {/* <div className="grid grid-cols-2 md:grid-cols-6 gap-6">
+        <div className="relative sm:mt-0 md:mt-0 lg:-mt-8 py-4 border-footerBorder md:border-t md:border-b">
+          {/* <div className="gap-6 grid grid-cols-2 md:grid-cols-6">
             {socialLinks.map((social, index) => (
               <div
                 key={social.name}
@@ -108,7 +109,7 @@ const Footer = () => {
               >
                 <a
                   href={social.href}
-                  className="flex items-center space-x-3 group px-4"
+                  className="group flex items-center space-x-3 px-4"
                 >
                   <svg
                     className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors duration-200"
@@ -118,7 +119,7 @@ const Footer = () => {
                     <path d={social.icon} />
                   </svg>
                 
-                  <span className="text-whiteColor text-sm md:text-base group-hover:text-white transition-colors duration-200">
+                  <span className="text-whiteColor group-hover:text-white text-sm md:text-base transition-colors duration-200">
                     {social.name}
                   </span>
                 </a>
@@ -128,74 +129,74 @@ const Footer = () => {
 
 
 
-          <div className="grid grid-cols-2  md:grid-cols-6 gap-6 lg:ml-8">
-            <div className='flex  border-footerBorder gap-3 lg:border-r  -mt-4 -mb-4 md:border-r pr-2 -ml-2 gap-0 sm:border-r-none'>
+          <div className="gap-6 grid grid-cols-2 md:grid-cols-6 lg:ml-8">
+            <div className='flex gap-0 gap-3 -mt-4 -mb-4 -ml-2 pr-2 border-footerBorder sm:border-r-none md:border-r lg:border-r'>
               <a
                 href="https://www.facebook.com/profile.php?id=61560930817507"
                 target="_blank"
                 rel="noopener noreferrer"
                 className=" "
               >
-                <Image src={Facebook} alt='' className='w-9 h-9 mt-4 ' />
+                <Image src={Facebook} alt='' className='mt-4 w-9 h-9' />
               </a>
-              <div className='mt-5 text-blue-600 md:mt-6'>Facebook</div>
+              <div className='mt-5 md:mt-6 text-blue-600'>Facebook</div>
             </div>
-            <div className=' flex border-footerBorder gap-3 lg:border-r -mt-4 -mb-4 md:border-r pr-2 -ml-2 gap-0 sm:border-r-none center' >
+            <div className='flex gap-0 gap-3 -mt-4 -mb-4 -ml-2 pr-2 border-footerBorder sm:border-r-none md:border-r lg:border-r center' >
               <a
                 href="https://www.instagram.com/sjspellingbee?utm_source=qr&igsh=aW1scDEwcGo3OW1j"
                 target="_blank"
                 rel="noopener noreferrer"
                 className=""
               >
-                <Image src={Insta} alt='' className='w-9 h-9 mt-4' />
+                <Image src={Insta} alt='' className='mt-4 w-9 h-9' />
               </a>
               <div className='mt-5 md:mt-6'>Instagram</div>
             </div>
-            <div className=' flex border-footerBorder gap-3 lg:border-r -mt-4 -mb-4 md:border-r pr-2 -ml-2 gap-0 sm:border-r-none center' >
+            <div className='flex gap-0 gap-3 -mt-4 -mb-4 -ml-2 pr-2 border-footerBorder sm:border-r-none md:border-r lg:border-r center' >
               <a
                 href="https://x.com/sjs_bee?s=09"
                 target="_blank"
                 rel="noopener noreferrer"
                 className=""
               >
-                <Image src={Twitter} alt='' className='w-9 h-9 mt-4 ' />
+                <Image src={Twitter} alt='' className='mt-4 w-9 h-9' />
               </a>
               <div className='mt-5 md:mt-6'>X</div>
             </div>
-            <div className=' flex border-footerBorder gap-3 lg:border-r -mt-4 -mb-4 md:border-r pr-2 -ml-2 gap-0 sm:border-r-none center' >
+            <div className='flex gap-0 gap-3 -mt-4 -mb-4 -ml-2 pr-2 border-footerBorder sm:border-r-none md:border-r lg:border-r center' >
             <a
               href="https://youtube.com/@sirjohnspellingbee-l2m?si=clWYl_3rT7HRFQgH"
               target="_blank"
               rel="noopener noreferrer"
               className=""
             >
-              <Image src={Youtube} alt='' className='w-10 h-10 mt-4' />
+              <Image src={Youtube} alt='' className='mt-4 w-10 h-10' />
              
             </a>
-            <div className='mt-5 text-red-600 md:mt-6'>Youtube</div>
+            <div className='mt-5 md:mt-6 text-red-600'>Youtube</div>
            
             </div>
-            <div className='flex border-footerBorder gap-3 lg:border-r -mt-4 -mb-4 md:border-r pr-2 -ml-2 gap-0 sm:border-r-none center' >
+            <div className='flex gap-0 gap-3 -mt-4 -mb-4 -ml-2 pr-2 border-footerBorder sm:border-r-none md:border-r lg:border-r center' >
             <a
               href="https://wa.me/2348144118744"
               target="_blank"
               rel="noopener noreferrer"
               className="text-green-600"
             >
-              <Image src={WhatsApp} alt='' className='w-8 h-8 mt-4 md:mt-4' />
+              <Image src={WhatsApp} alt='' className='mt-4 md:mt-4 w-8 h-8' />
             </a>
-            <div className='mt-5 text-green-600 md:mt-6'>WhatsApp</div>
+            <div className='mt-5 md:mt-6 text-green-600'>WhatsApp</div>
             </div>
-            <div className='flex gap-3 md:border-r-none pr-2 -ml-2  gap-0 sm:border-r-none center'>
+            <div className='flex gap-0 gap-3 -ml-2 pr-2 sm:border-r-none md:border-r-none center'>
             <a
               href="https://vm.tiktok.com/ZMk42sQCk/"
               target="_blank"
               rel="noopener noreferrer"
               className=""
             >
-              <Image src={Tiktok} alt='' className='w-9 h-9 ' />
+              <Image src={Tiktok} alt='' className='w-9 h-9' />
             </a>
-            <div className='mt-1 text-pink-600 md:mt-1'>Tiktok</div>
+            <div className='mt-1 md:mt-1 text-pink-600'>Tiktok</div>
             </div>
           </div>
 
@@ -204,7 +205,7 @@ const Footer = () => {
 
 
         {/* Copyright Section */}
-        <div className="text-center pt-6 text-sm">
+        <div className="pt-6 text-sm text-center">
           <p>&copy; {currentYear} All rights reserved.</p>
         </div>
       </div>

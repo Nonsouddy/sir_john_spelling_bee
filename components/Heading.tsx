@@ -1,8 +1,5 @@
 import Link from "next/link";
 
-//Icons
-import { CalendarTick } from "iconsax-react";
-
 const Heading = ({ totalEvents, page, Icon }: { totalEvents: number, page: string, Icon: React.ReactNode }) => {
     return (
         <main className="flex sm:flex-row flex-col sm:justify-between sm:items-center gap-y-5 my-4">

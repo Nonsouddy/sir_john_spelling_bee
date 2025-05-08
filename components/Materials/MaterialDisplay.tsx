@@ -15,7 +15,7 @@ import { Download } from "lucide-react";
 
 
 export default function MaterialsDisplay({ materials }: MaterialsDisplayProps) {
-    console.log("The materials", materials)
+    
     const handleDelete = async (id: string) => {
 
         const confirmDelete = window.confirm("Are you sure you want to delete this material?");
