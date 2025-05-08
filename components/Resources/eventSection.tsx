@@ -85,14 +85,17 @@ const EventsSection: FC = () => {
               className={`bg-white shadow-md rounded-lg overflow-hidden border-2 ${borderColors[index % borderColors.length]} flex flex-col items-center p-6`}
             >
               <div
-                className={`relative w-full aspect-video mb-4 border-4 ${borderColors[index % borderColors.length]} overflow-hidden`}
+                className={`relative w-full mb-4 border-4 ${borderColors[index % borderColors.length]} overflow-hidden flex items-center justify-center`}
+                style={{ minHeight: "240px" }}
               >
                 <Image
                   src={event.image}
                   alt={event.title}
-                  layout="fill"
-                  objectFit="contain"
-                  className="w-full h-full"
+                  width={800}
+                  height={600}
+                  layout="responsive"
+                  className="w-full h-auto"
+                  priority
                 />
               </div>
 
