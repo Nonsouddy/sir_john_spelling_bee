@@ -37,5 +37,5 @@ export default async function downloadMaterial(studentId: string, materialLink: 
         console.error('Error downloading material', error.stack)
         return { success: false, error: error }
     }
-}
+}  
 
