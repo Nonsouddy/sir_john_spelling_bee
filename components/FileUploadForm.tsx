@@ -21,7 +21,7 @@ const FileUploadForm: React.FC = () => {
         size: file.size,
         url: URL.createObjectURL(file)
       }));
-
+ 
       setFiles(prevFiles => {
         //  Limit total files or implement file replacement logic
         return [...prevFiles, ...newFiles];
