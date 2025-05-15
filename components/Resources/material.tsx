@@ -1,3 +1,5 @@
+
+
 "use client";
 
 import { useState, useEffect } from "react";
@@ -21,13 +23,14 @@ import getMaterials, { Material } from "../../actions/fetch/getMaterials";
 function MaterialSection() {
   const [mounted, setMounted] = useState(false);
   const [materials, setMaterials] = useState<Material[]>([]);
+  const [expandedCards, setExpandedCards] = useState<boolean[]>([]);
   
-  // Using an object to store states with material IDs as keys
-  const [cardStates, setCardStates] = useState<Record<string, {
+  // Using separate state arrays for each card to prevent cross-influence
+  const [cardStates, setCardStates] = useState<{
     input: string;
     loading: boolean;
-    expanded: boolean;
-  }>>({});
+    message: { type: string; text: string };
+  }[]>([]);
 
   const titleColors = ["text-primaryYellow", "text-accentOrange", "text-primaryYellow"];
   const cardColors = ["bg-primaryYellow", "bg-heroBlue", "bg-accentOrange"];
@@ -47,21 +50,16 @@ function MaterialSection() {
       try {
         const data = await getMaterials();
         setMaterials(data);
+        setExpandedCards(Array(data.length).fill(false));
         
-        // Initialize state for each material using their IDs
-        const initialStates = data.reduce((acc, material) => {
-          acc[material.id] = {
-            input: "",
-            loading: false,
-            expanded: false
-          };
-          return acc;
-        }, {} as Record<string, any>);
-        
-        setCardStates(initialStates);
+        // Initialize card state for each material
+        setCardStates(data.map(() => ({
+          input: "",
+          loading: false,
+          message: { type: "", text: "" }
+        })));
       } catch (error) {
         console.error("Error fetching materials:", error);
-        toast.error("Failed to load materials");
       } finally {
         setMounted(true);
       }
@@ -72,68 +70,91 @@ function MaterialSection() {
 
   if (!mounted) return null;
 
-  const handleChange = (materialId: string, value: string) => {
-    setCardStates(prev => ({
-      ...prev,
-      [materialId]: {
-        ...prev[materialId],
-        input: value
-      }
-    }));
+  const handleChange = (index: number, value: string) => {
+    setCardStates(prev => {
+      const newStates = [...prev];
+      newStates[index] = {
+        ...newStates[index],
+        input: value,
+        message: { type: "", text: "" }
+      };
+      return newStates;
+    });
   };
 
-  const handleDownload = async (materialId: string, downloadLink: string) => {
-    const currentInput = cardStates[materialId]?.input || "";
-    
-    if (!currentInput) {
-      toast.warning("Please enter your registration ID");
-      return;
-    }
-
+  const handleDownload = async (index: number, downloadLink: string) => {
     // Set loading state for this specific card
-    setCardStates(prev => ({
-      ...prev,
-      [materialId]: {
-        ...prev[materialId],
-        loading: true,
-        expanded: true
-      }
-    }));
+    setCardStates(prev => {
+      const newStates = [...prev];
+      newStates[index] = {
+        ...newStates[index],
+        loading: true
+      };
+      return newStates;
+    });
+
+    // Toggle expansion animation for this card
+    setExpandedCards(prev => {
+      const newExpanded = [...prev];
+      newExpanded[index] = true;
+      return newExpanded;
+    });
 
     try {
-      const result = await checkPayment(currentInput);
+      const result = await checkPayment(cardStates[index].input);
+      
+      setCardStates(prev => {
+        const newStates = [...prev];
+        newStates[index] = {
+          ...newStates[index],
+          loading: false,
+          message: { 
+            type: result.success ? "success" : "error", 
+            text: result.message 
+          }
+        };
+        return newStates;
+      });
       
       if (result.success) {
-        toast.success(result.message);
         window.open(downloadLink, "_blank");
-      } else {
-        toast.error(result.message);
       }
     } catch (error) {
       console.error("Error checking payment:", error);
-      toast.error("An error occurred. Please try again.");
-    } finally {
-      // Reset states after operation
-      setCardStates(prev => ({
-        ...prev,
-        [materialId]: {
-          ...prev[materialId],
+      
+      setCardStates(prev => {
+        const newStates = [...prev];
+        newStates[index] = {
+          ...newStates[index],
           loading: false,
-          expanded: false
-        }
-      }));
+          message: { 
+            type: "error", 
+            text: "An error occurred. Please try again." 
+          }
+        };
+        return newStates;
+      });
+    } finally {
+      // Keep expanded state for a short time to show animation, then revert
+      setTimeout(() => {
+        setExpandedCards(prev => {
+          const newExpanded = [...prev];
+          newExpanded[index] = false;
+          return newExpanded;
+        });
+      }, 300);
     }
   };
 
   const formatFileSize = (sizeInBytes: number): string => {
-    if (sizeInBytes < 1024) return `${sizeInBytes} B`;
-    if (sizeInBytes < 1024 * 1024) return `${(sizeInBytes / 1024).toFixed(1)} KB`;
-    return `${(sizeInBytes / (1024 * 1024)).toFixed(1)} MB`;
+    if (sizeInBytes < 1024) return `File size: ${sizeInBytes} B`;
+    if (sizeInBytes < 1024 * 1024) return `File size: ${(sizeInBytes / 1024).toFixed(1)} KB`;
+    return `File size: ${(sizeInBytes / (1024 * 1024)).toFixed(1)} MB`;
   };
 
   return (
     <div className="py-10 px-6 md:px-16">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 font-['Comic_Sans_MS']">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 font-['Comic_Sans_MS']">
         {materials.map((material, index) => {
           const decorIndex = index % decorData.length;
           const decor = decorData[decorIndex];
@@ -142,18 +163,15 @@ function MaterialSection() {
           const mainTitle = titleParts.length > 1 ? titleParts.slice(0, -1).join(' ') : material.title;
           const highlightedWord = titleParts.length > 1 ? titleParts.slice(-1)[0] : '';
           
-          const currentState = cardStates[material.id] || {
-            input: "",
-            loading: false,
-            expanded: false
-          };
+          const cardState = cardStates[index] || { input: "", loading: false, message: { type: "", text: "" } };
           
           return (
             <div 
               key={material.id} 
-              className={`shadow-md rounded-lg relative overflow-hidden min-h-[400px] flex flex-col ${cardColors[index % cardColors.length]}`}
+              className={`shadow-md rounded-lg relative overflow-hidden ${cardColors[index % cardColors.length]} transform transition-all duration-300 ${expandedCards[index] ? 'scale-y-105' : ''} min-h-[400px] flex flex-col`}
+              style={{ transformOrigin: 'top' }}
             >
-              {/* Decorative Elements */}
+              {/* Decorative Elements - Fixed positions */}
               <div className="absolute -bottom-4 -left-4 z-10 pointer-events-none">
                 <div className="relative">
                   <Image src={decor.ball} alt="Decor" width={45} height={45} />
@@ -168,8 +186,7 @@ function MaterialSection() {
                 <Image src={decor.leftImg} alt="Decor" width={40} height={40} />
               </div>
 
-              {/* Main Card Content */}
-              <div className={`flex-grow p-6 relative z-0 ${card2Colors[index % card2Colors.length]}`}>
+              <div className={`shadow-md rounded-lg p-6 relative z-0 ${card2Colors[index % card2Colors.length]} flex-grow`}>
                 <h2 className={`text-2xl font-bold ${titleColors[index % titleColors.length]}`}>
                   {mainTitle}
                   {highlightedWord && (
@@ -178,12 +195,11 @@ function MaterialSection() {
                     </span>
                   )}
                 </h2>
-                
                 <div className={`text-sm pt-2 font-normal ${authorColors[index % authorColors.length]}`}>
                   <p className="mt-2">By {material.author || 'Unknown Author'}</p>
-                  <p className="mt-6">{material.body || 'No description available.'}</p>
+                  <p className="mt-6 md:w-full line-clamp-3">{material.body || 'No description available.'}</p>
                   
-                  {/* File info and download button */}
+                  {/* File info and download button in a proper flex container */}
                   <div className={`mt-10 flex justify-between items-center w-full ${authorColors[index % authorColors.length]}`}>
                     <div className="flex items-center gap-2">
                       <div className="relative w-5 h-5 flex-shrink-0">
@@ -195,39 +211,39 @@ function MaterialSection() {
                           className={`fill-current ${curlColors[index % curlColors.length]}`}
                         />
                       </div>
-                      <p className="text-sm whitespace-nowrap">{material.type} {formatFileSize(material.size)}</p>
+                      <p className="text-sm whitespace-nowrap">{formatFileSize(material.size)}</p>
                     </div>
                     
                     <button
-                      onClick={() => handleDownload(material.id, material.downloadLink)}
-                      className={`flex-shrink-0 flex items-center justify-center space-x-2 px-4 py-2 rounded-lg transition-all
-                        ${currentState.input ? "bg-strokeColor2 hover:bg-blue800" : "cursor-not-allowed opacity-50"}
-                        ${currentState.loading ? "opacity-75" : ""}`}
-                      disabled={!currentState.input || currentState.loading}
+                      onClick={() => handleDownload(index, material.downloadLink)}
+                      className={`flex-shrink-0 flex items-center justify-center space-x-2 px-4 py-2 rounded-lg transition-all duration-300
+                        ${cardState.input ? "bg-strokeColor2 hover:bg-blue800 transform hover:-translate-y-1" : "cursor-not-allowed opacity-50"}
+                        ${cardState.loading ? "opacity-75 animate-pulse" : ""}`}
+                      disabled={!cardState.input || cardState.loading}
                     >
-                      <span>{currentState.loading ? "Checking..." : "Download"}</span>
-                      <Image 
-                        src={Btn} 
-                        alt="Download" 
-                        width={20} 
-                        height={20} 
-                      />
+                      <span className="whitespace-nowrap">{cardState.loading ? "Checking..." : "Download"}</span>
+                      <Image src={Btn} alt="Download" width={20} height={20} className={`transition-transform duration-300 ${expandedCards[index] ? 'translate-y-1' : ''}`} />
                     </button>
                   </div>
                 </div>
               </div>
               
-              {/* Input Section - Fixed height to prevent layout shift */}
-              <div className="p-6 bg-white">
+              {/* Input Section */}
+              <div className={`text-sm p-6 flex flex-col items-center gap-2 font-normal relative z-0 bg-white transition-all duration-300 ease-in-out ${expandedCards[index] ? 'max-h-40' : 'max-h-24'}`}>
                 <div className="w-full">
                   <input
                     type="text"
                     placeholder="Enter Reg. ID"
                     required
-                    value={currentState.input}
-                    onChange={(e) => handleChange(material.id, e.target.value)}
-                    className="w-full p-2 border rounded-md outline-none focus:ring-2 focus:ring-blue-500"
+                    value={cardState.input}
+                    onChange={(e) => handleChange(index, e.target.value)}
+                    className="w-full p-2 border rounded-md outline-none focus:border-blue-500 transition-colors"
                   />
+                  <div className={`mt-2 text-sm transition-all duration-300 ${cardState.message.text ? 'opacity-100 max-h-20' : 'opacity-0 max-h-0'}`}>
+                    <p className={`${cardState.message.type === "error" ? "text-red-500" : "text-green-500"}`}>
+                      {cardState.message.text}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
