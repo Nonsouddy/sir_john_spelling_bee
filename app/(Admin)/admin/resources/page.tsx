@@ -17,7 +17,7 @@ const page = async () => {
 
   return (
     <main>
-      <Heading totalEvents={materials.length} page="materials" Icon={<Book1 variant="Bold" size="28" color="#FFF" />} />
+      <Heading totalEvents={materials.length} page="resources" Icon={<Book1 variant="Bold" size="28" color="#FFF" />} />
       <MaterialsDisplay materials={materials} />
     </main>
   );
