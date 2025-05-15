@@ -5,7 +5,7 @@ import Image from "next/image";
 import { toast } from "sonner";
 import Btn from "../../public/Svgs/downloadBtn.svg";
 import bookBall from "../../public/Svgs/bookBall.svg";
-import bookBall1 from "../../public/Svgs/bookBall1.svg";
+import bookBall1 from "../../public/Svgs/bookBall1.svg"
 import bookBall2 from "../../public/Svgs/bookBall2.svg";
 import bookLeft from "../../public/Svgs/bookLeft.svg";
 import bookLeft1 from "../../public/Svgs/bookLeft1.svg";
