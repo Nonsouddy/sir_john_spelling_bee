@@ -74,7 +74,7 @@ const Form = () => {
             onSuccess: () => {
                 toast.success("The material was added successfully")
                 reset();
-                router.push(`/admin/materials`);
+                router.push(`/admin/resources`);
                 return
             },
             onError: (error: any) => {
