@@ -58,7 +58,7 @@ const Navbar = () => {
       {/* Announcement Notice Bar */}
       <div className="bg-heroBlue overflow-hidden py-2 font-comic relative">
         <div className="flex items-center justify-center whitespace-nowrap">
-          <div className="animate-marquee flex items-center gap-x-4 text-white font-medium text-m">
+          <div className="animate-marquee flex items-center gap-x-4 text-black font-medium text-m">
              < VolumeHigh size="16" className="text-white flex-shrink-0 ml-12" variant="Bold" />
             <span className='flex gap-2'>📢<div className='text-red-500'>Important Notice:</div> Registration for our next season starts on the 1st of Septemeber 2025 - Limited spots available!</span>
          
