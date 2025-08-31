@@ -60,16 +60,16 @@ const Navbar = () => {
         <div className="flex items-center justify-center whitespace-nowrap">
           <div className="animate-marquee flex items-center gap-x-4 text-white font-medium text-m">
              < VolumeHigh size="16" className="text-white flex-shrink-0 ml-12" variant="Bold" />
-            <span className='flex gap-2'>📢<div className='text-black'>Important Notice:</div> Registration for our next season starts on the 1st of Septemeber 2025 - Limited spots available!</span>
+            <span className='flex gap-2'>📢<div className='text-red-500'>Important Notice:</div> Registration for our next season starts on the 1st of Septemeber 2025 - Limited spots available!</span>
          
              < VolumeHigh size="16" className="text-white flex-shrink-0 ml-12" variant="Bold" />
-            <span className='flex gap-2'>📢<div className='text-black'>Important Notice:</div> Registration for our next season starts on the 1st of Septemeber 2025 - Limited spots available!</span>
+            <span className='flex gap-2'>📢<div className='text-red-500'>Important Notice:</div> Registration for our next season starts on the 1st of Septemeber 2025 - Limited spots available!</span>
          
              < VolumeHigh size="16" className="text-white flex-shrink-0 ml-12" variant="Bold" />
-            <span className='flex gap-2'>📢<div className='text-black'>Important Notice:</div> Registration for our next season starts on the 1st of Septemeber 2025 - Limited spots available!</span>
+            <span className='flex gap-2'>📢<div className='text-red-500'>Important Notice:</div> Registration for our next season starts on the 1st of Septemeber 2025 - Limited spots available!</span>
           
              < VolumeHigh size="16" className="text-white flex-shrink-0 ml-12" variant="Bold" />
-            <span className='flex gap-2 '>📢<div className='text-black'>Important Notice:</div> Registration for our next season starts on the 1st of Septemeber 2025 - Limited spots available!</span>
+            <span className='flex gap-2 '>📢<div className='text-red-500'>Important Notice:</div> Registration for our next season starts on the 1st of Septemeber 2025 - Limited spots available!</span>
  
         </div>
         </div>
