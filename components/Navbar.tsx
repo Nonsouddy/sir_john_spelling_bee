@@ -56,7 +56,7 @@ const Navbar = () => {
       </nav>
 
       {/* Announcement Notice Bar */}
-      <div className="bg-[#2563eb] overflow-hidden py-2 font-comic relative">
+      <div className="bg-heroBlue overflow-hidden py-2 font-comic relative">
         <div className="flex items-center justify-center whitespace-nowrap">
           <div className="animate-marquee flex items-center gap-x-4 text-white font-medium text-m">
              < VolumeHigh size="16" className="text-white flex-shrink-0 ml-12" variant="Bold" />
