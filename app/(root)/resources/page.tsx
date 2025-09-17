@@ -11,8 +11,8 @@ import moon from '../../../public/Svgs/aboutHalfMoon.svg'
 //Components
 import MaterialSection from '../../../components/Resources/material'
 import EventSection from '../../../components/Resources/eventSection'
-import GallerySection from '../../../components/Resources/gallery'
-import Gallery from '../../../components/Resources/gallery'
+// import GallerySection from '../../../components/Resources/gallery'
+// import Gallery from '../../../components/Resources/gallery'
 
 
 
@@ -39,7 +39,7 @@ import Gallery from '../../../components/Resources/gallery'
 
                  <MaterialSection/>
                  <EventSection/>
-                 <Gallery/>
+                 {/* <Gallery/> */}
             </div >
             
 
