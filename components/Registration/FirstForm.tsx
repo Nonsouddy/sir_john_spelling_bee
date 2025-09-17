@@ -71,15 +71,10 @@ const FirstForm = () => {
         if (data.studentDateOfBirth) {
             const birthDate = new Date(data.studentDateOfBirth);
             const today = new Date();
-            let age = today.getFullYear() - birthDate.getFullYear();
-            const monthDiff = today.getMonth() - birthDate.getMonth();
-
-            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
-                age--;
-            }
-
-            if (age < 6 || age > 18) {
-                errors.push('Student must be between 6 and 18 years old');
+            const age = today.getFullYear() - birthDate.getFullYear();
+           // Remove the month/day comparison entirely
+            if (age < 5 || age > 17) {
+                errors.push('Student must be between 5 and 17 years old');
             }
         }
 

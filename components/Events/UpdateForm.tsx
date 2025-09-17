@@ -27,13 +27,13 @@ const UpdateForm = ({ event, toggleFn }: { event?: EventProperties, toggleFn: ()
     const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
         if (!e.target.files) return;
 
-        const maxFileSize = 50 * 1024 * 1024;
+        const maxFileSize = 200 * 1024 * 1024;
         const files: File[] = Array.from(e.target.files);
 
         // Filter out files that exceed the size limit
         const validFiles = files.filter(file => {
             if (file.size > maxFileSize) {
-                toast.error(`"${file.name}" is too large! Max size is 50MB.`);
+                toast.error(`"${file.name}" is too large! Max size is 200MB.`);
                 return false;
             }
             return true;

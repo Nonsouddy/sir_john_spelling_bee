@@ -12,7 +12,7 @@ const navItems = [
   { href: "/admin/dashboard", icon: HomeHashtag, label: "Dashboard" },
   { href: "/admin/events", icon: Calendar1, label: "Events" },
   { href: "/admin/gallery", icon: Gallery, label: "Gallery" },
-  { href: "/admin/materials", icon: BookSaved, label: "Materials" },
+  { href: "/admin/resources", icon: BookSaved, label: "Materials" },
   {href: "/admin/staff", icon: Profile2User, label: "Staff", role: "super_admin"}
 ];
 
