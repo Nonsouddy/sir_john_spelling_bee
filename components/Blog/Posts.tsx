@@ -20,6 +20,7 @@ async function getPosts(): Promise<Post[]> {
   );
 }
 
+export const revalidate = 0;
 export default async function Posts() {
 
   const posts = await getPosts()

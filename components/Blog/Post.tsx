@@ -1,7 +1,10 @@
 import { client } from "@/sanity/lib/client";
 import Image from "next/image";
 import { PortableText } from "@portabletext/react";
+
+//Utils
 import { format } from "date-fns";
+import { urlFor } from "@/sanity/lib/image";
 
 //Component
 import CommentForm from "./CommentForm"
@@ -33,18 +36,11 @@ async function getPost(slug: string): Promise<Post> {
 const ptComponents = {
   types: {
     image: ({ value }: any) => {
-      if (!value?.asset?.url) {
-        return null
-      }
+      if (!value?.asset?._ref) return null
+      const src = urlFor(value).url()
       return (
         <div className="relative my-6 rounded-lg w-full h-96 overflow-hidden">
-          <Image
-            className="object-cover"
-            src={value.asset.url || "/placeholder.svg"}
-            alt={value.alt || ""}
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          />
+          <Image className="object-cover" src={src || "/placeholder.svg"} alt={value.alt || ""} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
         </div>
       )
     },
@@ -87,20 +83,26 @@ const Post = async ({ slug }: { slug: string }) => {
   const post = await getPost(slug);
 
   return (
-    <main className="mx-auto px-4 py-12 max-w-4xl">
+    <main className="mx-auto px-4 py-12 max-w-5xl">
       <article className="bg-white shadow-md rounded-2xl overflow-hidden">
         <div className="relative w-full h-[400px]">
-          <Image src={post.mainImage.asset.url || "/placeholder.svg"} alt={post.title} fill priority className="object-cover" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          />
+          <Image src={post.mainImage.asset.url || "/placeholder.svg"} alt={post.title} fill priority className="object-cover" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
         </div>
 
-        <div className="p-6 md:p-10">
+        <div className="p-4 md:p-6 xl:p-8">
           <h1 className="mb-4 font-bold text-gray-900 text-xl sm:text-2xl md:text-3xl xl:text-4xl">{post.title}</h1>
           <div className="flex items-center space-x-4 mb-8">
             <div>
-              <p className="font-medium text-gray-900">{post.author.name}</p>
+              <div className="flex items-center gap-x-1">
+                {post.author.image && (
+                  <div className="relative size-6 md:size-8 xl:size-10">
+                    <Image src={urlFor(post.author.image).url()} alt={post.author.name} fill className="rounded-full object-cover" />
+                  </div>
+                )}
+                <p className="font-medium text-gray-900">{post.author.name}</p>
+              </div>
               {post._createdAt && (
-                <p className="text-gray-500 text-sm">{format(new Date(post._createdAt), "MMMM dd, yyyy h:mm a")}</p>
+                <p className="text-gray-500 text-sm"><span className="font-semibold text-black">Published At:</span> {format(new Date(post._createdAt), "MMMM dd, yyyy h:mm a")}</p>
               )}
             </div>
           </div>
