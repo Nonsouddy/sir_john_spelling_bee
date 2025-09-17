@@ -1,27 +1,28 @@
 import { AddCommentIcon } from '@sanity/icons'
+import { defineType, defineField } from 'sanity'
 
-const comment = {
-    name: 'comment',
-    title: 'Comment',
-    type: 'document',
-    icon: AddCommentIcon,
-    fields: [
-        { name: 'name', title: 'Name', type: 'string' },
-        { name: 'email', title: 'Email', type: 'string' },
-        { name: 'comment', title: 'Comment', type: 'text' },
-        {
-            name: 'post',
-            title: 'Post',
-            type: 'reference',
-            to: [{ type: 'post' }],
-        },
-        {
-            name: 'approved',
-            title: 'Approved',
-            type: 'boolean',
-            initialValue: true,
-        },
-    ],
-};
+export const commentType = defineType({
+  name: 'comment',
+  title: 'Comment',
+  type: 'document',
+  icon: AddCommentIcon,
+  fields: [
+    defineField({ name: 'name', title: 'Name', type: 'string' }),
+    defineField({ name: 'email', title: 'Email', type: 'string' }),
+    defineField({ name: 'comment', title: 'Comment', type: 'text' }),
+    defineField({
+      name: 'post',
+      title: 'Post',
+      type: 'reference',
+      to: [{ type: 'post' }],
+    }),
+    defineField({
+      name: 'approved',
+      title: 'Approved',
+      type: 'boolean',
+      initialValue: true,
+    }),
+  ],
+})
 
-export default comment;
+export default commentType
