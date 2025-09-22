@@ -16,40 +16,93 @@ const NAV_LINKS = [
   { path: "/about", label: "About Us" },
   { path: "/contact", label: "Contact Us" },
   { path: "/resources", label: "Resources" },
+  { path: "/blog", label: "Blog", isSpecial: true }, // Special styling for blog
   { path: "/faq", label: "FAQs" },
 ];
 
-
 const Navbar = () => {
-
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const pathName = usePathname()
+  const pathName = usePathname();
 
   //Functions
-  const toggleMenu = () => setIsOpen((prev) => !prev)
+  const toggleMenu = () => setIsOpen((prev) => !prev);
 
   return (
     <>
       <nav className='font-comic'>
         <div className="flex justify-between items-center bg-[#FFFFFA] shadow-[0px_4px_26px_0px_rgba(0,0,0,0.07)] px-5 sm:px-10 md:px-20 xl:px-32 py-6">
           <Link href="/"><Image src={logo} alt='Logo' className='w-fit h-8 md:h-12 xl:h-16' /></Link>
+          
           <div className='lg:flex gap-x-5 xl:gap-x-10 hidden'>
             {NAV_LINKS.map((link) => (
               <div key={link.path} className='relative'>
-                <Link href={link.path} className={`${pathName === link.path ? "text-accentOrange font-bold" : "text-textGray hover:text-accentOrange duration-300 font-medium"}`}>{link.label}</Link>
-                <Image src={navHover} className={`${pathName === link.path ? "absolute left-1/2 transform -translate-x-1/2" : "hidden"}`} alt='Hover Image' />
+                <Link 
+                  href={link.path} 
+                  className={`${
+                    link.isSpecial 
+                      ? pathName === link.path 
+                        ? "text-white bg-accentOrange px-4 py-2 rounded-full font-bold animate-pulse shadow-lg" 
+                        : "text-accentOrange bg-gradient-to-r from-primaryYellow to-yellow-300 px-4 py-2 rounded-full font-bold hover:shadow-lg hover:scale-105 transform transition-all duration-300 animate-bounce"
+                      : pathName === link.path 
+                        ? "text-accentOrange font-bold" 
+                        : "text-textGray hover:text-accentOrange duration-300 font-medium"
+                  } ${link.isSpecial ? 'relative overflow-hidden' : ''}`}
+                >
+                  {link.isSpecial && (
+                    <span className="absolute inset-0  animate-pulse"></span>
+                  )}
+                  <span className="relative z-10">
+                    {link.label}
+                    {link.isSpecial && (
+                      <span className="ml-1 text-xs">✨</span>
+                    )}
+                  </span>
+                </Link>
+                {!link.isSpecial && (
+                  <Image 
+                    src={navHover} 
+                    className={`${pathName === link.path ? "absolute left-1/2 transform -translate-x-1/2" : "hidden"}`} 
+                    alt='Hover Image' 
+                  />
+                )}
               </div>
             ))}
           </div>
+          
           <Link href="/instructions?page=1" className={`${pathName === "/instructions" ? "bg-accentOrange text-white" : "bg-primaryYellow text-[#1C1B17]"} lg:block hidden px-2.5 py-3.5 rounded-[30px] w-48 font-bold text-center hover:-translate-y-1 duration-300`}>Register Now</Link>
           <HambergerMenu color="#000" className='lg:hidden cursor-pointer size-9 md:size-10' variant="Bold" onClick={toggleMenu} />
         </div>
+
+        {/* Click outside to close dropdown */}
+        {/* Removed dropdown overlay */}
 
         {/* Mobile Screen */}
         <div className={`lg:hidden fixed inset-0 bg-black opacity-50 ${isOpen ? "translate-x-0" : "-translate-x-full delay-500"} transition-transform duration-500 ease-in-out z-[5]`} onClick={toggleMenu}></div>
         <div onClick={toggleMenu} className={`lg:hidden flex flex-col gap-y-10 ${isOpen ? "translate-x-0 delay-500" : "-translate-x-full"} bg-[#FFFFFA] w-72 border-r border-[#413d3d] z-10 fixed top-0 left-0 h-screen transition-transform duration-500 ease-in-out p-8 py-20`}>
           {NAV_LINKS.map((link) => (
-              <Link key={link.path} href={link.path} className={`${pathName === link.path ? "text-accentOrange font-bold" : "text-textGray hover:text-accentOrange duration-300 font-medium"} text-sm md:text-base`}>{link.label}</Link>
+            <Link
+              key={link.path}
+              href={link.path}
+              className={`${
+                link.isSpecial 
+                  ? pathName === link.path 
+                    ? "text-white bg-accentOrange px-4 py-2 rounded-full font-bold text-center shadow-lg" 
+                    : "text-accentOrange bg-gradient-to-r from-primaryYellow to-yellow-300 px-4 py-2 rounded-full font-bold text-center shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                  : pathName === link.path 
+                    ? "text-accentOrange font-bold" 
+                    : "text-textGray hover:text-accentOrange duration-300 font-medium"
+              } text-sm md:text-base ${link.isSpecial ? 'relative overflow-hidden' : ''}`}
+            >
+              {link.isSpecial && (
+                <span className="absolute inset-0 bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-500 opacity-20 animate-pulse"></span>
+              )}
+              <span className="relative z-10">
+                {link.label}
+                {link.isSpecial && (
+                  <span className="ml-1 text-xs">✨</span>
+                )}
+              </span>
+            </Link>
           ))}
           <Link href="/instructions?page=1" className={`${pathName === "/instructions" ? "bg-accentOrange text-white" : "bg-primaryYellow text-[#1C1B17]"} block lg:hidden px-2.5 py-3.5 rounded-[30px] w-48 font-bold text-center hover:-translate-y-1 duration-300`}>Register Now</Link>
         </div>
@@ -59,16 +112,16 @@ const Navbar = () => {
       <div className="bg-heroBlue overflow-hidden py-2 font-comic relative">
         <div className="flex items-center justify-center whitespace-nowrap">
           <div className="animate-marquee flex items-center gap-x-4 text-black font-medium text-m">
-             < VolumeHigh size="16" className="text-white flex-shrink-0 ml-12" variant="Bold" />
+             <VolumeHigh size="16" className="text-white flex-shrink-0 ml-12" variant="Bold" />
             <span className='flex gap-2'>📢<div className='text-red-500'>Important Notice:</div> Registration for our next season starts on the 1st of Septemeber 2025 - Limited spots available!</span>
          
-             < VolumeHigh size="16" className="text-white flex-shrink-0 ml-12" variant="Bold" />
+             <VolumeHigh size="16" className="text-white flex-shrink-0 ml-12" variant="Bold" />
             <span className='flex gap-2'>📢<div className='text-red-500'>Important Notice:</div> Registration for our next season starts on the 1st of Septemeber 2025 - Limited spots available!</span>
          
-             < VolumeHigh size="16" className="text-white flex-shrink-0 ml-12" variant="Bold" />
+             <VolumeHigh size="16" className="text-white flex-shrink-0 ml-12" variant="Bold" />
             <span className='flex gap-2'>📢<div className='text-red-500'>Important Notice:</div> Registration for our next season starts on the 1st of Septemeber 2025 - Limited spots available!</span>
           
-             < VolumeHigh size="16" className="text-white flex-shrink-0 ml-12" variant="Bold" />
+             <VolumeHigh size="16" className="text-white flex-shrink-0 ml-12" variant="Bold" />
             <span className='flex gap-2 '>📢<div className='text-red-500'>Important Notice:</div> Registration for our next season starts on the 1st of Septemeber 2025 - Limited spots available!</span>
  
         </div>

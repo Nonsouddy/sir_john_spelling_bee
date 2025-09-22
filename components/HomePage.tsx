@@ -22,6 +22,8 @@ const HomeSection = () => {
     // States for controlling animations
     const [isLoaded, setIsLoaded] = useState(false);
     const [animationsReady, setAnimationsReady] = useState(false);
+    const [showSticker, setShowSticker] = useState(false);
+    const [isClosing, setIsClosing] = useState(false);
 
     useEffect(() => {
         // Set loaded state first
@@ -31,9 +33,29 @@ const HomeSection = () => {
         const timer = setTimeout(() => {
             setAnimationsReady(true);
         }, 100); // Short delay after component mounts
+
+        // Show sticker after a short delay
+        const stickerTimer = setTimeout(() => {
+            setShowSticker(true);
+        }, 2000);
         
-        return () => clearTimeout(timer);
+        return () => {
+            clearTimeout(timer);
+            clearTimeout(stickerTimer);
+        };
     }, []);
+
+    const handleCloseSticker = () => {
+        setIsClosing(true);
+        setTimeout(() => {
+            setShowSticker(false);
+            setIsClosing(false);
+        }, 300);
+    };
+
+    const handleStickerClick = () => {
+        window.location.href = '/blog';
+    };
 
     // Custom animation classes that only apply after hydration
     const fadeInClass = animationsReady ? "opacity-100 translate-y-0 translate-x-0" : "opacity-0";
@@ -42,7 +64,57 @@ const HomeSection = () => {
     const fadeInUpClass = animationsReady ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10";
 
     return (
-        <div className="min-h-screen w-full bg-white overflow-hidden">
+        <div className="min-h-screen w-full bg-white overflow-hidden relative">
+            {/* Disturbing Sticker Button */}
+            {showSticker && (
+                <div className={`fixed z-50 ${isClosing ? 'animate-bounce-out' : 'animate-bounce-in'} ${animationsReady ? 'animate-wiggle animate-pulse' : ''}`} 
+                     style={{ 
+                         top: '40%', 
+                         right: '20px', 
+                         transform: 'translateY(-50%)',
+                         cursor: 'pointer'
+                     }}>
+                    <div 
+                        className="relative group"
+                        onClick={handleStickerClick}
+                    >
+                        {/* Main Sticker */}
+                        <div className="relative bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 p-1 rounded-full shadow-2xl border-4 border-white animate-pulse">
+                            <div className="bg-yellow-300 rounded-full p-4 w-24 h-24 flex items-center justify-center text-center">
+                                <span className="font-comic font-bold text-lg text-black leading-tight">
+                                    READ OUR<br/>BLOG!<br/>
+                                    <span className="text-sm">📝✨</span>
+                                </span>
+                            </div>
+                            
+                            {/* Sparkle effects */}
+                            <div className="absolute -top-2 -left-2 text-2xl animate-spin">✨</div>
+                            <div className="absolute -bottom-2 -right-2 text-2xl animate-bounce">🌟</div>
+                            <div className="absolute -top-2 -right-2 text-xl animate-ping">💫</div>
+                        </div>
+                        
+                        {/* Close button */}
+                        <button 
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                handleCloseSticker();
+                            }}
+                            className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold hover:bg-red-600 transition-colors border-2 border-white shadow-lg"
+                        >
+                            ×
+                        </button>
+                        
+                        {/* Pointer arrow */}
+                        {/* <div className="absolute -left-6 top-1/2 transform -translate-y-1/2 text-3xl animate-bounce">👉</div> */}
+                    </div>
+                    
+                    {/* Floating text */}
+                    {/* <div className="absolute -left-40 top-1/2 transform -translate-y-1/2 bg-black text-white px-3 py-2 rounded-lg whitespace-nowrap font-comic font-bold text-sm animate-pulse">
+                        Click me! 🚀
+                    </div> */}
+                </div>
+            )}
+
             <div className={`container mx-auto px-4 py-8 md:py-16 flex flex-col lg:flex-row items-center justify-between transition-all duration-700 ${isLoaded ? fadeInClass : "opacity-0"}`}>
                 {/* Left Section */}
                 <div className="w-full lg:w-1/2 relative mb-12 lg:mb-0 transition-all duration-500 lg:mt-[-120px]">
@@ -191,6 +263,42 @@ const HomeSection = () => {
             {/* Home Page Section 2 */}
             <HomeStardom />
             <HomeRegSection />
+
+            {/* Custom CSS for animations */}
+            <style jsx>{`
+                @keyframes bounce-in {
+                    0% { transform: translateY(-50%) scale(0.3) rotate(-30deg); opacity: 0; }
+                    50% { transform: translateY(-50%) scale(1.1) rotate(10deg); }
+                    100% { transform: translateY(-50%) scale(1) rotate(0deg); opacity: 1; }
+                }
+                
+                @keyframes bounce-out {
+                    0% { transform: translateY(-50%) scale(1) rotate(0deg); opacity: 1; }
+                    100% { transform: translateY(-50%) scale(0.3) rotate(30deg); opacity: 0; }
+                }
+                
+                @keyframes wiggle {
+                    0%, 7% { transform: translateY(-50%) rotate(0deg); }
+                    15% { transform: translateY(-50%) rotate(-5deg); }
+                    20% { transform: translateY(-50%) rotate(5deg); }
+                    25% { transform: translateY(-50%) rotate(-3deg); }
+                    30% { transform: translateY(-50%) rotate(2deg); }
+                    35% { transform: translateY(-50%) rotate(0deg); }
+                    100% { transform: translateY(-50%) rotate(0deg); }
+                }
+                
+                .animate-bounce-in {
+                    animation: bounce-in 0.8s ease-out forwards;
+                }
+                
+                .animate-bounce-out {
+                    animation: bounce-out 0.3s ease-in forwards;
+                }
+                
+                .animate-wiggle {
+                    animation: wiggle 20s ease-in-out infinite;
+                }
+            `}</style>
         </div>
     );
 };
